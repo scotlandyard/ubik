@@ -11,8 +11,10 @@
 		DA906DF71D22F9490095B270 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA906DEE1D22F9490095B270 /* LaunchScreen.storyboard */; };
 		DA906DFB1D22FC700095B270 /* CMainParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA906DFA1D22FC700095B270 /* CMainParent.swift */; };
 		DA906DFC1D22FD7A0095B270 /* tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA906DF21D22F9490095B270 /* tests.swift */; };
+		DA9210491D233DBB0083D956 /* DModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA9210471D233DBB0083D956 /* DModel.xcdatamodeld */; };
+		DA9210511D233E6B0083D956 /* Level+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA92104F1D233E6B0083D956 /* Level+CoreDataProperties.swift */; };
+		DA9210521D233E6B0083D956 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9210501D233E6B0083D956 /* Level.swift */; };
 		DAA0DC641D23068E00F3EF29 /* DManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA0DC611D23068E00F3EF29 /* DManager.swift */; };
-		DAA0DC651D23068E00F3EF29 /* DModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAA0DC621D23068E00F3EF29 /* DModel.xcdatamodeld */; };
 		DAA0DC681D23184C00F3EF29 /* CategoryNSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA0DC671D23184C00F3EF29 /* CategoryNSFileManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,8 +37,10 @@
 		DA906DF11D22F9490095B270 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA906DF21D22F9490095B270 /* tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tests.swift; sourceTree = "<group>"; };
 		DA906DFA1D22FC700095B270 /* CMainParent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMainParent.swift; sourceTree = "<group>"; };
+		DA9210481D233DBB0083D956 /* DModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DModel.xcdatamodel; sourceTree = "<group>"; };
+		DA92104F1D233E6B0083D956 /* Level+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Level+CoreDataProperties.swift"; path = "../../Model/Level+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DA9210501D233E6B0083D956 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Level.swift; path = ../../Model/Level.swift; sourceTree = "<group>"; };
 		DAA0DC611D23068E00F3EF29 /* DManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManager.swift; sourceTree = "<group>"; };
-		DAA0DC631D23068E00F3EF29 /* ubik.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ubik.xcdatamodel; sourceTree = "<group>"; };
 		DAA0DC671D23184C00F3EF29 /* CategoryNSFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSFileManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +122,7 @@
 		DA906DE81D22F9490095B270 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				DA92104E1D233E500083D956 /* Models */,
 				DAA0DC601D23068E00F3EF29 /* Basic */,
 			);
 			path = Data;
@@ -154,11 +159,20 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		DA92104E1D233E500083D956 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DA92104F1D233E6B0083D956 /* Level+CoreDataProperties.swift */,
+				DA9210501D233E6B0083D956 /* Level.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		DAA0DC601D23068E00F3EF29 /* Basic */ = {
 			isa = PBXGroup;
 			children = (
 				DAA0DC611D23068E00F3EF29 /* DManager.swift */,
-				DAA0DC621D23068E00F3EF29 /* DModel.xcdatamodeld */,
+				DA9210471D233DBB0083D956 /* DModel.xcdatamodeld */,
 			);
 			path = Basic;
 			sourceTree = "<group>";
@@ -270,10 +284,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAA0DC651D23068E00F3EF29 /* DModel.xcdatamodeld in Sources */,
 				DA906DF41D22F9490095B270 /* CMain.swift in Sources */,
+				DA9210521D233E6B0083D956 /* Level.swift in Sources */,
 				DAA0DC641D23068E00F3EF29 /* DManager.swift in Sources */,
+				DA9210491D233DBB0083D956 /* DModel.xcdatamodeld in Sources */,
 				DA906DFB1D22FC700095B270 /* CMainParent.swift in Sources */,
+				DA9210511D233E6B0083D956 /* Level+CoreDataProperties.swift in Sources */,
 				DAA0DC681D23184C00F3EF29 /* CategoryNSFileManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,12 +488,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		DAA0DC621D23068E00F3EF29 /* DModel.xcdatamodeld */ = {
+		DA9210471D233DBB0083D956 /* DModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				DAA0DC631D23068E00F3EF29 /* ubik.xcdatamodel */,
+				DA9210481D233DBB0083D956 /* DModel.xcdatamodel */,
 			);
-			currentVersion = DAA0DC631D23068E00F3EF29 /* ubik.xcdatamodel */;
+			currentVersion = DA9210481D233DBB0083D956 /* DModel.xcdatamodel */;
 			path = DModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
