@@ -6,5 +6,6 @@ class CMainParent:UIViewController
     
     override func viewDidLoad()
     {
+        
     }
 }

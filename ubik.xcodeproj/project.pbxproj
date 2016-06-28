@@ -13,6 +13,7 @@
 		DA906DFC1D22FD7A0095B270 /* tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA906DF21D22F9490095B270 /* tests.swift */; };
 		DAA0DC641D23068E00F3EF29 /* DManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA0DC611D23068E00F3EF29 /* DManager.swift */; };
 		DAA0DC651D23068E00F3EF29 /* DModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAA0DC621D23068E00F3EF29 /* DModel.xcdatamodeld */; };
+		DAA0DC681D23184C00F3EF29 /* CategoryNSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA0DC671D23184C00F3EF29 /* CategoryNSFileManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		DA906DFA1D22FC700095B270 /* CMainParent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMainParent.swift; sourceTree = "<group>"; };
 		DAA0DC611D23068E00F3EF29 /* DManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManager.swift; sourceTree = "<group>"; };
 		DAA0DC631D23068E00F3EF29 /* ubik.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ubik.xcdatamodel; sourceTree = "<group>"; };
+		DAA0DC671D23184C00F3EF29 /* CategoryNSFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSFileManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				DA906DEB1D22F9490095B270 /* Info.plist */,
 				DA906DEC1D22F9490095B270 /* Model */,
 				DA906DED1D22F9490095B270 /* Resource */,
+				DAA0DC661D23174E00F3EF29 /* Category */,
 				DA906DF01D22F9490095B270 /* Test */,
 				DA906DF31D22F9490095B270 /* View */,
 			);
@@ -158,6 +161,14 @@
 				DAA0DC621D23068E00F3EF29 /* DModel.xcdatamodeld */,
 			);
 			path = Basic;
+			sourceTree = "<group>";
+		};
+		DAA0DC661D23174E00F3EF29 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				DAA0DC671D23184C00F3EF29 /* CategoryNSFileManager.swift */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +274,7 @@
 				DA906DF41D22F9490095B270 /* CMain.swift in Sources */,
 				DAA0DC641D23068E00F3EF29 /* DManager.swift in Sources */,
 				DA906DFB1D22FC700095B270 /* CMainParent.swift in Sources */,
+				DAA0DC681D23184C00F3EF29 /* CategoryNSFileManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
