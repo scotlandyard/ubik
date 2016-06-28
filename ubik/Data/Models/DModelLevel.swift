@@ -1,5 +1,5 @@
 //
-//  Level.swift
+//  DModelLevel.swift
 //  ubik
 //
 //  Created by zero on 6/28/16.
@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 
-class Level: NSManagedObject {
+class DModelLevel: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass
 

@@ -41,4 +41,26 @@ class DManager
             catch{}
         }
     }
+    
+    func fetchRequest()
+    {
+        managedObjectContext.executeFetchRequest(NSFetchRequest.)
+    }
+    
+    let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+    
+    let managedContext = appDelegate.managedObjectContext
+    
+    //2
+    let fetchRequest = NSFetchRequest(entityName: "Person")
+    
+    //3
+    do {
+    let results =
+    try managedContext.executeFetchRequest(fetchRequest)
+    people = results as! [NSManagedObject]
+    } catch let error as NSError {
+    print("Could not fetch \(error), \(error.userInfo)")
+    }
 }

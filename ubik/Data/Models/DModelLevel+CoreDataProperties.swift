@@ -1,5 +1,5 @@
 //
-//  Level+CoreDataProperties.swift
+//  DModelLevel+CoreDataProperties.swift
 //  ubik
 //
 //  Created by zero on 6/28/16.
@@ -12,7 +12,7 @@
 import Foundation
 import CoreData
 
-extension Level {
+extension DModelLevel {
 
     @NSManaged var steps: Int16
 
