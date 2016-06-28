@@ -7,13 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DA906DC21D22F4AF0095B270 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA906DC11D22F4AF0095B270 /* AppDelegate.swift */; };
-		DA906DC41D22F4AF0095B270 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA906DC31D22F4AF0095B270 /* ViewController.swift */; };
-		DA906DC71D22F4AF0095B270 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA906DC51D22F4AF0095B270 /* Main.storyboard */; };
-		DA906DCA1D22F4AF0095B270 /* ubik.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA906DC81D22F4AF0095B270 /* ubik.xcdatamodeld */; };
-		DA906DCC1D22F4AF0095B270 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA906DCB1D22F4AF0095B270 /* Assets.xcassets */; };
-		DA906DCF1D22F4AF0095B270 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA906DCD1D22F4AF0095B270 /* LaunchScreen.storyboard */; };
-		DA906DDA1D22F4AF0095B270 /* ubikTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA906DD91D22F4AF0095B270 /* ubikTests.swift */; };
+		DA906DF41D22F9490095B270 /* CMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA906DE71D22F9490095B270 /* CMain.swift */; };
+		DA906DF51D22F9490095B270 /* DModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA906DE91D22F9490095B270 /* DModel.xcdatamodeld */; };
+		DA906DF71D22F9490095B270 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA906DEE1D22F9490095B270 /* LaunchScreen.storyboard */; };
+		DA906DF91D22F9490095B270 /* tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA906DF21D22F9490095B270 /* tests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,16 +25,13 @@
 
 /* Begin PBXFileReference section */
 		DA906DBE1D22F4AE0095B270 /* ubik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ubik.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA906DC11D22F4AF0095B270 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DA906DC31D22F4AF0095B270 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DA906DC61D22F4AF0095B270 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DA906DC91D22F4AF0095B270 /* ubik.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ubik.xcdatamodel; sourceTree = "<group>"; };
-		DA906DCB1D22F4AF0095B270 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DA906DCE1D22F4AF0095B270 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		DA906DD01D22F4AF0095B270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DA906DD51D22F4AF0095B270 /* ubikTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ubikTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA906DD91D22F4AF0095B270 /* ubikTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ubikTests.swift; sourceTree = "<group>"; };
-		DA906DDB1D22F4AF0095B270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA906DD51D22F4AF0095B270 /* tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA906DE71D22F9490095B270 /* CMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMain.swift; sourceTree = "<group>"; };
+		DA906DEA1D22F9490095B270 /* ubik.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ubik.xcdatamodel; sourceTree = "<group>"; };
+		DA906DEB1D22F9490095B270 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA906DEF1D22F9490095B270 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DA906DF11D22F9490095B270 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA906DF21D22F9490095B270 /* tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +56,6 @@
 			isa = PBXGroup;
 			children = (
 				DA906DC01D22F4AF0095B270 /* ubik */,
-				DA906DD81D22F4AF0095B270 /* ubikTests */,
 				DA906DBF1D22F4AE0095B270 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,7 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				DA906DBE1D22F4AE0095B270 /* ubik.app */,
-				DA906DD51D22F4AF0095B270 /* ubikTests.xctest */,
+				DA906DD51D22F4AF0095B270 /* tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -79,24 +72,78 @@
 		DA906DC01D22F4AF0095B270 /* ubik */ = {
 			isa = PBXGroup;
 			children = (
-				DA906DC11D22F4AF0095B270 /* AppDelegate.swift */,
-				DA906DC31D22F4AF0095B270 /* ViewController.swift */,
-				DA906DC51D22F4AF0095B270 /* Main.storyboard */,
-				DA906DCB1D22F4AF0095B270 /* Assets.xcassets */,
-				DA906DCD1D22F4AF0095B270 /* LaunchScreen.storyboard */,
-				DA906DD01D22F4AF0095B270 /* Info.plist */,
-				DA906DC81D22F4AF0095B270 /* ubik.xcdatamodeld */,
+				DA906DE41D22F9490095B270 /* Asset */,
+				DA906DE51D22F9490095B270 /* Controller */,
+				DA906DE81D22F9490095B270 /* Data */,
+				DA906DEB1D22F9490095B270 /* Info.plist */,
+				DA906DEC1D22F9490095B270 /* Model */,
+				DA906DED1D22F9490095B270 /* Resource */,
+				DA906DF01D22F9490095B270 /* Test */,
+				DA906DF31D22F9490095B270 /* View */,
 			);
 			path = ubik;
 			sourceTree = "<group>";
 		};
-		DA906DD81D22F4AF0095B270 /* ubikTests */ = {
+		DA906DE41D22F9490095B270 /* Asset */ = {
 			isa = PBXGroup;
 			children = (
-				DA906DD91D22F4AF0095B270 /* ubikTests.swift */,
-				DA906DDB1D22F4AF0095B270 /* Info.plist */,
 			);
-			path = ubikTests;
+			path = Asset;
+			sourceTree = "<group>";
+		};
+		DA906DE51D22F9490095B270 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DA906DE61D22F9490095B270 /* Main */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DA906DE61D22F9490095B270 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DA906DE71D22F9490095B270 /* CMain.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		DA906DE81D22F9490095B270 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				DA906DE91D22F9490095B270 /* DModel.xcdatamodeld */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		DA906DEC1D22F9490095B270 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DA906DED1D22F9490095B270 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				DA906DEE1D22F9490095B270 /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		DA906DF01D22F9490095B270 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				DA906DF11D22F9490095B270 /* Info.plist */,
+				DA906DF21D22F9490095B270 /* tests.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		DA906DF31D22F9490095B270 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,9 +166,9 @@
 			productReference = DA906DBE1D22F4AE0095B270 /* ubik.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DA906DD41D22F4AF0095B270 /* ubikTests */ = {
+		DA906DD41D22F4AF0095B270 /* tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DA906DE11D22F4AF0095B270 /* Build configuration list for PBXNativeTarget "ubikTests" */;
+			buildConfigurationList = DA906DE11D22F4AF0095B270 /* Build configuration list for PBXNativeTarget "tests" */;
 			buildPhases = (
 				DA906DD11D22F4AF0095B270 /* Sources */,
 				DA906DD21D22F4AF0095B270 /* Frameworks */,
@@ -132,9 +179,9 @@
 			dependencies = (
 				DA906DD71D22F4AF0095B270 /* PBXTargetDependency */,
 			);
-			name = ubikTests;
+			name = tests;
 			productName = ubikTests;
-			productReference = DA906DD51D22F4AF0095B270 /* ubikTests.xctest */;
+			productReference = DA906DD51D22F4AF0095B270 /* tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -170,7 +217,7 @@
 			projectRoot = "";
 			targets = (
 				DA906DBD1D22F4AE0095B270 /* ubik */,
-				DA906DD41D22F4AF0095B270 /* ubikTests */,
+				DA906DD41D22F4AF0095B270 /* tests */,
 			);
 		};
 /* End PBXProject section */
@@ -180,9 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA906DCF1D22F4AF0095B270 /* LaunchScreen.storyboard in Resources */,
-				DA906DCC1D22F4AF0095B270 /* Assets.xcassets in Resources */,
-				DA906DC71D22F4AF0095B270 /* Main.storyboard in Resources */,
+				DA906DF71D22F9490095B270 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,9 +245,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA906DCA1D22F4AF0095B270 /* ubik.xcdatamodeld in Sources */,
-				DA906DC41D22F4AF0095B270 /* ViewController.swift in Sources */,
-				DA906DC21D22F4AF0095B270 /* AppDelegate.swift in Sources */,
+				DA906DF51D22F9490095B270 /* DModel.xcdatamodeld in Sources */,
+				DA906DF41D22F9490095B270 /* CMain.swift in Sources */,
+				DA906DF91D22F9490095B270 /* tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +255,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA906DDA1D22F4AF0095B270 /* ubikTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,18 +269,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		DA906DC51D22F4AF0095B270 /* Main.storyboard */ = {
+		DA906DEE1D22F9490095B270 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				DA906DC61D22F4AF0095B270 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		DA906DCD1D22F4AF0095B270 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DA906DCE1D22F4AF0095B270 /* Base */,
+				DA906DEF1D22F9490095B270 /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -281,7 +317,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -321,7 +357,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -355,7 +391,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = ubikTests/Info.plist;
+				INFOPLIST_FILE = ubik/Test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = iturbide.ubikTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -367,7 +403,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = ubikTests/Info.plist;
+				INFOPLIST_FILE = ubik/Test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = iturbide.ubikTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -395,7 +431,7 @@
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		DA906DE11D22F4AF0095B270 /* Build configuration list for PBXNativeTarget "ubikTests" */ = {
+		DA906DE11D22F4AF0095B270 /* Build configuration list for PBXNativeTarget "tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DA906DE21D22F4AF0095B270 /* Debug */,
@@ -406,13 +442,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		DA906DC81D22F4AF0095B270 /* ubik.xcdatamodeld */ = {
+		DA906DE91D22F9490095B270 /* DModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				DA906DC91D22F4AF0095B270 /* ubik.xcdatamodel */,
+				DA906DEA1D22F9490095B270 /* ubik.xcdatamodel */,
 			);
-			currentVersion = DA906DC91D22F4AF0095B270 /* ubik.xcdatamodel */;
-			path = ubik.xcdatamodeld;
+			currentVersion = DA906DEA1D22F9490095B270 /* ubik.xcdatamodel */;
+			path = DModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
