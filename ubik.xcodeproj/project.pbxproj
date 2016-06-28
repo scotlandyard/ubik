@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		DA906DF41D22F9490095B270 /* CMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA906DE71D22F9490095B270 /* CMain.swift */; };
-		DA906DF51D22F9490095B270 /* DModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA906DE91D22F9490095B270 /* DModel.xcdatamodeld */; };
 		DA906DF71D22F9490095B270 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA906DEE1D22F9490095B270 /* LaunchScreen.storyboard */; };
 		DA906DFB1D22FC700095B270 /* CMainParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA906DFA1D22FC700095B270 /* CMainParent.swift */; };
 		DA906DFC1D22FD7A0095B270 /* tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA906DF21D22F9490095B270 /* tests.swift */; };
+		DAA0DC641D23068E00F3EF29 /* DManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA0DC611D23068E00F3EF29 /* DManager.swift */; };
+		DAA0DC651D23068E00F3EF29 /* DModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAA0DC621D23068E00F3EF29 /* DModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,12 +29,13 @@
 		DA906DBE1D22F4AE0095B270 /* ubik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ubik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA906DD51D22F4AF0095B270 /* tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA906DE71D22F9490095B270 /* CMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMain.swift; sourceTree = "<group>"; };
-		DA906DEA1D22F9490095B270 /* ubik.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ubik.xcdatamodel; sourceTree = "<group>"; };
 		DA906DEB1D22F9490095B270 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA906DEF1D22F9490095B270 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA906DF11D22F9490095B270 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA906DF21D22F9490095B270 /* tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tests.swift; sourceTree = "<group>"; };
 		DA906DFA1D22FC700095B270 /* CMainParent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMainParent.swift; sourceTree = "<group>"; };
+		DAA0DC611D23068E00F3EF29 /* DManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManager.swift; sourceTree = "<group>"; };
+		DAA0DC631D23068E00F3EF29 /* ubik.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ubik.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +115,7 @@
 		DA906DE81D22F9490095B270 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				DA906DE91D22F9490095B270 /* DModel.xcdatamodeld */,
+				DAA0DC601D23068E00F3EF29 /* Basic */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -147,6 +149,15 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		DAA0DC601D23068E00F3EF29 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				DAA0DC611D23068E00F3EF29 /* DManager.swift */,
+				DAA0DC621D23068E00F3EF29 /* DModel.xcdatamodeld */,
+			);
+			path = Basic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,8 +259,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA906DF51D22F9490095B270 /* DModel.xcdatamodeld in Sources */,
+				DAA0DC651D23068E00F3EF29 /* DModel.xcdatamodeld in Sources */,
 				DA906DF41D22F9490095B270 /* CMain.swift in Sources */,
+				DAA0DC641D23068E00F3EF29 /* DManager.swift in Sources */,
 				DA906DFB1D22FC700095B270 /* CMainParent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,12 +460,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		DA906DE91D22F9490095B270 /* DModel.xcdatamodeld */ = {
+		DAA0DC621D23068E00F3EF29 /* DModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				DA906DEA1D22F9490095B270 /* ubik.xcdatamodel */,
+				DAA0DC631D23068E00F3EF29 /* ubik.xcdatamodel */,
 			);
-			currentVersion = DA906DEA1D22F9490095B270 /* ubik.xcdatamodel */;
+			currentVersion = DAA0DC631D23068E00F3EF29 /* ubik.xcdatamodel */;
 			path = DModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
