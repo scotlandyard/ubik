@@ -42,25 +42,20 @@ class DManager
         }
     }
     
-    func fetchRequest()
+    func fetchLevel() -> DModelLevel
     {
-        managedObjectContext.executeFetchRequest(NSFetchRequest.)
-    }
-    
-    let appDelegate =
-        UIApplication.sharedApplication().delegate as! AppDelegate
-    
-    let managedContext = appDelegate.managedObjectContext
-    
-    //2
-    let fetchRequest = NSFetchRequest(entityName: "Person")
-    
-    //3
-    do {
-    let results =
-    try managedContext.executeFetchRequest(fetchRequest)
-    people = results as! [NSManagedObject]
-    } catch let error as NSError {
-    print("Could not fetch \(error), \(error.userInfo)")
+        let fetchRequest:NSFetchRequest = NSFetchRequest(entityName:"Level")
+        let results:[DModelLevel]
+        
+        do
+        {
+            results = try managedObjectContext.executeFetchRequest(fetchRequest) as! [DModelLevel]
+        }
+        catch
+        {
+            results = []
+        }
+        
+        return results.first!
     }
 }
