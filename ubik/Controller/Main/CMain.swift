@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  ubik
-//
-//  Created by zero on 6/28/16.
-//  Copyright © 2016 zero. All rights reserved.
-//
-
 import UIKit
 import CoreData
 
@@ -16,7 +8,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        window = UIWindow(frame:UIScreen.mainScreen().bounds)
+        window!.makeKeyAndVisible()
+        window!.backgroundColor = UIColor.whiteColor()
+        window!.rootViewController = CMainParent()
+        
         return true
     }
 
