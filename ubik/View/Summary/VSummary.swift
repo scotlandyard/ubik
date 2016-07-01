@@ -1,5 +1,5 @@
 //
-//  CSummary.swift
+//  VSummary.swift
 //  ubik
 //
 //  Created by zero on 7/1/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CSummary:CMainController
+class VSummary:UIView
 {
     
 }

@@ -17,6 +17,8 @@
 		DAA0DC641D23068E00F3EF29 /* DManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA0DC611D23068E00F3EF29 /* DManager.swift */; };
 		DAA0DC681D23184C00F3EF29 /* CategoryNSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA0DC671D23184C00F3EF29 /* CategoryNSFileManager.swift */; };
 		DACE5CB61D26C93D00080E5F /* CSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CB51D26C93D00080E5F /* CSummary.swift */; };
+		DACE5CB91D26CA0800080E5F /* VSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CB81D26CA0800080E5F /* VSummary.swift */; };
+		DACE5CBB1D26CAC200080E5F /* CMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CBA1D26CAC200080E5F /* CMainController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		DAA0DC611D23068E00F3EF29 /* DManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManager.swift; sourceTree = "<group>"; };
 		DAA0DC671D23184C00F3EF29 /* CategoryNSFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSFileManager.swift; sourceTree = "<group>"; };
 		DACE5CB51D26C93D00080E5F /* CSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSummary.swift; sourceTree = "<group>"; };
+		DACE5CB81D26CA0800080E5F /* VSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSummary.swift; sourceTree = "<group>"; };
+		DACE5CBA1D26CAC200080E5F /* CMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMainController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,14 +89,14 @@
 			isa = PBXGroup;
 			children = (
 				DA906DE41D22F9490095B270 /* Asset */,
-				DA906DE51D22F9490095B270 /* Controller */,
 				DA906DE81D22F9490095B270 /* Data */,
 				DA906DEB1D22F9490095B270 /* Info.plist */,
+				DA906DE51D22F9490095B270 /* Controller */,
+				DA906DF31D22F9490095B270 /* View */,
 				DA906DEC1D22F9490095B270 /* Model */,
 				DA906DED1D22F9490095B270 /* Resource */,
 				DAA0DC661D23174E00F3EF29 /* Category */,
 				DA906DF01D22F9490095B270 /* Test */,
-				DA906DF31D22F9490095B270 /* View */,
 			);
 			path = ubik;
 			sourceTree = "<group>";
@@ -118,6 +122,7 @@
 			children = (
 				DA906DE71D22F9490095B270 /* CMain.swift */,
 				DA906DFA1D22FC700095B270 /* CMainParent.swift */,
+				DACE5CBA1D26CAC200080E5F /* CMainController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -158,6 +163,7 @@
 		DA906DF31D22F9490095B270 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DACE5CB71D26C9FE00080E5F /* Summary */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -192,6 +198,14 @@
 			isa = PBXGroup;
 			children = (
 				DACE5CB51D26C93D00080E5F /* CSummary.swift */,
+			);
+			path = Summary;
+			sourceTree = "<group>";
+		};
+		DACE5CB71D26C9FE00080E5F /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				DACE5CB81D26CA0800080E5F /* VSummary.swift */,
 			);
 			path = Summary;
 			sourceTree = "<group>";
@@ -296,12 +310,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA9210561D233F810083D956 /* DModelLevel.swift in Sources */,
+				DACE5CB91D26CA0800080E5F /* VSummary.swift in Sources */,
 				DA906DF41D22F9490095B270 /* CMain.swift in Sources */,
 				DACE5CB61D26C93D00080E5F /* CSummary.swift in Sources */,
 				DAA0DC641D23068E00F3EF29 /* DManager.swift in Sources */,
 				DA9210491D233DBB0083D956 /* DModel.xcdatamodeld in Sources */,
 				DA906DFB1D22FC700095B270 /* CMainParent.swift in Sources */,
 				DAA0DC681D23184C00F3EF29 /* CategoryNSFileManager.swift in Sources */,
+				DACE5CBB1D26CAC200080E5F /* CMainController.swift in Sources */,
 				DA9210551D233F810083D956 /* DModelLevel+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
