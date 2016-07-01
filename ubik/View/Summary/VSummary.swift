@@ -30,7 +30,7 @@ class VSummary:UIView
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-0-[header(100)]",
+            "V:|-0-[header(350)]",
             options:[],
             metrics:metrics,
             views:views))

@@ -2,7 +2,12 @@ import UIKit
 
 class MComponentGyroSummary:MComponentGyro
 {
-    private let kLineWidth:CGFloat = 10
+    private let kLineWidth:CGFloat = 15
+    
+    init()
+    {
+        super.init(value:0, maxValue:0, lineWidth:kLineWidth)
+    }
     
     init(value:CGFloat, maxValue:CGFloat)
     {

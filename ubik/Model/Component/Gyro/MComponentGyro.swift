@@ -7,6 +7,13 @@ class MComponentGyro
     let maxValue:CGFloat
     let lineWidth:CGFloat
 
+    class func Summary() -> MComponentGyro
+    {
+        let model:MComponentGyro = MComponentGyroSummary()
+        
+        return model
+    }
+    
     class func Summary(value:CGFloat, maxValue:CGFloat) -> MComponentGyro
     {
         let model:MComponentGyro = MComponentGyroSummary(value:value, maxValue:maxValue)

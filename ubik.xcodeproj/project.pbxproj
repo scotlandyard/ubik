@@ -24,6 +24,7 @@
 		DACE5CC41D26E44E00080E5F /* MComponentGyro.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CC31D26E44E00080E5F /* MComponentGyro.swift */; };
 		DACE5CC61D26E52000080E5F /* MComponentGyroSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CC51D26E52000080E5F /* MComponentGyroSummary.swift */; };
 		DAD00CF31D270DD600BCDDAA /* VSummaryHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD00CF21D270DD600BCDDAA /* VSummaryHeader.swift */; };
+		DAD00CF61D27109100BCDDAA /* VMainBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD00CF51D27109100BCDDAA /* VMainBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		DACE5CC31D26E44E00080E5F /* MComponentGyro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MComponentGyro.swift; sourceTree = "<group>"; };
 		DACE5CC51D26E52000080E5F /* MComponentGyroSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MComponentGyroSummary.swift; sourceTree = "<group>"; };
 		DAD00CF21D270DD600BCDDAA /* VSummaryHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSummaryHeader.swift; sourceTree = "<group>"; };
+		DAD00CF51D27109100BCDDAA /* VMainBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 		DA906DF31D22F9490095B270 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DAD00CF41D27108600BCDDAA /* Main */,
 				DACE5CBE1D26D6AD00080E5F /* Component */,
 				DACE5CB71D26C9FE00080E5F /* Summary */,
 			);
@@ -247,6 +250,14 @@
 				DACE5CC51D26E52000080E5F /* MComponentGyroSummary.swift */,
 			);
 			path = Gyro;
+			sourceTree = "<group>";
+		};
+		DAD00CF41D27108600BCDDAA /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DAD00CF51D27109100BCDDAA /* VMainBar.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,6 +368,7 @@
 				DACE5CB61D26C93D00080E5F /* CSummary.swift in Sources */,
 				DAA0DC641D23068E00F3EF29 /* DManager.swift in Sources */,
 				DA9210491D233DBB0083D956 /* DModel.xcdatamodeld in Sources */,
+				DAD00CF61D27109100BCDDAA /* VMainBar.swift in Sources */,
 				DACE5CBD1D26D5EF00080E5F /* CategoryUIColor.swift in Sources */,
 				DA906DFB1D22FC700095B270 /* CMainParent.swift in Sources */,
 				DACE5CC01D26D6B600080E5F /* VComponentGyro.swift in Sources */,

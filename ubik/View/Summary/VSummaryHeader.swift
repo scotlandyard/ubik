@@ -4,7 +4,7 @@ class VSummaryHeader:UIView
 {
     weak var controller:CSummary!
     weak var viewGyro:VComponentGyro!
-    var modelGyro:MComponentGyro = MComponentGyro.Summary(0, maxValue:0)
+    var modelGyro:MComponentGyro = MComponentGyro.Summary()
     
     convenience init(controller:CSummary)
     {
@@ -30,7 +30,7 @@ class VSummaryHeader:UIView
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-20-[gyro]-20-|",
+            "V:|-50-[gyro]-10-|",
             options:[],
             metrics:metrics,
             views:views))
