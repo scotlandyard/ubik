@@ -3,18 +3,19 @@ import Metal
 
 class CMainParent:UIViewController
 {
+    var current:UIViewController
+    
     init()
     {
-        let welcomeController:CSuggesticWelcome = CSuggesticWelcome()
-        current = welcomeController
+        let summary:CSummary = CSummary()
+        current = summary
         
         super.init(nibName:nil, bundle:nil)
         
-        interaction.controller = self
-        addChildViewController(welcomeController)
-        welcomeController.view.frame = view.bounds
-        view.addSubview(welcomeController.view)
-        welcomeController.didMoveToParentViewController(self)
+        addChildViewController(summary)
+        summary.view.frame = view.bounds
+        view.addSubview(summary.view)
+        summary.didMoveToParentViewController(self)
     }
     
     required init?(coder aDecoder:NSCoder?)
