@@ -13,6 +13,8 @@ class CMainParent:UIViewController
         1.0, -1.0, 0.0]
     var vertexBuffer:MTLBuffer! = nil
     var pipelineState: MTLRenderPipelineState! = nil
+    var commandQueue: MTLCommandQueue! = nil
+    var timer: CADisplayLink! = nil
     
     override func viewDidLoad()
     {
@@ -35,21 +37,61 @@ class CMainParent:UIViewController
         vertexBuffer = device.newBufferWithBytes(vertexData, length:dataSize, options: MTLResourceOptions.OptionCPUCacheModeDefault)
         
         // 1
-        let defaultLibrary = device.newDefaultLibrary()
-        let fragmentProgram = defaultLibrary!.newFunctionWithName("basic_fragment")
-        let vertexProgram = defaultLibrary!.newFunctionWithName("basic_vertex")
+        let defaultLibrary:MTLLibrary = device.newDefaultLibrary()!
+        let fragmentProgram:MTLFunction = defaultLibrary.newFunctionWithName("basic_fragment")!
+        let vertexProgram:MTLFunction = defaultLibrary.newFunctionWithName("basic_vertex")!
         
         // 2
         let pipelineStateDescriptor = MTLRenderPipelineDescriptor()
         pipelineStateDescriptor.vertexFunction = vertexProgram
         pipelineStateDescriptor.fragmentFunction = fragmentProgram
-        pipelineStateDescriptor.colorAttachments.objectAtIndexedSubscript(0).pixelFormat = .BGRA8Unorm
+        pipelineStateDescriptor.colorAttachments[0].pixelFormat = MTLPixelFormat.BGRA8Unorm
         
         // 3
-        var pipelineError : NSError?
-        pipelineState = device.newRenderPipelineStateWithDescriptor(pipelineStateDescriptor, error: &pipelineError)
-        if pipelineState == nil {
-            println("Failed to create pipeline state, error \(pipelineError)")
+        device.newRenderPipelineStateWithDescriptor(pipelineStateDescriptor, options: MTLPipelineOption.None)
+        { (pipelineState, piplineReflection, error) in
+            
+            self.pipelineState = pipelineState
+            
+            
+            print("error: \(error)")
+            
+            
+            self.timer = CADisplayLink(target: self, selector:#selector(self.gameloop))
+            self.timer.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSDefaultRunLoopMode)
+        }
+        
+        
+        commandQueue = device.newCommandQueue()
+        
+        
+    }
+    
+    func render() {
+        
+        let drawable = metalLayer.nextDrawable()!
+        
+        let renderPassDescriptor = MTLRenderPassDescriptor()
+        renderPassDescriptor.colorAttachments[0].texture = drawable.texture
+        renderPassDescriptor.colorAttachments[0].loadAction = .Clear
+        renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.0, green: 104.0/255.0, blue: 5.0/255.0, alpha: 1.0)
+        
+        let commandBuffer = commandQueue.commandBuffer()
+        
+        let renderEncoderOpt = commandBuffer.renderCommandEncoderWithDescriptor(renderPassDescriptor)
+        
+        renderEncoderOpt.setRenderPipelineState(pipelineState)
+        renderEncoderOpt.setVertexBuffer(vertexBuffer, offset: 0, atIndex: 0)
+        renderEncoderOpt.drawPrimitives(.Triangle, vertexStart: 0, vertexCount: 3, instanceCount: 1)
+        renderEncoderOpt.endEncoding()
+        
+        commandBuffer.presentDrawable(drawable)
+        commandBuffer.commit()
+    }
+    
+    func gameloop() {
+        autoreleasepool {
+            self.render()
         }
     }
 }
