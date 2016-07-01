@@ -16,6 +16,7 @@
 		DA9210561D233F810083D956 /* DModelLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9210541D233F810083D956 /* DModelLevel.swift */; };
 		DAA0DC641D23068E00F3EF29 /* DManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA0DC611D23068E00F3EF29 /* DManager.swift */; };
 		DAA0DC681D23184C00F3EF29 /* CategoryNSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA0DC671D23184C00F3EF29 /* CategoryNSFileManager.swift */; };
+		DACE5CB61D26C93D00080E5F /* CSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CB51D26C93D00080E5F /* CSummary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		DA9210541D233F810083D956 /* DModelLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DModelLevel.swift; sourceTree = "<group>"; };
 		DAA0DC611D23068E00F3EF29 /* DManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManager.swift; sourceTree = "<group>"; };
 		DAA0DC671D23184C00F3EF29 /* CategoryNSFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSFileManager.swift; sourceTree = "<group>"; };
+		DACE5CB51D26C93D00080E5F /* CSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSummary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		DA906DE51D22F9490095B270 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DACE5CB41D26C93300080E5F /* Summary */,
 				DA906DE61D22F9490095B270 /* Main */,
 			);
 			path = Controller;
@@ -183,6 +186,14 @@
 				DAA0DC671D23184C00F3EF29 /* CategoryNSFileManager.swift */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		DACE5CB41D26C93300080E5F /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				DACE5CB51D26C93D00080E5F /* CSummary.swift */,
+			);
+			path = Summary;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,6 +297,7 @@
 			files = (
 				DA9210561D233F810083D956 /* DModelLevel.swift in Sources */,
 				DA906DF41D22F9490095B270 /* CMain.swift in Sources */,
+				DACE5CB61D26C93D00080E5F /* CSummary.swift in Sources */,
 				DAA0DC641D23068E00F3EF29 /* DManager.swift in Sources */,
 				DA9210491D233DBB0083D956 /* DModel.xcdatamodeld in Sources */,
 				DA906DFB1D22FC700095B270 /* CMainParent.swift in Sources */,
