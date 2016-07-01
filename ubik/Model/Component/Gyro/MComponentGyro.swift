@@ -3,21 +3,22 @@ import UIKit
 class MComponentGyro
 {
     let color:UIColor
-    let value:Double
-    let maxValue:Double
-    
-    class func Summary(value:Double, maxValue:Double) -> MComponentGyro
+    let value:CGFloat
+    let maxValue:CGFloat
+    let lineWidth:CGFloat
+
+    class func Summary(value:CGFloat, maxValue:CGFloat) -> MComponentGyro
     {
-        let color:UIColor = UIColor.main()
-        let model:MComponentGyro = MComponentGyroSummary(value:value, maxValue:maxValue, color:color)
+        let model:MComponentGyro = MComponentGyroSummary(value:value, maxValue:maxValue)
         
         return model
     }
     
-    init(value:Double, maxValue:Double, color:UIColor)
+    init(value:CGFloat, maxValue:CGFloat, lineWidth:CGFloat, color:UIColor = UIColor.main())
     {
-        self.color = color
         self.value = value
         self.maxValue = maxValue
+        self.lineWidth = lineWidth
+        self.color = color
     }
 }

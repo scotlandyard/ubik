@@ -19,7 +19,7 @@ class VComponentGyro:UIView
     override func drawRect(rect:CGRect)
     {
         let context:CGContext = UIGraphicsGetCurrentContext()!
-        CGContextSetLineWidth(context, 1)
-        CGContextSetStrokeColorWithColor(context, model.colo)
+        CGContextSetLineWidth(context, model.lineWidth)
+        CGContextSetStrokeColorWithColor(context, model.color.CGColor)
     }
 }
