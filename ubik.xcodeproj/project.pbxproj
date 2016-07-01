@@ -20,6 +20,9 @@
 		DACE5CB91D26CA0800080E5F /* VSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CB81D26CA0800080E5F /* VSummary.swift */; };
 		DACE5CBB1D26CAC200080E5F /* CMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CBA1D26CAC200080E5F /* CMainController.swift */; };
 		DACE5CBD1D26D5EF00080E5F /* CategoryUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CBC1D26D5EF00080E5F /* CategoryUIColor.swift */; };
+		DACE5CC01D26D6B600080E5F /* VComponentGyro.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CBF1D26D6B600080E5F /* VComponentGyro.swift */; };
+		DACE5CC41D26E44E00080E5F /* MComponentGyro.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CC31D26E44E00080E5F /* MComponentGyro.swift */; };
+		DACE5CC61D26E52000080E5F /* MComponentGyroSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CC51D26E52000080E5F /* MComponentGyroSummary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,9 @@
 		DACE5CB81D26CA0800080E5F /* VSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSummary.swift; sourceTree = "<group>"; };
 		DACE5CBA1D26CAC200080E5F /* CMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMainController.swift; sourceTree = "<group>"; };
 		DACE5CBC1D26D5EF00080E5F /* CategoryUIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryUIColor.swift; sourceTree = "<group>"; };
+		DACE5CBF1D26D6B600080E5F /* VComponentGyro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VComponentGyro.swift; sourceTree = "<group>"; };
+		DACE5CC31D26E44E00080E5F /* MComponentGyro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MComponentGyro.swift; sourceTree = "<group>"; };
+		DACE5CC51D26E52000080E5F /* MComponentGyroSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MComponentGyroSummary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +147,7 @@
 		DA906DEC1D22F9490095B270 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DACE5CC11D26E43E00080E5F /* Component */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -165,6 +172,7 @@
 		DA906DF31D22F9490095B270 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DACE5CBE1D26D6AD00080E5F /* Component */,
 				DACE5CB71D26C9FE00080E5F /* Summary */,
 			);
 			path = View;
@@ -211,6 +219,31 @@
 				DACE5CB81D26CA0800080E5F /* VSummary.swift */,
 			);
 			path = Summary;
+			sourceTree = "<group>";
+		};
+		DACE5CBE1D26D6AD00080E5F /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				DACE5CBF1D26D6B600080E5F /* VComponentGyro.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		DACE5CC11D26E43E00080E5F /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				DACE5CC21D26E43E00080E5F /* Gyro */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		DACE5CC21D26E43E00080E5F /* Gyro */ = {
+			isa = PBXGroup;
+			children = (
+				DACE5CC31D26E44E00080E5F /* MComponentGyro.swift */,
+				DACE5CC51D26E52000080E5F /* MComponentGyroSummary.swift */,
+			);
+			path = Gyro;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,13 +346,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA9210561D233F810083D956 /* DModelLevel.swift in Sources */,
+				DACE5CC61D26E52000080E5F /* MComponentGyroSummary.swift in Sources */,
 				DACE5CB91D26CA0800080E5F /* VSummary.swift in Sources */,
 				DA906DF41D22F9490095B270 /* CMain.swift in Sources */,
+				DACE5CC41D26E44E00080E5F /* MComponentGyro.swift in Sources */,
 				DACE5CB61D26C93D00080E5F /* CSummary.swift in Sources */,
 				DAA0DC641D23068E00F3EF29 /* DManager.swift in Sources */,
 				DA9210491D233DBB0083D956 /* DModel.xcdatamodeld in Sources */,
 				DACE5CBD1D26D5EF00080E5F /* CategoryUIColor.swift in Sources */,
 				DA906DFB1D22FC700095B270 /* CMainParent.swift in Sources */,
+				DACE5CC01D26D6B600080E5F /* VComponentGyro.swift in Sources */,
 				DAA0DC681D23184C00F3EF29 /* CategoryNSFileManager.swift in Sources */,
 				DACE5CBB1D26CAC200080E5F /* CMainController.swift in Sources */,
 				DA9210551D233F810083D956 /* DModelLevel+CoreDataProperties.swift in Sources */,
