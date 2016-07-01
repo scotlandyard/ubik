@@ -2,8 +2,24 @@ import UIKit
 
 class VComponentGyro:UIView
 {
-    convenience init()
+    let model:MComponentGyro
+    
+    init(model:MComponentGyro)
     {
+        self.model = model
         
+        super.init(frame:CGRectZero)
+    }
+    
+    required init?(coder aDecoder:NSCoder)
+    {
+        fatalError()
+    }
+    
+    override func drawRect(rect:CGRect)
+    {
+        let context:CGContext = UIGraphicsGetCurrentContext()!
+        CGContextSetLineWidth(context, 1)
+        CGContextSetStrokeColorWithColor(context, model.colo)
     }
 }
