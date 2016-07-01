@@ -1,36 +1,36 @@
 import UIKit
 
-class VSummary:UIView
+class VSummaryHeader:UIView
 {
     weak var controller:CSummary!
-    weak var header:VSummaryHeader!
+    weak var viewGyro:VComponentGyro!
     var modelGyro:MComponentGyro = MComponentGyro.Summary(0, maxValue:0)
     
     convenience init(controller:CSummary)
     {
         self.init()
-        
         clipsToBounds = true
-        backgroundColor = UIColor.whiteColor()
+        backgroundColor = UIColor.clearColor()
+        translatesAutoresizingMaskIntoConstraints = false
         self.controller = controller
         
-        let header:VSummaryHeader = VSummaryHeader(controller:controller)
-        self.header = header
+        let viewGyro:VComponentGyro = VComponentGyro(model:modelGyro)
+        self.viewGyro = viewGyro
         
-        addSubview(header)
+        addSubview(viewGyro)
         
         let views:[String:AnyObject] = [
-            "header":header]
+            "gyro":viewGyro]
         
         let metrics:[String:AnyObject] = [:]
         
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-0-[header]-0-|",
+            "H:|-20-[gyro]-20-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-0-[header(100)]",
+            "V:|-20-[gyro]-20-|",
             options:[],
             metrics:metrics,
             views:views))

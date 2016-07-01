@@ -10,5 +10,8 @@ import UIKit
 
 class CSummary:CMainController
 {
-    
+    override func loadView()
+    {
+        view = VSummary(controller:self)
+    }
 }

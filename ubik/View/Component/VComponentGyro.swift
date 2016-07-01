@@ -9,6 +9,11 @@ class VComponentGyro:UIView
         self.model = model
         
         super.init(frame:CGRectZero)
+        
+        clipsToBounds = true
+        userInteractionEnabled = false
+        backgroundColor = UIColor.clearColor()
+        translatesAutoresizingMaskIntoConstraints = false
     }
     
     required init?(coder aDecoder:NSCoder)

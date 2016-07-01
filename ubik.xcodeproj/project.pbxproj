@@ -23,6 +23,7 @@
 		DACE5CC01D26D6B600080E5F /* VComponentGyro.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CBF1D26D6B600080E5F /* VComponentGyro.swift */; };
 		DACE5CC41D26E44E00080E5F /* MComponentGyro.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CC31D26E44E00080E5F /* MComponentGyro.swift */; };
 		DACE5CC61D26E52000080E5F /* MComponentGyroSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CC51D26E52000080E5F /* MComponentGyroSummary.swift */; };
+		DAD00CF31D270DD600BCDDAA /* VSummaryHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD00CF21D270DD600BCDDAA /* VSummaryHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		DACE5CBF1D26D6B600080E5F /* VComponentGyro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VComponentGyro.swift; sourceTree = "<group>"; };
 		DACE5CC31D26E44E00080E5F /* MComponentGyro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MComponentGyro.swift; sourceTree = "<group>"; };
 		DACE5CC51D26E52000080E5F /* MComponentGyroSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MComponentGyroSummary.swift; sourceTree = "<group>"; };
+		DAD00CF21D270DD600BCDDAA /* VSummaryHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSummaryHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				DACE5CB81D26CA0800080E5F /* VSummary.swift */,
+				DAD00CF21D270DD600BCDDAA /* VSummaryHeader.swift */,
 			);
 			path = Summary;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				DA9210561D233F810083D956 /* DModelLevel.swift in Sources */,
 				DACE5CC61D26E52000080E5F /* MComponentGyroSummary.swift in Sources */,
 				DACE5CB91D26CA0800080E5F /* VSummary.swift in Sources */,
+				DAD00CF31D270DD600BCDDAA /* VSummaryHeader.swift in Sources */,
 				DA906DF41D22F9490095B270 /* CMain.swift in Sources */,
 				DACE5CC41D26E44E00080E5F /* MComponentGyro.swift in Sources */,
 				DACE5CB61D26C93D00080E5F /* CSummary.swift in Sources */,
