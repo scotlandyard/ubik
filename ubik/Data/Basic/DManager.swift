@@ -9,6 +9,7 @@ class DManager
     private let kModelName:String = "DModel"
     private let kModelExtension:String = "momd"
     private let kSQLiteFile:String = "database.sqlite"
+    private let kEntityNameLevel:String = "Level"
     
     init()
     {
@@ -28,6 +29,16 @@ class DManager
         managedObjectContext.persistentStoreCoordinator = persistentStoreCoordinator
     }
     
+    //MARK: private
+    
+    private func createLevel() -> DModelLevel
+    {
+        let entityDescription:NSEntityDescription = NSEntityDescription.entityForName(kEntityNameLevel, inManagedObjectContext:managedObjectContext)!
+        let newLevel:DModelLevel = DModelLevel(entity:entityDescription, insertIntoManagedObjectContext:managedObjectContext)
+        
+        return newLevel
+    }
+    
     //MARK: public
     
     func saveContext()
@@ -44,8 +55,9 @@ class DManager
     
     func fetchLevel() -> DModelLevel
     {
-        let fetchRequest:NSFetchRequest = NSFetchRequest(entityName:"Level")
+        let fetchRequest:NSFetchRequest = NSFetchRequest(entityName:kEntityNameLevel)
         let results:[DModelLevel]
+        let result:DModelLevel
         
         do
         {
@@ -56,6 +68,15 @@ class DManager
             results = []
         }
         
-        return results.first!
+        if results.isEmpty
+        {
+            result = createLevel()
+        }
+        else
+        {
+            result = results.first!
+        }
+        
+        return result
     }
 }
