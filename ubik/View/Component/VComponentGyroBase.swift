@@ -31,11 +31,11 @@ class VComponentGyroBase:UIView
         
         if width > height
         {
-            size = height_2 - model.pointerRadius
+            size = height_2 - model.lineWidth
         }
         else
         {
-            size = width_2 - model.pointerRadius
+            size = width_2 - model.lineWidth
         }
         
         let context:CGContext = UIGraphicsGetCurrentContext()!

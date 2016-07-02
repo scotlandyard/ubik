@@ -3,6 +3,7 @@ import UIKit
 class MComponentGyro
 {
     let color:UIColor
+    let pointerColor:UIColor
     let value:CGFloat
     let maxValue:CGFloat
     let lineWidth:CGFloat
@@ -22,12 +23,13 @@ class MComponentGyro
         return model
     }
     
-    init(value:CGFloat, maxValue:CGFloat, lineWidth:CGFloat, pointerRadius:CGFloat, color:UIColor = UIColor.main())
+    init(value:CGFloat, maxValue:CGFloat, lineWidth:CGFloat, pointerRadius:CGFloat, color:UIColor = UIColor.main(), pointerColor:UIColor = UIColor(white:0, alpha:0.1))
     {
         self.value = value
         self.maxValue = maxValue
         self.lineWidth = lineWidth
         self.pointerRadius = pointerRadius
         self.color = color
+        self.pointerColor = pointerColor
     }
 }

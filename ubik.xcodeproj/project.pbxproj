@@ -26,6 +26,7 @@
 		DAD00CF31D270DD600BCDDAA /* VSummaryHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD00CF21D270DD600BCDDAA /* VSummaryHeader.swift */; };
 		DAD00CF61D27109100BCDDAA /* VMainBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD00CF51D27109100BCDDAA /* VMainBar.swift */; };
 		DAD00CF81D273E7000BCDDAA /* VComponentGyroBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD00CF71D273E7000BCDDAA /* VComponentGyroBase.swift */; };
+		DAD00CFA1D27523300BCDDAA /* gyro.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAD00CF91D27523300BCDDAA /* gyro.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		DAD00CF21D270DD600BCDDAA /* VSummaryHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSummaryHeader.swift; sourceTree = "<group>"; };
 		DAD00CF51D27109100BCDDAA /* VMainBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainBar.swift; sourceTree = "<group>"; };
 		DAD00CF71D273E7000BCDDAA /* VComponentGyroBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VComponentGyroBase.swift; sourceTree = "<group>"; };
+		DAD00CF91D27523300BCDDAA /* gyro.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = gyro.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 		DA906DE41D22F9490095B270 /* Asset */ = {
 			isa = PBXGroup;
 			children = (
+				DAD00CF91D27523300BCDDAA /* gyro.xcassets */,
 			);
 			path = Asset;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAD00CFA1D27523300BCDDAA /* gyro.xcassets in Resources */,
 				DA906DF71D22F9490095B270 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

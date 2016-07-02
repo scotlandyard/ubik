@@ -31,18 +31,24 @@ class VComponentGyro:UIView
         
         if width > height
         {
-            size = height_2 - model.pointerRadius
+            size = height_2 - model.lineWidth
         }
         else
         {
-            size = width_2 - model.pointerRadius
+            size = width_2 - model.lineWidth
         }
         
         let context:CGContext = UIGraphicsGetCurrentContext()!
         CGContextSetLineWidth(context, model.lineWidth)
         CGContextSetLineCap(context, CGLineCap.Round)
         CGContextSetStrokeColorWithColor(context, model.color.CGColor)
+        CGContextSetFillColorWithColor(context, model.pointerColor.CGColor)
         CGContextAddArc(context, width_2, height_2, size, 0.0001, 1.8, 0)
+        
+        let point:CGPoint = CGContextGetPathCurrentPoint(context)
+        
         CGContextDrawPath(context, CGPathDrawingMode.Stroke)
+        CGContextAddArc(context, point.x, point.y, model.pointerRadius, 0.0001, 0, 0)
+        CGContextDrawPath(context, CGPathDrawingMode.Fill)
     }
 }
