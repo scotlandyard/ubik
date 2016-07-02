@@ -7,11 +7,6 @@ class MComponentGyroSummary:MComponentGyro
     
     init()
     {
-        super.init(value:0, maxValue:0, lineWidth:kLineWidth, pointerRadius:kPointerRadius)
-    }
-    
-    init(value:CGFloat, maxValue:CGFloat)
-    {
-        super.init(value:value, maxValue:maxValue, lineWidth:kLineWidth, pointerRadius:kPointerRadius)
+        super.init(lineWidth:kLineWidth, pointerRadius:kPointerRadius)
     }
 }

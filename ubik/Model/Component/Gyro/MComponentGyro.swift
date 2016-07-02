@@ -4,11 +4,12 @@ class MComponentGyro
 {
     let color:UIColor
     let pointerColor:UIColor
-    let value:CGFloat
-    let maxValue:CGFloat
     let lineWidth:CGFloat
     let lineWidth_2:CGFloat
     let pointerRadius:CGFloat
+    var value:CGFloat
+    var maxValue:CGFloat
+    var percentValue:CGFloat
     var circleRadius:CGFloat?
     var width_2:CGFloat?
     var height_2:CGFloat?
@@ -20,17 +21,11 @@ class MComponentGyro
         return model
     }
     
-    class func Summary(value:CGFloat, maxValue:CGFloat) -> MComponentGyro
+    init(lineWidth:CGFloat, pointerRadius:CGFloat, color:UIColor = UIColor.main(), pointerColor:UIColor = UIColor(white:0, alpha:0.1))
     {
-        let model:MComponentGyro = MComponentGyroSummary(value:value, maxValue:maxValue)
-        
-        return model
-    }
-    
-    init(value:CGFloat, maxValue:CGFloat, lineWidth:CGFloat, pointerRadius:CGFloat, color:UIColor = UIColor.main(), pointerColor:UIColor = UIColor(white:0, alpha:0.1))
-    {
-        self.value = value
-        self.maxValue = maxValue
+        value = 0
+        maxValue = 0
+        percentValue = 0
         self.lineWidth = lineWidth
         self.pointerRadius = pointerRadius
         self.color = color
@@ -57,6 +52,21 @@ class MComponentGyro
             {
                 circleRadius = width_2! - lineWidth
             }
+        }
+    }
+    
+    func update(value:CGFloat, maxValue:CGFloat)
+    {
+        self.value = value
+        self.maxValue = maxValue
+        
+        if maxValue == 0
+        {
+            percentValue = 0
+        }
+        else
+        {
+            percentValue = value / maxValue
         }
     }
 }

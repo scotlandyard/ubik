@@ -17,17 +17,13 @@ class VSummaryHeader:UIView
         
         let viewGyroBase:VComponentGyroBase = VComponentGyroBase(model:modelGyro)
         let viewGyroIcon:VComponentGyroIcon = VComponentGyroIcon(model:modelGyro)
-        let viewGyro:VComponentGyro = VComponentGyro(model:modelGyro)
-        self.viewGyro = viewGyro
         
         addSubview(viewGyroBase)
-        addSubview(viewGyro)
         addSubview(viewGyroIcon)
         
         let views:[String:AnyObject] = [
             "gyroIcon":viewGyroIcon,
-            "gyroBase":viewGyroBase,
-            "gyro":viewGyro]
+            "gyroBase":viewGyroBase]
         
         let metrics:[String:AnyObject] = [
             "margin":kMargin]
@@ -52,15 +48,38 @@ class VSummaryHeader:UIView
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-(margin)-[gyro]-(margin)-|",
-            options:[],
-            metrics:metrics,
-            views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-(margin)-[gyro]-(margin)-|",
-            options:[],
-            metrics:metrics,
-            views:views))
+    }
+    
+    //MARK: public
+    
+    func update(value:CGFloat, maxValue:CGFloat)
+    {
+        modelGyro.update(value, maxValue:maxValue)
+        
+        dispatch_async(dispatch_get_main_queue())
+        {
+            self.viewGyro.removeFromSuperview()
+            let viewGyro:VComponentGyro = VComponentGyro(model:self.modelGyro)
+            self.viewGyro = viewGyro
+            
+            self.addSubview(viewGyro)
+            
+            let views:[String:AnyObject] = [
+                "gyro":viewGyro]
+            
+            let metrics:[String:AnyObject] = [
+                "margin":self.kMargin]
+            
+            self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+                "H:|-(margin)-[gyro]-(margin)-|",
+                options:[],
+                metrics:metrics,
+                views:views))
+            self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+                "V:|-(margin)-[gyro]-(margin)-|",
+                options:[],
+                metrics:metrics,
+                views:views))
+        }
     }
 }
