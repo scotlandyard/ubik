@@ -7,18 +7,19 @@ class VComponentGyro:UIView
     private var currentSpeed:CGFloat
     private var currentRadius:CGFloat
     private var maxRadius:CGFloat
+    private var radiusThreshold:CGFloat
     private let lineWidth:CGFloat
     private let circleRadius:CGFloat
     private let pointerRadius:CGFloat
     private let width_2:CGFloat
     private let height_2:CGFloat
     private let kTimeInterval:NSTimeInterval = 0.01
-    private let kMaxSpeed:CGFloat = 0.05
-    private let kMinSpeed:CGFloat = 0.005
-    private let kDeltaSpeed:CGFloat = 0.001
+    private let kMaxSpeed:CGFloat = 0.01
+    private let kMinSpeed:CGFloat = 0.006
     private let kMinRadius:CGFloat = -CGFloat(M_PI_2)
     private let kMaxDegrees:CGFloat = 360
     private let kDegreePerRads:CGFloat = CGFloat(M_PI) / 180
+    private let kThresholdRads:CGFloat = 0.4
     
     init(model:MComponentGyro)
     {
@@ -36,12 +37,22 @@ class VComponentGyro:UIView
         if percentValue == 0
         {
             maxRadius = kMinRadius
+            radiusThreshold = kMinRadius
         }
         else
         {
-            let maxRadiusDegrees:CGFloat = kMaxDegrees / percentValue
+            let maxRadiusDegrees:CGFloat = kMaxDegrees * percentValue
             let maxRadiusRadian:CGFloat = maxRadiusDegrees * kDegreePerRads
             maxRadius = maxRadiusRadian + kMinRadius
+            
+            if maxRadius - kMinRadius > kThresholdRads
+            {
+                radiusThreshold = maxRadius - kThresholdRads
+            }
+            else
+            {
+                radiusThreshold = kMinRadius
+            }
         }
         
         super.init(frame:CGRectZero)
@@ -86,9 +97,9 @@ class VComponentGyro:UIView
         {
             currentRadius += currentSpeed
             
-            if currentSpeed > kMinSpeed
+            if currentRadius > radiusThreshold
             {
-                currentSpeed -= kDeltaSpeed
+                currentSpeed = kMinSpeed
             }
         }
         else

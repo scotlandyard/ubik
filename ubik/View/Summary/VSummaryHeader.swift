@@ -3,7 +3,8 @@ import UIKit
 class VSummaryHeader:UIView
 {
     weak var controller:CSummary!
-    weak var viewGyro:VComponentGyro!
+    weak var viewGyro:VComponentGyro?
+    weak var viewGyroIcon:VComponentGyroIcon!
     var modelGyro:MComponentGyro = MComponentGyro.Summary()
     private let kMargin:CGFloat = 20
     
@@ -17,6 +18,7 @@ class VSummaryHeader:UIView
         
         let viewGyroBase:VComponentGyroBase = VComponentGyroBase(model:modelGyro)
         let viewGyroIcon:VComponentGyroIcon = VComponentGyroIcon(model:modelGyro)
+        self.viewGyroIcon = viewGyroIcon
         
         addSubview(viewGyroBase)
         addSubview(viewGyroIcon)
@@ -58,11 +60,11 @@ class VSummaryHeader:UIView
         
         dispatch_async(dispatch_get_main_queue())
         {
-            self.viewGyro.removeFromSuperview()
+            self.viewGyro?.removeFromSuperview()
             let viewGyro:VComponentGyro = VComponentGyro(model:self.modelGyro)
             self.viewGyro = viewGyro
             
-            self.addSubview(viewGyro)
+            self.insertSubview(viewGyro, belowSubview:self.viewGyroIcon)
             
             let views:[String:AnyObject] = [
                 "gyro":viewGyro]

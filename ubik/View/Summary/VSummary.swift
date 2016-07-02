@@ -4,7 +4,7 @@ class VSummary:UIView
 {
     weak var controller:CSummary!
     weak var header:VSummaryHeader!
-    var modelGyro:MComponentGyro = MComponentGyro.Summary(0, maxValue:0)
+    var modelGyro:MComponentGyro = MComponentGyro.Summary()
     
     convenience init(controller:CSummary)
     {
@@ -34,5 +34,12 @@ class VSummary:UIView
             options:[],
             metrics:metrics,
             views:views))
+    }
+    
+    //MARK: public
+    
+    func update(value:CGFloat, maxValue:CGFloat)
+    {
+        header.update(value, maxValue:maxValue)
     }
 }
