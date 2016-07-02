@@ -5,6 +5,7 @@ class VSummaryHeader:UIView
     weak var controller:CSummary!
     weak var viewGyro:VComponentGyro!
     var modelGyro:MComponentGyro = MComponentGyro.Summary()
+    private let kMargin:CGFloat = 10
     
     convenience init(controller:CSummary)
     {
@@ -22,15 +23,16 @@ class VSummaryHeader:UIView
         let views:[String:AnyObject] = [
             "gyro":viewGyro]
         
-        let metrics:[String:AnyObject] = [:]
+        let metrics:[String:AnyObject] = [
+            "margin":kMargin]
         
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-20-[gyro]-20-|",
+            "H:|-(margin)-[gyro]-(margin)-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-50-[gyro]-10-|",
+            "V:|-(margin)-[gyro]-(margin)-|",
             options:[],
             metrics:metrics,
             views:views))

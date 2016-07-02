@@ -6,6 +6,7 @@ class MComponentGyro
     let value:CGFloat
     let maxValue:CGFloat
     let lineWidth:CGFloat
+    let pointerRadius:CGFloat
 
     class func Summary() -> MComponentGyro
     {
@@ -21,11 +22,12 @@ class MComponentGyro
         return model
     }
     
-    init(value:CGFloat, maxValue:CGFloat, lineWidth:CGFloat, color:UIColor = UIColor.main())
+    init(value:CGFloat, maxValue:CGFloat, lineWidth:CGFloat, pointerRadius:CGFloat, color:UIColor = UIColor.main())
     {
         self.value = value
         self.maxValue = maxValue
         self.lineWidth = lineWidth
+        self.pointerRadius = pointerRadius
         self.color = color
     }
 }

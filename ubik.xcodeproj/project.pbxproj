@@ -25,6 +25,7 @@
 		DACE5CC61D26E52000080E5F /* MComponentGyroSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CC51D26E52000080E5F /* MComponentGyroSummary.swift */; };
 		DAD00CF31D270DD600BCDDAA /* VSummaryHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD00CF21D270DD600BCDDAA /* VSummaryHeader.swift */; };
 		DAD00CF61D27109100BCDDAA /* VMainBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD00CF51D27109100BCDDAA /* VMainBar.swift */; };
+		DAD00CF81D273E7000BCDDAA /* VComponentGyroBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD00CF71D273E7000BCDDAA /* VComponentGyroBase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		DACE5CC51D26E52000080E5F /* MComponentGyroSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MComponentGyroSummary.swift; sourceTree = "<group>"; };
 		DAD00CF21D270DD600BCDDAA /* VSummaryHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSummaryHeader.swift; sourceTree = "<group>"; };
 		DAD00CF51D27109100BCDDAA /* VMainBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainBar.swift; sourceTree = "<group>"; };
+		DAD00CF71D273E7000BCDDAA /* VComponentGyroBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VComponentGyroBase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				DACE5CBF1D26D6B600080E5F /* VComponentGyro.swift */,
+				DAD00CF71D273E7000BCDDAA /* VComponentGyroBase.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				DAD00CF61D27109100BCDDAA /* VMainBar.swift in Sources */,
 				DACE5CBD1D26D5EF00080E5F /* CategoryUIColor.swift in Sources */,
 				DA906DFB1D22FC700095B270 /* CMainParent.swift in Sources */,
+				DAD00CF81D273E7000BCDDAA /* VComponentGyroBase.swift in Sources */,
 				DACE5CC01D26D6B600080E5F /* VComponentGyro.swift in Sources */,
 				DAA0DC681D23184C00F3EF29 /* CategoryNSFileManager.swift in Sources */,
 				DACE5CBB1D26CAC200080E5F /* CMainController.swift in Sources */,
