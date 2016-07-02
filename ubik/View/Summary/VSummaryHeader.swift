@@ -16,14 +16,16 @@ class VSummaryHeader:UIView
         self.controller = controller
         
         let viewGyroBase:VComponentGyroBase = VComponentGyroBase(model:modelGyro)
-        
+        let viewGyroIcon:VComponentGyroIcon = VComponentGyroIcon(model:modelGyro)
         let viewGyro:VComponentGyro = VComponentGyro(model:modelGyro)
         self.viewGyro = viewGyro
         
         addSubview(viewGyroBase)
         addSubview(viewGyro)
+        addSubview(viewGyroIcon)
         
         let views:[String:AnyObject] = [
+            "gyroIcon":viewGyroIcon,
             "gyroBase":viewGyroBase,
             "gyro":viewGyro]
         
@@ -37,6 +39,16 @@ class VSummaryHeader:UIView
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "V:|-(margin)-[gyroBase]-(margin)-|",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:|-(margin)-[gyroIcon]-(margin)-|",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:|-(margin)-[gyroIcon]-(margin)-|",
             options:[],
             metrics:metrics,
             views:views))
