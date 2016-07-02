@@ -4,7 +4,7 @@ class CMainParent:UIViewController
 {
     var current:UIViewController
     private var controllerRect:CGRect!
-    private let kBarHeight:CGFloat = 70
+    private let kBarHeight:CGFloat = 60
     
     init()
     {

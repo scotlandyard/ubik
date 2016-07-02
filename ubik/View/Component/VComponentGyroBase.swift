@@ -31,11 +31,11 @@ class VComponentGyroBase:UIView
         
         if width > height
         {
-            size = height_2 - model.lineWidth
+            size = height_2 - model.pointerRadius
         }
         else
         {
-            size = width_2 - model.lineWidth
+            size = width_2 - model.pointerRadius
         }
         
         let context:CGContext = UIGraphicsGetCurrentContext()!
@@ -43,6 +43,5 @@ class VComponentGyroBase:UIView
         CGContextSetStrokeColorWithColor(context, UIColor.complement().CGColor)
         CGContextAddArc(context, width_2, height_2, size, 0.0001, 0, 0)
         CGContextDrawPath(context, CGPathDrawingMode.Stroke)
-        CGContextSetStrokeColorWithColor(context, model.color.CGColor)
     }
 }

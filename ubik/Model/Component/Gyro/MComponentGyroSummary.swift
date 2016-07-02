@@ -2,8 +2,8 @@ import UIKit
 
 class MComponentGyroSummary:MComponentGyro
 {
-    private let kLineWidth:CGFloat = 15
-    private let kPointerRadius:CGFloat = 20
+    private let kLineWidth:CGFloat = 20
+    private let kPointerRadius:CGFloat = 25
     
     init()
     {

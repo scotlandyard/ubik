@@ -15,17 +15,31 @@ class VSummaryHeader:UIView
         translatesAutoresizingMaskIntoConstraints = false
         self.controller = controller
         
+        let viewGyroBase:VComponentGyroBase = VComponentGyroBase(model:modelGyro)
+        
         let viewGyro:VComponentGyro = VComponentGyro(model:modelGyro)
         self.viewGyro = viewGyro
         
+        addSubview(viewGyroBase)
         addSubview(viewGyro)
         
         let views:[String:AnyObject] = [
+            "gyroBase":viewGyroBase,
             "gyro":viewGyro]
         
         let metrics:[String:AnyObject] = [
             "margin":kMargin]
         
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:|-(margin)-[gyroBase]-(margin)-|",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:|-(margin)-[gyroBase]-(margin)-|",
+            options:[],
+            metrics:metrics,
+            views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "H:|-(margin)-[gyro]-(margin)-|",
             options:[],
