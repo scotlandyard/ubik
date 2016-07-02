@@ -27,6 +27,7 @@
 		DAD00CF61D27109100BCDDAA /* VMainBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD00CF51D27109100BCDDAA /* VMainBar.swift */; };
 		DAD00CF81D273E7000BCDDAA /* VComponentGyroBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD00CF71D273E7000BCDDAA /* VComponentGyroBase.swift */; };
 		DAD00CFA1D27523300BCDDAA /* gyro.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAD00CF91D27523300BCDDAA /* gyro.xcassets */; };
+		DAD00CFC1D2752B600BCDDAA /* VComponentGyroIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD00CFB1D2752B600BCDDAA /* VComponentGyroIcon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		DAD00CF51D27109100BCDDAA /* VMainBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainBar.swift; sourceTree = "<group>"; };
 		DAD00CF71D273E7000BCDDAA /* VComponentGyroBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VComponentGyroBase.swift; sourceTree = "<group>"; };
 		DAD00CF91D27523300BCDDAA /* gyro.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = gyro.xcassets; sourceTree = "<group>"; };
+		DAD00CFB1D2752B600BCDDAA /* VComponentGyroIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VComponentGyroIcon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +239,7 @@
 			children = (
 				DACE5CBF1D26D6B600080E5F /* VComponentGyro.swift */,
 				DAD00CF71D273E7000BCDDAA /* VComponentGyroBase.swift */,
+				DAD00CFB1D2752B600BCDDAA /* VComponentGyroIcon.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				DACE5CC41D26E44E00080E5F /* MComponentGyro.swift in Sources */,
 				DACE5CB61D26C93D00080E5F /* CSummary.swift in Sources */,
 				DAA0DC641D23068E00F3EF29 /* DManager.swift in Sources */,
+				DAD00CFC1D2752B600BCDDAA /* VComponentGyroIcon.swift in Sources */,
 				DA9210491D233DBB0083D956 /* DModel.xcdatamodeld in Sources */,
 				DAD00CF61D27109100BCDDAA /* VMainBar.swift in Sources */,
 				DACE5CBD1D26D5EF00080E5F /* CategoryUIColor.swift in Sources */,
