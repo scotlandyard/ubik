@@ -30,7 +30,7 @@ class VComponentGyro:UIView
         CGContextSetLineCap(context, CGLineCap.Round)
         CGContextSetStrokeColorWithColor(context, model.color.CGColor)
         CGContextSetFillColorWithColor(context, model.pointerColor.CGColor)
-        CGContextAddArc(context, model.width_2!, model.height_2!, model.circleRadius!, 0.0001, 1.8, 0)
+        CGContextAddArc(context, model.width_2!, model.height_2!, model.circleRadius!, -CGFloat(M_PI_2), 1.8, 0)
         
         let point:CGPoint = CGContextGetPathCurrentPoint(context)
         

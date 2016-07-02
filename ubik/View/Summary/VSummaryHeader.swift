@@ -5,7 +5,7 @@ class VSummaryHeader:UIView
     weak var controller:CSummary!
     weak var viewGyro:VComponentGyro!
     var modelGyro:MComponentGyro = MComponentGyro.Summary()
-    private let kMargin:CGFloat = 10
+    private let kMargin:CGFloat = 20
     
     convenience init(controller:CSummary)
     {
