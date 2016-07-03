@@ -14,6 +14,7 @@
 		DA9210491D233DBB0083D956 /* DModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA9210471D233DBB0083D956 /* DModel.xcdatamodeld */; };
 		DA9210551D233F810083D956 /* DModelLevel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9210531D233F810083D956 /* DModelLevel+CoreDataProperties.swift */; };
 		DA9210561D233F810083D956 /* DModelLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9210541D233F810083D956 /* DModelLevel.swift */; };
+		DA94E20E1D28B77E002FF88B /* VMainBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA94E20D1D28B77E002FF88B /* VMainBarButton.swift */; };
 		DAA0DC641D23068E00F3EF29 /* DManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA0DC611D23068E00F3EF29 /* DManager.swift */; };
 		DAA0DC681D23184C00F3EF29 /* CategoryNSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA0DC671D23184C00F3EF29 /* CategoryNSFileManager.swift */; };
 		DACE5CB61D26C93D00080E5F /* CSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CB51D26C93D00080E5F /* CSummary.swift */; };
@@ -52,6 +53,7 @@
 		DA9210481D233DBB0083D956 /* DModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DModel.xcdatamodel; sourceTree = "<group>"; };
 		DA9210531D233F810083D956 /* DModelLevel+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DModelLevel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DA9210541D233F810083D956 /* DModelLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DModelLevel.swift; sourceTree = "<group>"; };
+		DA94E20D1D28B77E002FF88B /* VMainBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainBarButton.swift; sourceTree = "<group>"; };
 		DAA0DC611D23068E00F3EF29 /* DManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManager.swift; sourceTree = "<group>"; };
 		DAA0DC671D23184C00F3EF29 /* CategoryNSFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSFileManager.swift; sourceTree = "<group>"; };
 		DACE5CB51D26C93D00080E5F /* CSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSummary.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				DAD00CF51D27109100BCDDAA /* VMainBar.swift */,
+				DA94E20D1D28B77E002FF88B /* VMainBarButton.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				DAD00CF31D270DD600BCDDAA /* VSummaryHeader.swift in Sources */,
 				DA906DF41D22F9490095B270 /* CMain.swift in Sources */,
 				DACE5CC41D26E44E00080E5F /* MComponentGyro.swift in Sources */,
+				DA94E20E1D28B77E002FF88B /* VMainBarButton.swift in Sources */,
 				DACE5CB61D26C93D00080E5F /* CSummary.swift in Sources */,
 				DAA0DC641D23068E00F3EF29 /* DManager.swift in Sources */,
 				DAD00CFC1D2752B600BCDDAA /* VComponentGyroIcon.swift in Sources */,
