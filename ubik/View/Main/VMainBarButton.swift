@@ -1,9 +1,6 @@
-//
-//  VMainBarButton.swift
-//  ubik
-//
-//  Created by zero on 7/2/16.
-//  Copyright © 2016 zero. All rights reserved.
-//
+import UIKit
 
-import Foundation
+class VMainBarButton:UIButton
+{
+    
+}
