@@ -2,11 +2,20 @@ import Foundation
 
 class MOnboarding
 {
-    var items:[MOnboardingItem]
+    let items:[MOnboardingItem]
     
     init()
     {
-        items = []
+        let modelWelcome:MOnboardingItem = MOnboardingItem.Welcome()
+        let modelPermission:MOnboardingItem = MOnboardingItem.Permission()
+        let modelLoading:MOnboardingItem = MOnboardingItem.Loading()
+        let modelReady:MOnboardingItem = MOnboardingItem.Ready()
         
+        items = [
+            modelWelcome,
+            modelPermission,
+            modelLoading,
+            modelReady
+        ]
     }
 }
