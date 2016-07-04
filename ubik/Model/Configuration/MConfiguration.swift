@@ -2,20 +2,21 @@ import Foundation
 
 class MConfiguration
 {
-    let firstTime:Bool
+    let onboarding:Bool
     private let kAppVersionName:String = "CFBundleShortVersionString"
     
     init()
     {
         let currentVersion:String = NSBundle.mainBundle().objectForInfoDictionaryKey(kAppVersionName) as! String
-        
         let managerSession:DManagerModelSession = DManager.sharedInstance.managerSession
+        var experience:DSessionExperience? = managerSession.fetchLastManagedObject(managerSession.kEntity_Experience) as? DSessionExperience
         
-        var tryExperience:DObjectSessionExperience? = managerSession.fetchLastManagedObject(managerSession.kEntity_Experience) as? DObjectSessionExperience
-        
-        if tryExperience == nil
+        if experience == nil
         {
-            tryExperience = managerSession.createManagedObject(managerSession.kEntity_Device) as? DObjectSessionExperience
+            experience = managerSession.createManagedObject(managerSession.kEntity_Experience) as? DSessionExperience
         }
+        
+        onboarding = !experience!.onboardingDone
+        experience!.version = currentVersion
     }
 }
