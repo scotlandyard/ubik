@@ -24,6 +24,8 @@
 		DAB3442C1D2A9F2D00406CEE /* DSessionExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3442A1D2A9F2D00406CEE /* DSessionExperience.swift */; };
 		DAB3442D1D2A9F2D00406CEE /* DSessionExperience+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3442B1D2A9F2D00406CEE /* DSessionExperience+CoreDataProperties.swift */; };
 		DAB344321D2AA48000406CEE /* COnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB344311D2AA48000406CEE /* COnboarding.swift */; };
+		DAB344351D2AAE7C00406CEE /* MOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB344341D2AAE7C00406CEE /* MOnboarding.swift */; };
+		DAB344371D2AAE8800406CEE /* MOnboardingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB344361D2AAE8800406CEE /* MOnboardingItem.swift */; };
 		DACE5CB61D26C93D00080E5F /* CSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CB51D26C93D00080E5F /* CSummary.swift */; };
 		DACE5CB91D26CA0800080E5F /* VSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CB81D26CA0800080E5F /* VSummary.swift */; };
 		DACE5CBB1D26CAC200080E5F /* CMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CBA1D26CAC200080E5F /* CMainController.swift */; };
@@ -71,6 +73,8 @@
 		DAB3442A1D2A9F2D00406CEE /* DSessionExperience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSessionExperience.swift; sourceTree = "<group>"; };
 		DAB3442B1D2A9F2D00406CEE /* DSessionExperience+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DSessionExperience+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DAB344311D2AA48000406CEE /* COnboarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COnboarding.swift; sourceTree = "<group>"; };
+		DAB344341D2AAE7C00406CEE /* MOnboarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOnboarding.swift; sourceTree = "<group>"; };
+		DAB344361D2AAE8800406CEE /* MOnboardingItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOnboardingItem.swift; sourceTree = "<group>"; };
 		DACE5CB51D26C93D00080E5F /* CSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSummary.swift; sourceTree = "<group>"; };
 		DACE5CB81D26CA0800080E5F /* VSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSummary.swift; sourceTree = "<group>"; };
 		DACE5CBA1D26CAC200080E5F /* CMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMainController.swift; sourceTree = "<group>"; };
@@ -180,6 +184,7 @@
 		DA906DEC1D22F9490095B270 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DAB344331D2AAE7200406CEE /* Onboarding */,
 				DAA678591D2A23C600DDD9CC /* Configuration */,
 				DA94E2151D2A1348002FF88B /* Health */,
 				DACE5CC11D26E43E00080E5F /* Component */,
@@ -302,6 +307,15 @@
 			isa = PBXGroup;
 			children = (
 				DAB344311D2AA48000406CEE /* COnboarding.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		DAB344331D2AAE7200406CEE /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				DAB344341D2AAE7C00406CEE /* MOnboarding.swift */,
+				DAB344361D2AAE8800406CEE /* MOnboardingItem.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -481,6 +495,7 @@
 				DAB3442D1D2A9F2D00406CEE /* DSessionExperience+CoreDataProperties.swift in Sources */,
 				DAA678661D2A25A100DDD9CC /* DManagerModelSession.swift in Sources */,
 				DA94E2101D28B7D8002FF88B /* VMainBarButtonHistory.swift in Sources */,
+				DAB344371D2AAE8800406CEE /* MOnboardingItem.swift in Sources */,
 				DAD00CFC1D2752B600BCDDAA /* VComponentGyroIcon.swift in Sources */,
 				DA94E21B1D2A13BC002FF88B /* MHealthMain.swift in Sources */,
 				DAD00CF61D27109100BCDDAA /* VMainBar.swift in Sources */,
@@ -492,6 +507,7 @@
 				DAA0DC681D23184C00F3EF29 /* CategoryNSFileManager.swift in Sources */,
 				DAB3442C1D2A9F2D00406CEE /* DSessionExperience.swift in Sources */,
 				DAA678651D2A25A100DDD9CC /* DManagerModel.swift in Sources */,
+				DAB344351D2AAE7C00406CEE /* MOnboarding.swift in Sources */,
 				DACE5CBB1D26CAC200080E5F /* CMainController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

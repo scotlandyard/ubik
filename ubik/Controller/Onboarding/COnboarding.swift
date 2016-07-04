@@ -47,4 +47,21 @@ class COnboarding:UIPageViewController, UIPageViewControllerDataSource, UIPageVi
             metrics:metrics,
             views:views))
     }
+    
+    //MARK: pagecontrol del
+    
+    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int
+    {
+        return 5
+    }
+    
+    func pageViewController(pageViewController:UIPageViewController, viewControllerBeforeViewController viewController:UIViewController) -> UIViewController?
+    {
+        return UIViewController()
+    }
+    
+    func pageViewController(pageViewController:UIPageViewController, viewControllerAfterViewController viewController:UIViewController) -> UIViewController?
+    {
+        return UIViewController()
+    }
 }
