@@ -2,6 +2,7 @@ import UIKit
 
 class CMainParent:UIViewController
 {
+    weak var bar:VMainBar!
     weak var current:UIViewController!
     private var controllerRect:CGRect!
     private let kBarHeight:CGFloat = 60
@@ -9,21 +10,17 @@ class CMainParent:UIViewController
     init()
     {
         super.init(nibName:nil, bundle:nil)
-        
+        controllerRect = CGRectMake(0, kBarHeight, view.bounds.maxX, view.bounds.maxY - kBarHeight)
         let configuration:MConfiguration = MConfiguration()
-        let controller:UIViewController
         
         if configuration.onboarding
         {
-            controller = COnboarding()
+            startSummary()
         }
         else
         {
-            controller = CSummary()
+            startSummary()
         }
-        
-        current = controller
-        startWithRoot(controller)
     }
     
     required init?(coder aDecoder:NSCoder?)
@@ -33,32 +30,35 @@ class CMainParent:UIViewController
     
     //MARK: private
     
-    private func startWithRoot(controller:UIViewController)
+    private func startBar()
     {
-        controllerRect = CGRectMake(0, kBarHeight, view.bounds.maxX, view.bounds.maxY - kBarHeight)
+        let bar:VMainBar = VMainBar(controller:self)
+        bar.frame = CGRectMake(0, 0, view.bounds.maxX, kBarHeight)
+        self.bar = bar
+        
+        view.addSubview(bar)
+    }
+    
+    private func startOnboarding()
+    {
+        let controller:COnboarding = COnboarding()
+        addChildViewController(controller)
+        controller.view.frame = view.bounds
+        view.addSubview(controller.view)
+        controller.didMoveToParentViewController(self)
+    }
+    
+    private func startSummary()
+    {
+        if bar == nil
+        {
+            startBar()
+        }
+        
+        let controller:CSummary = CSummary()
         addChildViewController(controller)
         controller.view.frame = controllerRect
         view.addSubview(controller.view)
         controller.didMoveToParentViewController(self)
-        
-        let bar:VMainBar = VMainBar(controller:self)
-        view.addSubview(bar)
-        
-        let views:[String:AnyObject] = [
-            "bar":bar]
-        
-        let metrics:[String:AnyObject] = [
-            "barHeight":kBarHeight]
-        
-        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-0-[bar]-0-|",
-            options:[],
-            metrics:metrics,
-            views:views))
-        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-0-[bar(barHeight)]",
-            options:[],
-            metrics:metrics,
-            views:views))
     }
 }

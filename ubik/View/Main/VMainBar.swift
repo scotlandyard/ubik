@@ -7,7 +7,6 @@ class VMainBar:UIView
     convenience init(controller:CMainParent)
     {
         self.init()
-        translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = UIColor.complement()
         clipsToBounds = true
         self.controller = controller

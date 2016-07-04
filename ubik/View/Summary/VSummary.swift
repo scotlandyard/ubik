@@ -9,7 +9,6 @@ class VSummary:UIView
     convenience init(controller:CSummary)
     {
         self.init()
-        
         clipsToBounds = true
         backgroundColor = UIColor.whiteColor()
         self.controller = controller
