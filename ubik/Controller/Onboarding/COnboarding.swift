@@ -4,7 +4,7 @@ class COnboarding:UIPageViewController, UIPageViewControllerDataSource, UIPageVi
 {
     let model:MOnboarding
     weak var pageControl:UIPageControl!
-    private let kPageControlBottom:Int = 35
+    private let kPageControlBottom:Int = 50
     
     init()
     {
@@ -49,24 +49,32 @@ class COnboarding:UIPageViewController, UIPageViewControllerDataSource, UIPageVi
             options:[],
             metrics:metrics,
             views:views))
+        pageAtIndex(0, animated:false)
+    }
+    
+    //MARK: private
+    
+    private func pageAtIndex(index:Int, animated:Bool)
+    {
+        pageControl.currentPage = index
+        let controller:UIViewController = UIViewController()
+        setViewControllers([controller], direction:UIPageViewControllerNavigationDirection.Forward, animated:animated, completion:nil)
     }
     
     //MARK: pagecontrol del
     
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int
     {
-        let count:Int = model.items.count
-        
-        return count
+        return 1
     }
     
     func pageViewController(pageViewController:UIPageViewController, viewControllerBeforeViewController viewController:UIViewController) -> UIViewController?
     {
-        return UIViewController()
+        return nil
     }
     
     func pageViewController(pageViewController:UIPageViewController, viewControllerAfterViewController viewController:UIViewController) -> UIViewController?
     {
-        return UIViewController()
+        return nil
     }
 }
