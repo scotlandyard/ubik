@@ -18,4 +18,9 @@ class AppDelegate:UIResponder, UIApplicationDelegate
         
         return true
     }
+    
+    func applicationWillResignActive(application:UIApplication)
+    {
+        DManager.sharedInstance.managerSession.saveContext()
+    }
 }
