@@ -2,22 +2,44 @@ import UIKit
 
 class CMainParent:UIViewController
 {
-    var current:UIViewController
+    weak var current:UIViewController!
     private var controllerRect:CGRect!
     private let kBarHeight:CGFloat = 60
     
     init()
     {
-        let summary:CSummary = CSummary()
-        current = summary
-        
         super.init(nibName:nil, bundle:nil)
         
+        let configuration:MConfiguration = MConfiguration()
+        let controller:UIViewController
+        
+        if configuration.onboarding
+        {
+            
+        }
+        else
+        {
+            controller = CSummary()
+        }
+        
+        current = controller
+        startWithRoot(controller)
+    }
+    
+    required init?(coder aDecoder:NSCoder?)
+    {
+        fatalError()
+    }
+    
+    //MARK: private
+    
+    private func startWithRoot(controller:UIViewController)
+    {
         controllerRect = CGRectMake(0, kBarHeight, view.bounds.maxX, view.bounds.maxY - kBarHeight)
-        addChildViewController(summary)
-        summary.view.frame = controllerRect
-        view.addSubview(summary.view)
-        summary.didMoveToParentViewController(self)
+        addChildViewController(controller)
+        controller.view.frame = controllerRect
+        view.addSubview(controller.view)
+        controller.didMoveToParentViewController(self)
         
         let bar:VMainBar = VMainBar(controller:self)
         view.addSubview(bar)
@@ -38,10 +60,5 @@ class CMainParent:UIViewController
             options:[],
             metrics:metrics,
             views:views))
-    }
-    
-    required init?(coder aDecoder:NSCoder?)
-    {
-        fatalError()
     }
 }
