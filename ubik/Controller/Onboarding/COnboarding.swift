@@ -2,11 +2,13 @@ import UIKit
 
 class COnboarding:UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate
 {
+    let model:MOnboarding
     weak var pageControl:UIPageControl!
     private let kPageControlBottom:Int = 35
     
     init()
     {
+        model = MOnboarding()
         super.init(transitionStyle:UIPageViewControllerTransitionStyle.Scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.Horizontal, options:nil)
     }
     
@@ -22,6 +24,7 @@ class COnboarding:UIPageViewController, UIPageViewControllerDataSource, UIPageVi
         delegate = self
         
         let pageControl:UIPageControl = UIPageControl()
+        pageControl.numberOfPages = model.items.count
         pageControl.translatesAutoresizingMaskIntoConstraints = false
         pageControl.backgroundColor = UIColor.clearColor()
         pageControl.currentPageIndicatorTintColor = UIColor.main()
@@ -52,7 +55,9 @@ class COnboarding:UIPageViewController, UIPageViewControllerDataSource, UIPageVi
     
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int
     {
-        return 5
+        let count:Int = model.items.count
+        
+        return count
     }
     
     func pageViewController(pageViewController:UIPageViewController, viewControllerBeforeViewController viewController:UIViewController) -> UIViewController?
