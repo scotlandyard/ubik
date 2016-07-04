@@ -15,7 +15,7 @@ class CMainParent:UIViewController
         
         if configuration.onboarding
         {
-            
+            controller = COnboarding()
         }
         else
         {

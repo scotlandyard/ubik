@@ -23,6 +23,7 @@
 		DAA678691D2A261F00DDD9CC /* DSessionModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAA678671D2A261F00DDD9CC /* DSessionModel.xcdatamodeld */; };
 		DAB3442C1D2A9F2D00406CEE /* DSessionExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3442A1D2A9F2D00406CEE /* DSessionExperience.swift */; };
 		DAB3442D1D2A9F2D00406CEE /* DSessionExperience+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3442B1D2A9F2D00406CEE /* DSessionExperience+CoreDataProperties.swift */; };
+		DAB344321D2AA48000406CEE /* COnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB344311D2AA48000406CEE /* COnboarding.swift */; };
 		DACE5CB61D26C93D00080E5F /* CSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CB51D26C93D00080E5F /* CSummary.swift */; };
 		DACE5CB91D26CA0800080E5F /* VSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CB81D26CA0800080E5F /* VSummary.swift */; };
 		DACE5CBB1D26CAC200080E5F /* CMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CBA1D26CAC200080E5F /* CMainController.swift */; };
@@ -69,6 +70,7 @@
 		DAA678681D2A261F00DDD9CC /* DSessionModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DSessionModel.xcdatamodel; sourceTree = "<group>"; };
 		DAB3442A1D2A9F2D00406CEE /* DSessionExperience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSessionExperience.swift; sourceTree = "<group>"; };
 		DAB3442B1D2A9F2D00406CEE /* DSessionExperience+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DSessionExperience+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DAB344311D2AA48000406CEE /* COnboarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COnboarding.swift; sourceTree = "<group>"; };
 		DACE5CB51D26C93D00080E5F /* CSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSummary.swift; sourceTree = "<group>"; };
 		DACE5CB81D26CA0800080E5F /* VSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSummary.swift; sourceTree = "<group>"; };
 		DACE5CBA1D26CAC200080E5F /* CMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMainController.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 		DA906DE51D22F9490095B270 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DAB3442E1D2AA44200406CEE /* Onboarding */,
 				DACE5CB41D26C93300080E5F /* Summary */,
 				DA906DE61D22F9490095B270 /* Main */,
 			);
@@ -293,6 +296,14 @@
 			children = (
 			);
 			path = Steps;
+			sourceTree = "<group>";
+		};
+		DAB3442E1D2AA44200406CEE /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				DAB344311D2AA48000406CEE /* COnboarding.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		DACE5CB41D26C93300080E5F /* Summary */ = {
@@ -462,6 +473,7 @@
 				DAD00CF31D270DD600BCDDAA /* VSummaryHeader.swift in Sources */,
 				DA906DF41D22F9490095B270 /* CMain.swift in Sources */,
 				DACE5CC41D26E44E00080E5F /* MComponentGyro.swift in Sources */,
+				DAB344321D2AA48000406CEE /* COnboarding.swift in Sources */,
 				DAA6785B1D2A23DF00DDD9CC /* MConfiguration.swift in Sources */,
 				DA94E20E1D28B77E002FF88B /* VMainBarButton.swift in Sources */,
 				DAA678641D2A25A100DDD9CC /* DManager.swift in Sources */,
