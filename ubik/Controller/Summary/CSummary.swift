@@ -17,6 +17,8 @@ class CSummary:CMainController
         super.viewDidAppear(animated)
         
         vSummary.update(100, maxValue:380)
+        
+        if 
     }
     
     override func loadView()
