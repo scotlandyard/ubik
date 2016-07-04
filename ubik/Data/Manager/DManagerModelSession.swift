@@ -2,13 +2,7 @@ import Foundation
 
 class DManagerModelSession:DManagerModel
 {
-    let kEntity_Conf:String = "Conf"
-    let kEntity_ConfLocation:String = "ConfLocation"
-    let kEntity_ConfMedia:String = "ConfMedia"
-    let kEntity_ConfNotifications:String = "ConfNotifications"
-    let kEntity_Device:String = "Device"
-    let kEntity_Location:String = "Location"
-    let kEntity_User:String = "User"
+    let kEntity_Experience:String = "Experience"
     private let kModelName:String = "DSessionModel"
     
     init()
