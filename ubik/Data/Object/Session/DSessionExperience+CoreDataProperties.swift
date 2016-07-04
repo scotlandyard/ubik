@@ -1,8 +1,8 @@
 import Foundation
 import CoreData
 
-extension DObjectSessionExperience
+extension DSessionExperience
 {
-    @NSManaged var version:String
     @NSManaged var onboardingDone:Bool
+    @NSManaged var version:String
 }

@@ -21,8 +21,8 @@
 		DAA678651D2A25A100DDD9CC /* DManagerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA6785E1D2A25A100DDD9CC /* DManagerModel.swift */; };
 		DAA678661D2A25A100DDD9CC /* DManagerModelSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA6785F1D2A25A100DDD9CC /* DManagerModelSession.swift */; };
 		DAA678691D2A261F00DDD9CC /* DSessionModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAA678671D2A261F00DDD9CC /* DSessionModel.xcdatamodeld */; };
-		DAA678701D2A27C200DDD9CC /* DObjectSessionExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA6786E1D2A27C200DDD9CC /* DObjectSessionExperience.swift */; };
-		DAA678711D2A27C200DDD9CC /* DObjectSessionExperience+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA6786F1D2A27C200DDD9CC /* DObjectSessionExperience+CoreDataProperties.swift */; };
+		DAB3442C1D2A9F2D00406CEE /* DSessionExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3442A1D2A9F2D00406CEE /* DSessionExperience.swift */; };
+		DAB3442D1D2A9F2D00406CEE /* DSessionExperience+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3442B1D2A9F2D00406CEE /* DSessionExperience+CoreDataProperties.swift */; };
 		DACE5CB61D26C93D00080E5F /* CSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CB51D26C93D00080E5F /* CSummary.swift */; };
 		DACE5CB91D26CA0800080E5F /* VSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CB81D26CA0800080E5F /* VSummary.swift */; };
 		DACE5CBB1D26CAC200080E5F /* CMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CBA1D26CAC200080E5F /* CMainController.swift */; };
@@ -67,8 +67,8 @@
 		DAA6785E1D2A25A100DDD9CC /* DManagerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManagerModel.swift; sourceTree = "<group>"; };
 		DAA6785F1D2A25A100DDD9CC /* DManagerModelSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManagerModelSession.swift; sourceTree = "<group>"; };
 		DAA678681D2A261F00DDD9CC /* DSessionModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DSessionModel.xcdatamodel; sourceTree = "<group>"; };
-		DAA6786E1D2A27C200DDD9CC /* DObjectSessionExperience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DObjectSessionExperience.swift; sourceTree = "<group>"; };
-		DAA6786F1D2A27C200DDD9CC /* DObjectSessionExperience+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DObjectSessionExperience+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DAB3442A1D2A9F2D00406CEE /* DSessionExperience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSessionExperience.swift; sourceTree = "<group>"; };
+		DAB3442B1D2A9F2D00406CEE /* DSessionExperience+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DSessionExperience+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DACE5CB51D26C93D00080E5F /* CSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSummary.swift; sourceTree = "<group>"; };
 		DACE5CB81D26CA0800080E5F /* VSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSummary.swift; sourceTree = "<group>"; };
 		DACE5CBA1D26CAC200080E5F /* CMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMainController.swift; sourceTree = "<group>"; };
@@ -282,8 +282,8 @@
 		DAA678621D2A25A100DDD9CC /* Session */ = {
 			isa = PBXGroup;
 			children = (
-				DAA6786E1D2A27C200DDD9CC /* DObjectSessionExperience.swift */,
-				DAA6786F1D2A27C200DDD9CC /* DObjectSessionExperience+CoreDataProperties.swift */,
+				DAB3442A1D2A9F2D00406CEE /* DSessionExperience.swift */,
+				DAB3442B1D2A9F2D00406CEE /* DSessionExperience+CoreDataProperties.swift */,
 			);
 			path = Session;
 			sourceTree = "<group>";
@@ -466,19 +466,19 @@
 				DA94E20E1D28B77E002FF88B /* VMainBarButton.swift in Sources */,
 				DAA678641D2A25A100DDD9CC /* DManager.swift in Sources */,
 				DACE5CB61D26C93D00080E5F /* CSummary.swift in Sources */,
+				DAB3442D1D2A9F2D00406CEE /* DSessionExperience+CoreDataProperties.swift in Sources */,
 				DAA678661D2A25A100DDD9CC /* DManagerModelSession.swift in Sources */,
 				DA94E2101D28B7D8002FF88B /* VMainBarButtonHistory.swift in Sources */,
 				DAD00CFC1D2752B600BCDDAA /* VComponentGyroIcon.swift in Sources */,
 				DA94E21B1D2A13BC002FF88B /* MHealthMain.swift in Sources */,
 				DAD00CF61D27109100BCDDAA /* VMainBar.swift in Sources */,
-				DAA678711D2A27C200DDD9CC /* DObjectSessionExperience+CoreDataProperties.swift in Sources */,
 				DACE5CBD1D26D5EF00080E5F /* CategoryUIColor.swift in Sources */,
 				DAA678691D2A261F00DDD9CC /* DSessionModel.xcdatamodeld in Sources */,
 				DA906DFB1D22FC700095B270 /* CMainParent.swift in Sources */,
 				DAD00CF81D273E7000BCDDAA /* VComponentGyroBase.swift in Sources */,
-				DAA678701D2A27C200DDD9CC /* DObjectSessionExperience.swift in Sources */,
 				DACE5CC01D26D6B600080E5F /* VComponentGyro.swift in Sources */,
 				DAA0DC681D23184C00F3EF29 /* CategoryNSFileManager.swift in Sources */,
+				DAB3442C1D2A9F2D00406CEE /* DSessionExperience.swift in Sources */,
 				DAA678651D2A25A100DDD9CC /* DManagerModel.swift in Sources */,
 				DACE5CBB1D26CAC200080E5F /* CMainController.swift in Sources */,
 			);
