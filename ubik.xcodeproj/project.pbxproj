@@ -17,9 +17,9 @@
 		DA94E20E1D28B77E002FF88B /* VMainBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA94E20D1D28B77E002FF88B /* VMainBarButton.swift */; };
 		DA94E2101D28B7D8002FF88B /* VMainBarButtonHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA94E20F1D28B7D8002FF88B /* VMainBarButtonHistory.swift */; };
 		DA94E21B1D2A13BC002FF88B /* MHealthMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA94E21A1D2A13BC002FF88B /* MHealthMain.swift */; };
-		DA94E21E1D2A1457002FF88B /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA94E21D1D2A1457002FF88B /* HomeKit.framework */; };
 		DAA0DC641D23068E00F3EF29 /* DManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA0DC611D23068E00F3EF29 /* DManager.swift */; };
 		DAA0DC681D23184C00F3EF29 /* CategoryNSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA0DC671D23184C00F3EF29 /* CategoryNSFileManager.swift */; };
+		DAA678581D2A1BBF00DDD9CC /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAA678571D2A1BBF00DDD9CC /* HealthKit.framework */; };
 		DACE5CB61D26C93D00080E5F /* CSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CB51D26C93D00080E5F /* CSummary.swift */; };
 		DACE5CB91D26CA0800080E5F /* VSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CB81D26CA0800080E5F /* VSummary.swift */; };
 		DACE5CBB1D26CAC200080E5F /* CMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CBA1D26CAC200080E5F /* CMainController.swift */; };
@@ -60,9 +60,9 @@
 		DA94E20F1D28B7D8002FF88B /* VMainBarButtonHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainBarButtonHistory.swift; sourceTree = "<group>"; };
 		DA94E21A1D2A13BC002FF88B /* MHealthMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealthMain.swift; sourceTree = "<group>"; };
 		DA94E21C1D2A1456002FF88B /* ubik.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ubik.entitlements; sourceTree = "<group>"; };
-		DA94E21D1D2A1457002FF88B /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
 		DAA0DC611D23068E00F3EF29 /* DManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManager.swift; sourceTree = "<group>"; };
 		DAA0DC671D23184C00F3EF29 /* CategoryNSFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSFileManager.swift; sourceTree = "<group>"; };
+		DAA678571D2A1BBF00DDD9CC /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		DACE5CB51D26C93D00080E5F /* CSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSummary.swift; sourceTree = "<group>"; };
 		DACE5CB81D26CA0800080E5F /* VSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSummary.swift; sourceTree = "<group>"; };
 		DACE5CBA1D26CAC200080E5F /* CMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMainController.swift; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA94E21E1D2A1457002FF88B /* HomeKit.framework in Frameworks */,
+				DAA678581D2A1BBF00DDD9CC /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,7 +99,7 @@
 		DA906DB51D22F4AE0095B270 = {
 			isa = PBXGroup;
 			children = (
-				DA94E21D1D2A1457002FF88B /* HomeKit.framework */,
+				DAA678571D2A1BBF00DDD9CC /* HealthKit.framework */,
 				DA906DC01D22F4AF0095B270 /* ubik */,
 				DA906DBF1D22F4AE0095B270 /* Products */,
 			);
@@ -170,6 +170,7 @@
 		DA906DEC1D22F9490095B270 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DAA678591D2A23C600DDD9CC /* Configuration */,
 				DA94E2151D2A1348002FF88B /* Health */,
 				DACE5CC11D26E43E00080E5F /* Component */,
 			);
@@ -252,6 +253,13 @@
 				DACE5CBC1D26D5EF00080E5F /* CategoryUIColor.swift */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		DAA678591D2A23C600DDD9CC /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 		DACE5CB41D26C93300080E5F /* Summary */ = {
@@ -360,8 +368,11 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 7AMWG3RLHN;
 						SystemCapabilities = {
-							com.apple.HomeKit = {
+							com.apple.HealthKit = {
 								enabled = 1;
+							};
+							com.apple.HomeKit = {
+								enabled = 0;
 							};
 						};
 					};

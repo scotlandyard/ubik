@@ -53,7 +53,6 @@ class MHealthMain
     
     private func querySteps()
     {
-        
         let sampleQuery:HKSampleQuery = HKSampleQuery(
             sampleType:stepsType!,
             predicate:nil,
