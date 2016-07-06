@@ -25,6 +25,7 @@
 		DAAF3C8D1D2C873800BBBD40 /* VOnboardingItemWelcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAF3C8C1D2C873800BBBD40 /* VOnboardingItemWelcome.swift */; };
 		DAAF3C8F1D2C89C600BBBD40 /* COnboardingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAF3C8E1D2C89C600BBBD40 /* COnboardingItem.swift */; };
 		DAAF3C911D2CAC6700BBBD40 /* CategoryUIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAF3C901D2CAC6700BBBD40 /* CategoryUIFont.swift */; };
+		DAAF3C941D2CADA300BBBD40 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAAF3C921D2CADA300BBBD40 /* Localizable.strings */; };
 		DAB3442C1D2A9F2D00406CEE /* DSessionExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3442A1D2A9F2D00406CEE /* DSessionExperience.swift */; };
 		DAB3442D1D2A9F2D00406CEE /* DSessionExperience+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3442B1D2A9F2D00406CEE /* DSessionExperience+CoreDataProperties.swift */; };
 		DAB344321D2AA48000406CEE /* COnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB344311D2AA48000406CEE /* COnboarding.swift */; };
@@ -82,6 +83,7 @@
 		DAAF3C8C1D2C873800BBBD40 /* VOnboardingItemWelcome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VOnboardingItemWelcome.swift; sourceTree = "<group>"; };
 		DAAF3C8E1D2C89C600BBBD40 /* COnboardingItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COnboardingItem.swift; sourceTree = "<group>"; };
 		DAAF3C901D2CAC6700BBBD40 /* CategoryUIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryUIFont.swift; sourceTree = "<group>"; };
+		DAAF3C931D2CADA300BBBD40 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DAB3442A1D2A9F2D00406CEE /* DSessionExperience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSessionExperience.swift; sourceTree = "<group>"; };
 		DAB3442B1D2A9F2D00406CEE /* DSessionExperience+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DSessionExperience+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DAB344311D2AA48000406CEE /* COnboarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COnboarding.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				DA906DEE1D22F9490095B270 /* LaunchScreen.storyboard */,
+				DAAF3C921D2CADA300BBBD40 /* Localizable.strings */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAD00CFA1D27523300BCDDAA /* gyro.xcassets in Resources */,
+				DAAF3C941D2CADA300BBBD40 /* Localizable.strings in Resources */,
 				DA906DF71D22F9490095B270 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -577,6 +581,14 @@
 				DA906DEF1D22F9490095B270 /* en */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		DAAF3C921D2CADA300BBBD40 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DAAF3C931D2CADA300BBBD40 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
