@@ -4,6 +4,6 @@ class COnboardingItemWelcome:COnboardingItem
 {
     override func loadView()
     {
-        view = VOnboardingWelcome(controller:self)
+        view = VOnboardingItemWelcome(controller:self)
     }
 }

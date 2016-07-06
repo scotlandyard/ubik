@@ -22,7 +22,7 @@
 		DAA678661D2A25A100DDD9CC /* DManagerModelSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA6785F1D2A25A100DDD9CC /* DManagerModelSession.swift */; };
 		DAA678691D2A261F00DDD9CC /* DSessionModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAA678671D2A261F00DDD9CC /* DSessionModel.xcdatamodeld */; };
 		DAAF3C8A1D2C838700BBBD40 /* COnboardingItemWelcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAF3C891D2C838700BBBD40 /* COnboardingItemWelcome.swift */; };
-		DAAF3C8D1D2C873800BBBD40 /* VOnboardingWelcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAF3C8C1D2C873800BBBD40 /* VOnboardingWelcome.swift */; };
+		DAAF3C8D1D2C873800BBBD40 /* VOnboardingItemWelcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAF3C8C1D2C873800BBBD40 /* VOnboardingItemWelcome.swift */; };
 		DAAF3C8F1D2C89C600BBBD40 /* COnboardingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAF3C8E1D2C89C600BBBD40 /* COnboardingItem.swift */; };
 		DAB3442C1D2A9F2D00406CEE /* DSessionExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3442A1D2A9F2D00406CEE /* DSessionExperience.swift */; };
 		DAB3442D1D2A9F2D00406CEE /* DSessionExperience+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3442B1D2A9F2D00406CEE /* DSessionExperience+CoreDataProperties.swift */; };
@@ -78,7 +78,7 @@
 		DAA6785F1D2A25A100DDD9CC /* DManagerModelSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManagerModelSession.swift; sourceTree = "<group>"; };
 		DAA678681D2A261F00DDD9CC /* DSessionModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DSessionModel.xcdatamodel; sourceTree = "<group>"; };
 		DAAF3C891D2C838700BBBD40 /* COnboardingItemWelcome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COnboardingItemWelcome.swift; sourceTree = "<group>"; };
-		DAAF3C8C1D2C873800BBBD40 /* VOnboardingWelcome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VOnboardingWelcome.swift; sourceTree = "<group>"; };
+		DAAF3C8C1D2C873800BBBD40 /* VOnboardingItemWelcome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VOnboardingItemWelcome.swift; sourceTree = "<group>"; };
 		DAAF3C8E1D2C89C600BBBD40 /* COnboardingItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COnboardingItem.swift; sourceTree = "<group>"; };
 		DAB3442A1D2A9F2D00406CEE /* DSessionExperience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSessionExperience.swift; sourceTree = "<group>"; };
 		DAB3442B1D2A9F2D00406CEE /* DSessionExperience+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DSessionExperience+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -321,7 +321,7 @@
 		DAAF3C8B1D2C865100BBBD40 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				DAAF3C8C1D2C873800BBBD40 /* VOnboardingWelcome.swift */,
+				DAAF3C8C1D2C873800BBBD40 /* VOnboardingItemWelcome.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -536,7 +536,7 @@
 				DAA678691D2A261F00DDD9CC /* DSessionModel.xcdatamodeld in Sources */,
 				DA906DFB1D22FC700095B270 /* CMainParent.swift in Sources */,
 				DAD00CF81D273E7000BCDDAA /* VComponentGyroBase.swift in Sources */,
-				DAAF3C8D1D2C873800BBBD40 /* VOnboardingWelcome.swift in Sources */,
+				DAAF3C8D1D2C873800BBBD40 /* VOnboardingItemWelcome.swift in Sources */,
 				DACE5CC01D26D6B600080E5F /* VComponentGyro.swift in Sources */,
 				DAA0DC681D23184C00F3EF29 /* CategoryNSFileManager.swift in Sources */,
 				DAB3442C1D2A9F2D00406CEE /* DSessionExperience.swift in Sources */,

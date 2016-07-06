@@ -1,6 +1,6 @@
 import UIKit
 
-class VOnboardingWelcome:UIView
+class VOnboardingItemWelcome:UIView
 {
     weak var controller:COnboardingItemWelcome!
     
