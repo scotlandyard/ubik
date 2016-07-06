@@ -20,6 +20,9 @@ class COnboarding:UIPageViewController, UIPageViewControllerDataSource, UIPageVi
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        edgesForExtendedLayout = UIRectEdge.None
+        extendedLayoutIncludesOpaqueBars = false
+        automaticallyAdjustsScrollViewInsets = false
         dataSource = self
         delegate = self
         
@@ -53,12 +56,23 @@ class COnboarding:UIPageViewController, UIPageViewControllerDataSource, UIPageVi
         pageAtIndex(0, animated:false)
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle
+    {
+        return UIStatusBarStyle.LightContent
+    }
+    
+    override func prefersStatusBarHidden() -> Bool
+    {
+        return false
+    }
+    
     //MARK: private
     
     private func pageAtIndex(index:Int, animated:Bool)
     {
+        let item:MOnboardingItem = model.items[index]
         pageControl.currentPage = index
-        let controller:UIViewController = UIViewController()
+        let controller:UIViewController = item.controller(self)
         setViewControllers([controller], direction:UIPageViewControllerNavigationDirection.Forward, animated:animated, completion:nil)
     }
     

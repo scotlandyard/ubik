@@ -21,7 +21,9 @@
 		DAA678651D2A25A100DDD9CC /* DManagerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA6785E1D2A25A100DDD9CC /* DManagerModel.swift */; };
 		DAA678661D2A25A100DDD9CC /* DManagerModelSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA6785F1D2A25A100DDD9CC /* DManagerModelSession.swift */; };
 		DAA678691D2A261F00DDD9CC /* DSessionModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAA678671D2A261F00DDD9CC /* DSessionModel.xcdatamodeld */; };
-		DAAF3C8A1D2C838700BBBD40 /* COnboardingWelcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAF3C891D2C838700BBBD40 /* COnboardingWelcome.swift */; };
+		DAAF3C8A1D2C838700BBBD40 /* COnboardingItemWelcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAF3C891D2C838700BBBD40 /* COnboardingItemWelcome.swift */; };
+		DAAF3C8D1D2C873800BBBD40 /* VOnboardingWelcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAF3C8C1D2C873800BBBD40 /* VOnboardingWelcome.swift */; };
+		DAAF3C8F1D2C89C600BBBD40 /* COnboardingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAF3C8E1D2C89C600BBBD40 /* COnboardingItem.swift */; };
 		DAB3442C1D2A9F2D00406CEE /* DSessionExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3442A1D2A9F2D00406CEE /* DSessionExperience.swift */; };
 		DAB3442D1D2A9F2D00406CEE /* DSessionExperience+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3442B1D2A9F2D00406CEE /* DSessionExperience+CoreDataProperties.swift */; };
 		DAB344321D2AA48000406CEE /* COnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB344311D2AA48000406CEE /* COnboarding.swift */; };
@@ -75,7 +77,9 @@
 		DAA6785E1D2A25A100DDD9CC /* DManagerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManagerModel.swift; sourceTree = "<group>"; };
 		DAA6785F1D2A25A100DDD9CC /* DManagerModelSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManagerModelSession.swift; sourceTree = "<group>"; };
 		DAA678681D2A261F00DDD9CC /* DSessionModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DSessionModel.xcdatamodel; sourceTree = "<group>"; };
-		DAAF3C891D2C838700BBBD40 /* COnboardingWelcome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COnboardingWelcome.swift; sourceTree = "<group>"; };
+		DAAF3C891D2C838700BBBD40 /* COnboardingItemWelcome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COnboardingItemWelcome.swift; sourceTree = "<group>"; };
+		DAAF3C8C1D2C873800BBBD40 /* VOnboardingWelcome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VOnboardingWelcome.swift; sourceTree = "<group>"; };
+		DAAF3C8E1D2C89C600BBBD40 /* COnboardingItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COnboardingItem.swift; sourceTree = "<group>"; };
 		DAB3442A1D2A9F2D00406CEE /* DSessionExperience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSessionExperience.swift; sourceTree = "<group>"; };
 		DAB3442B1D2A9F2D00406CEE /* DSessionExperience+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DSessionExperience+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DAB344311D2AA48000406CEE /* COnboarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COnboarding.swift; sourceTree = "<group>"; };
@@ -222,6 +226,7 @@
 		DA906DF31D22F9490095B270 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DAAF3C8B1D2C865100BBBD40 /* Onboarding */,
 				DAD00CF41D27108600BCDDAA /* Main */,
 				DACE5CBE1D26D6AD00080E5F /* Component */,
 				DACE5CB71D26C9FE00080E5F /* Summary */,
@@ -313,11 +318,20 @@
 			path = Steps;
 			sourceTree = "<group>";
 		};
+		DAAF3C8B1D2C865100BBBD40 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				DAAF3C8C1D2C873800BBBD40 /* VOnboardingWelcome.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		DAB3442E1D2AA44200406CEE /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
 				DAB344311D2AA48000406CEE /* COnboarding.swift */,
-				DAAF3C891D2C838700BBBD40 /* COnboardingWelcome.swift */,
+				DAAF3C8E1D2C89C600BBBD40 /* COnboardingItem.swift */,
+				DAAF3C891D2C838700BBBD40 /* COnboardingItemWelcome.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -502,7 +516,7 @@
 				DAB3443D1D2AB0E200406CEE /* MOnboardingItemLoading.swift in Sources */,
 				DAD00CF31D270DD600BCDDAA /* VSummaryHeader.swift in Sources */,
 				DA906DF41D22F9490095B270 /* CMain.swift in Sources */,
-				DAAF3C8A1D2C838700BBBD40 /* COnboardingWelcome.swift in Sources */,
+				DAAF3C8A1D2C838700BBBD40 /* COnboardingItemWelcome.swift in Sources */,
 				DACE5CC41D26E44E00080E5F /* MComponentGyro.swift in Sources */,
 				DAB344321D2AA48000406CEE /* COnboarding.swift in Sources */,
 				DAA6785B1D2A23DF00DDD9CC /* MConfiguration.swift in Sources */,
@@ -522,11 +536,13 @@
 				DAA678691D2A261F00DDD9CC /* DSessionModel.xcdatamodeld in Sources */,
 				DA906DFB1D22FC700095B270 /* CMainParent.swift in Sources */,
 				DAD00CF81D273E7000BCDDAA /* VComponentGyroBase.swift in Sources */,
+				DAAF3C8D1D2C873800BBBD40 /* VOnboardingWelcome.swift in Sources */,
 				DACE5CC01D26D6B600080E5F /* VComponentGyro.swift in Sources */,
 				DAA0DC681D23184C00F3EF29 /* CategoryNSFileManager.swift in Sources */,
 				DAB3442C1D2A9F2D00406CEE /* DSessionExperience.swift in Sources */,
 				DAA678651D2A25A100DDD9CC /* DManagerModel.swift in Sources */,
 				DAB3443F1D2AB10800406CEE /* MOnboardingItemReady.swift in Sources */,
+				DAAF3C8F1D2C89C600BBBD40 /* COnboardingItem.swift in Sources */,
 				DAB344351D2AAE7C00406CEE /* MOnboarding.swift in Sources */,
 				DACE5CBB1D26CAC200080E5F /* CMainController.swift in Sources */,
 			);

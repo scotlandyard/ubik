@@ -25,4 +25,11 @@ class MOnboardingItem
         let model:MOnboardingItem = MOnboardingItemReady()
         return model
     }
+    
+    //MARK: public
+    
+    func controller(onboarding:COnboarding) -> COnboardingItem
+    {
+        fatalError()
+    }
 }
