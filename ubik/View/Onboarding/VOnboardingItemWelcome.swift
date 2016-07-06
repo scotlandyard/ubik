@@ -25,15 +25,24 @@ class VOnboardingItemWelcome:UIView
         label.textAlignment = NSTextAlignment.Center
         label.backgroundColor = UIColor.clearColor()
         label.textColor = UIColor.blackColor()
-        label.font = UIFont.regular(15)
+        label.font = UIFont.regular(19)
         label.text = NSLocalizedString("VOnboardingItemWelcome_label", comment:"")
+        
+        let button:UIButton = UIButton()
+        button.setTitleColor(UIColor.main(), forState:UIControlState.Normal)
+        button.setTitleColor(UIColor.main().colorWithAlphaComponent(0.2), forState:UIControlState.Highlighted)
+        button.setTitle(NSLocalizedString("VOnboardingItemWelcome_button", comment:""), forState:UIControlState.Normal)
+        button.titleLabel?.font = UIFont.bold(16)
+        button.translatesAutoresizingMaskIntoConstraints = false
         
         addSubview(icon)
         addSubview(label)
+        addSubview(button)
         
         let views:[String:AnyObject] = [
             "icon":icon,
-            "label":label]
+            "label":label,
+            "button":button]
         
         let metrics:[String:AnyObject] = [:]
         
@@ -43,12 +52,17 @@ class VOnboardingItemWelcome:UIView
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-60-[label]-60-|",
+            "H:|-5-[label]-5-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-150-[icon(75)]-0-[label]",
+            "H:|-100-[button]-100-|",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:|-200-[icon(70)]-0-[label(70)]-20-[button(50)]",
             options:[],
             metrics:metrics,
             views:views))
