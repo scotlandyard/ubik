@@ -16,7 +16,7 @@ class VOnboardingItemWelcome:UIView
         icon.translatesAutoresizingMaskIntoConstraints = false
         icon.clipsToBounds = true
         icon.contentMode = UIViewContentMode.Center
-        icon.image = UIImage(named:"icon")
+        icon.image = UIImage(named:"logo")
         
         addSubview(icon)
         
@@ -31,7 +31,7 @@ class VOnboardingItemWelcome:UIView
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-0-[icon(200)]",
+            "V:|-0-[icon(160)]",
             options:[],
             metrics:metrics,
             views:views))

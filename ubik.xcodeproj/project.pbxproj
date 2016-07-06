@@ -24,6 +24,7 @@
 		DAAF3C8A1D2C838700BBBD40 /* COnboardingItemWelcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAF3C891D2C838700BBBD40 /* COnboardingItemWelcome.swift */; };
 		DAAF3C8D1D2C873800BBBD40 /* VOnboardingItemWelcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAF3C8C1D2C873800BBBD40 /* VOnboardingItemWelcome.swift */; };
 		DAAF3C8F1D2C89C600BBBD40 /* COnboardingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAF3C8E1D2C89C600BBBD40 /* COnboardingItem.swift */; };
+		DAAF3C911D2CAC6700BBBD40 /* CategoryUIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAF3C901D2CAC6700BBBD40 /* CategoryUIFont.swift */; };
 		DAB3442C1D2A9F2D00406CEE /* DSessionExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3442A1D2A9F2D00406CEE /* DSessionExperience.swift */; };
 		DAB3442D1D2A9F2D00406CEE /* DSessionExperience+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3442B1D2A9F2D00406CEE /* DSessionExperience+CoreDataProperties.swift */; };
 		DAB344321D2AA48000406CEE /* COnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB344311D2AA48000406CEE /* COnboarding.swift */; };
@@ -80,6 +81,7 @@
 		DAAF3C891D2C838700BBBD40 /* COnboardingItemWelcome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COnboardingItemWelcome.swift; sourceTree = "<group>"; };
 		DAAF3C8C1D2C873800BBBD40 /* VOnboardingItemWelcome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VOnboardingItemWelcome.swift; sourceTree = "<group>"; };
 		DAAF3C8E1D2C89C600BBBD40 /* COnboardingItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COnboardingItem.swift; sourceTree = "<group>"; };
+		DAAF3C901D2CAC6700BBBD40 /* CategoryUIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryUIFont.swift; sourceTree = "<group>"; };
 		DAB3442A1D2A9F2D00406CEE /* DSessionExperience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSessionExperience.swift; sourceTree = "<group>"; };
 		DAB3442B1D2A9F2D00406CEE /* DSessionExperience+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DSessionExperience+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DAB344311D2AA48000406CEE /* COnboarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COnboarding.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 			children = (
 				DAA0DC671D23184C00F3EF29 /* CategoryNSFileManager.swift */,
 				DACE5CBC1D26D5EF00080E5F /* CategoryUIColor.swift */,
+				DAAF3C901D2CAC6700BBBD40 /* CategoryUIFont.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 				DAA6785B1D2A23DF00DDD9CC /* MConfiguration.swift in Sources */,
 				DA94E20E1D28B77E002FF88B /* VMainBarButton.swift in Sources */,
 				DAA678641D2A25A100DDD9CC /* DManager.swift in Sources */,
+				DAAF3C911D2CAC6700BBBD40 /* CategoryUIFont.swift in Sources */,
 				DACE5CB61D26C93D00080E5F /* CSummary.swift in Sources */,
 				DAB344391D2AB0BB00406CEE /* MOnboardingItemWelcome.swift in Sources */,
 				DAB3442D1D2A9F2D00406CEE /* DSessionExperience+CoreDataProperties.swift in Sources */,
