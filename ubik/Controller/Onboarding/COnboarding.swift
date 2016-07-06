@@ -49,6 +49,7 @@ class COnboarding:UIPageViewController, UIPageViewControllerDataSource, UIPageVi
             options:[],
             metrics:metrics,
             views:views))
+        
         pageAtIndex(0, animated:false)
     }
     
