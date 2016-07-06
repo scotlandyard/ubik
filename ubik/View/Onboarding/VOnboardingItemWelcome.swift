@@ -32,7 +32,7 @@ class VOnboardingItemWelcome:UIView
         button.setTitleColor(UIColor.main(), forState:UIControlState.Normal)
         button.setTitleColor(UIColor.main().colorWithAlphaComponent(0.2), forState:UIControlState.Highlighted)
         button.setTitle(NSLocalizedString("VOnboardingItemWelcome_button", comment:""), forState:UIControlState.Normal)
-        button.titleLabel?.font = UIFont.bold(16)
+        button.titleLabel?.font = UIFont.bold(18)
         button.translatesAutoresizingMaskIntoConstraints = false
         
         addSubview(icon)
@@ -57,12 +57,12 @@ class VOnboardingItemWelcome:UIView
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-100-[button]-100-|",
+            "H:|-80-[button]-80-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-200-[icon(70)]-0-[label(70)]-20-[button(50)]",
+            "V:|-200-[icon(70)]-0-[label(80)]-0-[button(60)]",
             options:[],
             metrics:metrics,
             views:views))
