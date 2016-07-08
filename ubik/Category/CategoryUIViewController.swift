@@ -1,9 +1,12 @@
-//
-//  CategoryUIViewController.swift
-//  ubik
-//
-//  Created by zero on 7/7/16.
-//  Copyright © 2016 zero. All rights reserved.
-//
+import UIKit
 
-import Foundation
+extension UIViewController
+{
+    var parent:CMainParent
+    {
+        get
+        {
+            return self.parentViewController as! CMainParent
+        }
+    }
+}
