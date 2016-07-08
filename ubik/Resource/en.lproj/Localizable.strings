@@ -2,9 +2,9 @@
 "VOnboardingItemWelcome_button"="Start";
 "VOnboardingItemPermission_label"="We need to access you HealthKit information";
 "VOnboardingItemPermission_buttonNext"="Next";
-"VOnboardingItemPermission_buttonBack"="Back";
+"VOnboardingItemPermission_buttonPrevious"="Back";
 "VOnboardingItemLoading_label"="Brace yourself while while we load your history from HealthKit";
 "VOnboardingItemLoading_buttonNext"="Next";
-"VOnboardingItemLoading_buttonBack"="Back";
+"VOnboardingItemLoading_buttonPrevious"="Back";
 "VOnboardingItemReady_label"="ubik is ready";
 "VOnboardingItemReady_button"="Enter";
