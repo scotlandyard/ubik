@@ -6,12 +6,9 @@ class MHealthMain
     static let sharedInstance = MHealthMain()
     let healthStore:HKHealthStore?
     let stepsType:HKQuantityType?
-    private(set) var authorized:Bool
     
     private init()
     {
-        authorized = false
-        
         if HKHealthStore.isHealthDataAvailable()
         {
             healthStore = HKHealthStore()
@@ -27,19 +24,14 @@ class MHealthMain
     
     //MARK: private
     
-    private func storeLoaded()
+    private func storeLoaded(delegate:MHealthMainDelegate?)
     {
         let readTypes:Set<HKObjectType> = Set(arrayLiteral:stepsType!)
         
         healthStore!.requestAuthorizationToShareTypes(nil, readTypes:readTypes)
-        { [unowned self] (done, error) in
+        { (done, error) in
             
-            if done
-            {
-                self.authorized = true
-                
-                self.querySteps()
-            }
+            delegate?.authorizationAsked()
         }
     }
     
