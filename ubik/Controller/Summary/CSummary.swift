@@ -9,11 +9,6 @@ class CSummary:CMainController
         super.viewDidAppear(animated)
         
         vSummary.update(100, maxValue:380)
-        
-        if MHealthMain.sharedInstance.healthStore != nil
-        {
-            MHealthMain.sharedInstance.currentSteps()
-        }
     }
     
     override func loadView()

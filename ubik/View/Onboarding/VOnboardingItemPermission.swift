@@ -98,7 +98,7 @@ class VOnboardingItemPermission:UIView
     
     func actionNext(sender button:UIButton)
     {
-        controller.onboarding.next()
+        controller.askPermission()
     }
     
     func actionPrevious(sender button:UIButton)

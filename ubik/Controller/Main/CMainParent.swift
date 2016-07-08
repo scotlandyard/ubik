@@ -10,7 +10,7 @@ class CMainParent:UIViewController
     
     init()
     {
-        statusBarStyle = UIStatusBarStyle.LightContent
+        statusBarStyle = UIStatusBarStyle.Default
         
         super.init(nibName:nil, bundle:nil)
         controllerRect = CGRectMake(0, kBarHeight, view.bounds.maxX, view.bounds.maxY - kBarHeight)

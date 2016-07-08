@@ -6,4 +6,14 @@ class COnboardingItemPermission:COnboardingItem
     {
         view = VOnboardingItemPermission(controller:self)
     }
+    
+    //MARK: public
+    
+    func askPermission()
+    {
+        if MHealthMain.sharedInstance.healthStore != nil
+        {
+            onboarding.next()
+        }
+    }
 }
