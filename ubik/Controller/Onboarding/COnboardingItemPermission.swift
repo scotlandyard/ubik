@@ -4,6 +4,6 @@ class COnboardingItemPermission:COnboardingItem
 {
     override func loadView()
     {
-        view = VOnboardingItemWelcome(controller:self)
+        view = VOnboardingItemPermission(controller:self)
     }
 }

@@ -1,2 +1,10 @@
-"VOnboardingItemWelcome_label"="You are about to join the\nubik experience";
-"VOnboardingItemWelcome_button"="Next";
+"VOnboardingItemWelcome_label"="Just a few steps to\nsetup ubik";
+"VOnboardingItemWelcome_button"="Start";
+"VOnboardingItemPermission_label"="We need to access you HealthKit information";
+"VOnboardingItemPermission_buttonNext"="Next";
+"VOnboardingItemPermission_buttonBack"="Back";
+"VOnboardingItemLoading_label"="Brace yourself while while we load your history from HealthKit";
+"VOnboardingItemLoading_buttonNext"="Next";
+"VOnboardingItemLoading_buttonBack"="Back";
+"VOnboardingItemReady_label"="ubik is ready";
+"VOnboardingItemReady_button"="Enter";

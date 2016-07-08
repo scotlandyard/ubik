@@ -94,14 +94,14 @@ class COnboarding:UIPageViewController, UIPageViewControllerDataSource, UIPageVi
         }
     }
     
-    func prev()
+    func previous()
     {
         let currentItem:Int = pageControl.currentPage
-        let prevItem:Int = currentItem - 1
+        let previousItem:Int = currentItem - 1
         
-        if prevItem >= 0
+        if previousItem >= 0
         {
-            pageAtIndex(prevItem, animated:true)
+            pageAtIndex(previousItem, animated:true)
         }
     }
     

@@ -1,9 +1,9 @@
-//
-//  COnboardingLoading.swift
-//  ubik
-//
-//  Created by zero on 7/7/16.
-//  Copyright © 2016 zero. All rights reserved.
-//
+import UIKit
 
-import Foundation
+class COnboardingItemLoading:COnboardingItem
+{
+    override func loadView()
+    {
+        view = VOnboardingItemLoading(controller:self)
+    }
+}
