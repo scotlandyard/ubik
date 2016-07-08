@@ -14,6 +14,7 @@
 		DA94E20E1D28B77E002FF88B /* VMainBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA94E20D1D28B77E002FF88B /* VMainBarButton.swift */; };
 		DA94E2101D28B7D8002FF88B /* VMainBarButtonHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA94E20F1D28B7D8002FF88B /* VMainBarButtonHistory.swift */; };
 		DA94E21B1D2A13BC002FF88B /* MHealthMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA94E21A1D2A13BC002FF88B /* MHealthMain.swift */; };
+		DAA005481D2F3C54004B57FA /* CategoryUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA005471D2F3C54004B57FA /* CategoryUIViewController.swift */; };
 		DAA0DC681D23184C00F3EF29 /* CategoryNSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA0DC671D23184C00F3EF29 /* CategoryNSFileManager.swift */; };
 		DAA678581D2A1BBF00DDD9CC /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAA678571D2A1BBF00DDD9CC /* HealthKit.framework */; };
 		DAA6785B1D2A23DF00DDD9CC /* MConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA6785A1D2A23DF00DDD9CC /* MConfiguration.swift */; };
@@ -72,6 +73,7 @@
 		DA94E20F1D28B7D8002FF88B /* VMainBarButtonHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainBarButtonHistory.swift; sourceTree = "<group>"; };
 		DA94E21A1D2A13BC002FF88B /* MHealthMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealthMain.swift; sourceTree = "<group>"; };
 		DA94E21C1D2A1456002FF88B /* ubik.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ubik.entitlements; sourceTree = "<group>"; };
+		DAA005471D2F3C54004B57FA /* CategoryUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryUIViewController.swift; sourceTree = "<group>"; };
 		DAA0DC671D23184C00F3EF29 /* CategoryNSFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSFileManager.swift; sourceTree = "<group>"; };
 		DAA678571D2A1BBF00DDD9CC /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		DAA6785A1D2A23DF00DDD9CC /* MConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MConfiguration.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				DAA0DC671D23184C00F3EF29 /* CategoryNSFileManager.swift */,
 				DACE5CBC1D26D5EF00080E5F /* CategoryUIColor.swift */,
 				DAAF3C901D2CAC6700BBBD40 /* CategoryUIFont.swift */,
+				DAA005471D2F3C54004B57FA /* CategoryUIViewController.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 				DACE5CB91D26CA0800080E5F /* VSummary.swift in Sources */,
 				DAB3443D1D2AB0E200406CEE /* MOnboardingItemLoading.swift in Sources */,
 				DAD00CF31D270DD600BCDDAA /* VSummaryHeader.swift in Sources */,
+				DAA005481D2F3C54004B57FA /* CategoryUIViewController.swift in Sources */,
 				DA906DF41D22F9490095B270 /* CMain.swift in Sources */,
 				DAAF3C8A1D2C838700BBBD40 /* COnboardingItemWelcome.swift in Sources */,
 				DACE5CC41D26E44E00080E5F /* MComponentGyro.swift in Sources */,

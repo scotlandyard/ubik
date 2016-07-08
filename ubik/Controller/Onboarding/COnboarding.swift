@@ -76,6 +76,24 @@ class COnboarding:UIPageViewController, UIPageViewControllerDataSource, UIPageVi
         setViewControllers([controller], direction:UIPageViewControllerNavigationDirection.Forward, animated:animated, completion:nil)
     }
     
+    //MARK: public
+    
+    func next()
+    {
+        let currentItem:Int = pageControl.currentPage
+        let nextItem:Int = currentItem + 1
+        let totalItems:Int = model.items.count
+        
+        if nextItem < totalItems
+        {
+            pageAtIndex(nextItem, animated:true)
+        }
+        else
+        {
+            pare
+        }
+    }
+    
     //MARK: pagecontrol del
     
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int

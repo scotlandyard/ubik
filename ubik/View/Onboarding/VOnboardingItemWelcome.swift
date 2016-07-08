@@ -34,6 +34,7 @@ class VOnboardingItemWelcome:UIView
         button.setTitle(NSLocalizedString("VOnboardingItemWelcome_button", comment:""), forState:UIControlState.Normal)
         button.titleLabel?.font = UIFont.bold(18)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action:#selector(self.actionNext(sender:)), forControlEvents:UIControlEvents.TouchUpInside)
         
         addSubview(icon)
         addSubview(label)
@@ -66,5 +67,12 @@ class VOnboardingItemWelcome:UIView
             options:[],
             metrics:metrics,
             views:views))
+    }
+    
+    //MARK: action
+    
+    func actionNext(sender button:UIButton)
+    {
+        controller.next()
     }
 }

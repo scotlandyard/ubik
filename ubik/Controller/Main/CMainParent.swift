@@ -48,7 +48,9 @@ class CMainParent:UIViewController
         controller.didMoveToParentViewController(self)
     }
     
-    private func startSummary()
+    //MARK: public
+    
+    func startSummary()
     {
         if bar == nil
         {
