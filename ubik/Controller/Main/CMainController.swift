@@ -2,16 +2,6 @@ import UIKit
 
 class CMainController:UIViewController
 {
-    var parent:CMainParent
-    {
-        get
-        {
-            return self.parentViewController as! CMainParent
-        }
-    }
-    
-    private var statusBarStyle:UIStatusBarStyle = UIStatusBarStyle.LightContent
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -23,25 +13,11 @@ class CMainController:UIViewController
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle
     {
-        return statusBarStyle
+        return UIStatusBarStyle.Default
     }
     
     override func prefersStatusBarHidden() -> Bool
     {
         return false
-    }
-    
-    //MARK: public
-    
-    func statusBarLight()
-    {
-        statusBarStyle = UIStatusBarStyle.LightContent
-        parent.setNeedsStatusBarAppearanceUpdate()
-    }
-    
-    func statusBarDefault()
-    {
-        statusBarStyle = UIStatusBarStyle.Default
-        parent.setNeedsStatusBarAppearanceUpdate()
     }
 }

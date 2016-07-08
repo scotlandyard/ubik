@@ -90,7 +90,7 @@ class COnboarding:UIPageViewController, UIPageViewControllerDataSource, UIPageVi
         }
         else
         {
-            pare
+            parent.startSummary()
         }
     }
     

@@ -5,10 +5,13 @@ class CMainParent:UIViewController
     weak var bar:VMainBar!
     weak var current:UIViewController!
     private var controllerRect:CGRect!
+    private var statusBarStyle:UIStatusBarStyle
     private let kBarHeight:CGFloat = 60
     
     init()
     {
+        statusBarStyle = UIStatusBarStyle.LightContent
+        
         super.init(nibName:nil, bundle:nil)
         controllerRect = CGRectMake(0, kBarHeight, view.bounds.maxX, view.bounds.maxY - kBarHeight)
         let configuration:MConfiguration = MConfiguration()
@@ -26,6 +29,16 @@ class CMainParent:UIViewController
     required init?(coder aDecoder:NSCoder?)
     {
         fatalError()
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle
+    {
+        return statusBarStyle
+    }
+    
+    override func prefersStatusBarHidden() -> Bool
+    {
+        return false
     }
     
     //MARK: private
@@ -62,5 +75,19 @@ class CMainParent:UIViewController
         controller.view.frame = controllerRect
         view.addSubview(controller.view)
         controller.didMoveToParentViewController(self)
+    }
+    
+    //MARK: public
+    
+    func statusBarLight()
+    {
+        statusBarStyle = UIStatusBarStyle.LightContent
+        parent.setNeedsStatusBarAppearanceUpdate()
+    }
+    
+    func statusBarDefault()
+    {
+        statusBarStyle = UIStatusBarStyle.Default
+        parent.setNeedsStatusBarAppearanceUpdate()
     }
 }
