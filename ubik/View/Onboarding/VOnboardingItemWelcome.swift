@@ -69,7 +69,7 @@ class VOnboardingItemWelcome:UIView
             views:views))
     }
     
-    //MARK: action
+    //MARK: actions
     
     func actionNext(sender button:UIButton)
     {
