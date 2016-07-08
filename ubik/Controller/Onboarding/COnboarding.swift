@@ -53,7 +53,7 @@ class COnboarding:UIPageViewController, UIPageViewControllerDataSource, UIPageVi
             metrics:metrics,
             views:views))
         
-        pageAtIndex(0, animated:false)
+        pageAtIndex(0, animated:false, direction:UIPageViewControllerNavigationDirection.Forward)
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle
@@ -68,12 +68,12 @@ class COnboarding:UIPageViewController, UIPageViewControllerDataSource, UIPageVi
     
     //MARK: private
     
-    private func pageAtIndex(index:Int, animated:Bool)
+    private func pageAtIndex(index:Int, animated:Bool, direction:UIPageViewControllerNavigationDirection)
     {
         let item:MOnboardingItem = model.items[index]
         pageControl.currentPage = index
         let controller:UIViewController = item.controller(self)
-        setViewControllers([controller], direction:UIPageViewControllerNavigationDirection.Forward, animated:animated, completion:nil)
+        setViewControllers([controller], direction:direction, animated:animated, completion:nil)
     }
     
     //MARK: public
@@ -86,7 +86,7 @@ class COnboarding:UIPageViewController, UIPageViewControllerDataSource, UIPageVi
         
         if nextItem < totalItems
         {
-            pageAtIndex(nextItem, animated:true)
+            pageAtIndex(nextItem, animated:true, direction:UIPageViewControllerNavigationDirection.Forward)
         }
         else
         {
@@ -101,7 +101,7 @@ class COnboarding:UIPageViewController, UIPageViewControllerDataSource, UIPageVi
         
         if previousItem >= 0
         {
-            pageAtIndex(previousItem, animated:true)
+            pageAtIndex(previousItem, animated:true, direction:UIPageViewControllerNavigationDirection.Reverse)
         }
     }
     
