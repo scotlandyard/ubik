@@ -94,6 +94,17 @@ class COnboarding:UIPageViewController, UIPageViewControllerDataSource, UIPageVi
         }
     }
     
+    func prev()
+    {
+        let currentItem:Int = pageControl.currentPage
+        let prevItem:Int = currentItem - 1
+        
+        if prevItem >= 0
+        {
+            pageAtIndex(prevItem, animated:true)
+        }
+    }
+    
     //MARK: pagecontrol del
     
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int
