@@ -32,9 +32,9 @@ class VOnboardingItemPermission:UIView
         buttonNext.addTarget(self, action:#selector(self.actionNext(sender:)), forControlEvents:UIControlEvents.TouchUpInside)
         
         let buttonPrevious:UIButton = UIButton()
-        buttonPrevious.setTitleColor(UIColor.complement(), forState:UIControlState.Normal)
-        buttonPrevious.setTitleColor(UIColor.complement().colorWithAlphaComponent(0.2), forState:UIControlState.Highlighted)
-        buttonPrevious.setTitle(NSLocalizedString("VOnboardingItemPermission_buttonNext", comment:""), forState:UIControlState.Normal)
+        buttonPrevious.setTitleColor(UIColor(white:0.7, alpha:1), forState:UIControlState.Normal)
+        buttonPrevious.setTitleColor(UIColor.complement(), forState:UIControlState.Highlighted)
+        buttonPrevious.setTitle(NSLocalizedString("VOnboardingItemPermission_buttonPrevious", comment:""), forState:UIControlState.Normal)
         buttonPrevious.titleLabel?.font = UIFont.bold(18)
         buttonPrevious.translatesAutoresizingMaskIntoConstraints = false
         buttonPrevious.addTarget(self, action:#selector(self.actionPrevious(sender:)), forControlEvents:UIControlEvents.TouchUpInside)
@@ -52,7 +52,7 @@ class VOnboardingItemPermission:UIView
             "buttonWidth":kButtonWidth]
         
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-5-[label]-5-|",
+            "H:|-40-[label]-40-|",
             options:[],
             metrics:metrics,
             views:views))

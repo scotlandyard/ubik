@@ -1,9 +1,9 @@
 "VOnboardingItemWelcome_label"="Just a few steps to\nsetup ubik";
 "VOnboardingItemWelcome_button"="Start";
-"VOnboardingItemPermission_label"="We need to access you HealthKit information";
+"VOnboardingItemPermission_label"="ubik works better if you grant access to HealthKit";
 "VOnboardingItemPermission_buttonNext"="Next";
 "VOnboardingItemPermission_buttonPrevious"="Back";
-"VOnboardingItemLoading_label"="Brace yourself while while we load your history from HealthKit";
+"VOnboardingItemLoading_label"="Brace yourself while loading your history from HealthKit";
 "VOnboardingItemLoading_buttonNext"="Next";
 "VOnboardingItemLoading_buttonPrevious"="Back";
 "VOnboardingItemReady_label"="ubik is ready";

@@ -53,7 +53,7 @@ class VOnboardingItemWelcome:UIView
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-5-[label]-5-|",
+            "H:|-40-[label]-40-|",
             options:[],
             metrics:metrics,
             views:views))
