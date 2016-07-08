@@ -26,7 +26,7 @@ class VOnboardingItemPermission:UIView
         let buttonNext:UIButton = UIButton()
         buttonNext.setTitleColor(UIColor.main(), forState:UIControlState.Normal)
         buttonNext.setTitleColor(UIColor.main().colorWithAlphaComponent(0.2), forState:UIControlState.Highlighted)
-        buttonNext.setTitle(NSLocalizedString("VOnboardingItemWelcome_buttonNext", comment:""), forState:UIControlState.Normal)
+        buttonNext.setTitle(NSLocalizedString("VOnboardingItemPermission_buttonNext", comment:""), forState:UIControlState.Normal)
         buttonNext.titleLabel?.font = UIFont.bold(18)
         buttonNext.translatesAutoresizingMaskIntoConstraints = false
         buttonNext.addTarget(self, action:#selector(self.actionNext(sender:)), forControlEvents:UIControlEvents.TouchUpInside)
@@ -34,7 +34,7 @@ class VOnboardingItemPermission:UIView
         let buttonPrevious:UIButton = UIButton()
         buttonPrevious.setTitleColor(UIColor.complement(), forState:UIControlState.Normal)
         buttonPrevious.setTitleColor(UIColor.complement().colorWithAlphaComponent(0.2), forState:UIControlState.Highlighted)
-        buttonPrevious.setTitle(NSLocalizedString("VOnboardingItemWelcome_buttonNext", comment:""), forState:UIControlState.Normal)
+        buttonPrevious.setTitle(NSLocalizedString("VOnboardingItemPermission_buttonNext", comment:""), forState:UIControlState.Normal)
         buttonPrevious.titleLabel?.font = UIFont.bold(18)
         buttonPrevious.translatesAutoresizingMaskIntoConstraints = false
         buttonPrevious.addTarget(self, action:#selector(self.actionPrevious(sender:)), forControlEvents:UIControlEvents.TouchUpInside)
