@@ -2,11 +2,11 @@ import UIKit
 
 class VMainLoader:UIImageView
 {
-    private let kAnimationDuration:NSTimeInterval = 2.5
+    private let kAnimationDuration:NSTimeInterval = 1.5
     
-    convenience init()
+    init()
     {
-        self.init()
+        super.init(frame:CGRectZero)
         
         let images:[UIImage] = [
             UIImage(named:"loader0")!,
@@ -22,7 +22,13 @@ class VMainLoader:UIImageView
         clipsToBounds = true
         animationDuration = kAnimationDuration
         animationImages = images
+        contentMode = UIViewContentMode.Center
         
         startAnimating()
+    }
+    
+    required init?(coder aDecoder:NSCoder)
+    {
+        fatalError()
     }
 }

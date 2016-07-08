@@ -4,6 +4,9 @@ class VOnboardingItemLoading:UIView
 {
     weak var controller:COnboardingItemLoading!
     weak var layoutButtonsLeft:NSLayoutConstraint!
+    weak var spinner:VMainLoader!
+    weak var buttonNext:UIButton!
+    weak var buttonPrevious:UIButton!
     private let kButtonWidth:CGFloat = 100
     
     convenience init(controller:COnboardingItemLoading)
@@ -23,6 +26,9 @@ class VOnboardingItemLoading:UIView
         label.font = UIFont.regular(19)
         label.text = NSLocalizedString("VOnboardingItemLoading_label", comment:"")
         
+        let spinner:VMainLoader = VMainLoader()
+        self.spinner = spinner
+        
         let buttonNext:UIButton = UIButton()
         buttonNext.setTitleColor(UIColor.main(), forState:UIControlState.Normal)
         buttonNext.setTitleColor(UIColor.main().colorWithAlphaComponent(0.2), forState:UIControlState.Highlighted)
@@ -30,6 +36,8 @@ class VOnboardingItemLoading:UIView
         buttonNext.titleLabel?.font = UIFont.bold(18)
         buttonNext.translatesAutoresizingMaskIntoConstraints = false
         buttonNext.addTarget(self, action:#selector(self.actionNext(sender:)), forControlEvents:UIControlEvents.TouchUpInside)
+        buttonNext.hidden = true
+        self.buttonNext = buttonNext
         
         let buttonPrevious:UIButton = UIButton()
         buttonPrevious.setTitleColor(UIColor(white:0.7, alpha:1), forState:UIControlState.Normal)
@@ -38,15 +46,19 @@ class VOnboardingItemLoading:UIView
         buttonPrevious.titleLabel?.font = UIFont.bold(18)
         buttonPrevious.translatesAutoresizingMaskIntoConstraints = false
         buttonPrevious.addTarget(self, action:#selector(self.actionPrevious(sender:)), forControlEvents:UIControlEvents.TouchUpInside)
+        buttonPrevious.hidden = true
+        self.buttonPrevious = buttonPrevious
         
         addSubview(label)
+        addSubview(spinner)
         addSubview(buttonNext)
         addSubview(buttonPrevious)
         
         let views:[String:AnyObject] = [
             "label":label,
             "buttonNext":buttonNext,
-            "buttonPrevious":buttonPrevious]
+            "buttonPrevious":buttonPrevious,
+            "spinner":spinner]
         
         let metrics:[String:AnyObject] = [
             "buttonWidth":kButtonWidth]
@@ -68,6 +80,16 @@ class VOnboardingItemLoading:UIView
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "V:[label]-0-[buttonPrevious(60)]",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:|-0-[spinner]-0-|",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:[label]-0-[spinner(80)]",
             options:[],
             metrics:metrics,
             views:views))
