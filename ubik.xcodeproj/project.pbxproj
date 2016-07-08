@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA2C38BD1D30619800977D50 /* VMainLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C38BC1D30619800977D50 /* VMainLoader.swift */; };
 		DA906DF41D22F9490095B270 /* CMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA906DE71D22F9490095B270 /* CMain.swift */; };
 		DA906DF71D22F9490095B270 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA906DEE1D22F9490095B270 /* LaunchScreen.storyboard */; };
 		DA906DFB1D22FC700095B270 /* CMainParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA906DFA1D22FC700095B270 /* CMainParent.swift */; };
@@ -68,6 +69,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA2C38BC1D30619800977D50 /* VMainLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainLoader.swift; sourceTree = "<group>"; };
 		DA906DBE1D22F4AE0095B270 /* ubik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ubik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA906DD51D22F4AF0095B270 /* tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA906DE71D22F9490095B270 /* CMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMain.swift; sourceTree = "<group>"; };
@@ -429,6 +431,7 @@
 				DAD00CF51D27109100BCDDAA /* VMainBar.swift */,
 				DA94E20D1D28B77E002FF88B /* VMainBarButton.swift */,
 				DA94E20F1D28B7D8002FF88B /* VMainBarButtonHistory.swift */,
+				DA2C38BC1D30619800977D50 /* VMainLoader.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 				DAB3443D1D2AB0E200406CEE /* MOnboardingItemLoading.swift in Sources */,
 				DAD00CF31D270DD600BCDDAA /* VSummaryHeader.swift in Sources */,
 				DAA005481D2F3C54004B57FA /* CategoryUIViewController.swift in Sources */,
+				DA2C38BD1D30619800977D50 /* VMainLoader.swift in Sources */,
 				DA906DF41D22F9490095B270 /* CMain.swift in Sources */,
 				DAAF3C8A1D2C838700BBBD40 /* COnboardingItemWelcome.swift in Sources */,
 				DACE5CC41D26E44E00080E5F /* MComponentGyro.swift in Sources */,
