@@ -13,7 +13,6 @@ class MHealthMain
         {
             healthStore = HKHealthStore()
             stepsType = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierStepCount)
-            storeLoaded()
         }
         else
         {
@@ -23,17 +22,6 @@ class MHealthMain
     }
     
     //MARK: private
-    
-    private func storeLoaded(delegate:MHealthMainDelegate?)
-    {
-        let readTypes:Set<HKObjectType> = Set(arrayLiteral:stepsType!)
-        
-        healthStore!.requestAuthorizationToShareTypes(nil, readTypes:readTypes)
-        { (done, error) in
-            
-            delegate?.authorizationAsked()
-        }
-    }
     
     private func querySteps()
     {
@@ -64,6 +52,17 @@ class MHealthMain
     }
     
     //MARK: public
+    
+    func askAuthorization(delegate:MHealthMainDelegate?)
+    {
+        let readTypes:Set<HKObjectType> = Set(arrayLiteral:stepsType!)
+        
+        healthStore!.requestAuthorizationToShareTypes(nil, readTypes:readTypes)
+        { (done, error) in
+            
+            delegate?.healthAuthorizationAsked()
+        }
+    }
     
     func currentSteps()
     {
