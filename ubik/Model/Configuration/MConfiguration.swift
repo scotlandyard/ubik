@@ -3,13 +3,14 @@ import Foundation
 class MConfiguration
 {
     static let sharedInstance = MConfiguration()
+    private let managerSession:DManagerModelSession
     private(set) var experience:DSessionExperience
     private let kAppVersionName:String = "CFBundleShortVersionString"
     
     private init()
     {
+        managerSession = DManager.sharedInstance.managerSession
         let currentVersion:String = NSBundle.mainBundle().objectForInfoDictionaryKey(kAppVersionName) as! String
-        let managerSession:DManagerModelSession = DManager.sharedInstance.managerSession
         var tryExperience:DSessionExperience? = managerSession.fetchLastManagedObject(managerSession.kEntity_Experience) as? DSessionExperience
         
         if tryExperience == nil
@@ -25,7 +26,7 @@ class MConfiguration
     
     private func saveSession()
     {
-        DManager.sharedInstance.managerSession.saveContext()
+        managerSession.saveContext()
     }
     
     //MARK: public

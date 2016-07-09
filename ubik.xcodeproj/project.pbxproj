@@ -48,6 +48,7 @@
 		DAB3443F1D2AB10800406CEE /* MOnboardingItemReady.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3443E1D2AB10800406CEE /* MOnboardingItemReady.swift */; };
 		DAB8F6BA1D31BFE900236A00 /* MHealth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8F6B81D31BFE900236A00 /* MHealth.swift */; };
 		DAB8F6BB1D31BFE900236A00 /* MHealthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8F6B91D31BFE900236A00 /* MHealthDelegate.swift */; };
+		DAB8F6BE1D31C0F600236A00 /* MHike.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8F6BD1D31C0F600236A00 /* MHike.swift */; };
 		DACE5CB61D26C93D00080E5F /* CSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CB51D26C93D00080E5F /* CSummary.swift */; };
 		DACE5CB91D26CA0800080E5F /* VSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CB81D26CA0800080E5F /* VSummary.swift */; };
 		DACE5CBB1D26CAC200080E5F /* CMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CBA1D26CAC200080E5F /* CMainController.swift */; };
@@ -119,6 +120,7 @@
 		DAB3443E1D2AB10800406CEE /* MOnboardingItemReady.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOnboardingItemReady.swift; sourceTree = "<group>"; };
 		DAB8F6B81D31BFE900236A00 /* MHealth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealth.swift; sourceTree = "<group>"; };
 		DAB8F6B91D31BFE900236A00 /* MHealthDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealthDelegate.swift; sourceTree = "<group>"; };
+		DAB8F6BD1D31C0F600236A00 /* MHike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHike.swift; sourceTree = "<group>"; };
 		DACE5CB51D26C93D00080E5F /* CSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSummary.swift; sourceTree = "<group>"; };
 		DACE5CB81D26CA0800080E5F /* VSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSummary.swift; sourceTree = "<group>"; };
 		DACE5CBA1D26CAC200080E5F /* CMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMainController.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 		DA906DEC1D22F9490095B270 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DAB8F6BC1D31C0EB00236A00 /* Hike */,
 				DAB344331D2AAE7200406CEE /* Onboarding */,
 				DAA678591D2A23C600DDD9CC /* Configuration */,
 				DA94E2151D2A1348002FF88B /* Health */,
@@ -375,6 +378,14 @@
 				DAB3443E1D2AB10800406CEE /* MOnboardingItemReady.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		DAB8F6BC1D31C0EB00236A00 /* Hike */ = {
+			isa = PBXGroup;
+			children = (
+				DAB8F6BD1D31C0F600236A00 /* MHike.swift */,
+			);
+			path = Hike;
 			sourceTree = "<group>";
 		};
 		DACE5CB41D26C93300080E5F /* Summary */ = {
@@ -557,6 +568,7 @@
 				DAB344321D2AA48000406CEE /* COnboarding.swift in Sources */,
 				DAA6785B1D2A23DF00DDD9CC /* MConfiguration.swift in Sources */,
 				DAA005501D2F42DA004B57FA /* VOnboardingItemPermission.swift in Sources */,
+				DAB8F6BE1D31C0F600236A00 /* MHike.swift in Sources */,
 				DA94E20E1D28B77E002FF88B /* VMainBarButton.swift in Sources */,
 				DAA678641D2A25A100DDD9CC /* DManager.swift in Sources */,
 				DAA0054E1D2F427C004B57FA /* COnboardingItemLoading.swift in Sources */,
