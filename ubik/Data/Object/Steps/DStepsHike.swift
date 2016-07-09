@@ -7,7 +7,7 @@ class DStepsHike:NSManagedObject
     @NSManaged private(set) var amount:Step
     @NSManaged private(set) var day:Timestamp
     
-    typealias Step = Int16
+    typealias Step = Int32
     typealias Timestamp = NSTimeInterval
     
     //MARK: public
@@ -20,6 +20,6 @@ class DStepsHike:NSManagedObject
     
     func add(steps:Step)
     {
-        self.amount += steps
+        amount += steps
     }
 }

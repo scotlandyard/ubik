@@ -34,7 +34,7 @@ class MHealthMain
         
         for sample:HKQuantitySample in samples
         {
-            let count:Int16 = Int16(sample.quantity.doubleValueForUnit(stepsUnit))
+            let count:Int32 = Int32(sample.quantity.doubleValueForUnit(stepsUnit))
             let date:NSDate = sample.startDate
             let components:NSDateComponents = calendar.components(calendarUnits, fromDate:date)
             let normalizedDate:NSDate = calendar.dateFromComponents(components)!
