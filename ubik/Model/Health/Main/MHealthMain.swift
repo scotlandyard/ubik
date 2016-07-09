@@ -30,6 +30,7 @@ class MHealthMain
         let calendar:NSCalendar = NSCalendar.currentCalendar()
         let calendarUnits:NSCalendarUnit = [NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day]
         let managerSteps:DManagerModelSteps = DManager.sharedInstance.managerSteps
+        var hike:DStepsHike?
         
         for sample:HKQuantitySample in samples
         {
@@ -38,8 +39,24 @@ class MHealthMain
             let components:NSDateComponents = calendar.components(calendarUnits, fromDate:date)
             let normalizedDate:NSDate = calendar.dateFromComponents(components)!
             let timestamp:NSTimeInterval = normalizedDate.timeIntervalSince1970
-            let hike:DStepsHike = managerSteps.createManagedObject(managerSteps.kEntity_Hike) as! DStepsHike
-            hike.record(timestamp, amount:count)
+            
+            if hike != nil
+            {
+                if hike!.day == timestamp
+                {
+                    hike!.add(count)
+                }
+                else
+                {
+                    hike = nil
+                }
+            }
+            
+            if hike == nil
+            {
+                hike = managerSteps.createManagedObject(managerSteps.kEntity_Hike) as? DStepsHike
+                hike!.record(timestamp, amount:count)
+            }
         }
         
         DManager.sharedInstance.managerSteps.saveContext()

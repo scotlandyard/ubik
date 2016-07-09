@@ -17,4 +17,9 @@ class DStepsHike:NSManagedObject
         self.day = day
         self.amount = amount
     }
+    
+    func add(steps:Step)
+    {
+        self.amount += steps
+    }
 }
