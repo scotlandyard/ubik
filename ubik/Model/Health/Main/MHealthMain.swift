@@ -29,18 +29,22 @@ class MHealthMain
     {
         let calendar:NSCalendar = NSCalendar.currentCalendar()
         let calendarUnits:NSCalendarUnit = [NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day]
+        let managerSteps:DManagerModelSteps = DManager.sharedInstance.managerSteps
         
         for sample:HKQuantitySample in samples
         {
-            let count:Double = sample.quantity.doubleValueForUnit(stepsUnit)
+            let count:Int16 = Int16(sample.quantity.doubleValueForUnit(stepsUnit))
             let date:NSDate = sample.startDate
             let components:NSDateComponents = calendar.components(calendarUnits, fromDate:date)
             let normalizedDate:NSDate = calendar.dateFromComponents(components)!
             let timestamp:NSTimeInterval = normalizedDate.timeIntervalSince1970
-            
-            print(timestamp)
+            let hike:DStepsHike = managerSteps.createManagedObject(managerSteps.kEntity_Hike) as! DStepsHike
+            hike.day = timestamp
+            hike.amount = count
+            hike.milestone = false
         }
         
+        DManager.sharedInstance.managerSteps.saveContext()
         delegate?.healthStepsSaved()
     }
     

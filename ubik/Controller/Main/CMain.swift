@@ -22,5 +22,6 @@ class AppDelegate:UIResponder, UIApplicationDelegate
     func applicationWillResignActive(application:UIApplication)
     {
         DManager.sharedInstance.managerSession.saveContext()
+        DManager.sharedInstance.managerSteps.saveContext()
     }
 }
