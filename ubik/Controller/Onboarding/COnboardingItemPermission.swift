@@ -1,6 +1,6 @@
 import UIKit
 
-class COnboardingItemPermission:COnboardingItem, MHealthMainDelegate
+class COnboardingItemPermission:COnboardingItem, MHealthDelegate
 {
     override func loadView()
     {
@@ -11,13 +11,13 @@ class COnboardingItemPermission:COnboardingItem, MHealthMainDelegate
     
     func askPermission()
     {
-        if MHealthMain.sharedInstance.healthStore == nil
+        if MHealth.sharedInstance.healthStore == nil
         {
             onboarding.next()
         }
         else
         {
-            MHealthMain.sharedInstance.askAuthorization(self)
+            MHealth.sharedInstance.askAuthorization(self)
         }
     }
     

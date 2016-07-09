@@ -1,6 +1,6 @@
 import UIKit
 
-class COnboardingItemLoading:COnboardingItem, MHealthMainDelegate
+class COnboardingItemLoading:COnboardingItem, MHealthDelegate
 {
     private var loading:Bool = false
     
@@ -34,7 +34,7 @@ class COnboardingItemLoading:COnboardingItem, MHealthMainDelegate
     {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0))
         {
-            MHealthMain.sharedInstance.loadStepsHistory(self)
+            MHealth.sharedInstance.loadStepsHistory(self)
         }
     }
     
