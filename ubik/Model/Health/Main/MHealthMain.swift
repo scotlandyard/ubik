@@ -59,7 +59,6 @@ class MHealthMain
             }
         }
         
-        DManager.sharedInstance.managerSteps.saveContext()
         MConfiguration.sharedInstance.updateLastHike(yesterday)
         delegate?.healthStepsSaved()
     }

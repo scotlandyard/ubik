@@ -61,6 +61,6 @@ class VOnboardingItemReady:UIView
     
     func actionNext(sender button:UIButton)
     {
-        controller.onboarding.next()
+        controller.onboardingDone()
     }
 }

@@ -34,11 +34,12 @@ class MConfiguration
     {
         experience.onboardingDone = true
         saveSession()
+        
+        DManager.sharedInstance.managerSteps.saveContext()
     }
     
     func updateLastHike(lastHike:NSTimeInterval)
     {
         experience.lastHike = lastHike
-        saveSession()
     }
 }
