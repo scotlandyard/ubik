@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		DA2C38BD1D30619800977D50 /* VMainLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C38BC1D30619800977D50 /* VMainLoader.swift */; };
 		DA2C38C01D308D5900977D50 /* DStepsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA2C38BE1D308D5900977D50 /* DStepsModel.xcdatamodeld */; };
+		DA2C38C71D308EA100977D50 /* DStepsHike.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C38C51D308EA100977D50 /* DStepsHike.swift */; };
+		DA2C38C81D308EA100977D50 /* DStepsHike+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C38C61D308EA100977D50 /* DStepsHike+CoreDataProperties.swift */; };
 		DA906DF41D22F9490095B270 /* CMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA906DE71D22F9490095B270 /* CMain.swift */; };
 		DA906DF71D22F9490095B270 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA906DEE1D22F9490095B270 /* LaunchScreen.storyboard */; };
 		DA906DFB1D22FC700095B270 /* CMainParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA906DFA1D22FC700095B270 /* CMainParent.swift */; };
@@ -72,6 +74,8 @@
 /* Begin PBXFileReference section */
 		DA2C38BC1D30619800977D50 /* VMainLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainLoader.swift; sourceTree = "<group>"; };
 		DA2C38BF1D308D5900977D50 /* DStepsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DStepsModel.xcdatamodel; sourceTree = "<group>"; };
+		DA2C38C51D308EA100977D50 /* DStepsHike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DStepsHike.swift; sourceTree = "<group>"; };
+		DA2C38C61D308EA100977D50 /* DStepsHike+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DStepsHike+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DA906DBE1D22F4AE0095B270 /* ubik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ubik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA906DD51D22F4AF0095B270 /* tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA906DE71D22F9490095B270 /* CMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMain.swift; sourceTree = "<group>"; };
@@ -343,6 +347,8 @@
 		DAA678631D2A25A100DDD9CC /* Steps */ = {
 			isa = PBXGroup;
 			children = (
+				DA2C38C51D308EA100977D50 /* DStepsHike.swift */,
+				DA2C38C61D308EA100977D50 /* DStepsHike+CoreDataProperties.swift */,
 			);
 			path = Steps;
 			sourceTree = "<group>";
@@ -555,6 +561,7 @@
 				DAD00CF31D270DD600BCDDAA /* VSummaryHeader.swift in Sources */,
 				DAA005481D2F3C54004B57FA /* CategoryUIViewController.swift in Sources */,
 				DA2C38BD1D30619800977D50 /* VMainLoader.swift in Sources */,
+				DA2C38C71D308EA100977D50 /* DStepsHike.swift in Sources */,
 				DA906DF41D22F9490095B270 /* CMain.swift in Sources */,
 				DAAF3C8A1D2C838700BBBD40 /* COnboardingItemWelcome.swift in Sources */,
 				DACE5CC41D26E44E00080E5F /* MComponentGyro.swift in Sources */,
@@ -592,6 +599,7 @@
 				DA2C38C01D308D5900977D50 /* DStepsModel.xcdatamodeld in Sources */,
 				DAB344351D2AAE7C00406CEE /* MOnboarding.swift in Sources */,
 				DAA005561D2F509E004B57FA /* MHealthMainDelegate.swift in Sources */,
+				DA2C38C81D308EA100977D50 /* DStepsHike+CoreDataProperties.swift in Sources */,
 				DACE5CBB1D26CAC200080E5F /* CMainController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
