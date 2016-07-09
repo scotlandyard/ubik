@@ -29,7 +29,6 @@ class MHealth
     {
         let calendar:NSCalendar = NSCalendar.currentCalendar()
         let calendarUnits:NSCalendarUnit = [NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day]
-        let managerSteps:DManagerModelSteps = DManager.sharedInstance.managerSteps
         var hike:DStepsHike?
         
         for sample:HKQuantitySample in samples
@@ -54,7 +53,7 @@ class MHealth
             
             if hike == nil
             {
-                hike = managerSteps.createManagedObject(managerSteps.kEntity_Hike) as? DStepsHike
+                hike = MHike.sharedInstance.newHike()
                 hike!.record(timestamp, amount:count)
             }
         }
