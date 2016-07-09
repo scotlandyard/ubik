@@ -3,9 +3,8 @@
     <entity name="Hike" representedClassName="DStepsHike" syncable="YES">
         <attribute name="amount" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="day" attributeType="Date" syncable="YES"/>
-        <attribute name="milestone" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Hike" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="Hike" positionX="-63" positionY="-18" width="128" height="75"/>
     </elements>
 </model>

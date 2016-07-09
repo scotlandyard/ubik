@@ -3,7 +3,6 @@ import CoreData
 
 extension DStepsHike
 {
-    @NSManaged var day:NSTimeInterval
-    @NSManaged var amount:Int16
-    @NSManaged var milestone:Bool
+    @NSManaged var amount: Int16
+    @NSManaged var day: NSTimeInterval
 }
