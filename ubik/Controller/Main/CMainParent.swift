@@ -15,13 +15,13 @@ class CMainParent:UIViewController
         super.init(nibName:nil, bundle:nil)
         controllerRect = CGRectMake(0, kBarHeight, view.bounds.maxX, view.bounds.maxY - kBarHeight)
         
-        if MConfiguration.sharedInstance.onboarding
+        if MConfiguration.sharedInstance.experience.onboardingDone
         {
-            startOnboarding()
+            startSummary()
         }
         else
         {
-            startSummary()
+            startOnboarding()
         }
     }
     

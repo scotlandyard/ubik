@@ -25,7 +25,7 @@ class MHealthMain
     
     //MARK: private
     
-    private func storeSteps(samples:[HKQuantitySample], delegate:MHealthMainDelegate?)
+    private func storeSteps(samples:[HKQuantitySample], yesterday:NSTimeInterval, delegate:MHealthMainDelegate?)
     {
         let calendar:NSCalendar = NSCalendar.currentCalendar()
         let calendarUnits:NSCalendarUnit = [NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day]
@@ -60,6 +60,7 @@ class MHealthMain
         }
         
         DManager.sharedInstance.managerSteps.saveContext()
+        MConfiguration.sharedInstance.updateLastHike(yesterday)
         delegate?.healthStepsSaved()
     }
     
@@ -84,6 +85,7 @@ class MHealthMain
         let calendar:NSCalendar = NSCalendar.currentCalendar()
         let yesterday:NSDate = calendar.dateByAddingComponents(dateComponents, toDate:now, options:NSCalendarOptions(rawValue:0))!
         let predicate:NSPredicate = HKQuery.predicateForSamplesWithStartDate(nil, endDate:yesterday, options:HKQueryOptions.StrictEndDate)
+        let yesterdayTimestamp:NSTimeInterval = yesterday.timeIntervalSince1970
         
         let sampleQuery:HKSampleQuery = HKSampleQuery(
             sampleType:stepsType,
@@ -96,7 +98,7 @@ class MHealthMain
             
             if error == nil && resultsQuantity != nil
             {
-                self?.storeSteps(resultsQuantity!, delegate:delegate)
+                self?.storeSteps(resultsQuantity!, yesterday:yesterdayTimestamp, delegate:delegate)
             }
             else
             {

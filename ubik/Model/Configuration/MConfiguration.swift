@@ -3,31 +3,42 @@ import Foundation
 class MConfiguration
 {
     static let sharedInstance = MConfiguration()
-    let onboarding:Bool
+    private(set) var experience:DSessionExperience
     private let kAppVersionName:String = "CFBundleShortVersionString"
     
     private init()
     {
         let currentVersion:String = NSBundle.mainBundle().objectForInfoDictionaryKey(kAppVersionName) as! String
         let managerSession:DManagerModelSession = DManager.sharedInstance.managerSession
-        var experience:DSessionExperience? = managerSession.fetchLastManagedObject(managerSession.kEntity_Experience) as? DSessionExperience
+        var tryExperience:DSessionExperience? = managerSession.fetchLastManagedObject(managerSession.kEntity_Experience) as? DSessionExperience
         
-        if experience == nil
+        if tryExperience == nil
         {
-            experience = managerSession.createManagedObject(managerSession.kEntity_Experience) as? DSessionExperience
+            tryExperience = managerSession.createManagedObject(managerSession.kEntity_Experience) as? DSessionExperience
         }
         
-        onboarding = !experience!.onboardingDone
-        experience!.version = currentVersion
+        tryExperience!.version = currentVersion
+        experience = tryExperience!
+    }
+    
+    //MARK: private
+    
+    private func saveSession()
+    {
+        DManager.sharedInstance.managerSession.saveContext()
     }
     
     //MARK: public
     
     func onboardingDone()
     {
-        let managerSession:DManagerModelSession = DManager.sharedInstance.managerSession
-        let experience:DSessionExperience! = managerSession.fetchLastManagedObject(managerSession.kEntity_Experience) as! DSessionExperience
         experience.onboardingDone = true
-        managerSession.saveContext()
+        saveSession()
+    }
+    
+    func updateLastHike(lastHike:NSTimeInterval)
+    {
+        experience.lastHike = lastHike
+        saveSession()
     }
 }
