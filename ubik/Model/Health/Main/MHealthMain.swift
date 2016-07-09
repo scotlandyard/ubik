@@ -5,29 +5,40 @@ class MHealthMain
 {
     static let sharedInstance = MHealthMain()
     let healthStore:HKHealthStore?
-    let stepsType:HKQuantityType?
+    let stepsType:HKQuantityType
+    let stepsUnit:HKUnit
     
     private init()
     {
         if HKHealthStore.isHealthDataAvailable()
         {
             healthStore = HKHealthStore()
-            stepsType = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierStepCount)
         }
         else
         {
             healthStore = nil
-            stepsType = nil
         }
+        
+        stepsType = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierStepCount)!
+        stepsUnit = HKUnit.countUnit()
     }
     
     //MARK: private
     
-    private func storeSteps(samples:[HKSample], delegate:MHealthMainDelegate?)
+    private func storeSteps(samples:[HKQuantitySample], delegate:MHealthMainDelegate?)
     {
-        for sample:HKSample in samples
+        let calendar:NSCalendar = NSCalendar.currentCalendar()
+        let calendarUnits:NSCalendarUnit = [NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day]
+        
+        for sample:HKQuantitySample in samples
         {
+            let count:Double = sample.quantity.doubleValueForUnit(stepsUnit)
+            let date:NSDate = sample.startDate
+            let components:NSDateComponents = calendar.components(calendarUnits, fromDate:date)
+            let normalizedDate:NSDate = calendar.dateFromComponents(components)!
+            let timestamp:NSTimeInterval = normalizedDate.timeIntervalSince1970
             
+            print(timestamp)
         }
         
         delegate?.healthStepsSaved()
@@ -37,7 +48,7 @@ class MHealthMain
     
     func askAuthorization(delegate:MHealthMainDelegate?)
     {
-        let readTypes:Set<HKObjectType> = Set(arrayLiteral:stepsType!)
+        let readTypes:Set<HKObjectType> = Set(arrayLiteral:stepsType)
         
         healthStore!.requestAuthorizationToShareTypes(nil, readTypes:readTypes)
         { (done, error) in
@@ -51,20 +62,22 @@ class MHealthMain
         let now:NSDate = NSDate()
         let dateComponents:NSDateComponents = NSDateComponents()
         dateComponents.day = -1
-        let calendar:NSCalendar = NSCalendar(identifier:NSCalendarIdentifierGregorian)!
+        let calendar:NSCalendar = NSCalendar.currentCalendar()
         let yesterday:NSDate = calendar.dateByAddingComponents(dateComponents, toDate:now, options:NSCalendarOptions(rawValue:0))!
         let predicate:NSPredicate = HKQuery.predicateForSamplesWithStartDate(nil, endDate:yesterday, options:HKQueryOptions.StrictEndDate)
         
         let sampleQuery:HKSampleQuery = HKSampleQuery(
-            sampleType:stepsType!,
+            sampleType:stepsType,
             predicate:predicate,
             limit:0,
             sortDescriptors:nil)
         { [weak self] (query, results, error) in
             
-            if error == nil && results != nil
+            let resultsQuantity:[HKQuantitySample]? = results as? [HKQuantitySample]
+            
+            if error == nil && resultsQuantity != nil
             {
-                self?.storeSteps(results!, delegate:delegate)
+                self?.storeSteps(resultsQuantity!, delegate:delegate)
             }
             else
             {

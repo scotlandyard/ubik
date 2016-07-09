@@ -89,7 +89,7 @@ class VOnboardingItemLoading:UIView
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:[label]-0-[spinner(80)]",
+            "V:[label]-0-[spinner(60)]",
             options:[],
             metrics:metrics,
             views:views))
