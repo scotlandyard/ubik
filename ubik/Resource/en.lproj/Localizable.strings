@@ -8,3 +8,5 @@
 "VOnboardingItemLoading_buttonPrevious"="Back";
 "VOnboardingItemReady_label"="ubik is ready";
 "VOnboardingItemReady_button"="Enter";
+
+"MHealthMain_stepsError"="Error loading HealthKit info";

@@ -25,6 +25,12 @@ class COnboardingItemPermission:COnboardingItem, MHealthMainDelegate
     
     func healthAuthorizationAsked()
     {
-        onboarding.next()
+        dispatch_async(dispatch_get_main_queue())
+        {
+            self.onboarding.next()
+        }
     }
+    
+    func healthStepsSaved() {}
+    func healthStepsError(error:String){}
 }

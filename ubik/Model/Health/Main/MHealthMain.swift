@@ -23,32 +23,14 @@ class MHealthMain
     
     //MARK: private
     
-    private func querySteps()
+    private func storeSteps(samples:[HKSample], delegate:MHealthMainDelegate?)
     {
-        let sampleQuery:HKSampleQuery = HKSampleQuery(
-            sampleType:stepsType!,
-            predicate:nil,
-            limit:10,
-            sortDescriptors:nil)
-        { [unowned self] (query, results, error) in
+        for sample:HKSample in samples
+        {
             
-            if error != nil
-            {
-                print("error \(error)")
-            }
-            else
-            {
-                if results != nil
-                {
-                    for result in results!
-                    {
-                        print(result)
-                    }
-                }
-            }
         }
         
-        healthStore!.executeQuery(sampleQuery)
+        delegate?.healthStepsSaved()
     }
     
     //MARK: public
@@ -62,6 +44,42 @@ class MHealthMain
             
             delegate?.healthAuthorizationAsked()
         }
+    }
+    
+    func loadStepsHistory(delegate:MHealthMainDelegate?)
+    {
+        let now:NSDate = NSDate()
+        let dateComponents:NSDateComponents = NSDateComponents()
+        dateComponents.day = -1
+        let calendar:NSCalendar = NSCalendar(identifier:NSCalendarIdentifierGregorian)!
+        let yesterday:NSDate = calendar.dateByAddingComponents(dateComponents, toDate:now, options:NSCalendarOptions(rawValue:0))!
+        let predicate:NSPredicate = HKQuery.predicateForSamplesWithStartDate(nil, endDate:yesterday, options:HKQueryOptions.StrictEndDate)
+        
+        let sampleQuery:HKSampleQuery = HKSampleQuery(
+            sampleType:stepsType!,
+            predicate:predicate,
+            limit:0,
+            sortDescriptors:nil)
+        { [weak self] (query, results, error) in
+            
+            if error == nil && results != nil
+            {
+                self?.storeSteps(results!, delegate:delegate)
+            }
+            else
+            {
+                var errorString:String? = error?.localizedDescription
+                
+                if errorString == nil
+                {
+                    errorString = NSLocalizedString("MHealthMain_stepsError", comment:"")
+                }
+                
+                delegate?.healthStepsError(errorString!)
+            }
+        }
+        
+        healthStore!.executeQuery(sampleQuery)
     }
     
     func currentSteps()
