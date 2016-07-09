@@ -6,4 +6,16 @@ class COnboardingItemReady:COnboardingItem
     {
         view = VOnboardingItemReady(controller:self)
     }
+    
+    //MARK: public
+    
+    func onboardingDone()
+    {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0))
+        {
+            MConfiguration.sharedInstance.onboardingDone()
+        }
+        
+        onboarding.next()
+    }
 }

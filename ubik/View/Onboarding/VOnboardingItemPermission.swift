@@ -29,7 +29,7 @@ class VOnboardingItemPermission:UIView
         buttonNext.setTitle(NSLocalizedString("VOnboardingItemPermission_buttonNext", comment:""), forState:UIControlState.Normal)
         buttonNext.titleLabel?.font = UIFont.bold(18)
         buttonNext.translatesAutoresizingMaskIntoConstraints = false
-        buttonNext.addTarget(self, action:#selector(self.actionNext(sender:)), forControlEvents:UIControlEvents.TouchUpInside)
+        buttonNext.addTarget(self, action:#selector(self.actionAskPermission(sender:)), forControlEvents:UIControlEvents.TouchUpInside)
         
         let buttonPrevious:UIButton = UIButton()
         buttonPrevious.setTitleColor(UIColor(white:0.7, alpha:1), forState:UIControlState.Normal)
@@ -96,7 +96,7 @@ class VOnboardingItemPermission:UIView
     
     //MARK: actions
     
-    func actionNext(sender button:UIButton)
+    func actionAskPermission(sender button:UIButton)
     {
         controller.askPermission()
     }

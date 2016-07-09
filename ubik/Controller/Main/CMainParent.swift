@@ -14,9 +14,8 @@ class CMainParent:UIViewController
         
         super.init(nibName:nil, bundle:nil)
         controllerRect = CGRectMake(0, kBarHeight, view.bounds.maxX, view.bounds.maxY - kBarHeight)
-        let configuration:MConfiguration = MConfiguration()
         
-        if configuration.onboarding
+        if MConfiguration.sharedInstance.onboarding
         {
             startOnboarding()
         }

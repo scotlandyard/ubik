@@ -3,11 +3,7 @@ import UIKit
 class VOnboardingItemLoading:UIView
 {
     weak var controller:COnboardingItemLoading!
-    weak var layoutButtonsLeft:NSLayoutConstraint!
     weak var spinner:VMainLoader!
-    weak var buttonNext:UIButton!
-    weak var buttonPrevious:UIButton!
-    private let kButtonWidth:CGFloat = 100
     
     convenience init(controller:COnboardingItemLoading)
     {
@@ -29,39 +25,14 @@ class VOnboardingItemLoading:UIView
         let spinner:VMainLoader = VMainLoader()
         self.spinner = spinner
         
-        let buttonNext:UIButton = UIButton()
-        buttonNext.setTitleColor(UIColor.main(), forState:UIControlState.Normal)
-        buttonNext.setTitleColor(UIColor.main().colorWithAlphaComponent(0.2), forState:UIControlState.Highlighted)
-        buttonNext.setTitle(NSLocalizedString("VOnboardingItemLoading_buttonNext", comment:""), forState:UIControlState.Normal)
-        buttonNext.titleLabel?.font = UIFont.bold(18)
-        buttonNext.translatesAutoresizingMaskIntoConstraints = false
-        buttonNext.addTarget(self, action:#selector(self.actionNext(sender:)), forControlEvents:UIControlEvents.TouchUpInside)
-        buttonNext.hidden = true
-        self.buttonNext = buttonNext
-        
-        let buttonPrevious:UIButton = UIButton()
-        buttonPrevious.setTitleColor(UIColor(white:0.7, alpha:1), forState:UIControlState.Normal)
-        buttonPrevious.setTitleColor(UIColor.complement(), forState:UIControlState.Highlighted)
-        buttonPrevious.setTitle(NSLocalizedString("VOnboardingItemLoading_buttonPrevious", comment:""), forState:UIControlState.Normal)
-        buttonPrevious.titleLabel?.font = UIFont.bold(18)
-        buttonPrevious.translatesAutoresizingMaskIntoConstraints = false
-        buttonPrevious.addTarget(self, action:#selector(self.actionPrevious(sender:)), forControlEvents:UIControlEvents.TouchUpInside)
-        buttonPrevious.hidden = true
-        self.buttonPrevious = buttonPrevious
-        
         addSubview(label)
         addSubview(spinner)
-        addSubview(buttonNext)
-        addSubview(buttonPrevious)
         
         let views:[String:AnyObject] = [
             "label":label,
-            "buttonNext":buttonNext,
-            "buttonPrevious":buttonPrevious,
             "spinner":spinner]
         
-        let metrics:[String:AnyObject] = [
-            "buttonWidth":kButtonWidth]
+        let metrics:[String:AnyObject] = [:]
         
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "H:|-40-[label]-40-|",
@@ -69,17 +40,7 @@ class VOnboardingItemLoading:UIView
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:[buttonPrevious(buttonWidth)]-0-[buttonNext(buttonWidth)]",
-            options:[],
-            metrics:metrics,
-            views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-250-[label(100)]-0-[buttonNext(60)]",
-            options:[],
-            metrics:metrics,
-            views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:[label]-0-[buttonPrevious(60)]",
+            "V:|-250-[label(100)]-0-[spinner(60)]",
             options:[],
             metrics:metrics,
             views:views))
@@ -88,43 +49,5 @@ class VOnboardingItemLoading:UIView
             options:[],
             metrics:metrics,
             views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:[label]-0-[spinner(60)]",
-            options:[],
-            metrics:metrics,
-            views:views))
-        
-        layoutButtonsLeft = NSLayoutConstraint(
-            item:buttonPrevious,
-            attribute:NSLayoutAttribute.Left,
-            relatedBy:NSLayoutRelation.Equal,
-            toItem:self,
-            attribute:NSLayoutAttribute.Left,
-            multiplier:1,
-            constant:0)
-        
-        addConstraint(layoutButtonsLeft)
-    }
-    
-    override func layoutSubviews()
-    {
-        let width:CGFloat = bounds.maxX
-        let buttonsWidth:CGFloat = kButtonWidth + kButtonWidth
-        let remain:CGFloat = width - buttonsWidth
-        let margin:CGFloat = remain / 2.0
-        
-        layoutButtonsLeft.constant = margin
-    }
-    
-    //MARK: actions
-    
-    func actionNext(sender button:UIButton)
-    {
-        controller.onboarding.next()
-    }
-    
-    func actionPrevious(sender button:UIButton)
-    {
-        controller.onboarding.previous()
     }
 }
