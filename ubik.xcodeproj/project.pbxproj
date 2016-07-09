@@ -49,6 +49,7 @@
 		DAB8F6BA1D31BFE900236A00 /* MHealth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8F6B81D31BFE900236A00 /* MHealth.swift */; };
 		DAB8F6BB1D31BFE900236A00 /* MHealthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8F6B91D31BFE900236A00 /* MHealthDelegate.swift */; };
 		DAB8F6BE1D31C0F600236A00 /* MHike.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8F6BD1D31C0F600236A00 /* MHike.swift */; };
+		DAB8F6C11D31C4A000236A00 /* MSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8F6C01D31C4A000236A00 /* MSummary.swift */; };
 		DACE5CB61D26C93D00080E5F /* CSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CB51D26C93D00080E5F /* CSummary.swift */; };
 		DACE5CB91D26CA0800080E5F /* VSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CB81D26CA0800080E5F /* VSummary.swift */; };
 		DACE5CBB1D26CAC200080E5F /* CMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CBA1D26CAC200080E5F /* CMainController.swift */; };
@@ -121,6 +122,7 @@
 		DAB8F6B81D31BFE900236A00 /* MHealth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealth.swift; sourceTree = "<group>"; };
 		DAB8F6B91D31BFE900236A00 /* MHealthDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealthDelegate.swift; sourceTree = "<group>"; };
 		DAB8F6BD1D31C0F600236A00 /* MHike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHike.swift; sourceTree = "<group>"; };
+		DAB8F6C01D31C4A000236A00 /* MSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSummary.swift; sourceTree = "<group>"; };
 		DACE5CB51D26C93D00080E5F /* CSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSummary.swift; sourceTree = "<group>"; };
 		DACE5CB81D26CA0800080E5F /* VSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSummary.swift; sourceTree = "<group>"; };
 		DACE5CBA1D26CAC200080E5F /* CMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMainController.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 		DA906DEC1D22F9490095B270 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DAB8F6BF1D31C49000236A00 /* Summary */,
 				DAB8F6BC1D31C0EB00236A00 /* Hike */,
 				DAB344331D2AAE7200406CEE /* Onboarding */,
 				DAA678591D2A23C600DDD9CC /* Configuration */,
@@ -386,6 +389,14 @@
 				DAB8F6BD1D31C0F600236A00 /* MHike.swift */,
 			);
 			path = Hike;
+			sourceTree = "<group>";
+		};
+		DAB8F6BF1D31C49000236A00 /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				DAB8F6C01D31C4A000236A00 /* MSummary.swift */,
+			);
+			path = Summary;
 			sourceTree = "<group>";
 		};
 		DACE5CB41D26C93300080E5F /* Summary */ = {
@@ -566,6 +577,7 @@
 				DACE5CC41D26E44E00080E5F /* MComponentGyro.swift in Sources */,
 				DAB8F6BA1D31BFE900236A00 /* MHealth.swift in Sources */,
 				DAB344321D2AA48000406CEE /* COnboarding.swift in Sources */,
+				DAB8F6C11D31C4A000236A00 /* MSummary.swift in Sources */,
 				DAA6785B1D2A23DF00DDD9CC /* MConfiguration.swift in Sources */,
 				DAA005501D2F42DA004B57FA /* VOnboardingItemPermission.swift in Sources */,
 				DAB8F6BE1D31C0F600236A00 /* MHike.swift in Sources */,
