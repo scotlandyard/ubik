@@ -39,9 +39,7 @@ class MHealthMain
             let normalizedDate:NSDate = calendar.dateFromComponents(components)!
             let timestamp:NSTimeInterval = normalizedDate.timeIntervalSince1970
             let hike:DStepsHike = managerSteps.createManagedObject(managerSteps.kEntity_Hike) as! DStepsHike
-            hike.day = timestamp
-            hike.amount = count
-            hike.milestone = false
+            hike.record(timestamp, amount:count)
         }
         
         DManager.sharedInstance.managerSteps.saveContext()
