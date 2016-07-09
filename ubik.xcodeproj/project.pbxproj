@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DA2C38BD1D30619800977D50 /* VMainLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C38BC1D30619800977D50 /* VMainLoader.swift */; };
+		DA2C38C01D308D5900977D50 /* DStepsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA2C38BE1D308D5900977D50 /* DStepsModel.xcdatamodeld */; };
 		DA906DF41D22F9490095B270 /* CMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA906DE71D22F9490095B270 /* CMain.swift */; };
 		DA906DF71D22F9490095B270 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA906DEE1D22F9490095B270 /* LaunchScreen.storyboard */; };
 		DA906DFB1D22FC700095B270 /* CMainParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA906DFA1D22FC700095B270 /* CMainParent.swift */; };
@@ -70,6 +71,7 @@
 
 /* Begin PBXFileReference section */
 		DA2C38BC1D30619800977D50 /* VMainLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainLoader.swift; sourceTree = "<group>"; };
+		DA2C38BF1D308D5900977D50 /* DStepsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DStepsModel.xcdatamodel; sourceTree = "<group>"; };
 		DA906DBE1D22F4AE0095B270 /* ubik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ubik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA906DD51D22F4AF0095B270 /* tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA906DE71D22F9490095B270 /* CMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMain.swift; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				DAA678671D2A261F00DDD9CC /* DSessionModel.xcdatamodeld */,
+				DA2C38BE1D308D5900977D50 /* DStepsModel.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -586,6 +589,7 @@
 				DAB3443F1D2AB10800406CEE /* MOnboardingItemReady.swift in Sources */,
 				DAAF3C8F1D2C89C600BBBD40 /* COnboardingItem.swift in Sources */,
 				DAA0054C1D2F426F004B57FA /* COnboardingItemReady.swift in Sources */,
+				DA2C38C01D308D5900977D50 /* DStepsModel.xcdatamodeld in Sources */,
 				DAB344351D2AAE7C00406CEE /* MOnboarding.swift in Sources */,
 				DAA005561D2F509E004B57FA /* MHealthMainDelegate.swift in Sources */,
 				DACE5CBB1D26CAC200080E5F /* CMainController.swift in Sources */,
@@ -798,6 +802,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		DA2C38BE1D308D5900977D50 /* DStepsModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DA2C38BF1D308D5900977D50 /* DStepsModel.xcdatamodel */,
+			);
+			currentVersion = DA2C38BF1D308D5900977D50 /* DStepsModel.xcdatamodel */;
+			path = DStepsModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		DAA678671D2A261F00DDD9CC /* DSessionModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
