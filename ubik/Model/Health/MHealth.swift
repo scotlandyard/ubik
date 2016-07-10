@@ -25,7 +25,7 @@ class MHealth
     
     //MARK: private
     
-    private func storeSteps(samples:[HKQuantitySample], yesterday:NSTimeInterval, delegate:MHealthStepsDelegate)
+    private func storeSteps(samples:[HKQuantitySample], yesterday:NSTimeInterval, delegate:MHealthStepsDelegate?)
     {
         let calendar:NSCalendar = NSCalendar.currentCalendar()
         let calendarUnits:NSCalendarUnit = [NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day]
@@ -59,7 +59,7 @@ class MHealth
         }
         
         MConfiguration.sharedInstance.updateLastHike(yesterday)
-        delegate.healthStepsSaved()
+        delegate?.healthStepsSaved()
     }
     
     //MARK: public
@@ -116,12 +116,15 @@ class MHealth
     
     func loadStepsRemaining(delegate:MHealthTodayDelegate)
     {
+        let lastTimestamp:NSTimeInterval = MConfiguration.sharedInstance.experience.lastHike
+        let lastLoadedDate:NSDate = NSDate(timeIntervalSince1970:lastTimestamp)
         let now:NSDate = NSDate()
         let calendar:NSCalendar = NSCalendar.currentCalendar()
         let calendarUnits:NSCalendarUnit = [NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day]
         let components:NSDateComponents = calendar.components(calendarUnits, fromDate:now)
         let today:NSDate = calendar.dateFromComponents(components)!
-        let predicate:NSPredicate = HKQuery.predicateForSamplesWithStartDate(today, endDate:nil, options:HKQueryOptions.StrictStartDate)
+        let predicate:NSPredicate = HKQuery.predicateForSamplesWithStartDate(lastLoadedDate, endDate:nil, options:HKQueryOptions.StrictStartDate)
+        let todayTimestamp:NSTimeInterval = today.timeIntervalSince1970
         
         let sampleQuery:HKSampleQuery = HKSampleQuery(
             sampleType:stepsType,
@@ -134,56 +137,32 @@ class MHealth
             
             if error == nil && resultsQuantity != nil
             {
-                var count:Int32 = 0
+                var countToday:Int32 = 0
+                var history:[HKQuantitySample] = []
                 
                 for result:HKQuantitySample in resultsQuantity!
                 {
-                    let amount:Int32 = Int32(result.quantity.doubleValueForUnit(self.stepsUnit))
-                    count += amount
-                    print("\(result.startDate):\(amount)")
+                    let date:NSDate = result.startDate
+                    let components:NSDateComponents = calendar.components(calendarUnits, fromDate:date)
+                    let normalizedDate:NSDate = calendar.dateFromComponents(components)!
+                    let timestamp:NSTimeInterval = normalizedDate.timeIntervalSince1970
+                    
+                    if timestamp < todayTimestamp
+                    {
+                        history.append(result)
+                        
+                        let amount:Int32 = Int32(result.quantity.doubleValueForUnit(self.stepsUnit))
+                        print("\(date):\(amount)")
+                    }
+                    else
+                    {
+                        let amount:Int32 = Int32(result.quantity.doubleValueForUnit(self.stepsUnit))
+                        countToday += amount
+                        print("\(date):\(amount)")
+                    }
                 }
                 
-                delegate.healthTodaySteps(count)
-            }
-            else
-            {
-                delegate.healthTodaySteps(0)
-            }
-        }
-        
-        healthStore!.executeQuery(sampleQuery)
-    }
-    
-    func loadStepsToday(delegate:MHealthTodayDelegate)
-    {
-        let now:NSDate = NSDate()
-        let calendar:NSCalendar = NSCalendar.currentCalendar()
-        let calendarUnits:NSCalendarUnit = [NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day]
-        let components:NSDateComponents = calendar.components(calendarUnits, fromDate:now)
-        let today:NSDate = calendar.dateFromComponents(components)!
-        let predicate:NSPredicate = HKQuery.predicateForSamplesWithStartDate(today, endDate:nil, options:HKQueryOptions.StrictStartDate)
-        
-        let sampleQuery:HKSampleQuery = HKSampleQuery(
-            sampleType:stepsType,
-            predicate:predicate,
-            limit:0,
-            sortDescriptors:nil)
-        { (query, results, error) in
-            
-            let resultsQuantity:[HKQuantitySample]? = results as? [HKQuantitySample]
-            
-            if error == nil && resultsQuantity != nil
-            {
-                var count:Int32 = 0
-                
-                for result:HKQuantitySample in resultsQuantity!
-                {
-                    let amount:Int32 = Int32(result.quantity.doubleValueForUnit(self.stepsUnit))
-                    count += amount
-                    print("\(result.startDate):\(amount)")
-                }
-                
-                delegate.healthTodaySteps(count)
+                delegate.healthTodaySteps(countToday)
             }
             else
             {
