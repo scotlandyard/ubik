@@ -25,7 +25,7 @@ class MHealth
     
     //MARK: private
     
-    private func storeSteps(samples:[HKQuantitySample], yesterday:NSTimeInterval, delegate:MHealthStepsDelegate?)
+    private func storeSteps(samples:[HKQuantitySample], lastHike:NSTimeInterval, delegate:MHealthStepsDelegate?)
     {
         let calendar:NSCalendar = NSCalendar.currentCalendar()
         let calendarUnits:NSCalendarUnit = [NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day]
@@ -58,7 +58,7 @@ class MHealth
             }
         }
         
-        MConfiguration.sharedInstance.updateLastHike(yesterday)
+        MConfiguration.sharedInstance.updateLastHike(lastHike)
         delegate?.healthStepsSaved()
     }
     
@@ -77,13 +77,9 @@ class MHealth
     
     func loadStepsHistory(delegate:MHealthStepsDelegate)
     {
-        let now:NSDate = NSDate()
-        let calendar:NSCalendar = NSCalendar.currentCalendar()
-        let calendarUnits:NSCalendarUnit = [NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day]
-        let components:NSDateComponents = calendar.components(calendarUnits, fromDate:now)
-        let today:NSDate = calendar.dateFromComponents(components)!
+        let today:NSDate = NSDate().beginningOfDay()
         let predicate:NSPredicate = HKQuery.predicateForSamplesWithStartDate(nil, endDate:today, options:HKQueryOptions.StrictStartDate)
-        let yesterdayTimestamp:NSTimeInterval = today.timeIntervalSince1970
+        let todayTimestamp:NSTimeInterval = today.timeIntervalSince1970
         
         let sampleQuery:HKSampleQuery = HKSampleQuery(
             sampleType:stepsType,
@@ -96,7 +92,7 @@ class MHealth
             
             if error == nil && resultsQuantity != nil
             {
-                self.storeSteps(resultsQuantity!, yesterday:yesterdayTimestamp, delegate:delegate)
+                self.storeSteps(resultsQuantity!, lastHike:todayTimestamp, delegate:delegate)
             }
             else
             {
@@ -118,17 +114,7 @@ class MHealth
     {
         let lastTimestamp:NSTimeInterval = MConfiguration.sharedInstance.experience.lastHike
         let lastLoadedDate:NSDate = NSDate(timeIntervalSince1970:lastTimestamp)
-        
-        
-        
-        let now:NSDate = NSDate()
-        let calendar:NSCalendar = NSCalendar.currentCalendar()
-        let calendarUnits:NSCalendarUnit = [NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day]
-        let components:NSDateComponents = calendar.components(calendarUnits, fromDate:now)
-        let today:NSDate = calendar.dateFromComponents(components)!
-        
-        
-        
+        let today:NSDate = NSDate().beginningOfDay()
         let predicate:NSPredicate = HKQuery.predicateForSamplesWithStartDate(lastLoadedDate, endDate:nil, options:HKQueryOptions.StrictStartDate)
         let todayTimestamp:NSTimeInterval = today.timeIntervalSince1970
         
@@ -162,7 +148,7 @@ class MHealth
                     }
                 }
                 
-                self.storeSteps(history, yesterday:todayTimestamp, delegate:nil)
+                self.storeSteps(history, lastHike:todayTimestamp, delegate:nil)
                 delegate.healthTodaySteps(countToday)
             }
             else
