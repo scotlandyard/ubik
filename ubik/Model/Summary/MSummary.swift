@@ -2,14 +2,21 @@ import Foundation
 
 class MSummary
 {
-    let history:[DStepsHike]
-    let max:DStepsHike?
+    var history:[DStepsHike]
+    var max:DStepsHike?
     var today:Int32
     
     init()
     {
-        history = MHike.sharedInstance.fetchHistory()
+        history = []
         today = 0
+    }
+    
+    //MARK: public
+    
+    func loadHistory()
+    {
+        history = MHike.sharedInstance.fetchHistory()
         var max:DStepsHike?
         
         for hike in history

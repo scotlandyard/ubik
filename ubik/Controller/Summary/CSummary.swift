@@ -1,6 +1,6 @@
 import UIKit
 
-class CSummary:CMainController
+class CSummary:CMainController, MHealthTodayDelegate
 {
     weak var vSummary:VSummary!
     let model:MSummary
@@ -16,11 +16,19 @@ class CSummary:CMainController
         fatalError()
     }
     
-    override func viewDidAppear(animated:Bool)
+    override func viewDidLoad()
     {
-        super.viewDidAppear(animated)
+        super.viewDidLoad()
         
-        vSummary.update(100, maxValue:380)
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0))
+        { [weak self] in
+            
+            if self != nil
+            {
+                self!.model.loadHistory()
+                MHealth.sharedInstance.loadStepsToday(self!)
+            }
+        }
     }
     
     override func loadView()
@@ -28,5 +36,28 @@ class CSummary:CMainController
         let vSummary:VSummary = VSummary(controller:self)
         self.vSummary = vSummary
         view = vSummary
+    }
+    
+    //MARK: functionality
+    
+    func reload()
+    {
+        if model.max != nil
+        {
+            vSummary.update(model.today, maxValue:model.max!.amount)
+        }
+    }
+    
+    //MARK: health del
+    
+    func healthTodaySteps(steps:Int32)
+    {
+        model.today = steps
+        
+        dispatch_async(dispatch_get_main_queue())
+        { [weak self] in
+            
+            self?.reload()
+        }
     }
 }
