@@ -1,8 +1,7 @@
 import Foundation
 
-protocol MHealthDelegate
+protocol MHealthStepsDelegate
 {
-    func healthAuthorizationAsked()
     func healthStepsSaved()
     func healthStepsError(error:String)
 }

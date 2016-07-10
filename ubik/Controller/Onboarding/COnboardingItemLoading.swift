@@ -49,6 +49,4 @@ class COnboardingItemLoading:COnboardingItem, MHealthDelegate
     {
         goNext()
     }
-    
-    func healthAuthorizationAsked(){}
 }

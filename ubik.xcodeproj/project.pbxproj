@@ -12,6 +12,7 @@
 		DA2C38C71D308EA100977D50 /* DStepsHike.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C38C51D308EA100977D50 /* DStepsHike.swift */; };
 		DA2C38C81D308EA100977D50 /* DStepsHike+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C38C61D308EA100977D50 /* DStepsHike+CoreDataProperties.swift */; };
 		DA2C38CA1D30908A00977D50 /* DManagerModelSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C38C91D30908A00977D50 /* DManagerModelSteps.swift */; };
+		DA55F34B1D31CF3E00BBF21F /* MHealthTodayDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F34A1D31CF3E00BBF21F /* MHealthTodayDelegate.swift */; };
 		DA906DF41D22F9490095B270 /* CMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA906DE71D22F9490095B270 /* CMain.swift */; };
 		DA906DF71D22F9490095B270 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA906DEE1D22F9490095B270 /* LaunchScreen.storyboard */; };
 		DA906DFB1D22FC700095B270 /* CMainParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA906DFA1D22FC700095B270 /* CMainParent.swift */; };
@@ -47,9 +48,10 @@
 		DAB3443D1D2AB0E200406CEE /* MOnboardingItemLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3443C1D2AB0E200406CEE /* MOnboardingItemLoading.swift */; };
 		DAB3443F1D2AB10800406CEE /* MOnboardingItemReady.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3443E1D2AB10800406CEE /* MOnboardingItemReady.swift */; };
 		DAB8F6BA1D31BFE900236A00 /* MHealth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8F6B81D31BFE900236A00 /* MHealth.swift */; };
-		DAB8F6BB1D31BFE900236A00 /* MHealthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8F6B91D31BFE900236A00 /* MHealthDelegate.swift */; };
 		DAB8F6BE1D31C0F600236A00 /* MHike.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8F6BD1D31C0F600236A00 /* MHike.swift */; };
 		DAB8F6C11D31C4A000236A00 /* MSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8F6C01D31C4A000236A00 /* MSummary.swift */; };
+		DAB8F6C31D31CEC100236A00 /* MHealthAuthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8F6C21D31CEC100236A00 /* MHealthAuthDelegate.swift */; };
+		DAB8F6C51D31CED700236A00 /* MHealthStepsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8F6C41D31CED700236A00 /* MHealthStepsDelegate.swift */; };
 		DACE5CB61D26C93D00080E5F /* CSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CB51D26C93D00080E5F /* CSummary.swift */; };
 		DACE5CB91D26CA0800080E5F /* VSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CB81D26CA0800080E5F /* VSummary.swift */; };
 		DACE5CBB1D26CAC200080E5F /* CMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CBA1D26CAC200080E5F /* CMainController.swift */; };
@@ -80,6 +82,7 @@
 		DA2C38C51D308EA100977D50 /* DStepsHike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DStepsHike.swift; sourceTree = "<group>"; };
 		DA2C38C61D308EA100977D50 /* DStepsHike+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DStepsHike+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DA2C38C91D30908A00977D50 /* DManagerModelSteps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManagerModelSteps.swift; sourceTree = "<group>"; };
+		DA55F34A1D31CF3E00BBF21F /* MHealthTodayDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealthTodayDelegate.swift; sourceTree = "<group>"; };
 		DA906DBE1D22F4AE0095B270 /* ubik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ubik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA906DD51D22F4AF0095B270 /* tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA906DE71D22F9490095B270 /* CMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMain.swift; sourceTree = "<group>"; };
@@ -120,9 +123,10 @@
 		DAB3443C1D2AB0E200406CEE /* MOnboardingItemLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOnboardingItemLoading.swift; sourceTree = "<group>"; };
 		DAB3443E1D2AB10800406CEE /* MOnboardingItemReady.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOnboardingItemReady.swift; sourceTree = "<group>"; };
 		DAB8F6B81D31BFE900236A00 /* MHealth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealth.swift; sourceTree = "<group>"; };
-		DAB8F6B91D31BFE900236A00 /* MHealthDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealthDelegate.swift; sourceTree = "<group>"; };
 		DAB8F6BD1D31C0F600236A00 /* MHike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHike.swift; sourceTree = "<group>"; };
 		DAB8F6C01D31C4A000236A00 /* MSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSummary.swift; sourceTree = "<group>"; };
+		DAB8F6C21D31CEC100236A00 /* MHealthAuthDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealthAuthDelegate.swift; sourceTree = "<group>"; };
+		DAB8F6C41D31CED700236A00 /* MHealthStepsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealthStepsDelegate.swift; sourceTree = "<group>"; };
 		DACE5CB51D26C93D00080E5F /* CSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSummary.swift; sourceTree = "<group>"; };
 		DACE5CB81D26CA0800080E5F /* VSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSummary.swift; sourceTree = "<group>"; };
 		DACE5CBA1D26CAC200080E5F /* CMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMainController.swift; sourceTree = "<group>"; };
@@ -275,7 +279,9 @@
 			isa = PBXGroup;
 			children = (
 				DAB8F6B81D31BFE900236A00 /* MHealth.swift */,
-				DAB8F6B91D31BFE900236A00 /* MHealthDelegate.swift */,
+				DAB8F6C21D31CEC100236A00 /* MHealthAuthDelegate.swift */,
+				DAB8F6C41D31CED700236A00 /* MHealthStepsDelegate.swift */,
+				DA55F34A1D31CF3E00BBF21F /* MHealthTodayDelegate.swift */,
 			);
 			path = Health;
 			sourceTree = "<group>";
@@ -565,15 +571,17 @@
 			files = (
 				DAA0054A1D2F3F97004B57FA /* COnboardingItemPermission.swift in Sources */,
 				DACE5CC61D26E52000080E5F /* MComponentGyroSummary.swift in Sources */,
+				DAB8F6C51D31CED700236A00 /* MHealthStepsDelegate.swift in Sources */,
 				DACE5CB91D26CA0800080E5F /* VSummary.swift in Sources */,
 				DAB3443D1D2AB0E200406CEE /* MOnboardingItemLoading.swift in Sources */,
+				DAB8F6C31D31CEC100236A00 /* MHealthAuthDelegate.swift in Sources */,
 				DAD00CF31D270DD600BCDDAA /* VSummaryHeader.swift in Sources */,
 				DAA005481D2F3C54004B57FA /* CategoryUIViewController.swift in Sources */,
 				DA2C38BD1D30619800977D50 /* VMainLoader.swift in Sources */,
-				DAB8F6BB1D31BFE900236A00 /* MHealthDelegate.swift in Sources */,
 				DA2C38C71D308EA100977D50 /* DStepsHike.swift in Sources */,
 				DA906DF41D22F9490095B270 /* CMain.swift in Sources */,
 				DAAF3C8A1D2C838700BBBD40 /* COnboardingItemWelcome.swift in Sources */,
+				DA55F34B1D31CF3E00BBF21F /* MHealthTodayDelegate.swift in Sources */,
 				DACE5CC41D26E44E00080E5F /* MComponentGyro.swift in Sources */,
 				DAB8F6BA1D31BFE900236A00 /* MHealth.swift in Sources */,
 				DAB344321D2AA48000406CEE /* COnboarding.swift in Sources */,

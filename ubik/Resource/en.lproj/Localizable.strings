@@ -4,8 +4,6 @@
 "VOnboardingItemPermission_buttonNext"="Next";
 "VOnboardingItemPermission_buttonPrevious"="Back";
 "VOnboardingItemLoading_label"="Brace yourself while loading your history from HealthKit";
-"VOnboardingItemLoading_buttonNext"="Next";
-"VOnboardingItemLoading_buttonPrevious"="Back";
 "VOnboardingItemReady_label"="ubik is ready";
 "VOnboardingItemReady_button"="Enter";
 

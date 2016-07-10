@@ -30,7 +30,4 @@ class COnboardingItemPermission:COnboardingItem, MHealthDelegate
             self.onboarding.next()
         }
     }
-    
-    func healthStepsSaved() {}
-    func healthStepsError(error:String){}
 }
