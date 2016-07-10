@@ -13,6 +13,7 @@
 		DA2C38C81D308EA100977D50 /* DStepsHike+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C38C61D308EA100977D50 /* DStepsHike+CoreDataProperties.swift */; };
 		DA2C38CA1D30908A00977D50 /* DManagerModelSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C38C91D30908A00977D50 /* DManagerModelSteps.swift */; };
 		DA55F34B1D31CF3E00BBF21F /* MHealthTodayDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F34A1D31CF3E00BBF21F /* MHealthTodayDelegate.swift */; };
+		DA55F34D1D33081D00BBF21F /* CategoryNSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F34C1D33081D00BBF21F /* CategoryNSDate.swift */; };
 		DA906DF41D22F9490095B270 /* CMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA906DE71D22F9490095B270 /* CMain.swift */; };
 		DA906DF71D22F9490095B270 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA906DEE1D22F9490095B270 /* LaunchScreen.storyboard */; };
 		DA906DFB1D22FC700095B270 /* CMainParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA906DFA1D22FC700095B270 /* CMainParent.swift */; };
@@ -83,6 +84,7 @@
 		DA2C38C61D308EA100977D50 /* DStepsHike+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DStepsHike+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DA2C38C91D30908A00977D50 /* DManagerModelSteps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManagerModelSteps.swift; sourceTree = "<group>"; };
 		DA55F34A1D31CF3E00BBF21F /* MHealthTodayDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealthTodayDelegate.swift; sourceTree = "<group>"; };
+		DA55F34C1D33081D00BBF21F /* CategoryNSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSDate.swift; sourceTree = "<group>"; };
 		DA906DBE1D22F4AE0095B270 /* ubik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ubik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA906DD51D22F4AF0095B270 /* tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA906DE71D22F9490095B270 /* CMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMain.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				DACE5CBC1D26D5EF00080E5F /* CategoryUIColor.swift */,
 				DAAF3C901D2CAC6700BBBD40 /* CategoryUIFont.swift */,
 				DAA005471D2F3C54004B57FA /* CategoryUIViewController.swift */,
+				DA55F34C1D33081D00BBF21F /* CategoryNSDate.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -604,6 +607,7 @@
 				DAD00CFC1D2752B600BCDDAA /* VComponentGyroIcon.swift in Sources */,
 				DAD00CF61D27109100BCDDAA /* VMainBar.swift in Sources */,
 				DAB3443B1D2AB0D700406CEE /* MOnboardingItemPermission.swift in Sources */,
+				DA55F34D1D33081D00BBF21F /* CategoryNSDate.swift in Sources */,
 				DACE5CBD1D26D5EF00080E5F /* CategoryUIColor.swift in Sources */,
 				DAA678691D2A261F00DDD9CC /* DSessionModel.xcdatamodeld in Sources */,
 				DA906DFB1D22FC700095B270 /* CMainParent.swift in Sources */,

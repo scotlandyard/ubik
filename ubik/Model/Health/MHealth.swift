@@ -118,11 +118,17 @@ class MHealth
     {
         let lastTimestamp:NSTimeInterval = MConfiguration.sharedInstance.experience.lastHike
         let lastLoadedDate:NSDate = NSDate(timeIntervalSince1970:lastTimestamp)
+        
+        
+        
         let now:NSDate = NSDate()
         let calendar:NSCalendar = NSCalendar.currentCalendar()
         let calendarUnits:NSCalendarUnit = [NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day]
         let components:NSDateComponents = calendar.components(calendarUnits, fromDate:now)
         let today:NSDate = calendar.dateFromComponents(components)!
+        
+        
+        
         let predicate:NSPredicate = HKQuery.predicateForSamplesWithStartDate(lastLoadedDate, endDate:nil, options:HKQueryOptions.StrictStartDate)
         let todayTimestamp:NSTimeInterval = today.timeIntervalSince1970
         
