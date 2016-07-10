@@ -25,7 +25,7 @@ class MHealth
     
     //MARK: private
     
-    private func storeSteps(samples:[HKQuantitySample], yesterday:NSTimeInterval, delegate:MHealthDelegate?)
+    private func storeSteps(samples:[HKQuantitySample], yesterday:NSTimeInterval, delegate:MHealthStepsDelegate)
     {
         let calendar:NSCalendar = NSCalendar.currentCalendar()
         let calendarUnits:NSCalendarUnit = [NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day]
@@ -59,23 +59,23 @@ class MHealth
         }
         
         MConfiguration.sharedInstance.updateLastHike(yesterday)
-        delegate?.healthStepsSaved()
+        delegate.healthStepsSaved()
     }
     
     //MARK: public
     
-    func askAuthorization(delegate:MHealthDelegate?)
+    func askAuthorization(delegate:MHealthAuthDelegate)
     {
         let readTypes:Set<HKObjectType> = Set(arrayLiteral:stepsType)
         
         healthStore!.requestAuthorizationToShareTypes(nil, readTypes:readTypes)
         { (done, error) in
             
-            delegate?.healthAuthorizationAsked()
+            delegate.healthAuthorizationAsked()
         }
     }
     
-    func loadStepsHistory(delegate:MHealthDelegate?)
+    func loadStepsHistory(delegate:MHealthStepsDelegate)
     {
         let now:NSDate = NSDate()
         let dateComponents:NSDateComponents = NSDateComponents()
@@ -107,7 +107,7 @@ class MHealth
                     errorString = NSLocalizedString("MHealthMain_stepsError", comment:"")
                 }
                 
-                delegate?.healthStepsError(errorString!)
+                delegate.healthStepsError(errorString!)
             }
         }
         

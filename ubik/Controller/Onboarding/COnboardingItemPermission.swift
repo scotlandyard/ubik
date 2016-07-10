@@ -1,6 +1,6 @@
 import UIKit
 
-class COnboardingItemPermission:COnboardingItem, MHealthDelegate
+class COnboardingItemPermission:COnboardingItem, MHealthAuthDelegate
 {
     override func loadView()
     {

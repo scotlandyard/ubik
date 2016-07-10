@@ -1,6 +1,6 @@
 import UIKit
 
-class COnboardingItemLoading:COnboardingItem, MHealthDelegate
+class COnboardingItemLoading:COnboardingItem, MHealthStepsDelegate
 {
     private var loading:Bool = false
     
