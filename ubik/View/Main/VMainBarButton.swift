@@ -11,6 +11,13 @@ class VMainBarButton:UIButton
         return button
     }
     
+    class func Config() -> VMainBarButton
+    {
+        let button:VMainBarButton = VMainBarButtonConfig()
+        
+        return button
+    }
+    
     init(image:String, title:String)
     {
         super.init(frame:CGRectZero)

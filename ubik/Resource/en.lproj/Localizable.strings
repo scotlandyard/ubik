@@ -7,5 +7,6 @@
 "VOnboardingItemReady_label"="ubik is ready";
 "VOnboardingItemReady_button"="Enter";
 "VMainBarButtonHistory_title"="History";
+"VMainBarButtonConfig_title"="Settings";
 
 "MHealthMain_stepsError"="Error loading HealthKit info";
