@@ -6,7 +6,9 @@ class VMainBarButtonHistory:VMainBarButton
     
     init()
     {
-        super.init(image:kImageName)
+        let title:String = NSLocalizedString("VMainBarButtonHistory_title", comment:"")
+        
+        super.init(image:kImageName, title:title)
     }
     
     required init?(coder aDecoder: NSCoder)
