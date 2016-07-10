@@ -3,6 +3,18 @@ import UIKit
 class CSummary:CMainController
 {
     weak var vSummary:VSummary!
+    let model:MSummary
+    
+    init()
+    {
+        model = MSummary()
+        super.init(nibName:nil, bundle:nil)
+    }
+    
+    required init?(coder:NSCoder)
+    {
+        fatalError()
+    }
     
     override func viewDidAppear(animated:Bool)
     {

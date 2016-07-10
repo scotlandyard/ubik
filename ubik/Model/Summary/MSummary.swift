@@ -8,8 +8,13 @@ class MSummary
     
     init()
     {
-        history = []
+        history = MHike.sharedInstance.fetchHistory()
         max = DStepsHike()
         today = 0
+        
+        for hike in history
+        {
+            print(hike.date())
+        }
     }
 }

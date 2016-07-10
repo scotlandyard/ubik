@@ -22,4 +22,11 @@ class DStepsHike:NSManagedObject
     {
         amount += steps
     }
+    
+    func date() -> NSDate
+    {
+        let date:NSDate = NSDate(timeIntervalSince1970:day)
+        
+        return date
+    }
 }

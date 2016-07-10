@@ -23,4 +23,13 @@ class MHike
     {
         managerSteps.saveContext()
     }
+    
+    func fetchHistory() -> [DStepsHike]
+    {
+        let sortDay:NSSortDescriptor = NSSortDescriptor(key:managerSteps.kEntity_Hike_Day, ascending:true)
+        let sorters:[NSSortDescriptor] = [sortDay]
+        let history:[DStepsHike] = managerSteps.fetchManagedObjects(managerSteps.kEntity_Hike, sorters:sorters) as! [DStepsHike]
+        
+        return history
+    }
 }

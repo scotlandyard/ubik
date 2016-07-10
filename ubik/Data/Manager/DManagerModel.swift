@@ -50,9 +50,10 @@ class DManagerModel
         return managedObject
     }
     
-    func fetchManagedObjects(entity:String) -> [NSManagedObject]
+    func fetchManagedObjects(entity:String, sorters:[NSSortDescriptor]?) -> [NSManagedObject]
     {
         let fetchRequest:NSFetchRequest = NSFetchRequest(entityName:entity)
+        fetchRequest.sortDescriptors = sorters
         let results:[NSManagedObject]
         
         do
@@ -69,7 +70,7 @@ class DManagerModel
     
     func fetchLastManagedObject(entity:String) -> NSManagedObject?
     {
-        let managedObjects:[NSManagedObject] = fetchManagedObjects(entity)
+        let managedObjects:[NSManagedObject] = fetchManagedObjects(entity, sorters:nil)
         
         return managedObjects.last
     }
