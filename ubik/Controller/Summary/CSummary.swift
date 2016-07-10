@@ -54,10 +54,16 @@ class CSummary:CMainController, MHealthTodayDelegate
     {
         model.today = steps
         
-        dispatch_async(dispatch_get_main_queue())
-        { [weak self] in
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0))
+        {
+            MConfiguration.sharedInstance.saveSession()
+            MHike.sharedInstance.saveSession()
             
-            self?.reload()
+            dispatch_async(dispatch_get_main_queue())
+            { [weak self] in
+                
+                self?.reload()
+            }
         }
     }
 }

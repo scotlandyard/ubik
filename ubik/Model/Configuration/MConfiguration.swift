@@ -22,14 +22,12 @@ class MConfiguration
         experience = tryExperience!
     }
     
-    //MARK: private
+    //MARK: public
     
-    private func saveSession()
+    func saveSession()
     {
         managerSession.saveContext()
     }
-    
-    //MARK: public
     
     func onboardingDone()
     {

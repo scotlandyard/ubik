@@ -143,25 +143,20 @@ class MHealth
                 for result:HKQuantitySample in resultsQuantity!
                 {
                     let date:NSDate = result.startDate
-                    let components:NSDateComponents = calendar.components(calendarUnits, fromDate:date)
-                    let normalizedDate:NSDate = calendar.dateFromComponents(components)!
-                    let timestamp:NSTimeInterval = normalizedDate.timeIntervalSince1970
+                    let timestamp:NSTimeInterval = date.timeIntervalSince1970
                     
                     if timestamp < todayTimestamp
                     {
                         history.append(result)
-                        
-                        let amount:Int32 = Int32(result.quantity.doubleValueForUnit(self.stepsUnit))
-                        print("\(date):\(amount)")
                     }
                     else
                     {
                         let amount:Int32 = Int32(result.quantity.doubleValueForUnit(self.stepsUnit))
                         countToday += amount
-                        print("\(date):\(amount)")
                     }
                 }
                 
+                self.storeSteps(history, yesterday:todayTimestamp, delegate:nil)
                 delegate.healthTodaySteps(countToday)
             }
             else
