@@ -12,6 +12,28 @@ class VMainBar:UIView
     private let kButtonWidth:CGFloat = 70
     private let kButtonHeight:CGFloat = 60
     
+    private lazy var totalWidth:CGFloat =
+    {
+        let width:CGFloat = self.bounds.maxX
+
+        return width
+    }()
+    
+    private lazy var leftButtonCentered:CGFloat =
+    {
+        let remain:CGFloat = self.totalWidth - self.kButtonWidth
+        let margin:CGFloat = remain / 2.0
+        
+        return margin
+    }()
+    
+    private lazy var letButtonRight:CGFloat =
+    {
+        let left:CGFloat = self.totalWidth - self.kButtonWidth
+        
+        return left
+    }()
+    
     convenience init(controller:CMainParent)
     {
         self.init()
@@ -102,5 +124,22 @@ class VMainBar:UIView
         addConstraint(layoutSummaryLeft)
         addConstraint(layoutHistoryLeft)
         addConstraint(layoutConfigLeft)
+    }
+    
+    //MARK public
+    
+    func selectSummary()
+    {
+        
+    }
+    
+    func selectHistory()
+    {
+        
+    }
+    
+    func selectConfig()
+    {
+        
     }
 }
