@@ -11,4 +11,9 @@ extension UIFont
     {
         return UIFont(name:"AvenirNext-DemiBold", size:size)!
     }
+    
+    class func numeric(size:CGFloat) -> UIFont
+    {
+        return UIFont(name:"AppleSDGothicNeo-Bold", size:size)
+    }
 }
