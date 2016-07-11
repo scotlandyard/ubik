@@ -35,7 +35,7 @@ class VMainBarButton:UIButton
         imageView?.contentMode = UIViewContentMode.Center
         imageView?.tintColor = UIColor(white:0, alpha:0.1)
         imageView?.clipsToBounds = true
-        imageEdgeInsets = UIEdgeInsetsMake(20, 0, 12, 0)
+        imageEdgeInsets = UIEdgeInsetsMake(18, 0, 12, 0)
         
         let label:UILabel = UILabel()
         label.userInteractionEnabled = false

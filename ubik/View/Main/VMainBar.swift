@@ -27,6 +27,7 @@ class VMainBar:UIView
         
         addSubview(buttonHistory)
         addSubview(buttonConfig)
+        addSubview(buttonSummary)
         
         let views:[String:AnyObject] = [
             "buttonSummary":buttonSummary,
