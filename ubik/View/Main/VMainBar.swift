@@ -27,7 +27,7 @@ class VMainBar:UIView
         return margin
     }()
     
-    private lazy var letButtonRight:CGFloat =
+    private lazy var leftButtonRight:CGFloat =
     {
         let left:CGFloat = self.totalWidth - self.kButtonWidth
         
@@ -130,16 +130,34 @@ class VMainBar:UIView
     
     func selectSummary()
     {
+        buttonSummary.activate()
+        buttonConfig.deactivate()
+        buttonHistory.deactivate()
         
+        layoutSummaryLeft.constant = leftButtonCentered
+        layoutConfigLeft.constant = leftButtonRight
+        layoutHistoryLeft.constant = 0
     }
     
     func selectHistory()
     {
+        buttonSummary.deactivate()
+        buttonConfig.hide()
+        buttonHistory.activate()
         
+        layoutSummaryLeft.constant = leftButtonRight
+        layoutConfigLeft.constant = leftButtonRight
+        layoutHistoryLeft.constant = leftButtonCentered
     }
     
     func selectConfig()
     {
+        buttonSummary.deactivate()
+        buttonConfig.activate()
+        buttonHistory.hide()
         
+        layoutSummaryLeft.constant = 0
+        layoutConfigLeft.constant = leftButtonCentered
+        layoutHistoryLeft.constant = 0
     }
 }

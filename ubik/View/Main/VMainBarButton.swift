@@ -114,6 +114,7 @@ class VMainBarButton:UIButton
     
     func activate()
     {
+        hidden = false
         userInteractionEnabled = false
         active = true
         hover()
@@ -121,8 +122,14 @@ class VMainBarButton:UIButton
     
     func deactivate()
     {
+        hidden = false
         userInteractionEnabled = true
         active = false
         hover()
+    }
+    
+    func hide()
+    {
+        hidden = true
     }
 }
