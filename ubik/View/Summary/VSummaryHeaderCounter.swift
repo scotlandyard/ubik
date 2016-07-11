@@ -73,6 +73,9 @@ class VSummaryHeaderCounter:UIView
     
     func update(value:CGFloat, maxValue:CGFloat)
     {
-        
+        let stringValue:String = numberFormatter.stringFromNumber(value)!
+        let stringMaxValue:String = numberFormatter.stringFromNumber(maxValue)!
+        labelValue.text = stringValue
+        labelMaxValue.text = stringMaxValue
     }
 }

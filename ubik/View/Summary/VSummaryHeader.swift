@@ -5,7 +5,7 @@ class VSummaryHeader:UIView
     weak var controller:CSummary!
     weak var viewGyro:VComponentGyro?
     weak var viewGyroIcon:VComponentGyroIcon!
-    weak var labelAmount:UILabel!
+    weak var counter:VSummaryHeaderCounter!
     var modelGyro:MComponentGyro = MComponentGyro.Summary()
     private let kMargin:CGFloat = 20
     
@@ -17,14 +17,19 @@ class VSummaryHeader:UIView
         translatesAutoresizingMaskIntoConstraints = false
         self.controller = controller
         
+        let counter:VSummaryHeaderCounter = VSummaryHeaderCounter()
         let viewGyroBase:VComponentGyroBase = VComponentGyroBase(model:modelGyro)
         let viewGyroIcon:VComponentGyroIcon = VComponentGyroIcon(model:modelGyro)
+        
+        self.counter = counter
         self.viewGyroIcon = viewGyroIcon
         
+        addSubview(counter)
         addSubview(viewGyroBase)
         addSubview(viewGyroIcon)
         
         let views:[String:AnyObject] = [
+            "counter":counter,
             "gyroIcon":viewGyroIcon,
             "gyroBase":viewGyroBase]
         
@@ -51,6 +56,16 @@ class VSummaryHeader:UIView
             options:[],
             metrics:metrics,
             views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:|-(margin)-[counter]-(margin)-|",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:|-(margin)-[counter]-(margin)-|",
+            options:[],
+            metrics:metrics,
+            views:views))
     }
     
     //MARK: public
@@ -58,6 +73,7 @@ class VSummaryHeader:UIView
     func update(value:CGFloat, maxValue:CGFloat)
     {
         modelGyro.update(value, maxValue:maxValue)
+        counter.update(value, maxValue:maxValue)
         
         dispatch_async(dispatch_get_main_queue())
         {
