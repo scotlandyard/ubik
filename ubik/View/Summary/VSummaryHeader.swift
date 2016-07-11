@@ -5,6 +5,7 @@ class VSummaryHeader:UIView
     weak var controller:CSummary!
     weak var viewGyro:VComponentGyro?
     weak var viewGyroIcon:VComponentGyroIcon!
+    weak var labelAmount:UILabel!
     var modelGyro:MComponentGyro = MComponentGyro.Summary()
     private let kMargin:CGFloat = 20
     

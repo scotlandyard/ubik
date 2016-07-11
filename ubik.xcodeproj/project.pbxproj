@@ -69,6 +69,7 @@
 		DAD00CF81D273E7000BCDDAA /* VComponentGyroBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD00CF71D273E7000BCDDAA /* VComponentGyroBase.swift */; };
 		DAD00CFA1D27523300BCDDAA /* ui.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAD00CF91D27523300BCDDAA /* ui.xcassets */; };
 		DAD00CFC1D2752B600BCDDAA /* VComponentGyroIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD00CFB1D2752B600BCDDAA /* VComponentGyroIcon.swift */; };
+		DAE320701D33D8FE007FDC96 /* VSummaryHeaderCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE3206F1D33D8FE007FDC96 /* VSummaryHeaderCounter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +150,7 @@
 		DAD00CF71D273E7000BCDDAA /* VComponentGyroBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VComponentGyroBase.swift; sourceTree = "<group>"; };
 		DAD00CF91D27523300BCDDAA /* ui.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ui.xcassets; sourceTree = "<group>"; };
 		DAD00CFB1D2752B600BCDDAA /* VComponentGyroIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VComponentGyroIcon.swift; sourceTree = "<group>"; };
+		DAE3206F1D33D8FE007FDC96 /* VSummaryHeaderCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSummaryHeaderCounter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -447,6 +449,7 @@
 			children = (
 				DACE5CB81D26CA0800080E5F /* VSummary.swift */,
 				DAD00CF21D270DD600BCDDAA /* VSummaryHeader.swift */,
+				DAE3206F1D33D8FE007FDC96 /* VSummaryHeaderCounter.swift */,
 			);
 			path = Summary;
 			sourceTree = "<group>";
@@ -633,6 +636,7 @@
 				DACE5CB61D26C93D00080E5F /* CSummary.swift in Sources */,
 				DAB344391D2AB0BB00406CEE /* MOnboardingItemWelcome.swift in Sources */,
 				DAB3442D1D2A9F2D00406CEE /* DSessionExperience+CoreDataProperties.swift in Sources */,
+				DAE320701D33D8FE007FDC96 /* VSummaryHeaderCounter.swift in Sources */,
 				DAA678661D2A25A100DDD9CC /* DManagerModelSession.swift in Sources */,
 				DA94E2101D28B7D8002FF88B /* VMainBarButtonHistory.swift in Sources */,
 				DAB344371D2AAE8800406CEE /* MOnboardingItem.swift in Sources */,
