@@ -5,7 +5,7 @@ class VMainBar:UIView
     weak var controller:CMainParent!
     weak var buttonHistory:VMainBarButton!
     weak var buttonConfig:VMainBarButton!
-    private let kButtonWidth:CGFloat = 65
+    private let kButtonWidth:CGFloat = 70
     
     convenience init(controller:CMainParent)
     {

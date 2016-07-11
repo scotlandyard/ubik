@@ -26,7 +26,7 @@ class VMainBarButton:UIButton
         setImage(UIImage(named:image)?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal), forState:UIControlState.Normal)
         setImage(UIImage(named:image)?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate), forState:UIControlState.Highlighted)
         imageView?.contentMode = UIViewContentMode.Center
-        imageView?.tintColor = UIColor.complement()
+        imageView?.tintColor = UIColor(white:0, alpha:0.1)
         imageView?.clipsToBounds = true
         imageEdgeInsets = UIEdgeInsetsMake(0, 0, 12, 0)
         
