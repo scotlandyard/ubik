@@ -42,12 +42,15 @@ class VMainBar:UIView
         self.controller = controller
         
         let buttonSummary:VMainBarButton = VMainBarButton.Summary()
+        buttonSummary.addTarget(self, action:#selector(self.actionSummary(sender:)), forControlEvents:UIControlEvents.TouchUpInside)
         self.buttonSummary = buttonSummary
         
         let buttonHistory:VMainBarButton = VMainBarButton.History()
+        buttonHistory.addTarget(self, action:#selector(self.actionHistory(sender:)), forControlEvents:UIControlEvents.TouchUpInside)
         self.buttonHistory = buttonHistory
         
         let buttonConfig:VMainBarButton = VMainBarButton.Config()
+        buttonConfig.addTarget(self, action:#selector(self.actionConfig(sender:)), forControlEvents:UIControlEvents.TouchUpInside)
         self.buttonConfig = buttonConfig
         
         addSubview(buttonHistory)
@@ -126,7 +129,24 @@ class VMainBar:UIView
         addConstraint(layoutConfigLeft)
     }
     
-    //MARK public
+    //MARK: actions
+    
+    func actionSummary(sender button:UIButton)
+    {
+        selectSummary()
+    }
+    
+    func actionHistory(sender button:UIButton)
+    {
+        selectHistory()
+    }
+    
+    func actionConfig(sender button:UIButton)
+    {
+        selectConfig()
+    }
+    
+    //MARK: public
     
     func selectSummary()
     {
