@@ -11,6 +11,7 @@ class VMainBar:UIView
     private weak var layoutConfigLeft:NSLayoutConstraint!
     private let kButtonWidth:CGFloat = 70
     private let kButtonHeight:CGFloat = 60
+    private let kAnimationDurantion:NSTimeInterval = 0.4
     
     private lazy var totalWidth:CGFloat =
     {
@@ -32,6 +33,20 @@ class VMainBar:UIView
         let left:CGFloat = self.totalWidth - self.kButtonWidth
         
         return left
+    }()
+    
+    private lazy var leftButtonMinLeft:CGFloat =
+    {
+        let minLeft:CGFloat = -self.kButtonWidth
+        
+        return minLeft
+    }()
+    
+    private lazy var leftButtonMaxRight:CGFloat =
+    {
+        let maxRight:CGFloat = self.totalWidth + self.kButtonWidth
+        
+        return maxRight
     }()
     
     convenience init(controller:CMainParent)
@@ -133,22 +148,32 @@ class VMainBar:UIView
     
     func actionSummary(sender button:UIButton)
     {
-        selectSummary()
+        selectSummary(true)
     }
     
     func actionHistory(sender button:UIButton)
     {
-        selectHistory()
+        selectHistory(true)
     }
     
     func actionConfig(sender button:UIButton)
     {
-        selectConfig()
+        selectConfig(true)
+    }
+    
+    //MARK: private
+    
+    private func animateButtons()
+    {
+        UIView.animateWithDuration(kAnimationDurantion)
+        {
+            self.layoutIfNeeded()
+        }
     }
     
     //MARK: public
     
-    func selectSummary()
+    func selectSummary(animate:Bool)
     {
         buttonSummary.activate()
         buttonConfig.deactivate()
@@ -157,20 +182,30 @@ class VMainBar:UIView
         layoutSummaryLeft.constant = leftButtonCentered
         layoutConfigLeft.constant = leftButtonRight
         layoutHistoryLeft.constant = 0
+        
+        if animate
+        {
+            animateButtons()
+        }
     }
     
-    func selectHistory()
+    func selectHistory(animate:Bool)
     {
         buttonSummary.deactivate()
         buttonConfig.hide()
         buttonHistory.activate()
         
         layoutSummaryLeft.constant = leftButtonRight
-        layoutConfigLeft.constant = leftButtonRight
+        layoutConfigLeft.constant = leftButtonMaxRight
         layoutHistoryLeft.constant = leftButtonCentered
+        
+        if animate
+        {
+            animateButtons()
+        }
     }
     
-    func selectConfig()
+    func selectConfig(animate:Bool)
     {
         buttonSummary.deactivate()
         buttonConfig.activate()
@@ -178,6 +213,11 @@ class VMainBar:UIView
         
         layoutSummaryLeft.constant = 0
         layoutConfigLeft.constant = leftButtonCentered
-        layoutHistoryLeft.constant = 0
+        layoutHistoryLeft.constant = leftButtonMinLeft
+        
+        if animate
+        {
+            animateButtons()
+        }
     }
 }

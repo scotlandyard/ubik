@@ -74,6 +74,8 @@ class CMainParent:UIViewController
         controller.view.frame = controllerRect
         view.addSubview(controller.view)
         controller.didMoveToParentViewController(self)
+        
+        bar.selectSummary(false)
     }
     
     //MARK: public
