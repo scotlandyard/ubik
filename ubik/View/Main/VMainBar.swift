@@ -154,6 +154,7 @@ class VMainBar:UIView
     func actionHistory(sender button:UIButton)
     {
         selectHistory(true)
+        controller.showHistory()
     }
     
     func actionConfig(sender button:UIButton)

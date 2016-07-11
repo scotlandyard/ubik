@@ -16,6 +16,11 @@ class CSummary:CMainController, MHealthTodayDelegate
         fatalError()
     }
     
+    deinit
+    {
+        print("summary death")
+    }
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()

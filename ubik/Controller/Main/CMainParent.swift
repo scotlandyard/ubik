@@ -7,6 +7,21 @@ class CMainParent:UIViewController
     private var controllerRect:CGRect!
     private var statusBarStyle:UIStatusBarStyle
     private let kBarHeight:CGFloat = 60
+    private let kAnimationDuration:NSTimeInterval = 0.3
+    
+    private lazy var leftRect:CGRect =
+    {
+        let rect:CGRect = CGRectMake(-self.controllerRect.maxX, self.controllerRect.minY, self.controllerRect.maxX, self.controllerRect.maxY)
+        
+        return rect
+    }()
+    
+    private lazy var rightRect:CGRect =
+    {
+        let rect:CGRect = CGRectMake(self.controllerRect.maxX, self.controllerRect.minY, self.controllerRect.maxX, self.controllerRect.maxY)
+        
+        return rect
+    }()
     
     init()
     {
@@ -74,11 +89,37 @@ class CMainParent:UIViewController
         controller.view.frame = controllerRect
         view.addSubview(controller.view)
         controller.didMoveToParentViewController(self)
+        current = controller
         
         bar.selectSummary(false)
     }
     
-    //MARK: public
+    func showHistory()
+    {
+        let history:CHistory = CHistory()
+        history.view.frame = leftRect
+        current.willMoveToParentViewController(nil)
+        addChildViewController(history)
+        
+        transitionFromViewController(
+            current,
+            toViewController:history,
+            duration:kAnimationDuration,
+            options:UIViewAnimationOptions.CurveEaseOut,
+            animations:
+            {
+                history.view.frame = self.controllerRect
+                self.current.view.frame = self.rightRect
+            })
+        { (done) in
+            
+            self.current.removeFromParentViewController()
+            history.didMoveToParentViewController(self)
+            self.current = history
+        }
+    }
+    
+    
     
     func statusBarLight()
     {
