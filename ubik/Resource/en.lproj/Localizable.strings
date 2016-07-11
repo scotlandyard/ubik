@@ -8,5 +8,6 @@
 "VOnboardingItemReady_button"="Enter";
 "VMainBarButtonHistory_title"="History";
 "VMainBarButtonConfig_title"="Settings";
+"VMainBarButtonSummary_title"="Summary";
 
 "MHealthMain_stepsError"="Error loading HealthKit info";

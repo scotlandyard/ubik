@@ -3,9 +3,11 @@ import UIKit
 class VMainBar:UIView
 {
     weak var controller:CMainParent!
+    weak var buttonSummary:VMainBarButton!
     weak var buttonHistory:VMainBarButton!
     weak var buttonConfig:VMainBarButton!
     private let kButtonWidth:CGFloat = 70
+    private let kButtonHeight:CGFloat = 60
     
     convenience init(controller:CMainParent)
     {
@@ -13,6 +15,9 @@ class VMainBar:UIView
         backgroundColor = UIColor.complement()
         clipsToBounds = true
         self.controller = controller
+        
+        let buttonSummary:VMainBarButton = VMainBarButton.Summary()
+        self.buttonSummary = buttonSummary
         
         let buttonHistory:VMainBarButton = VMainBarButton.History()
         self.buttonHistory = buttonHistory
@@ -24,11 +29,13 @@ class VMainBar:UIView
         addSubview(buttonConfig)
         
         let views:[String:AnyObject] = [
+            "buttonSummary":buttonSummary,
             "buttonHistory":buttonHistory,
             "buttonConfig":buttonConfig]
         
         let metrics:[String:AnyObject] = [
-            "buttonWidth":kButtonWidth]
+            "buttonWidth":kButtonWidth,
+            "buttonHeight":kButtonHeight]
         
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "H:|-0-[buttonHistory(buttonWidth)]",
@@ -41,12 +48,22 @@ class VMainBar:UIView
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-20-[buttonHistory(40)]",
+            "H:|-0-[buttonSummary]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-20-[buttonConfig(40)]",
+            "V:|-0-[buttonSummary(buttonHeight)]",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:|-0-[buttonHistory(buttonHeight)]",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:|-0-[buttonConfig(buttonHeight)]",
             options:[],
             metrics:metrics,
             views:views))

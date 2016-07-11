@@ -4,6 +4,13 @@ class VMainBarButton:UIButton
 {
     weak var label:UILabel!
     
+    class func Summary() -> VMainBarButton
+    {
+        let button:VMainBarButton = VMainBarButtonSummary()
+        
+        return button
+    }
+    
     class func History() -> VMainBarButton
     {
         let button:VMainBarButton = VMainBarButtonHistory()
@@ -28,7 +35,7 @@ class VMainBarButton:UIButton
         imageView?.contentMode = UIViewContentMode.Center
         imageView?.tintColor = UIColor(white:0, alpha:0.1)
         imageView?.clipsToBounds = true
-        imageEdgeInsets = UIEdgeInsetsMake(0, 0, 12, 0)
+        imageEdgeInsets = UIEdgeInsetsMake(20, 0, 12, 0)
         
         let label:UILabel = UILabel()
         label.userInteractionEnabled = false
