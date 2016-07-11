@@ -9,6 +9,12 @@ class CMainParent:UIViewController
     private let kBarHeight:CGFloat = 60
     private let kAnimationDuration:NSTimeInterval = 0.3
     
+    enum CMainParentScroll
+    {
+        case Left
+        case Right
+    }
+    
     private lazy var leftRect:CGRect =
     {
         let rect:CGRect = CGRectMake(-self.controllerRect.maxX, self.controllerRect.minY, self.controllerRect.maxX, self.controllerRect.maxY)
@@ -75,6 +81,58 @@ class CMainParent:UIViewController
         controller.didMoveToParentViewController(self)
     }
     
+    private func showController(controller:UIViewController, scroll:CMainParentScroll)
+    {
+        switch scroll
+        {
+            case CMainParentScroll.Left:
+        
+                controller.view.frame = rightRect
+                
+                break
+                
+            case CMainParentScroll.Right:
+                
+                controller.view.frame = leftRect
+                
+                break
+        }
+        
+        current.willMoveToParentViewController(nil)
+        addChildViewController(controller)
+        
+        transitionFromViewController(
+            current,
+            toViewController:controller,
+            duration:kAnimationDuration,
+            options:UIViewAnimationOptions.CurveEaseOut,
+            animations:
+            {
+                controller.view.frame = self.controllerRect
+                
+                switch scroll
+                {
+                    case CMainParentScroll.Left:
+                        
+                        self.current.view.frame = self.leftRect
+                        
+                        break
+                        
+                    case CMainParentScroll.Right:
+                        
+                        self.current.view.frame = self.rightRect
+                        
+                        break
+                }
+            })
+        { (done) in
+            
+            self.current.removeFromParentViewController()
+            controller.didMoveToParentViewController(self)
+            self.current = controller
+        }
+    }
+    
     //MARK: public
     
     func startSummary()
@@ -97,29 +155,20 @@ class CMainParent:UIViewController
     func showHistory()
     {
         let history:CHistory = CHistory()
-        history.view.frame = leftRect
-        current.willMoveToParentViewController(nil)
-        addChildViewController(history)
-        
-        transitionFromViewController(
-            current,
-            toViewController:history,
-            duration:kAnimationDuration,
-            options:UIViewAnimationOptions.CurveEaseOut,
-            animations:
-            {
-                history.view.frame = self.controllerRect
-                self.current.view.frame = self.rightRect
-            })
-        { (done) in
-            
-            self.current.removeFromParentViewController()
-            history.didMoveToParentViewController(self)
-            self.current = history
-        }
+        showController(history, scroll:CMainParentScroll.Right)
     }
     
+    func showSummaryFromLeft()
+    {
+        let summary:CSummary = CSummary()
+        showController(summary, scroll:CMainParentScroll.Right)
+    }
     
+    func showSummaryFromRight()
+    {
+        let summary:CSummary = CSummary()
+        showController(summary, scroll:CMainParentScroll.Left)
+    }
     
     func statusBarLight()
     {

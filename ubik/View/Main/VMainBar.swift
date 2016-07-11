@@ -148,13 +148,23 @@ class VMainBar:UIView
     
     func actionSummary(sender button:UIButton)
     {
+        if buttonHistory.active
+        {
+            controller.showSummaryFromRight()
+        }
+        else
+        {
+            controller.showSummaryFromLeft()
+        }
+        
         selectSummary(true)
     }
     
     func actionHistory(sender button:UIButton)
     {
-        selectHistory(true)
         controller.showHistory()
+        
+        selectHistory(true)
     }
     
     func actionConfig(sender button:UIButton)

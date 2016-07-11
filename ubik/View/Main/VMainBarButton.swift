@@ -3,7 +3,7 @@ import UIKit
 class VMainBarButton:UIButton
 {
     weak var label:UILabel!
-    private var active:Bool
+    private(set) var active:Bool
     
     class func Summary() -> VMainBarButton
     {
