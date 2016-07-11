@@ -6,6 +6,9 @@ class VMainBar:UIView
     weak var buttonSummary:VMainBarButton!
     weak var buttonHistory:VMainBarButton!
     weak var buttonConfig:VMainBarButton!
+    private weak var layoutSummaryLeft:NSLayoutConstraint!
+    private weak var layoutHistoryLeft:NSLayoutConstraint!
+    private weak var layoutConfigLeft:NSLayoutConstraint!
     private let kButtonWidth:CGFloat = 70
     private let kButtonHeight:CGFloat = 60
     
@@ -39,17 +42,17 @@ class VMainBar:UIView
             "buttonHeight":kButtonHeight]
         
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-0-[buttonHistory(buttonWidth)]",
+            "H:[buttonHistory(buttonWidth)]",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:[buttonConfig(buttonWidth)]-0-|",
+            "H:[buttonConfig(buttonWidth)]",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-0-[buttonSummary]-0-|",
+            "H:[buttonSummary(buttonWidth)]",
             options:[],
             metrics:metrics,
             views:views))
@@ -68,5 +71,36 @@ class VMainBar:UIView
             options:[],
             metrics:metrics,
             views:views))
+        
+        layoutSummaryLeft = NSLayoutConstraint(
+            item:buttonSummary,
+            attribute:NSLayoutAttribute.Left,
+            relatedBy:NSLayoutRelation.Equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.Left,
+            multiplier:1,
+            constant:0)
+        
+        layoutHistoryLeft = NSLayoutConstraint(
+            item:buttonHistory,
+            attribute:NSLayoutAttribute.Left,
+            relatedBy:NSLayoutRelation.Equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.Left,
+            multiplier:1,
+            constant:0)
+        
+        layoutConfigLeft = NSLayoutConstraint(
+            item:buttonConfig,
+            attribute:NSLayoutAttribute.Left,
+            relatedBy:NSLayoutRelation.Equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.Left,
+            multiplier:1,
+            constant:0)
+        
+        addConstraint(layoutSummaryLeft)
+        addConstraint(layoutHistoryLeft)
+        addConstraint(layoutConfigLeft)
     }
 }
