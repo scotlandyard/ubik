@@ -112,5 +112,17 @@ class VMainBarButton:UIButton
     
     //MARK: public
     
+    func activate()
+    {
+        userInteractionEnabled = false
+        active = true
+        hover()
+    }
     
+    func deactivate()
+    {
+        userInteractionEnabled = true
+        active = false
+        hover()
+    }
 }
