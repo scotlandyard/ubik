@@ -4,10 +4,10 @@ class VSummaryHeaderCounter:UIView
 {
     weak var labelValue:UILabel!
     weak var labelMaxValue:UILabel!
+    private weak var layoutValueTop:NSLayoutConstraint!
     private let numberFormatter:NSNumberFormatter
-    private let kValueSize:CGFloat = 50
-    private let kMaxValueSize:CGFloat = 20
-    private let kLabelsTop:CGFloat = 20
+    private let kValueSize:CGFloat = 35
+    private let kMaxValueSize:CGFloat = 14
     
     init()
     {
@@ -34,7 +34,7 @@ class VSummaryHeaderCounter:UIView
         labelMaxValue.textAlignment = NSTextAlignment.Center
         labelMaxValue.backgroundColor = UIColor.clearColor()
         labelMaxValue.font = UIFont.numeric(kMaxValueSize)
-        labelMaxValue.textColor = UIColor.main()
+        labelMaxValue.textColor = UIColor(white:0.84, alpha:1)
         self.labelMaxValue = labelMaxValue
         
         addSubview(labelValue)
@@ -44,8 +44,7 @@ class VSummaryHeaderCounter:UIView
             "labelValue":labelValue,
             "labelMaxValue":labelMaxValue]
         
-        let metrics:[String:AnyObject] = [
-            "labelsTop":kLabelsTop]
+        let metrics:[String:AnyObject] = [:]
         
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "H:|-0-[labelValue]-0-|",
@@ -58,15 +57,35 @@ class VSummaryHeaderCounter:UIView
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-(labelsTop)-[labelValue]-0-[labelMaxValue]",
+            "V:[labelValue]-0-[labelMaxValue]",
             options:[],
             metrics:metrics,
             views:views))
+        
+        layoutValueTop = NSLayoutConstraint(
+            item:labelValue,
+            attribute:NSLayoutAttribute.Top,
+            relatedBy:NSLayoutRelation.Equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.Top,
+            multiplier:1,
+            constant:0)
+        
+        addConstraint(layoutValueTop)
     }
     
     required init?(coder:NSCoder)
     {
         fatalError()
+    }
+    
+    override func layoutSubviews()
+    {
+        let height:CGFloat = bounds.maxY
+        let remain:CGFloat = height - kValueSize
+        let margin:CGFloat = remain / 2.0
+        let usableMargin:CGFloat = margin - kMaxValueSize
+        layoutValueTop.constant = usableMargin
     }
     
     //MARK: public

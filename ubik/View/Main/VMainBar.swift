@@ -11,7 +11,7 @@ class VMainBar:UIView
     private weak var layoutConfigLeft:NSLayoutConstraint!
     private let kButtonWidth:CGFloat = 70
     private let kButtonHeight:CGFloat = 60
-    private let kAnimationDurantion:NSTimeInterval = 0.4
+    private let kAnimationDurantion:NSTimeInterval = 0.3
     
     private lazy var totalWidth:CGFloat =
     {
