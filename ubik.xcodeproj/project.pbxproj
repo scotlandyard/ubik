@@ -17,6 +17,7 @@
 		DA55F34F1D3314EA00BBF21F /* VMainBarButtonConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F34E1D3314EA00BBF21F /* VMainBarButtonConfig.swift */; };
 		DA55F3511D33192E00BBF21F /* VMainBarButtonSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F3501D33192E00BBF21F /* VMainBarButtonSummary.swift */; };
 		DA55F3541D33493D00BBF21F /* CHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F3531D33493D00BBF21F /* CHistory.swift */; };
+		DA55F3571D334A0D00BBF21F /* VHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F3561D334A0D00BBF21F /* VHistory.swift */; };
 		DA906DF41D22F9490095B270 /* CMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA906DE71D22F9490095B270 /* CMain.swift */; };
 		DA906DF71D22F9490095B270 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA906DEE1D22F9490095B270 /* LaunchScreen.storyboard */; };
 		DA906DFB1D22FC700095B270 /* CMainParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA906DFA1D22FC700095B270 /* CMainParent.swift */; };
@@ -91,6 +92,7 @@
 		DA55F34E1D3314EA00BBF21F /* VMainBarButtonConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainBarButtonConfig.swift; sourceTree = "<group>"; };
 		DA55F3501D33192E00BBF21F /* VMainBarButtonSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainBarButtonSummary.swift; sourceTree = "<group>"; };
 		DA55F3531D33493D00BBF21F /* CHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHistory.swift; sourceTree = "<group>"; };
+		DA55F3561D334A0D00BBF21F /* VHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHistory.swift; sourceTree = "<group>"; };
 		DA906DBE1D22F4AE0095B270 /* ubik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ubik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA906DD51D22F4AF0095B270 /* tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA906DE71D22F9490095B270 /* CMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMain.swift; sourceTree = "<group>"; };
@@ -172,6 +174,14 @@
 			isa = PBXGroup;
 			children = (
 				DA55F3531D33493D00BBF21F /* CHistory.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		DA55F3551D334A0200BBF21F /* History */ = {
+			isa = PBXGroup;
+			children = (
+				DA55F3561D334A0D00BBF21F /* VHistory.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -284,6 +294,7 @@
 		DA906DF31D22F9490095B270 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DA55F3551D334A0200BBF21F /* History */,
 				DAAF3C8B1D2C865100BBBD40 /* Onboarding */,
 				DAD00CF41D27108600BCDDAA /* Main */,
 				DACE5CBE1D26D6AD00080E5F /* Component */,
@@ -605,6 +616,7 @@
 				DA55F34B1D31CF3E00BBF21F /* MHealthTodayDelegate.swift in Sources */,
 				DA55F3541D33493D00BBF21F /* CHistory.swift in Sources */,
 				DACE5CC41D26E44E00080E5F /* MComponentGyro.swift in Sources */,
+				DA55F3571D334A0D00BBF21F /* VHistory.swift in Sources */,
 				DAB8F6BA1D31BFE900236A00 /* MHealth.swift in Sources */,
 				DAB344321D2AA48000406CEE /* COnboarding.swift in Sources */,
 				DAB8F6C11D31C4A000236A00 /* MSummary.swift in Sources */,

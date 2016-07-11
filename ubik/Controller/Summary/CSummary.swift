@@ -2,7 +2,7 @@ import UIKit
 
 class CSummary:CMainController, MHealthTodayDelegate
 {
-    weak var vSummary:VSummary!
+    weak var viewSummary:VSummary!
     let model:MSummary
     
     init()
@@ -33,9 +33,9 @@ class CSummary:CMainController, MHealthTodayDelegate
     
     override func loadView()
     {
-        let vSummary:VSummary = VSummary(controller:self)
-        self.vSummary = vSummary
-        view = vSummary
+        let viewSummary:VSummary = VSummary(controller:self)
+        self.viewSummary = viewSummary
+        view = viewSummary
     }
     
     //MARK: functionality
@@ -44,7 +44,7 @@ class CSummary:CMainController, MHealthTodayDelegate
     {
         if model.max != nil
         {
-            vSummary.update(model.today, maxValue:model.max!.amount)
+            viewSummary.update(model.today, maxValue:model.max!.amount)
         }
     }
     
