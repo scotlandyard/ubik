@@ -4,45 +4,22 @@ class VComponentGyro:UIView
 {
     weak var model:MComponentGyro!
     weak var timer:NSTimer?
-    private var currentSpeed:CGFloat
     private var currentRadius:CGFloat
-    private var maxRadius:CGFloat
-    private var radiusThreshold:CGFloat
+    private var currentSpeed:CGFloat?
+    private var maxRadius:CGFloat?
+    private var radiusThreshold:CGFloat?
     private let kTimeInterval:NSTimeInterval = 0.01
     private let kMaxSpeed:CGFloat = 0.01
     private let kMinSpeed:CGFloat = 0.006
     private let kMinRadius:CGFloat = -CGFloat(M_PI_2)
     private let kMaxDegrees:CGFloat = 360
-    private let kDegreePerRads:CGFloat = CGFloat(M_PI) / 180
+    private let kDegreePerRads:CGFloat = CGFloat(M_PI) / 180.0
     private let kThresholdRads:CGFloat = 0.4
     
     init(model:MComponentGyro)
     {
         self.model = model
-        currentSpeed = kMaxSpeed
         currentRadius = kMinRadius
-        let percentValue:CGFloat = model.percentValue
-        
-        if percentValue == 0
-        {
-            maxRadius = kMinRadius
-            radiusThreshold = kMinRadius
-        }
-        else
-        {
-            let maxRadiusDegrees:CGFloat = kMaxDegrees * percentValue
-            let maxRadiusRadian:CGFloat = maxRadiusDegrees * kDegreePerRads
-            maxRadius = maxRadiusRadian + kMinRadius
-            
-            if maxRadius - kMinRadius > kThresholdRads
-            {
-                radiusThreshold = maxRadius - kThresholdRads
-            }
-            else
-            {
-                radiusThreshold = kMinRadius
-            }
-        }
         
         super.init(frame:CGRectZero)
         
@@ -50,8 +27,6 @@ class VComponentGyro:UIView
         userInteractionEnabled = false
         backgroundColor = UIColor.clearColor()
         translatesAutoresizingMaskIntoConstraints = false
-        
-        timer = NSTimer.scheduledTimerWithTimeInterval(kTimeInterval, target:self, selector:#selector(self.tick(_:)), userInfo:nil, repeats:true)
     }
     
     required init?(coder aDecoder:NSCoder)
@@ -84,9 +59,33 @@ class VComponentGyro:UIView
     
     func tick(timer:NSTimer)
     {
-        if currentRadius < maxRadius
+        switch model.delta
         {
-            currentRadius += currentSpeed
+            case MComponentGyro.MComponentGyroDelta.Increase:
+                
+                
+                
+                break
+                
+            case MComponentGyro.MComponentGyroDelta.Decrease:
+                
+                deltaDecrease()
+                
+                break
+                
+            case MComponentGyro.MComponentGyroDelta.None:break
+        }
+        
+        setNeedsDisplay()
+    }
+    
+    //MARK: private
+    
+    private func tickIncrease()
+    {
+        if currentRadius < maxRadius!
+        {
+            currentRadius += currentSpeed!
             
             if currentRadius > radiusThreshold
             {
@@ -95,17 +94,99 @@ class VComponentGyro:UIView
         }
         else
         {
-            currentRadius = maxRadius
-            timer.invalidate()
+            currentRadius = maxRadius!
+            timer?.invalidate()
+        }
+    }
+    
+    private func tickDecrease()
+    {
+        if currentRadius > maxRadius!
+        {
+            currentRadius += currentSpeed!
+            
+            if currentRadius < radiusThreshold
+            {
+                currentSpeed = kMinSpeed
+            }
+        }
+        else
+        {
+            currentRadius = maxRadius!
+            timer?.invalidate()
+        }
+    }
+    
+    private func thresholds()
+    {
+        let percentValue:CGFloat = model.percentValue
+        
+        if percentValue == 0
+        {
+            maxRadius = kMinRadius
+            radiusThreshold = kMinRadius
+        }
+        else
+        {
+            let maxRadiusDegrees:CGFloat = kMaxDegrees * percentValue
+            let maxRadiusRadian:CGFloat = maxRadiusDegrees * kDegreePerRads
+            maxRadius = maxRadiusRadian + kMinRadius
+            
+            if maxRadius! - kMinRadius > kThresholdRads
+            {
+                radiusThreshold = maxRadius! - kThresholdRads
+            }
+            else
+            {
+                radiusThreshold = kMinRadius
+            }
         }
         
-        setNeedsDisplay()
+        dispatch_async(dispatch_get_main_queue())
+        { [weak self] in
+            
+            if self != nil
+            {
+                self!.timer = NSTimer.scheduledTimerWithTimeInterval(self!.kTimeInterval, target:self!, selector:#selector(self!.tick(_:)), userInfo:nil, repeats:true)
+            }
+        }
+    }
+    
+    private func deltaIncrease()
+    {
+        currentSpeed = kMaxSpeed
+        thresholds()
+    }
+    
+    private func deltaDecrease()
+    {
+        currentSpeed = -kMaxSpeed
+        thresholds()
     }
     
     //MARK: public
     
     func update()
     {
-        
+        switch model.delta
+        {
+            case MComponentGyro.MComponentGyroDelta.Increase:
+                
+                deltaIncrease()
+                
+                break
+            
+            case MComponentGyro.MComponentGyroDelta.Decrease:
+                
+                deltaDecrease()
+                
+                break
+                
+            case MComponentGyro.MComponentGyroDelta.None:
+                
+                timer?.invalidate()
+                
+                break
+        }
     }
 }

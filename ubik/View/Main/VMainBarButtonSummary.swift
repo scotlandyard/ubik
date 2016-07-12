@@ -6,9 +6,7 @@ class VMainBarButtonSummary:VMainBarButton
     
     init()
     {
-        let title:String = NSLocalizedString("VMainBarButtonSummary_title", comment:"")
-        
-        super.init(image:kImageName, title:title)
+        super.init(image:kImageName, title:nil)
     }
     
     required init?(coder aDecoder: NSCoder)
