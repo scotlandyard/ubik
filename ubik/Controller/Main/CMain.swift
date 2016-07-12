@@ -6,7 +6,7 @@ class AppDelegate:UIResponder, UIApplicationDelegate
     var window:UIWindow?
     private weak var parent:CMainParent!
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions:[NSObject:AnyObject]?) -> Bool
+    func application(application:UIApplication, didFinishLaunchingWithOptions launchOptions:[NSObject:AnyObject]?) -> Bool
     {
         let window = UIWindow(frame:UIScreen.mainScreen().bounds)
         window.makeKeyAndVisible()
@@ -23,5 +23,10 @@ class AppDelegate:UIResponder, UIApplicationDelegate
     {
         DManager.sharedInstance.managerSession.saveContext()
         DManager.sharedInstance.managerSteps.saveContext()
+    }
+    
+    func applicationDidBecomeActive(application:UIApplication)
+    {
+        print("active bitches")
     }
 }
