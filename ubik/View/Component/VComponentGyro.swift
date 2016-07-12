@@ -63,13 +63,13 @@ class VComponentGyro:UIView
         {
             case MComponentGyro.MComponentGyroDelta.Increase:
                 
-                
+                tickIncrease()
                 
                 break
                 
             case MComponentGyro.MComponentGyroDelta.Decrease:
                 
-                deltaDecrease()
+                tickDecrease()
                 
                 break
                 
