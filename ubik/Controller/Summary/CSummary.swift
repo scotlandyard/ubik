@@ -25,7 +25,7 @@ class CSummary:CMainController, MHealthTodayDelegate
             
             if self != nil
             {
-                self!.model.loadHistory()
+                self!.model.loadMax()
                 MHealth.sharedInstance.loadStepsRemaining(self!)
             }
         }

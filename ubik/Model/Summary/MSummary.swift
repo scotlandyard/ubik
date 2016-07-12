@@ -14,26 +14,8 @@ class MSummary
     
     //MARK: public
     
-    func loadHistory()
+    func loadMax()
     {
-        history = MHike.sharedInstance.fetchHistory()
-        var max:DStepsHike?
-        
-        for hike in history
-        {
-            if max == nil
-            {
-                max = hike
-            }
-            else
-            {
-                if hike.amount > max!.amount
-                {
-                    max = hike
-                }
-            }
-        }
-        
-        self.max = max
+        max = MHike.sharedInstance.fetchMaxHike()
     }
 }

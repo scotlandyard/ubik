@@ -4,7 +4,6 @@ class VSummaryHeaderCounter:UIView
 {
     weak var labelValue:UILabel!
     weak var labelMaxValue:UILabel!
-    private weak var layoutValueTop:NSLayoutConstraint!
     private let numberFormatter:NSNumberFormatter
     private let kValueSize:CGFloat = 35
     private let kMaxValueSize:CGFloat = 14
@@ -57,35 +56,20 @@ class VSummaryHeaderCounter:UIView
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:[labelValue]-0-[labelMaxValue]",
+            "V:|-0-[labelValue]-0-|",
             options:[],
             metrics:metrics,
             views:views))
-        
-        layoutValueTop = NSLayoutConstraint(
-            item:labelValue,
-            attribute:NSLayoutAttribute.Top,
-            relatedBy:NSLayoutRelation.Equal,
-            toItem:self,
-            attribute:NSLayoutAttribute.Top,
-            multiplier:1,
-            constant:0)
-        
-        addConstraint(layoutValueTop)
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:|-50-[labelMaxValue]-0-|",
+            options:[],
+            metrics:metrics,
+            views:views))
     }
     
     required init?(coder:NSCoder)
     {
         fatalError()
-    }
-    
-    override func layoutSubviews()
-    {
-        let height:CGFloat = bounds.maxY
-        let remain:CGFloat = height - kValueSize
-        let margin:CGFloat = remain / 2.0
-        let usableMargin:CGFloat = margin - kMaxValueSize
-        layoutValueTop.constant = usableMargin
     }
     
     //MARK: public
@@ -94,7 +78,11 @@ class VSummaryHeaderCounter:UIView
     {
         let stringValue:String = numberFormatter.stringFromNumber(value)!
         let stringMaxValue:String = numberFormatter.stringFromNumber(maxValue)!
-        labelValue.text = stringValue
-        labelMaxValue.text = stringMaxValue
+        
+        dispatch_async(dispatch_get_main_queue())
+        {
+            self.labelValue.text = stringValue
+            self.labelMaxValue.text = stringMaxValue
+        }
     }
 }
