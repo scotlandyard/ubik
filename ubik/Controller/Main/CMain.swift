@@ -27,6 +27,6 @@ class AppDelegate:UIResponder, UIApplicationDelegate
     
     func applicationDidBecomeActive(application:UIApplication)
     {
-        print("active bitches")
+        NSNotification.postBecameActive()
     }
 }

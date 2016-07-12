@@ -16,26 +16,16 @@ class CSummary:CMainController, MHealthTodayDelegate
         fatalError()
     }
     
-    override func viewDidLoad()
+    deinit
     {
-        super.viewDidLoad()
-        
-        
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     override func viewDidAppear(animated:Bool)
     {
         super.viewDidAppear(animated)
-        
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0))
-        { [weak self] in
-            
-            if self != nil
-            {
-                self!.model.loadMax()
-                MHealth.sharedInstance.loadStepsRemaining(self!)
-            }
-        }
+        NSNotification.observeBecameActive(self, sel:#selector(self.notifiedBecameActive(sender:)))
+        fetchData()
     }
     
     override func loadView()
@@ -45,13 +35,33 @@ class CSummary:CMainController, MHealthTodayDelegate
         view = viewSummary
     }
     
-    //MARK: functionality
+    //MARK: notified
     
-    func reload()
+    func notifiedBecameActive(sender notification:NSNotification)
+    {
+        fetchData()
+    }
+    
+    //MARK: private
+    
+    private func reload()
     {
         if model.max != nil
         {
             viewSummary.update(model.today, maxValue:model.max!.amount)
+        }
+    }
+    
+    private func fetchData()
+    {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0))
+        { [weak self] in
+            
+            if self != nil
+            {
+                self!.model.loadMax()
+                MHealth.sharedInstance.loadStepsRemaining(self!)
+            }
         }
     }
     
