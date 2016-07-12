@@ -3,7 +3,7 @@ import UIKit
 class VSummaryHeader:UIView
 {
     weak var controller:CSummary!
-    weak var viewGyro:VComponentGyro?
+    weak var viewGyro:VComponentGyro!
     weak var viewGyroIcon:VComponentGyroIcon!
     weak var counter:VSummaryHeaderCounter!
     var modelGyro:MComponentGyro = MComponentGyro.Summary()
@@ -17,21 +17,25 @@ class VSummaryHeader:UIView
         translatesAutoresizingMaskIntoConstraints = false
         self.controller = controller
         
-        let counter:VSummaryHeaderCounter = VSummaryHeaderCounter()
+        let counter:VSummaryHeaderCounter = VSummaryHeaderCounter(model:modelGyro)
         let viewGyroBase:VComponentGyroBase = VComponentGyroBase(model:modelGyro)
         let viewGyroIcon:VComponentGyroIcon = VComponentGyroIcon(model:modelGyro)
+        let viewGyro:VComponentGyro = VComponentGyro(model:self.modelGyro)
         
         self.counter = counter
         self.viewGyroIcon = viewGyroIcon
+        self.viewGyro = viewGyro
         
         addSubview(counter)
         addSubview(viewGyroBase)
+        addSubview(viewGyro)
         addSubview(viewGyroIcon)
         
         let views:[String:AnyObject] = [
             "counter":counter,
             "gyroIcon":viewGyroIcon,
-            "gyroBase":viewGyroBase]
+            "gyroBase":viewGyroBase,
+            "gyro":viewGyro]
         
         let metrics:[String:AnyObject] = [
             "margin":kMargin]
@@ -66,6 +70,16 @@ class VSummaryHeader:UIView
             options:[],
             metrics:metrics,
             views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:|-(margin)-[gyro]-(margin)-|",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:|-(margin)-[gyro]-(margin)-|",
+            options:[],
+            metrics:metrics,
+            views:views))
     }
     
     //MARK: public
@@ -73,32 +87,7 @@ class VSummaryHeader:UIView
     func update(value:CGFloat, maxValue:CGFloat)
     {
         modelGyro.update(value, maxValue:maxValue)
-        counter.update(modelGyro)
-        
-        dispatch_async(dispatch_get_main_queue())
-        {
-            self.viewGyro?.removeFromSuperview()
-            let viewGyro:VComponentGyro = VComponentGyro(model:self.modelGyro)
-            self.viewGyro = viewGyro
-            
-            self.insertSubview(viewGyro, belowSubview:self.viewGyroIcon)
-            
-            let views:[String:AnyObject] = [
-                "gyro":viewGyro]
-            
-            let metrics:[String:AnyObject] = [
-                "margin":self.kMargin]
-            
-            self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-                "H:|-(margin)-[gyro]-(margin)-|",
-                options:[],
-                metrics:metrics,
-                views:views))
-            self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-                "V:|-(margin)-[gyro]-(margin)-|",
-                options:[],
-                metrics:metrics,
-                views:views))
-        }
+        counter.update()
+        viewGyro.update()
     }
 }

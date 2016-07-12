@@ -110,4 +110,11 @@ class VComponentGyro:UIView
         
         setNeedsDisplay()
     }
+    
+    //MARK: public
+    
+    func update()
+    {
+        
+    }
 }

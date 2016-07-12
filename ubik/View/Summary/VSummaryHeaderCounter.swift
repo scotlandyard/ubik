@@ -2,7 +2,7 @@ import UIKit
 
 class VSummaryHeaderCounter:UIView
 {
-    weak var modelGyro:MComponentGyro!
+    weak var model:MComponentGyro!
     weak var labelValue:UILabel!
     weak var labelMaxValue:UILabel!
     weak var spinner:VMainLoader?
@@ -10,8 +10,9 @@ class VSummaryHeaderCounter:UIView
     private let kValueSize:CGFloat = 35
     private let kMaxValueSize:CGFloat = 14
     
-    init()
+    init(model:MComponentGyro)
     {
+        self.model = model
         numberFormatter = NSNumberFormatter()
         numberFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
         
@@ -96,11 +97,10 @@ class VSummaryHeaderCounter:UIView
     
     //MARK: public
     
-    func update(modelGyro:MComponentGyro)
+    func update()
     {
-        self.modelGyro = modelGyro
-        let stringValue:String = numberFormatter.stringFromNumber(modelGyro.value)!
-        let stringMaxValue:String = numberFormatter.stringFromNumber(modelGyro.maxValue)!
+        let stringValue:String = numberFormatter.stringFromNumber(model.value)!
+        let stringMaxValue:String = numberFormatter.stringFromNumber(model.maxValue)!
         
         dispatch_async(dispatch_get_main_queue())
         { [weak self] in
