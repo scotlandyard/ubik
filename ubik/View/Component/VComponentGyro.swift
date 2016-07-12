@@ -3,7 +3,7 @@ import UIKit
 class VComponentGyro:UIView
 {
     weak var model:MComponentGyro!
-    var timer:NSTimer?
+    weak var timer:NSTimer?
     private var currentSpeed:CGFloat
     private var currentRadius:CGFloat
     private var maxRadius:CGFloat

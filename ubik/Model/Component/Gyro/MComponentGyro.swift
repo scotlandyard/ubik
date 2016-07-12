@@ -2,6 +2,13 @@ import UIKit
 
 class MComponentGyro
 {
+    enum MComponentGyroDelta
+    {
+        case Increase
+        case Decrease
+        case None
+    }
+    
     let color:UIColor
     let pointerColor:UIColor
     let lineWidth:CGFloat
@@ -13,6 +20,7 @@ class MComponentGyro
     var circleRadius:CGFloat?
     var width_2:CGFloat?
     var height_2:CGFloat?
+    var delta:MComponentGyroDelta
 
     class func Summary() -> MComponentGyro
     {
@@ -26,6 +34,7 @@ class MComponentGyro
         value = 0
         maxValue = 0
         percentValue = 0
+        delta = MComponentGyroDelta.None
         self.lineWidth = lineWidth
         self.pointerRadius = pointerRadius
         self.color = color
@@ -59,14 +68,29 @@ class MComponentGyro
     {
         self.value = value
         self.maxValue = maxValue
+        let newPercentValue:CGFloat
         
         if maxValue == 0
         {
-            percentValue = 0
+            newPercentValue = 0
         }
         else
         {
-            percentValue = value / maxValue
+            newPercentValue = value / maxValue
         }
+        
+        if newPercentValue > percentValue
+        {
+            delta = MComponentGyroDelta.Increase
+        }
+        else if newPercentValue < percentValue
+        {
+            delta = MComponentGyroDelta.Decrease
+        }
+        else
+        {
+            delta = MComponentGyroDelta.None
+        }
+        percentValue = newPercentValue
     }
 }
