@@ -2,7 +2,7 @@ import UIKit
 
 class VComponentGyroBase:UIView
 {
-    let model:MComponentGyro
+    weak var model:MComponentGyro!
     
     init(model:MComponentGyro)
     {

@@ -2,8 +2,10 @@ import UIKit
 
 class VSummaryHeaderCounter:UIView
 {
+    weak var modelGyro:MComponentGyro!
     weak var labelValue:UILabel!
     weak var labelMaxValue:UILabel!
+    weak var spinner:VMainLoader?
     private let numberFormatter:NSNumberFormatter
     private let kValueSize:CGFloat = 35
     private let kMaxValueSize:CGFloat = 14
@@ -36,12 +38,17 @@ class VSummaryHeaderCounter:UIView
         labelMaxValue.textColor = UIColor(white:0.84, alpha:1)
         self.labelMaxValue = labelMaxValue
         
+        let spinner:VMainLoader = VMainLoader()
+        self.spinner = spinner
+        
         addSubview(labelValue)
         addSubview(labelMaxValue)
+        addSubview(spinner)
         
         let views:[String:AnyObject] = [
             "labelValue":labelValue,
-            "labelMaxValue":labelMaxValue]
+            "labelMaxValue":labelMaxValue,
+            "spinner":spinner]
         
         let metrics:[String:AnyObject] = [:]
         
@@ -65,6 +72,16 @@ class VSummaryHeaderCounter:UIView
             options:[],
             metrics:metrics,
             views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:|-0-[spinner]-0-|",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:|-0-[spinner]-0-|",
+            options:[],
+            metrics:metrics,
+            views:views))
     }
     
     required init?(coder:NSCoder)
@@ -72,17 +89,26 @@ class VSummaryHeaderCounter:UIView
         fatalError()
     }
     
+    deinit
+    {
+        spinner?.stopAnimating()
+    }
+    
     //MARK: public
     
-    func update(value:CGFloat, maxValue:CGFloat)
+    func update(modelGyro:MComponentGyro)
     {
-        let stringValue:String = numberFormatter.stringFromNumber(value)!
-        let stringMaxValue:String = numberFormatter.stringFromNumber(maxValue)!
+        self.modelGyro = modelGyro
+        let stringValue:String = numberFormatter.stringFromNumber(modelGyro.value)!
+        let stringMaxValue:String = numberFormatter.stringFromNumber(modelGyro.maxValue)!
         
         dispatch_async(dispatch_get_main_queue())
-        {
-            self.labelValue.text = stringValue
-            self.labelMaxValue.text = stringMaxValue
+        { [weak self] in
+            
+            self?.spinner?.stopAnimating()
+            self?.spinner?.removeFromSuperview()
+            self?.labelValue.text = stringValue
+            self?.labelMaxValue.text = stringMaxValue
         }
     }
 }

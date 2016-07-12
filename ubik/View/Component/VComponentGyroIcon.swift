@@ -2,7 +2,7 @@ import UIKit
 
 class VComponentGyroIcon:UIView
 {
-    let model:MComponentGyro
+    weak var model:MComponentGyro!
     weak var layoutIconTop:NSLayoutConstraint!
     
     init(model:MComponentGyro)

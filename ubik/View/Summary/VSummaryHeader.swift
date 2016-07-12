@@ -73,7 +73,7 @@ class VSummaryHeader:UIView
     func update(value:CGFloat, maxValue:CGFloat)
     {
         modelGyro.update(value, maxValue:maxValue)
-        counter.update(value, maxValue:maxValue)
+        counter.update(modelGyro)
         
         dispatch_async(dispatch_get_main_queue())
         {
