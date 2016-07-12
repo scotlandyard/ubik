@@ -8,11 +8,6 @@ class VComponentGyro:UIView
     private var currentRadius:CGFloat
     private var maxRadius:CGFloat
     private var radiusThreshold:CGFloat
-    private let lineWidth:CGFloat
-    private let circleRadius:CGFloat
-    private let pointerRadius:CGFloat
-    private let width_2:CGFloat
-    private let height_2:CGFloat
     private let kTimeInterval:NSTimeInterval = 0.01
     private let kMaxSpeed:CGFloat = 0.01
     private let kMinSpeed:CGFloat = 0.006
@@ -26,12 +21,6 @@ class VComponentGyro:UIView
         self.model = model
         currentSpeed = kMaxSpeed
         currentRadius = kMinRadius
-        lineWidth = model.lineWidth
-        circleRadius = model.circleRadius!
-        pointerRadius = model.pointerRadius
-        width_2 = model.width_2!
-        height_2 = model.height_2!
-        
         let percentValue:CGFloat = model.percentValue
         
         if percentValue == 0
@@ -77,17 +66,19 @@ class VComponentGyro:UIView
     
     override func drawRect(rect:CGRect)
     {
+        model.measures(rect)
+        
         let context:CGContext = UIGraphicsGetCurrentContext()!
-        CGContextSetLineWidth(context, lineWidth)
+        CGContextSetLineWidth(context, model.lineWidth)
         CGContextSetLineCap(context, CGLineCap.Round)
         CGContextSetStrokeColorWithColor(context, model.color.CGColor)
         CGContextSetFillColorWithColor(context, model.pointerColor.CGColor)
-        CGContextAddArc(context, width_2, height_2, circleRadius, kMinRadius, currentRadius, 0)
+        CGContextAddArc(context, model.width_2!, model.height_2!, model.circleRadius!, kMinRadius, currentRadius, 0)
         
         let point:CGPoint = CGContextGetPathCurrentPoint(context)
         
         CGContextDrawPath(context, CGPathDrawingMode.Stroke)
-        CGContextAddArc(context, point.x, point.y, pointerRadius, 0.0001, 0, 0)
+        CGContextAddArc(context, point.x, point.y, model.pointerRadius, 0.0001, 0, 0)
         CGContextDrawPath(context, CGPathDrawingMode.Fill)
     }
     

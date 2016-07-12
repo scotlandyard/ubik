@@ -20,7 +20,7 @@ class VSummaryHeader:UIView
         let counter:VSummaryHeaderCounter = VSummaryHeaderCounter(model:modelGyro)
         let viewGyroBase:VComponentGyroBase = VComponentGyroBase(model:modelGyro)
         let viewGyroIcon:VComponentGyroIcon = VComponentGyroIcon(model:modelGyro)
-        let viewGyro:VComponentGyro = VComponentGyro(model:self.modelGyro)
+        let viewGyro:VComponentGyro = VComponentGyro(model:modelGyro)
         
         self.counter = counter
         self.viewGyroIcon = viewGyroIcon
