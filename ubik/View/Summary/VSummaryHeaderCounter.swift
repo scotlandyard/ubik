@@ -6,6 +6,12 @@ class VSummaryHeaderCounter:UIView
     weak var labelValue:UILabel!
     weak var labelMaxValue:UILabel!
     weak var spinner:VMainLoader?
+    weak var timer:NSTimer?
+    private var deltaCounter:CGFloat
+    private var currentCounter:CGFloat
+    private var expectedCounter:CGFloat
+    private let kTimeInterval:NSTimeInterval = 0.05
+    private let kAnimationRepetitions:CGFloat = 60
     private let numberFormatter:NSNumberFormatter
     private let kValueSize:CGFloat = 35
     private let kMaxValueSize:CGFloat = 14
@@ -15,6 +21,9 @@ class VSummaryHeaderCounter:UIView
         self.model = model
         numberFormatter = NSNumberFormatter()
         numberFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
+        currentCounter = 0
+        deltaCounter = 0
+        expectedCounter = 0
         
         super.init(frame:CGRectZero)
         userInteractionEnabled = false
@@ -92,23 +101,67 @@ class VSummaryHeaderCounter:UIView
     
     deinit
     {
+        timer?.invalidate()
         spinner?.stopAnimating()
+    }
+    
+    func tick(sender timer:NSTimer)
+    {
+        currentCounter += deltaCounter
+        
+        if deltaCounter > 0
+        {
+            if currentCounter > expectedCounter
+            {
+                currentCounter = expectedCounter
+                
+                timer.invalidate()
+            }
+        }
+        else
+        {
+            if currentCounter < expectedCounter
+            {
+                currentCounter = expectedCounter
+                
+                timer.invalidate()
+            }
+        }
+        
+        printCount()
+    }
+    
+    //MARK: private
+    
+    private func printCount()
+    {
+        let stringValue:String = numberFormatter.stringFromNumber(currentCounter)!
+        labelValue.text = stringValue
     }
     
     //MARK: public
     
     func update()
     {
-        let stringValue:String = numberFormatter.stringFromNumber(model.value)!
+        timer?.invalidate()
         let stringMaxValue:String = numberFormatter.stringFromNumber(model.maxValue)!
+        expectedCounter = model.value
+        deltaCounter = (expectedCounter - currentCounter) / kAnimationRepetitions
         
         dispatch_async(dispatch_get_main_queue())
         { [weak self] in
             
-            self?.spinner?.stopAnimating()
-            self?.spinner?.removeFromSuperview()
-            self?.labelValue.text = stringValue
-            self?.labelMaxValue.text = stringMaxValue
+            if self != nil
+            {
+                self!.spinner?.stopAnimating()
+                self!.spinner?.removeFromSuperview()
+                self!.labelMaxValue.text = stringMaxValue
+                
+                if self!.deltaCounter != 0
+                {
+                    self!.timer = NSTimer.scheduledTimerWithTimeInterval(self!.kTimeInterval, target:self!, selector:#selector(self!.tick(sender:)), userInfo:nil, repeats:true)
+                }
+            }
         }
     }
 }

@@ -57,7 +57,7 @@ class VComponentGyro:UIView
         CGContextDrawPath(context, CGPathDrawingMode.Fill)
     }
     
-    func tick(timer:NSTimer)
+    func tick(sender timer:NSTimer)
     {
         switch model.delta
         {
@@ -147,7 +147,7 @@ class VComponentGyro:UIView
             
             if self != nil
             {
-                self!.timer = NSTimer.scheduledTimerWithTimeInterval(self!.kTimeInterval, target:self!, selector:#selector(self!.tick(_:)), userInfo:nil, repeats:true)
+                self!.timer = NSTimer.scheduledTimerWithTimeInterval(self!.kTimeInterval, target:self!, selector:#selector(self!.tick(sender:)), userInfo:nil, repeats:true)
             }
         }
     }
