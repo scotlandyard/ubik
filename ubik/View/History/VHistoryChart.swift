@@ -2,6 +2,8 @@ import UIKit
 
 class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
+    var model:MHistory?
+    
     init()
     {
         super.init(frame:CGRectZero)
@@ -14,6 +16,18 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
     required init?(coder:NSCoder)
     {
         fatalError()
+    }
+    
+    //MARK: public
+    
+    func modelLoaded(model:MHistory)
+    {
+        self.model = model
+        
+        dispatch_async(dispatch_get_main_queue())
+        {
+            
+        }
     }
     
     //MARK: col del
