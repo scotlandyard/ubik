@@ -31,6 +31,7 @@
 		DAA005501D2F42DA004B57FA /* VOnboardingItemPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA0054F1D2F42DA004B57FA /* VOnboardingItemPermission.swift */; };
 		DAA005521D2F42E6004B57FA /* VOnboardingItemLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA005511D2F42E6004B57FA /* VOnboardingItemLoading.swift */; };
 		DAA005541D2F42F3004B57FA /* VOnboardingItemReady.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA005531D2F42F3004B57FA /* VOnboardingItemReady.swift */; };
+		DAA076C91D35CE360039248D /* VHistoryChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA076C81D35CE360039248D /* VHistoryChart.swift */; };
 		DAA0DC681D23184C00F3EF29 /* CategoryNSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA0DC671D23184C00F3EF29 /* CategoryNSFileManager.swift */; };
 		DAA678581D2A1BBF00DDD9CC /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAA678571D2A1BBF00DDD9CC /* HealthKit.framework */; };
 		DAA6785B1D2A23DF00DDD9CC /* MConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA6785A1D2A23DF00DDD9CC /* MConfiguration.swift */; };
@@ -113,6 +114,7 @@
 		DAA0054F1D2F42DA004B57FA /* VOnboardingItemPermission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VOnboardingItemPermission.swift; sourceTree = "<group>"; };
 		DAA005511D2F42E6004B57FA /* VOnboardingItemLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VOnboardingItemLoading.swift; sourceTree = "<group>"; };
 		DAA005531D2F42F3004B57FA /* VOnboardingItemReady.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VOnboardingItemReady.swift; sourceTree = "<group>"; };
+		DAA076C81D35CE360039248D /* VHistoryChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHistoryChart.swift; sourceTree = "<group>"; };
 		DAA0DC671D23184C00F3EF29 /* CategoryNSFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSFileManager.swift; sourceTree = "<group>"; };
 		DAA678571D2A1BBF00DDD9CC /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		DAA6785A1D2A23DF00DDD9CC /* MConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MConfiguration.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 		DA55F3551D334A0200BBF21F /* History */ = {
 			isa = PBXGroup;
 			children = (
+				DAA076C81D35CE360039248D /* VHistoryChart.swift */,
 				DA55F3561D334A0D00BBF21F /* VHistory.swift */,
 			);
 			path = History;
@@ -626,6 +629,7 @@
 				DAB8F6BA1D31BFE900236A00 /* MHealth.swift in Sources */,
 				DAB344321D2AA48000406CEE /* COnboarding.swift in Sources */,
 				DAB8F6C11D31C4A000236A00 /* MSummary.swift in Sources */,
+				DAA076C91D35CE360039248D /* VHistoryChart.swift in Sources */,
 				DAA6785B1D2A23DF00DDD9CC /* MConfiguration.swift in Sources */,
 				DAA005501D2F42DA004B57FA /* VOnboardingItemPermission.swift in Sources */,
 				DAB8F6BE1D31C0F600236A00 /* MHike.swift in Sources */,
