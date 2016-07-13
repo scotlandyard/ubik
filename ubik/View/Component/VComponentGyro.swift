@@ -2,7 +2,7 @@ import UIKit
 
 class VComponentGyro:UIView
 {
-    weak var model:MComponentGyro!
+    weak var model:MComponentGyro?
     weak var timer:NSTimer?
     private var currentRadius:CGFloat
     private var currentSpeed:CGFloat?
@@ -41,42 +41,48 @@ class VComponentGyro:UIView
     
     override func drawRect(rect:CGRect)
     {
-        model.measures(rect)
-        
-        let context:CGContext = UIGraphicsGetCurrentContext()!
-        CGContextSetLineWidth(context, model.lineWidth)
-        CGContextSetLineCap(context, CGLineCap.Round)
-        CGContextSetStrokeColorWithColor(context, model.color.CGColor)
-        CGContextSetFillColorWithColor(context, model.pointerColor.CGColor)
-        CGContextAddArc(context, model.width_2!, model.height_2!, model.circleRadius!, kMinRadius, currentRadius, 0)
-        
-        let point:CGPoint = CGContextGetPathCurrentPoint(context)
-        
-        CGContextDrawPath(context, CGPathDrawingMode.Stroke)
-        CGContextAddArc(context, point.x, point.y, model.pointerRadius, 0.0001, 0, 0)
-        CGContextDrawPath(context, CGPathDrawingMode.Fill)
+        if model != nil
+        {
+            model!.measures(rect)
+            
+            let context:CGContext = UIGraphicsGetCurrentContext()!
+            CGContextSetLineWidth(context, model!.lineWidth)
+            CGContextSetLineCap(context, CGLineCap.Round)
+            CGContextSetStrokeColorWithColor(context, model!.color.CGColor)
+            CGContextSetFillColorWithColor(context, model!.pointerColor.CGColor)
+            CGContextAddArc(context, model!.width_2!, model!.height_2!, model!.circleRadius!, kMinRadius, currentRadius, 0)
+            
+            let point:CGPoint = CGContextGetPathCurrentPoint(context)
+            
+            CGContextDrawPath(context, CGPathDrawingMode.Stroke)
+            CGContextAddArc(context, point.x, point.y, model!.pointerRadius, 0.0001, 0, 0)
+            CGContextDrawPath(context, CGPathDrawingMode.Fill)
+        }
     }
     
     func tick(sender timer:NSTimer)
     {
-        switch model.delta
+        if model != nil
         {
-            case MComponentGyro.MComponentGyroDelta.Increase:
-                
-                tickIncrease()
-                
-                break
-                
-            case MComponentGyro.MComponentGyroDelta.Decrease:
-                
-                tickDecrease()
-                
-                break
-                
-            case MComponentGyro.MComponentGyroDelta.None:break
+            switch model!.delta
+            {
+                case MComponentGyro.MComponentGyroDelta.Increase:
+                    
+                    tickIncrease()
+                    
+                    break
+                    
+                case MComponentGyro.MComponentGyroDelta.Decrease:
+                    
+                    tickDecrease()
+                    
+                    break
+                    
+                case MComponentGyro.MComponentGyroDelta.None:break
+            }
+            
+            setNeedsDisplay()
         }
-        
-        setNeedsDisplay()
     }
     
     //MARK: private
@@ -119,35 +125,38 @@ class VComponentGyro:UIView
     
     private func thresholds()
     {
-        let percentValue:CGFloat = model.percentValue
-        
-        if percentValue == 0
+        if model != nil
         {
-            maxRadius = kMinRadius
-            radiusThreshold = kMinRadius
-        }
-        else
-        {
-            let maxRadiusDegrees:CGFloat = kMaxDegrees * percentValue
-            let maxRadiusRadian:CGFloat = maxRadiusDegrees * kDegreePerRads
-            maxRadius = maxRadiusRadian + kMinRadius
+            let percentValue:CGFloat = model!.percentValue
             
-            if maxRadius! - kMinRadius > kThresholdRads
+            if percentValue == 0
             {
-                radiusThreshold = maxRadius! - kThresholdRads
+                maxRadius = kMinRadius
+                radiusThreshold = kMinRadius
             }
             else
             {
-                radiusThreshold = kMinRadius
+                let maxRadiusDegrees:CGFloat = kMaxDegrees * percentValue
+                let maxRadiusRadian:CGFloat = maxRadiusDegrees * kDegreePerRads
+                maxRadius = maxRadiusRadian + kMinRadius
+                
+                if maxRadius! - kMinRadius > kThresholdRads
+                {
+                    radiusThreshold = maxRadius! - kThresholdRads
+                }
+                else
+                {
+                    radiusThreshold = kMinRadius
+                }
             }
-        }
-        
-        dispatch_async(dispatch_get_main_queue())
-        { [weak self] in
             
-            if self != nil
-            {
-                self!.timer = NSTimer.scheduledTimerWithTimeInterval(self!.kTimeInterval, target:self!, selector:#selector(self!.tick(sender:)), userInfo:nil, repeats:true)
+            dispatch_async(dispatch_get_main_queue())
+            { [weak self] in
+                
+                if self != nil
+                {
+                    self!.timer = NSTimer.scheduledTimerWithTimeInterval(self!.kTimeInterval, target:self!, selector:#selector(self!.tick(sender:)), userInfo:nil, repeats:true)
+                }
             }
         }
     }
@@ -168,25 +177,28 @@ class VComponentGyro:UIView
     
     func update()
     {
-        switch model.delta
+        if model != nil
         {
-            case MComponentGyro.MComponentGyroDelta.Increase:
-                
-                deltaIncrease()
-                
-                break
-            
-            case MComponentGyro.MComponentGyroDelta.Decrease:
-                
-                deltaDecrease()
-                
-                break
-                
-            case MComponentGyro.MComponentGyroDelta.None:
-                
-                timer?.invalidate()
-                
-                break
+            switch model!.delta
+            {
+                case MComponentGyro.MComponentGyroDelta.Increase:
+                    
+                    deltaIncrease()
+                    
+                    break
+                    
+                case MComponentGyro.MComponentGyroDelta.Decrease:
+                    
+                    deltaDecrease()
+                    
+                    break
+                    
+                case MComponentGyro.MComponentGyroDelta.None:
+                    
+                    timer?.invalidate()
+                    
+                    break
+            }
         }
     }
 }
