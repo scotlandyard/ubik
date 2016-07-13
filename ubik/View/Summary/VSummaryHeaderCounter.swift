@@ -7,11 +7,11 @@ class VSummaryHeaderCounter:UIView
     weak var labelMaxValue:UILabel!
     weak var spinner:VMainLoader?
     weak var timer:NSTimer?
-    private var deltaCounter:CGFloat
     private var currentCounter:CGFloat
     private var expectedCounter:CGFloat
-    private let kTimeInterval:NSTimeInterval = 0.02
-    private let kAnimationRepetitions:CGFloat = 50
+    private var deltaCounter:CGFloat
+    private let kTimeInterval:NSTimeInterval = 0.020
+    private var kDeltaCounter:CGFloat = 100
     private let numberFormatter:NSNumberFormatter
     private let kValueSize:CGFloat = 35
     private let kMaxValueSize:CGFloat = 14
@@ -22,8 +22,8 @@ class VSummaryHeaderCounter:UIView
         numberFormatter = NSNumberFormatter()
         numberFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
         currentCounter = 0
-        deltaCounter = 0
         expectedCounter = 0
+        deltaCounter = 0
         
         super.init(frame:CGRectZero)
         userInteractionEnabled = false
@@ -146,7 +146,15 @@ class VSummaryHeaderCounter:UIView
         timer?.invalidate()
         let stringMaxValue:String = numberFormatter.stringFromNumber(model.maxValue)!
         expectedCounter = model.value
-        deltaCounter = floor((expectedCounter - currentCounter) / kAnimationRepetitions)
+        
+        if expectedCounter > currentCounter
+        {
+            deltaCounter = kDeltaCounter
+        }
+        else
+        {
+            deltaCounter = -kDeltaCounter
+        }
         
         dispatch_async(dispatch_get_main_queue())
         { [weak self] in
