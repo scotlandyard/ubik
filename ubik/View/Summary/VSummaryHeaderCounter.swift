@@ -10,8 +10,8 @@ class VSummaryHeaderCounter:UIView
     private var deltaCounter:CGFloat
     private var currentCounter:CGFloat
     private var expectedCounter:CGFloat
-    private let kTimeInterval:NSTimeInterval = 0.04
-    private let kAnimationRepetitions:CGFloat = 40
+    private let kTimeInterval:NSTimeInterval = 0.02
+    private let kAnimationRepetitions:CGFloat = 50
     private let numberFormatter:NSNumberFormatter
     private let kValueSize:CGFloat = 35
     private let kMaxValueSize:CGFloat = 14

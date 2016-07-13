@@ -39,7 +39,18 @@ class CSummary:CMainController, MHealthTodayDelegate
     
     func notifiedBecameActive(sender notification:NSNotification)
     {
-        fetchData()
+//        fetchData()
+        
+        if model.today > 20000
+        {
+            model.today -= 10000
+        }
+        else
+        {
+            model.today += 3000
+        }
+        
+        reload()
     }
     
     //MARK: private
