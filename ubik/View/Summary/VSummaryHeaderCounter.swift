@@ -10,8 +10,8 @@ class VSummaryHeaderCounter:UIView
     private var deltaCounter:CGFloat
     private var currentCounter:CGFloat
     private var expectedCounter:CGFloat
-    private let kTimeInterval:NSTimeInterval = 0.05
-    private let kAnimationRepetitions:CGFloat = 60
+    private let kTimeInterval:NSTimeInterval = 0.04
+    private let kAnimationRepetitions:CGFloat = 40
     private let numberFormatter:NSNumberFormatter
     private let kValueSize:CGFloat = 35
     private let kMaxValueSize:CGFloat = 14
@@ -146,7 +146,7 @@ class VSummaryHeaderCounter:UIView
         timer?.invalidate()
         let stringMaxValue:String = numberFormatter.stringFromNumber(model.maxValue)!
         expectedCounter = model.value
-        deltaCounter = (expectedCounter - currentCounter) / kAnimationRepetitions
+        deltaCounter = floor((expectedCounter - currentCounter) / kAnimationRepetitions)
         
         dispatch_async(dispatch_get_main_queue())
         { [weak self] in
