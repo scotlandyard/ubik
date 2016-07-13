@@ -34,6 +34,8 @@
 		DAA076C91D35CE360039248D /* VHistoryChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA076C81D35CE360039248D /* VHistoryChart.swift */; };
 		DAA076CB1D35D0A90039248D /* VHistoryChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA076CA1D35D0A90039248D /* VHistoryChartCell.swift */; };
 		DAA076CD1D35D1390039248D /* CategoryUICollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA076CC1D35D1390039248D /* CategoryUICollectionReusableView.swift */; };
+		DAA076D01D35D2950039248D /* MHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA076CF1D35D2950039248D /* MHistory.swift */; };
+		DAA076D21D35D29D0039248D /* MHistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA076D11D35D29D0039248D /* MHistoryItem.swift */; };
 		DAA0DC681D23184C00F3EF29 /* CategoryNSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA0DC671D23184C00F3EF29 /* CategoryNSFileManager.swift */; };
 		DAA678581D2A1BBF00DDD9CC /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAA678571D2A1BBF00DDD9CC /* HealthKit.framework */; };
 		DAA6785B1D2A23DF00DDD9CC /* MConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA6785A1D2A23DF00DDD9CC /* MConfiguration.swift */; };
@@ -119,6 +121,8 @@
 		DAA076C81D35CE360039248D /* VHistoryChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHistoryChart.swift; sourceTree = "<group>"; };
 		DAA076CA1D35D0A90039248D /* VHistoryChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHistoryChartCell.swift; sourceTree = "<group>"; };
 		DAA076CC1D35D1390039248D /* CategoryUICollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryUICollectionReusableView.swift; sourceTree = "<group>"; };
+		DAA076CF1D35D2950039248D /* MHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHistory.swift; sourceTree = "<group>"; };
+		DAA076D11D35D29D0039248D /* MHistoryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHistoryItem.swift; sourceTree = "<group>"; };
 		DAA0DC671D23184C00F3EF29 /* CategoryNSFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSFileManager.swift; sourceTree = "<group>"; };
 		DAA678571D2A1BBF00DDD9CC /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		DAA6785A1D2A23DF00DDD9CC /* MConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MConfiguration.swift; sourceTree = "<group>"; };
@@ -275,6 +279,7 @@
 		DA906DEC1D22F9490095B270 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DAA076CE1D35D28C0039248D /* History */,
 				DAB8F6BF1D31C49000236A00 /* Summary */,
 				DAB8F6BC1D31C0EB00236A00 /* Hike */,
 				DAB344331D2AAE7200406CEE /* Onboarding */,
@@ -324,6 +329,15 @@
 				DA55F34A1D31CF3E00BBF21F /* MHealthTodayDelegate.swift */,
 			);
 			path = Health;
+			sourceTree = "<group>";
+		};
+		DAA076CE1D35D28C0039248D /* History */ = {
+			isa = PBXGroup;
+			children = (
+				DAA076CF1D35D2950039248D /* MHistory.swift */,
+				DAA076D11D35D29D0039248D /* MHistoryItem.swift */,
+			);
+			path = History;
 			sourceTree = "<group>";
 		};
 		DAA0DC661D23174E00F3EF29 /* Category */ = {
@@ -658,6 +672,7 @@
 				DAB3443B1D2AB0D700406CEE /* MOnboardingItemPermission.swift in Sources */,
 				DAA076CD1D35D1390039248D /* CategoryUICollectionReusableView.swift in Sources */,
 				DA55F34D1D33081D00BBF21F /* CategoryNSDate.swift in Sources */,
+				DAA076D01D35D2950039248D /* MHistory.swift in Sources */,
 				DACE5CBD1D26D5EF00080E5F /* CategoryUIColor.swift in Sources */,
 				DAA678691D2A261F00DDD9CC /* DSessionModel.xcdatamodeld in Sources */,
 				DA906DFB1D22FC700095B270 /* CMainParent.swift in Sources */,
@@ -673,6 +688,7 @@
 				DAB3443F1D2AB10800406CEE /* MOnboardingItemReady.swift in Sources */,
 				DAAF3C8F1D2C89C600BBBD40 /* COnboardingItem.swift in Sources */,
 				DAA0054C1D2F426F004B57FA /* COnboardingItemReady.swift in Sources */,
+				DAA076D21D35D29D0039248D /* MHistoryItem.swift in Sources */,
 				DA2C38C01D308D5900977D50 /* DStepsModel.xcdatamodeld in Sources */,
 				DAB344351D2AAE7C00406CEE /* MOnboarding.swift in Sources */,
 				DA2C38C81D308EA100977D50 /* DStepsHike+CoreDataProperties.swift in Sources */,

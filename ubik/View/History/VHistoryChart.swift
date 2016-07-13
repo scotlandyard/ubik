@@ -1,6 +1,6 @@
 import UIKit
 
-class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewFlowLayout
+class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
     init()
     {
@@ -9,6 +9,11 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
         clipsToBounds = true
         
         
+    }
+    
+    required init?(coder:NSCoder)
+    {
+        fatalError()
     }
     
     //MARK: col del
@@ -25,5 +30,11 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
     
     func collectionView(collectionView:UICollectionView, cellForItemAtIndexPath indexPath:NSIndexPath) -> UICollectionViewCell
     {
+        let cell:VHistoryChartCell = collectionView.dequeueReusableCellWithReuseIdentifier(
+            VHistoryChartCell.reusableIdentifier(),
+            forIndexPath:
+            indexPath) as! VHistoryChartCell
+        
+        return cell
     }
 }
