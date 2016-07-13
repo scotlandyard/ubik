@@ -32,6 +32,8 @@
 		DAA005521D2F42E6004B57FA /* VOnboardingItemLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA005511D2F42E6004B57FA /* VOnboardingItemLoading.swift */; };
 		DAA005541D2F42F3004B57FA /* VOnboardingItemReady.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA005531D2F42F3004B57FA /* VOnboardingItemReady.swift */; };
 		DAA076C91D35CE360039248D /* VHistoryChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA076C81D35CE360039248D /* VHistoryChart.swift */; };
+		DAA076CB1D35D0A90039248D /* VHistoryChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA076CA1D35D0A90039248D /* VHistoryChartCell.swift */; };
+		DAA076CD1D35D1390039248D /* CategoryUICollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA076CC1D35D1390039248D /* CategoryUICollectionReusableView.swift */; };
 		DAA0DC681D23184C00F3EF29 /* CategoryNSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA0DC671D23184C00F3EF29 /* CategoryNSFileManager.swift */; };
 		DAA678581D2A1BBF00DDD9CC /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAA678571D2A1BBF00DDD9CC /* HealthKit.framework */; };
 		DAA6785B1D2A23DF00DDD9CC /* MConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA6785A1D2A23DF00DDD9CC /* MConfiguration.swift */; };
@@ -115,6 +117,8 @@
 		DAA005511D2F42E6004B57FA /* VOnboardingItemLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VOnboardingItemLoading.swift; sourceTree = "<group>"; };
 		DAA005531D2F42F3004B57FA /* VOnboardingItemReady.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VOnboardingItemReady.swift; sourceTree = "<group>"; };
 		DAA076C81D35CE360039248D /* VHistoryChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHistoryChart.swift; sourceTree = "<group>"; };
+		DAA076CA1D35D0A90039248D /* VHistoryChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHistoryChartCell.swift; sourceTree = "<group>"; };
+		DAA076CC1D35D1390039248D /* CategoryUICollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryUICollectionReusableView.swift; sourceTree = "<group>"; };
 		DAA0DC671D23184C00F3EF29 /* CategoryNSFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSFileManager.swift; sourceTree = "<group>"; };
 		DAA678571D2A1BBF00DDD9CC /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		DAA6785A1D2A23DF00DDD9CC /* MConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MConfiguration.swift; sourceTree = "<group>"; };
@@ -187,8 +191,9 @@
 		DA55F3551D334A0200BBF21F /* History */ = {
 			isa = PBXGroup;
 			children = (
-				DAA076C81D35CE360039248D /* VHistoryChart.swift */,
 				DA55F3561D334A0D00BBF21F /* VHistory.swift */,
+				DAA076C81D35CE360039248D /* VHistoryChart.swift */,
+				DAA076CA1D35D0A90039248D /* VHistoryChartCell.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -330,6 +335,7 @@
 				DAA005471D2F3C54004B57FA /* CategoryUIViewController.swift */,
 				DA55F34C1D33081D00BBF21F /* CategoryNSDate.swift */,
 				DADF024B1D35404C00FBFDA6 /* CategoryNSNotification.swift */,
+				DAA076CC1D35D1390039248D /* CategoryUICollectionReusableView.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -650,6 +656,7 @@
 				DAD00CFC1D2752B600BCDDAA /* VComponentGyroIcon.swift in Sources */,
 				DAD00CF61D27109100BCDDAA /* VMainBar.swift in Sources */,
 				DAB3443B1D2AB0D700406CEE /* MOnboardingItemPermission.swift in Sources */,
+				DAA076CD1D35D1390039248D /* CategoryUICollectionReusableView.swift in Sources */,
 				DA55F34D1D33081D00BBF21F /* CategoryNSDate.swift in Sources */,
 				DACE5CBD1D26D5EF00080E5F /* CategoryUIColor.swift in Sources */,
 				DAA678691D2A261F00DDD9CC /* DSessionModel.xcdatamodeld in Sources */,
@@ -661,6 +668,7 @@
 				DAA0DC681D23184C00F3EF29 /* CategoryNSFileManager.swift in Sources */,
 				DAB3442C1D2A9F2D00406CEE /* DSessionExperience.swift in Sources */,
 				DADF024C1D35404C00FBFDA6 /* CategoryNSNotification.swift in Sources */,
+				DAA076CB1D35D0A90039248D /* VHistoryChartCell.swift in Sources */,
 				DAA678651D2A25A100DDD9CC /* DManagerModel.swift in Sources */,
 				DAB3443F1D2AB10800406CEE /* MOnboardingItemReady.swift in Sources */,
 				DAAF3C8F1D2C89C600BBBD40 /* COnboardingItem.swift in Sources */,
