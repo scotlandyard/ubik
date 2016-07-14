@@ -4,6 +4,7 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
 {
     var model:MHistory?
     weak var collection:UICollectionView!
+    private let kCellHeight:CGFloat = 50
     
     init()
     {
@@ -72,6 +73,14 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
     }
     
     //MARK: col del
+    
+    func collectionView(collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAtIndexPath indexPath:NSIndexPath) -> CGSize
+    {
+        let width:CGFloat = collectionView.bounds.maxX
+        let size:CGSize = CGSizeMake(width, kCellHeight)
+        
+        return size
+    }
     
     func numberOfSectionsInCollectionView(collectionView:UICollectionView) -> Int
     {

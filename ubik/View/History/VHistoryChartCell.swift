@@ -6,7 +6,7 @@ class VHistoryChartCell:UICollectionViewCell
     {
         super.init(frame:frame)
         clipsToBounds = true
-        backgroundColor = UIColor.clearColor()
+        backgroundColor = UIColor.main()
     }
     
     required init?(coder:NSCoder)
