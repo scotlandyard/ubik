@@ -59,6 +59,15 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
         fatalError()
     }
     
+    //MARK: private
+    
+    private func modelAtIndex(index:NSIndexPath) -> MHistoryItem
+    {
+        let item:MHistoryItem = model!.items[index.item]
+        
+        return item
+    }
+    
     //MARK: public
     
     func modelLoaded(model:MHistory)
@@ -107,10 +116,12 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
     
     func collectionView(collectionView:UICollectionView, cellForItemAtIndexPath indexPath:NSIndexPath) -> UICollectionViewCell
     {
+        let item:MHistoryItem = modelAtIndex(indexPath)
         let cell:VHistoryChartCell = collectionView.dequeueReusableCellWithReuseIdentifier(
             VHistoryChartCell.reusableIdentifier(),
             forIndexPath:
             indexPath) as! VHistoryChartCell
+        cell.config(item)
         
         return cell
     }
