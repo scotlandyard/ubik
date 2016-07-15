@@ -4,7 +4,8 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
 {
     var model:MHistory?
     weak var collection:UICollectionView!
-    private let kCellHeight:CGFloat = 50
+    private let kCellWidth:CGFloat = 30
+    private let kCollectionHeight:CGFloat = 150
     
     init()
     {
@@ -17,8 +18,9 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
         flow.footerReferenceSize = CGSizeZero
         flow.minimumLineSpacing = 0
         flow.minimumInteritemSpacing = 0
+        flow.itemSize = CGSizeMake(kCellWidth, kCollectionHeight)
         flow.sectionInset = UIEdgeInsetsZero
-        flow.scrollDirection = UICollectionViewScrollDirection.Vertical
+        flow.scrollDirection = UICollectionViewScrollDirection.Horizontal
         
         let collection:UICollectionView = UICollectionView(frame:CGRectZero, collectionViewLayout:flow)
         collection.clipsToBounds = true
@@ -40,7 +42,8 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
         let views:[String:AnyObject] = [
             "collection":collection]
         
-        let metrics:[String:AnyObject] = [:]
+        let metrics:[String:AnyObject] = [
+            "collectionHeight":kCollectionHeight]
         
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "H:|-0-[collection]-0-|",
@@ -48,7 +51,7 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-0-[collection]-0-|",
+            "V:[collection(collectionHeight)]-0-|",
             options:[],
             metrics:metrics,
             views:views))
@@ -82,14 +85,6 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
     }
     
     //MARK: col del
-    
-    func collectionView(collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAtIndexPath indexPath:NSIndexPath) -> CGSize
-    {
-        let width:CGFloat = collectionView.bounds.maxX
-        let size:CGSize = CGSizeMake(width, kCellHeight)
-        
-        return size
-    }
     
     func numberOfSectionsInCollectionView(collectionView:UICollectionView) -> Int
     {
