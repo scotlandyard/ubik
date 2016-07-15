@@ -22,16 +22,14 @@ class VHistoryChartCell:UICollectionViewCell
         {
             let maxWidth:CGFloat = rect.maxX
             let maxHeight:CGFloat = rect.maxY
-            let topMax:CGFloat = maxWidth * model!.percentage
+            let topMax:CGFloat = maxHeight * model!.percentage
+            let remainHeight:CGFloat = maxHeight - topMax
+            let rect:CGRect = CGRectMake(0, remainHeight, maxWidth, topMax)
             let context:CGContext = UIGraphicsGetCurrentContext()!
-            CGContextSetLineWidth(context, 1)
-            CGContextSetStrokeColorWithColor(context, UIColor.main().CGColor)
-            CGContextMoveToPoint(context, 0, 0)
-            CGContextAddLineToPoint(context, topMax, 0)
-            CGContextAddLineToPoint(context, topMax, maxHeight)
-            CGContextAddLineToPoint(context, 0, maxHeight)
-            CGContextClosePath(context)
-            CGContextDrawPath(context, CGPathDrawingMode.Stroke)
+            
+            CGContextSetFillColorWithColor(context, UIColor.main().CGColor)
+            CGContextAddRect(context, rect)
+            CGContextDrawPath(context, CGPathDrawingMode.Fill)
         }
     }
     

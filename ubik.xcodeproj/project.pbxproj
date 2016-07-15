@@ -24,6 +24,7 @@
 		DA906DFC1D22FD7A0095B270 /* tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA906DF21D22F9490095B270 /* tests.swift */; };
 		DA94E20E1D28B77E002FF88B /* VMainBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA94E20D1D28B77E002FF88B /* VMainBarButton.swift */; };
 		DA94E2101D28B7D8002FF88B /* VMainBarButtonHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA94E20F1D28B7D8002FF88B /* VMainBarButtonHistory.swift */; };
+		DA97F30A1D389958008176E6 /* VHistoryChartSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA97F3091D389958008176E6 /* VHistoryChartSelector.swift */; };
 		DAA005481D2F3C54004B57FA /* CategoryUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA005471D2F3C54004B57FA /* CategoryUIViewController.swift */; };
 		DAA0054A1D2F3F97004B57FA /* COnboardingItemPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA005491D2F3F97004B57FA /* COnboardingItemPermission.swift */; };
 		DAA0054C1D2F426F004B57FA /* COnboardingItemReady.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA0054B1D2F426F004B57FA /* COnboardingItemReady.swift */; };
@@ -111,6 +112,7 @@
 		DA94E20D1D28B77E002FF88B /* VMainBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainBarButton.swift; sourceTree = "<group>"; };
 		DA94E20F1D28B7D8002FF88B /* VMainBarButtonHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainBarButtonHistory.swift; sourceTree = "<group>"; };
 		DA94E21C1D2A1456002FF88B /* ubik.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ubik.entitlements; sourceTree = "<group>"; };
+		DA97F3091D389958008176E6 /* VHistoryChartSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHistoryChartSelector.swift; sourceTree = "<group>"; };
 		DAA005471D2F3C54004B57FA /* CategoryUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryUIViewController.swift; sourceTree = "<group>"; };
 		DAA005491D2F3F97004B57FA /* COnboardingItemPermission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COnboardingItemPermission.swift; sourceTree = "<group>"; };
 		DAA0054B1D2F426F004B57FA /* COnboardingItemReady.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COnboardingItemReady.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				DA55F3561D334A0D00BBF21F /* VHistory.swift */,
 				DAA076C81D35CE360039248D /* VHistoryChart.swift */,
 				DAA076CA1D35D0A90039248D /* VHistoryChartCell.swift */,
+				DA97F3091D389958008176E6 /* VHistoryChartSelector.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -631,6 +634,7 @@
 			files = (
 				DAA0054A1D2F3F97004B57FA /* COnboardingItemPermission.swift in Sources */,
 				DACE5CC61D26E52000080E5F /* MComponentGyroSummary.swift in Sources */,
+				DA97F30A1D389958008176E6 /* VHistoryChartSelector.swift in Sources */,
 				DAB8F6C51D31CED700236A00 /* MHealthStepsDelegate.swift in Sources */,
 				DA55F34F1D3314EA00BBF21F /* VMainBarButtonConfig.swift in Sources */,
 				DACE5CB91D26CA0800080E5F /* VSummary.swift in Sources */,

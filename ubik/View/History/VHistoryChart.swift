@@ -4,14 +4,38 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
 {
     var model:MHistory?
     weak var collection:UICollectionView!
-    private let kCellWidth:CGFloat = 30
-    private let kCollectionHeight:CGFloat = 150
+    weak var selector:VHistoryChartSelector!
+    private weak var layoutSelectorLeft:NSLayoutConstraint!
+    private let kCellWidth:CGFloat = 10
+    private let kCollectionHeight:CGFloat = 50
+    private let kCollectionBaseHeight:CGFloat = 2
+    private let kSelectorWidth:CGFloat = 30
+    private let kSelectorTop:CGFloat = 50
+    private let kSelectorHeight:CGFloat = 70
     
     init()
     {
         super.init(frame:CGRectZero)
         translatesAutoresizingMaskIntoConstraints = false
         clipsToBounds = true
+        
+        let selector:VHistoryChartSelector = VHistoryChartSelector()
+        self.selector = selector
+        
+        let borderBottom:UIView = UIView()
+        borderBottom.userInteractionEnabled = false
+        borderBottom.translatesAutoresizingMaskIntoConstraints = false
+        borderBottom.backgroundColor = UIColor.blackColor()
+        
+        let borderTop:UIView = UIView()
+        borderTop.userInteractionEnabled = false
+        borderTop.translatesAutoresizingMaskIntoConstraints = false
+        borderTop.backgroundColor = UIColor.blackColor()
+        
+        let base:UIView = UIView()
+        base.backgroundColor = UIColor.main()
+        base.userInteractionEnabled = false
+        base.translatesAutoresizingMaskIntoConstraints = false
         
         let flow:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         flow.headerReferenceSize = CGSizeZero
@@ -28,7 +52,7 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
         collection.backgroundColor = UIColor.clearColor()
         collection.showsVerticalScrollIndicator = false
         collection.showsHorizontalScrollIndicator = false
-        collection.alwaysBounceVertical = true
+        collection.alwaysBounceHorizontal = true
         collection.dataSource = self
         collection.delegate = self
         collection.registerClass(
@@ -37,13 +61,25 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
             VHistoryChartCell.reusableIdentifier())
         self.collection = collection
         
+        addSubview(borderBottom)
+        addSubview(borderTop)
+        addSubview(base)
         addSubview(collection)
+        addSubview(selector)
         
         let views:[String:AnyObject] = [
-            "collection":collection]
+            "collection":collection,
+            "base":base,
+            "borderBottom":borderBottom,
+            "borderTop":borderTop,
+            "selector":selector]
         
         let metrics:[String:AnyObject] = [
-            "collectionHeight":kCollectionHeight]
+            "collectionHeight":kCollectionHeight,
+            "baseHeight":kCollectionBaseHeight,
+            "selectorWidth":kSelectorWidth,
+            "selectorHeight":kSelectorHeight,
+            "selectorTop":kSelectorTop]
         
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "H:|-0-[collection]-0-|",
@@ -51,10 +87,48 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:[collection(collectionHeight)]-0-|",
+            "H:|-0-[base]-0-|",
             options:[],
             metrics:metrics,
             views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:|-0-[borderBottom]-0-|",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:|-0-[borderTop]-0-|",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:|-0-[borderTop(1)]-0-[collection(collectionHeight)]-0-[base(baseHeight)]-0-[borderBottom(1)]",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:[selector(selectorWidth)]",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:|-(selectorTop)-[selector(selectorHeight)]",
+            options:[],
+            metrics:metrics,
+            views:views))
+        
+        layoutSelectorLeft = NSLayoutConstraint(
+            item:selector,
+            attribute:NSLayoutAttribute.Left,
+            relatedBy:NSLayoutRelation.Equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.Left,
+            multiplier:1,
+            constant:0)
+        
+        addConstraint(layoutSelectorLeft)
+        
+        centerSelector()
     }
     
     required init?(coder:NSCoder)
@@ -63,6 +137,14 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
     }
     
     //MARK: private
+    
+    private func centerSelector()
+    {
+        let maxWidth:CGFloat = UIScreen.mainScreen().bounds.maxX
+        let remain:CGFloat = maxWidth - kSelectorWidth
+        let margin:CGFloat = remain / 2.0
+        layoutSelectorLeft.constant = margin
+    }
     
     private func modelAtIndex(index:NSIndexPath) -> MHistoryItem
     {
