@@ -28,7 +28,7 @@ class MHike
     {
         let sortDay:NSSortDescriptor = NSSortDescriptor(key:managerSteps.kEntity_Hike_Day, ascending:false)
         let sorters:[NSSortDescriptor] = [sortDay]
-        let history:[DStepsHike] = managerSteps.fetchManagedObjects(managerSteps.kEntity_Hike, limit:0, sorters:sorters) as! [DStepsHike]
+        let history:[DStepsHike] = managerSteps.fetchManagedObjects(managerSteps.kEntity_Hike, limit:0, predicate:nil, sorters:sorters) as! [DStepsHike]
         
         return history
     }
@@ -38,7 +38,7 @@ class MHike
         let hike:DStepsHike?
         let sortAmount:NSSortDescriptor = NSSortDescriptor(key:managerSteps.kEntity_hike_Amount, ascending:false)
         let sorters:[NSSortDescriptor] = [sortAmount]
-        let max:[DStepsHike] = managerSteps.fetchManagedObjects(managerSteps.kEntity_Hike, limit:1, sorters:sorters) as! [DStepsHike]
+        let max:[DStepsHike] = managerSteps.fetchManagedObjects(managerSteps.kEntity_Hike, limit:1, predicate:nil, sorters:sorters) as! [DStepsHike]
         
         if max.isEmpty
         {

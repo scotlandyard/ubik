@@ -6,7 +6,7 @@ class DManagerModel
     private let managedObjectContext:NSManagedObjectContext
     private let kModelExtension:String = "momd"
     private let kSQLiteExtension:String = "%@.sqlite"
-
+    
     init(modelName:String)
     {
         let modelURL:NSURL = NSBundle.mainBundle().URLForResource(modelName, withExtension:kModelExtension)!
@@ -32,12 +32,12 @@ class DManagerModel
         if managedObjectContext.hasChanges
         {
             managedObjectContext.performBlock
-            {
-                do
                 {
-                    try self.managedObjectContext.save()
-                }
-                catch{}
+                    do
+                    {
+                        try self.managedObjectContext.save()
+                    }
+                    catch{}
             }
         }
     }
@@ -50,9 +50,10 @@ class DManagerModel
         return managedObject
     }
     
-    func fetchManagedObjects(entity:String, limit:Int, sorters:[NSSortDescriptor]?) -> [NSManagedObject]
+    func fetchManagedObjects(entity:String, limit:Int, predicate:NSPredicate?, sorters:[NSSortDescriptor]?) -> [NSManagedObject]
     {
         let fetchRequest:NSFetchRequest = NSFetchRequest(entityName:entity)
+        fetchRequest.predicate = predicate
         fetchRequest.sortDescriptors = sorters
         fetchRequest.fetchLimit = limit
         let results:[NSManagedObject]
@@ -71,7 +72,7 @@ class DManagerModel
     
     func fetchLastManagedObject(entity:String) -> NSManagedObject?
     {
-        let managedObjects:[NSManagedObject] = fetchManagedObjects(entity, limit:1, sorters:nil)
+        let managedObjects:[NSManagedObject] = fetchManagedObjects(entity, limit:1, predicate:nil, sorters:nil)
         
         return managedObjects.last
     }

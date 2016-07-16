@@ -10,7 +10,7 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
     private let kCollectionHeight:CGFloat = 50
     private let kCollectionBaseHeight:CGFloat = 2
     private let kSelectorWidth:CGFloat = 30
-    private let kSelectorTop:CGFloat = 50
+    private let kSelectorTop:CGFloat = 35
     private let kSelectorHeight:CGFloat = 70
     
     init()
