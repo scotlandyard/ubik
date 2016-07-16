@@ -75,6 +75,7 @@
 		DAD00CF81D273E7000BCDDAA /* VComponentGyroBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD00CF71D273E7000BCDDAA /* VComponentGyroBase.swift */; };
 		DAD00CFA1D27523300BCDDAA /* ui.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAD00CF91D27523300BCDDAA /* ui.xcassets */; };
 		DAD00CFC1D2752B600BCDDAA /* VComponentGyroIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD00CFB1D2752B600BCDDAA /* VComponentGyroIcon.swift */; };
+		DAD79D691D3A97B3001BBCF5 /* DManagerSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD79D681D3A97B3001BBCF5 /* DManagerSaver.swift */; };
 		DADF024C1D35404C00FBFDA6 /* CategoryNSNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADF024B1D35404C00FBFDA6 /* CategoryNSNotification.swift */; };
 		DAE320701D33D8FE007FDC96 /* VSummaryHeaderCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE3206F1D33D8FE007FDC96 /* VSummaryHeaderCounter.swift */; };
 /* End PBXBuildFile section */
@@ -163,6 +164,7 @@
 		DAD00CF71D273E7000BCDDAA /* VComponentGyroBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VComponentGyroBase.swift; sourceTree = "<group>"; };
 		DAD00CF91D27523300BCDDAA /* ui.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ui.xcassets; sourceTree = "<group>"; };
 		DAD00CFB1D2752B600BCDDAA /* VComponentGyroIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VComponentGyroIcon.swift; sourceTree = "<group>"; };
+		DAD79D681D3A97B3001BBCF5 /* DManagerSaver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManagerSaver.swift; sourceTree = "<group>"; };
 		DADF024B1D35404C00FBFDA6 /* CategoryNSNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSNotification.swift; sourceTree = "<group>"; };
 		DAE3206F1D33D8FE007FDC96 /* VSummaryHeaderCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSummaryHeaderCounter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -372,6 +374,7 @@
 				DAA6785E1D2A25A100DDD9CC /* DManagerModel.swift */,
 				DAA6785F1D2A25A100DDD9CC /* DManagerModelSession.swift */,
 				DA2C38C91D30908A00977D50 /* DManagerModelSteps.swift */,
+				DAD79D681D3A97B3001BBCF5 /* DManagerSaver.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -686,6 +689,7 @@
 				DAA005521D2F42E6004B57FA /* VOnboardingItemLoading.swift in Sources */,
 				DAA0DC681D23184C00F3EF29 /* CategoryNSFileManager.swift in Sources */,
 				DAB3442C1D2A9F2D00406CEE /* DSessionExperience.swift in Sources */,
+				DAD79D691D3A97B3001BBCF5 /* DManagerSaver.swift in Sources */,
 				DADF024C1D35404C00FBFDA6 /* CategoryNSNotification.swift in Sources */,
 				DAA076CB1D35D0A90039248D /* VHistoryChartCell.swift in Sources */,
 				DAA678651D2A25A100DDD9CC /* DManagerModel.swift in Sources */,

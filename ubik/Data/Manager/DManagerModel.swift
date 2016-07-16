@@ -27,7 +27,7 @@ class DManagerModel
     
     //MARK: public
     
-    func saveContext()
+    func forceSaveContext()
     {
         if managedObjectContext.hasChanges
         {
