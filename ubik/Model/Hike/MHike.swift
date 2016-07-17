@@ -28,32 +28,38 @@ class MHike:DManagerDelegate
         managerSteps.saver.save(false)
     }
     
-    func fetchHistory() -> [DStepsHike]
+    func fetchHistory(block:[DStepsHike] -> ())
     {
         let sortDay:NSSortDescriptor = NSSortDescriptor(key:managerSteps.kEntity_Hike_Day, ascending:false)
         let sorters:[NSSortDescriptor] = [sortDay]
-        let history:[DStepsHike] = managerSteps.fetchManagedObjects(managerSteps.kEntity_Hike, limit:0, predicate:nil, sorters:sorters) as! [DStepsHike]
-        
-        return history
+        managerSteps.fetchManagedObjects(managerSteps.kEntity_Hike, limit:0, predicate:nil, sorters:sorters)
+        { (managedObjects) in
+            
+            let history:[DStepsHike] = managedObjects as! [DStepsHike]
+            block(history)
+        }
     }
     
-    func fetchMaxHike(block:DStepsHike -> ())
+    func fetchMaxHike(block:DStepsHike? -> ())
     {
-        let hike:DStepsHike?
         let sortAmount:NSSortDescriptor = NSSortDescriptor(key:managerSteps.kEntity_hike_Amount, ascending:false)
         let sorters:[NSSortDescriptor] = [sortAmount]
-        let max:[DStepsHike] = managerSteps.fetchManagedObjects(managerSteps.kEntity_Hike, limit:1, predicate:nil, sorters:sorters) as! [DStepsHike]
-        
-        if max.isEmpty
-        {
-            hike = nil
+        managerSteps.fetchManagedObjects(managerSteps.kEntity_Hike, limit:1, predicate:nil, sorters:sorters)
+        { (managedObjects) in
+            
+            let hike:DStepsHike?
+            
+            if managedObjects.isEmpty
+            {
+                hike = nil
+            }
+            else
+            {
+                hike = managedObjects.first as? DStepsHike
+            }
+            
+            block(hike)
         }
-        else
-        {
-            hike = max.first
-        }
-        
-        return hike
     }
     
     //MARK: dmanager del
