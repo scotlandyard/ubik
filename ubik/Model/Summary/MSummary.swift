@@ -16,6 +16,10 @@ class MSummary
     
     func loadMax()
     {
-        max = MHike.sharedInstance.fetchMaxHike()
+        MHike.sharedInstance.fetchMaxHike
+        { [weak self] (maxHike) in
+            
+            self?.max = maxHike
+        }
     }
 }
