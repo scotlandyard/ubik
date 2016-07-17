@@ -29,7 +29,8 @@ class MHealth
     {
         let calendar:NSCalendar = NSCalendar.currentCalendar()
         let calendarUnits:NSCalendarUnit = [NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day]
-        var hike:DStepsHike?
+        var hikes:[MHealthHike] = []
+        var hike:MHealthHike?
         
         for sample:HKQuantitySample in samples
         {
@@ -41,7 +42,7 @@ class MHealth
             
             if hike != nil
             {
-                if hike!.day == timestamp
+                if hike!.timestamp == timestamp
                 {
                     hike!.add(count)
                 }
@@ -53,8 +54,17 @@ class MHealth
             
             if hike == nil
             {
-                MHike.sharedInstance.newHike(timestamp, amount:count)
+                hike = MHealthHike(timestamp:timestamp, amount:count)
+                hikes.append(hike!)
             }
+        }
+        
+        for inHike:MHealthHike in hikes
+        {
+            let timestamp:NSTimeInterval = inHike.timestamp
+            let amount:Int32 = inHike.amount
+            
+            MHike.sharedInstance.newHike(timestamp, amount:amount)
         }
         
         MConfiguration.sharedInstance.updateLastHike(lastHike)
