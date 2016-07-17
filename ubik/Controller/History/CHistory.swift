@@ -25,25 +25,36 @@ class CHistory:CMainController
     
     private func loadModel()
     {
-        let history:[DStepsHike] = MHike.sharedInstance.fetchHistory()
-        let maxHike:DStepsHike? = MHike.sharedInstance.fetchMaxHike()
-        let maxHikeNum:Int32
-        
-        if maxHike == nil
-        {
-            maxHikeNum = 1
-        }
-        else
-        {
-            maxHikeNum = maxHike!.amount
-        }
-        
-        let model:MHistory = MHistory(dbModel:history, maxSteps:maxHikeNum)
-        
-        dispatch_async(dispatch_get_main_queue())
-        { [weak self] in
+        MHike.sharedInstance.fetchMaxHike
+        { [weak self] (maxHike) in
             
-            self?.viewHistory.chart.modelLoaded(model)
+            let maxHikeNum:Int32
+            
+            if maxHike == nil
+            {
+                maxHikeNum = 1
+            }
+            else
+            {
+                maxHikeNum = maxHike!.amount
+            }
+            
+            self?.maxHikeLoaded(maxHikeNum)
+        }
+    }
+    
+    private func maxHikeLoaded(maxHikeNum:Int32)
+    {
+        MHike.sharedInstance.fetchHistory
+        { (history) in
+            
+            let model:MHistory = MHistory(dbModel:history, maxSteps:maxHikeNum)
+            
+            dispatch_async(dispatch_get_main_queue())
+            { [weak self] in
+                
+                self?.viewHistory.chart.modelLoaded(model)
+            }
         }
     }
 }

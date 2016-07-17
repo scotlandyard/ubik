@@ -1,7 +1,7 @@
 import Foundation
 import CoreData
 
-class MHike:DManagerDelegate
+class MHike
 {
     static let sharedInstance = MHike()
     private weak var managerSteps:DManagerModelSteps!
@@ -60,15 +60,5 @@ class MHike:DManagerDelegate
             
             block(hike)
         }
-    }
-    
-    //MARK: dmanager del
-    
-    func dManagerFetched(results:[NSManagedObject], manager:DManagerModel, entity:String)
-    {
-    }
-    
-    func dManagerCreated(result:NSManagedObject, manager:DManagerModel, entity:String)
-    {
     }
 }

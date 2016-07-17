@@ -8,6 +8,7 @@ class CMainParent:UIViewController
     private var statusBarStyle:UIStatusBarStyle
     private let kBarHeight:CGFloat = 60
     private let kAnimationDuration:NSTimeInterval = 0.3
+    private let kLoadDelay:UInt64 = 250
     
     enum CMainParentScroll
     {
@@ -35,15 +36,7 @@ class CMainParent:UIViewController
         
         super.init(nibName:nil, bundle:nil)
         controllerRect = CGRectMake(0, kBarHeight, view.bounds.maxX, view.bounds.maxY - kBarHeight)
-        
-        if MConfiguration.sharedInstance.experience.onboardingDone
-        {
-            startSummary()
-        }
-        else
-        {
-            startOnboarding()
-        }
+        loadSession()
     }
     
     required init?(coder aDecoder:NSCoder?)
@@ -62,6 +55,29 @@ class CMainParent:UIViewController
     }
     
     //MARK: private
+    
+    private func loadSession()
+    {
+        if MConfiguration.sharedInstance.experience == nil
+        {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(NSEC_PER_MSEC * kLoadDelay)), dispatch_get_main_queue())
+            { [weak self] in
+                
+                self?.loadSession()
+            }
+        }
+        else
+        {
+            if MConfiguration.sharedInstance.experience!.onboardingDone
+            {
+                startSummary()
+            }
+            else
+            {
+                startOnboarding()
+            }
+        }
+    }
     
     private func startBar()
     {

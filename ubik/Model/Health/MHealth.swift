@@ -111,7 +111,7 @@ class MHealth
     
     func loadStepsRemaining(delegate:MHealthTodayDelegate)
     {
-        let lastTimestamp:NSTimeInterval = MConfiguration.sharedInstance.experience.lastHike
+        let lastTimestamp:NSTimeInterval = MConfiguration.sharedInstance.experience!.lastHike
         let lastLoadedDate:NSDate = NSDate(timeIntervalSince1970:lastTimestamp)
         let today:NSDate = NSDate().beginningOfDay()
         let predicate:NSPredicate = HKQuery.predicateForSamplesWithStartDate(lastLoadedDate, endDate:nil, options:HKQueryOptions.StrictStartDate)
