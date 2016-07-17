@@ -1,42 +1,62 @@
 import Foundation
+import CoreData
 
-class MConfiguration
+class MConfiguration:DManagerDelegate
 {
     static let sharedInstance = MConfiguration()
-    private let managerSession:DManagerModelSession
-    private(set) var experience:DSessionExperience
+    private weak var managerSession:DManagerModelSession!
+    private(set) var experience:DSessionExperience?
     private let kAppVersionName:String = "CFBundleShortVersionString"
     
     private init()
     {
         managerSession = DManager.sharedInstance.managerSession
+        managerSession.fetchManagedObjects(managerSession.kEntity_Experience, limit:1, predicate:nil, sorters:nil, delegate:self)
+    }
+    
+    //MARK: private
+    
+    private func experienceLoaded()
+    {
         let currentVersion:String = NSBundle.mainBundle().objectForInfoDictionaryKey(kAppVersionName) as! String
-        var tryExperience:DSessionExperience? = managerSession.fetchLastManagedObject(managerSession.kEntity_Experience) as? DSessionExperience
-        
-        if tryExperience == nil
-        {
-            tryExperience = managerSession.createManagedObject(managerSession.kEntity_Experience) as? DSessionExperience
-        }
-        
-        tryExperience!.version = currentVersion
-        experience = tryExperience!
+        experience!.version = currentVersion
     }
     
     //MARK: public
     
     func saveSession()
     {
-        managerSession.saveContext()
+        managerSession.saver.save(false)
     }
     
     func onboardingDone()
     {
-        experience.onboardingDone = true
+        experience!.onboardingDone = true
         saveSession()
     }
     
     func updateLastHike(lastHike:NSTimeInterval)
     {
-        experience.lastHike = lastHike
+        experience!.lastHike = lastHike
+    }
+    
+    //MARK: dmanager delegate
+    
+    func dManagerFetched(results:[NSManagedObject], manager:DManagerModel, entity:String)
+    {
+        if results.isEmpty
+        {
+            managerSession.createManagedObject(managerSession.kEntity_Experience, delegate:self)
+        }
+        else
+        {
+            experience = results.first as? DSessionExperience
+            experienceLoaded()
+        }
+    }
+    
+    func dManagerCreated(result:NSManagedObject, manager:DManagerModel, entity:String)
+    {
+        experienceLoaded()
     }
 }
