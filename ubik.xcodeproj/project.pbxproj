@@ -13,6 +13,7 @@
 		DA2C38C81D308EA100977D50 /* DStepsHike+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C38C61D308EA100977D50 /* DStepsHike+CoreDataProperties.swift */; };
 		DA2C38CA1D30908A00977D50 /* DManagerModelSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C38C91D30908A00977D50 /* DManagerModelSteps.swift */; };
 		DA2C7D191D3C23CB005FFDB0 /* DManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C7D181D3C23CB005FFDB0 /* DManagerDelegate.swift */; };
+		DA2C7D1B1D3C41BD005FFDB0 /* MHealthHike.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C7D1A1D3C41BD005FFDB0 /* MHealthHike.swift */; };
 		DA55F34B1D31CF3E00BBF21F /* MHealthTodayDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F34A1D31CF3E00BBF21F /* MHealthTodayDelegate.swift */; };
 		DA55F34D1D33081D00BBF21F /* CategoryNSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F34C1D33081D00BBF21F /* CategoryNSDate.swift */; };
 		DA55F34F1D3314EA00BBF21F /* VMainBarButtonConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F34E1D3314EA00BBF21F /* VMainBarButtonConfig.swift */; };
@@ -98,6 +99,7 @@
 		DA2C38C61D308EA100977D50 /* DStepsHike+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DStepsHike+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DA2C38C91D30908A00977D50 /* DManagerModelSteps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManagerModelSteps.swift; sourceTree = "<group>"; };
 		DA2C7D181D3C23CB005FFDB0 /* DManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManagerDelegate.swift; sourceTree = "<group>"; };
+		DA2C7D1A1D3C41BD005FFDB0 /* MHealthHike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealthHike.swift; sourceTree = "<group>"; };
 		DA55F34A1D31CF3E00BBF21F /* MHealthTodayDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealthTodayDelegate.swift; sourceTree = "<group>"; };
 		DA55F34C1D33081D00BBF21F /* CategoryNSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSDate.swift; sourceTree = "<group>"; };
 		DA55F34E1D3314EA00BBF21F /* VMainBarButtonConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainBarButtonConfig.swift; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				DAB8F6B81D31BFE900236A00 /* MHealth.swift */,
+				DA2C7D1A1D3C41BD005FFDB0 /* MHealthHike.swift */,
 				DAB8F6C21D31CEC100236A00 /* MHealthAuthDelegate.swift */,
 				DAB8F6C41D31CED700236A00 /* MHealthStepsDelegate.swift */,
 				DA55F34A1D31CF3E00BBF21F /* MHealthTodayDelegate.swift */,
@@ -690,6 +693,7 @@
 				DAD00CF81D273E7000BCDDAA /* VComponentGyroBase.swift in Sources */,
 				DAAF3C8D1D2C873800BBBD40 /* VOnboardingItemWelcome.swift in Sources */,
 				DACE5CC01D26D6B600080E5F /* VComponentGyro.swift in Sources */,
+				DA2C7D1B1D3C41BD005FFDB0 /* MHealthHike.swift in Sources */,
 				DAA005521D2F42E6004B57FA /* VOnboardingItemLoading.swift in Sources */,
 				DAA0DC681D23184C00F3EF29 /* CategoryNSFileManager.swift in Sources */,
 				DAB3442C1D2A9F2D00406CEE /* DSessionExperience.swift in Sources */,

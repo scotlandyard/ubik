@@ -58,6 +58,7 @@ class MConfiguration:DManagerDelegate
     
     func dManagerCreated(result:NSManagedObject, manager:DManagerModel, entity:String)
     {
+        experience = result as? DSessionExperience
         experienceLoaded()
     }
 }
