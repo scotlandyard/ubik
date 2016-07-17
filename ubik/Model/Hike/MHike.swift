@@ -3,7 +3,7 @@ import Foundation
 class MHike
 {
     static let sharedInstance = MHike()
-    private let managerSteps:DManagerModelSteps
+    private weak var managerSteps:DManagerModelSteps!
     
     private init()
     {
@@ -12,11 +12,14 @@ class MHike
     
     //MARK: public
     
-    func newHike() -> DStepsHike
+    func newHike(day:NSTimeInterval, amount:Int32)
     {
-        let hike:DStepsHike = managerSteps.createManagedObject(managerSteps.kEntity_Hike) as! DStepsHike
-        
-        return hike
+        managerSteps.createManagedObject(managerSteps.kEntity_Hike)
+        { (rawHike) in
+            
+            let hike:DStepsHike = rawHike as! DStepsHike
+            hike.record(day, amount:amount)
+        }
     }
     
     func saveSession()

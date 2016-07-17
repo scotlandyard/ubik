@@ -38,6 +38,7 @@ class MConfiguration:DManagerDelegate
     func updateLastHike(lastHike:NSTimeInterval)
     {
         experience!.lastHike = lastHike
+        saveSession()
     }
     
     //MARK: dmanager delegate

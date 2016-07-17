@@ -31,6 +31,23 @@ class DManagerModel
     
     //MARK: public
     
+    func createManagedObject(entity:String, block:(NSManagedObject -> ())?)
+    {
+        saver.delaySaving()
+        
+        managedObjectContext.performBlock
+        { [weak self] in
+                
+                if self != nil
+                {
+                    let entityDescription:NSEntityDescription = NSEntityDescription.entityForName(entity, inManagedObjectContext:self!.managedObjectContext)!
+                    let managedObject:NSManagedObject = NSManagedObject(entity:entityDescription, insertIntoManagedObjectContext:self!.managedObjectContext)
+                    
+                    block?(managedObject)
+                }
+        }
+    }
+    
     func createManagedObject(entity:String, delegate:DManagerDelegate?)
     {
         saver.delaySaving()

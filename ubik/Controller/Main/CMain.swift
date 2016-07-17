@@ -19,12 +19,6 @@ class AppDelegate:UIResponder, UIApplicationDelegate
         return true
     }
     
-    func applicationWillResignActive(application:UIApplication)
-    {
-        DManager.sharedInstance.managerSession.saveContext()
-        DManager.sharedInstance.managerSteps.saveContext()
-    }
-    
     func applicationDidBecomeActive(application:UIApplication)
     {
         NSNotification.postBecameActive()

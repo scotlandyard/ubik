@@ -53,8 +53,7 @@ class MHealth
             
             if hike == nil
             {
-                hike = MHike.sharedInstance.newHike()
-                hike!.record(timestamp, amount:count)
+                MHike.sharedInstance.newHike(timestamp, amount:count)
             }
         }
         
