@@ -3,6 +3,7 @@ import CoreData
 
 class DManagerModel
 {
+    let saver:DManagerSaver
     private let managedObjectContext:NSManagedObjectContext
     private let kModelExtension:String = "momd"
     private let kSQLiteExtension:String = "%@.sqlite"
@@ -23,6 +24,9 @@ class DManagerModel
         
         managedObjectContext = NSManagedObjectContext(concurrencyType:NSManagedObjectContextConcurrencyType.PrivateQueueConcurrencyType)
         managedObjectContext.persistentStoreCoordinator = persistentStoreCoordinator
+        
+        saver = DManagerSaver()
+        saver.model = self
     }
     
     //MARK: public
@@ -46,6 +50,7 @@ class DManagerModel
     {
         let entityDescription:NSEntityDescription = NSEntityDescription.entityForName(entity, inManagedObjectContext:managedObjectContext)!
         let managedObject:NSManagedObject = NSManagedObject(entity:entityDescription, insertIntoManagedObjectContext: managedObjectContext)
+        saver.delaySaving()
         
         return managedObject
     }
@@ -80,5 +85,6 @@ class DManagerModel
     func delete(object:NSManagedObject)
     {
         managedObjectContext.deleteObject(object)
+        saver.delaySaving()
     }
 }
