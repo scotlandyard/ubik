@@ -6,15 +6,19 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
     weak var collection:UICollectionView!
     weak var selector:VHistoryChartSelector!
     private weak var layoutSelectorLeft:NSLayoutConstraint!
+    private let selectorWidth_2:CGFloat
     private let kCellWidth:CGFloat = 10
     private let kCollectionHeight:CGFloat = 50
     private let kCollectionBaseHeight:CGFloat = 2
     private let kSelectorWidth:CGFloat = 30
     private let kSelectorTop:CGFloat = 35
     private let kSelectorHeight:CGFloat = 70
+    private let kSelectorAnimationDuration:NSTimeInterval = 0.3
     
     init()
     {
+        selectorWidth_2 = kSelectorWidth / 2.0
+        
         super.init(frame:CGRectZero)
         translatesAutoresizingMaskIntoConstraints = false
         clipsToBounds = true
@@ -136,14 +140,41 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
         fatalError()
     }
     
+    override func touchesBegan(touches:Set<UITouch>, withEvent event:UIEvent?)
+    {
+        if !touches.isEmpty
+        {
+            let touch:UITouch = touches.first!
+            touchProcess(touch)
+        }
+    }
+    
+    override func touchesMoved(touches:Set<UITouch>, withEvent event:UIEvent?)
+    {
+        if !touches.isEmpty
+        {
+            let touch:UITouch = touches.first!
+            touchProcess(touch)
+        }
+    }
+    
     //MARK: private
+    
+    private func touchProcess(touch:UITouch)
+    {
+        let point:CGPoint = touch.locationInView(self)
+        let x:CGFloat = point.x
+        let realX:CGFloat = x - selectorWidth_2
+        animateSelector(realX)
+    }
     
     private func centerSelector()
     {
         let maxWidth:CGFloat = UIScreen.mainScreen().bounds.maxX
         let remain:CGFloat = maxWidth - kSelectorWidth
         let margin:CGFloat = remain / 2.0
-        layoutSelectorLeft.constant = margin
+        
+        animateSelector(margin)
     }
     
     private func modelAtIndex(index:NSIndexPath) -> MHistoryItem
@@ -151,6 +182,17 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
         let item:MHistoryItem = model!.items[index.item]
         
         return item
+    }
+    
+    private func animateSelector(left:CGFloat)
+    {
+        layoutSelectorLeft.constant = left
+        
+        UIView.animateWithDuration(kSelectorAnimationDuration)
+        { [weak self] in
+            
+            self?.layoutIfNeeded()
+        }
     }
     
     //MARK: public
