@@ -38,34 +38,29 @@ class DManagerModel
         managedObjectContext.performBlock
         { [weak self] in
                 
-                if self != nil
-                {
-                    let entityDescription:NSEntityDescription = NSEntityDescription.entityForName(entity, inManagedObjectContext:self!.managedObjectContext)!
-                    let managedObject:NSManagedObject = NSManagedObject(entity:entityDescription, insertIntoManagedObjectContext:self!.managedObjectContext)
-                    
-                    block?(managedObject)
-                }
+            if self != nil
+            {
+                let entityDescription:NSEntityDescription = NSEntityDescription.entityForName(entity, inManagedObjectContext:self!.managedObjectContext)!
+                let managedObject:NSManagedObject = NSManagedObject(entity:entityDescription, insertIntoManagedObjectContext:self!.managedObjectContext)
+                
+                block?(managedObject)
+            }
         }
     }
     
     func createManagedObject(entity:String, delegate:DManagerDelegate?)
     {
-        saver.delaySaving()
-        
-        managedObjectContext.performBlock
-        { [weak self] in
-                
-                if self != nil
-                {
-                    let entityDescription:NSEntityDescription = NSEntityDescription.entityForName(entity, inManagedObjectContext:self!.managedObjectContext)!
-                    let managedObject:NSManagedObject = NSManagedObject(entity:entityDescription, insertIntoManagedObjectContext:self!.managedObjectContext)
-                    
-                    delegate?.dManagerCreated(managedObject, manager:self!, entity:entity)
-                }
+        createManagedObject(entity)
+        { [weak self] (managedObject) in
+            
+            if self != nil
+            {
+                delegate?.dManagerCreated(managedObject, manager:self!, entity:entity)
+            }
         }
     }
     
-    func fetchManagedObjects(entity:String, limit:Int, predicate:NSPredicate?, sorters:[NSSortDescriptor]?, delegate:DManagerDelegate?)
+    func fetchManagedObjects(entity:String, limit:Int, predicate:NSPredicate?, sorters:[NSSortDescriptor]?, block:([NSManagedObject] -> ())?)
     {
         saver.delaySaving()
         let fetchRequest:NSFetchRequest = NSFetchRequest(entityName:entity)
@@ -76,21 +71,30 @@ class DManagerModel
         managedObjectContext.performBlock
         { [weak self] in
                 
-                let results:[NSManagedObject]
-                
-                do
-                {
-                    results = try self?.managedObjectContext.executeFetchRequest(fetchRequest) as! [NSManagedObject]
-                }
-                catch
-                {
-                    results = []
-                }
-                
-                if self != nil
-                {
-                    delegate?.dManagerFetched(results, manager:self!, entity:entity)
-                }
+            let results:[NSManagedObject]
+            
+            do
+            {
+                results = try self?.managedObjectContext.executeFetchRequest(fetchRequest) as! [NSManagedObject]
+            }
+            catch
+            {
+                results = []
+            }
+            
+            block?(results)
+        }
+    }
+    
+    func fetchManagedObjects(entity:String, limit:Int, predicate:NSPredicate?, sorters:[NSSortDescriptor]?, delegate:DManagerDelegate?)
+    {
+        fetchManagedObjects(entity, limit:limit, predicate:predicate, sorters:sorters)
+        { [weak self] (managedObjects) in
+            
+            if self != nil
+            {
+                delegate?.dManagerFetched(managedObjects, manager:self!, entity:entity)
+            }
         }
     }
     

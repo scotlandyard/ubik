@@ -1,6 +1,7 @@
 import Foundation
+import CoreData
 
-class MHike
+class MHike:DManagerDelegate
 {
     static let sharedInstance = MHike()
     private weak var managerSteps:DManagerModelSteps!
@@ -24,7 +25,7 @@ class MHike
     
     func saveSession()
     {
-        managerSteps.saveContext()
+        managerSteps.saver.save(false)
     }
     
     func fetchHistory() -> [DStepsHike]
@@ -36,7 +37,7 @@ class MHike
         return history
     }
     
-    func fetchMaxHike() -> DStepsHike?
+    func fetchMaxHike(block:DStepsHike -> ())
     {
         let hike:DStepsHike?
         let sortAmount:NSSortDescriptor = NSSortDescriptor(key:managerSteps.kEntity_hike_Amount, ascending:false)
@@ -53,5 +54,15 @@ class MHike
         }
         
         return hike
+    }
+    
+    //MARK: dmanager del
+    
+    func dManagerFetched(results:[NSManagedObject], manager:DManagerModel, entity:String)
+    {
+    }
+    
+    func dManagerCreated(result:NSManagedObject, manager:DManagerModel, entity:String)
+    {
     }
 }
