@@ -4,7 +4,7 @@ class DManagerSaver
 {
     weak var model:DManagerModel!
     weak var timer:NSTimer?
-    private let kTimeoutSave:NSTimeInterval = 1.5
+    private let kTimeoutSave:NSTimeInterval = 1
     
     init()
     {
@@ -13,34 +13,58 @@ class DManagerSaver
     @objc func timerDone(sender timer:NSTimer)
     {
         timer.invalidate()
+        self.timer = nil
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0))
         { [weak self] in
             
-            self?.saveModel()
-            self?.timer = nil
+            self?.actualSave()
         }
     }
     
     //MARK: private
     
-    private func saveModel()
+    private func actualSave()
     {
-        model.forceSaveContext()
+        if model.managedObjectContext.hasChanges
+        {
+            model.managedObjectContext.performBlock
+            { [weak self] in
+                    
+                do
+                {
+                    try self?.model.managedObjectContext.save()
+                }
+                catch{}
+            }
+        }
     }
     
     //MARK: public
     
-    func save()
+    func save(force:Bool)
     {
-        dispatch_async(dispatch_get_main_queue())
-        { [weak self] in
+        if force
+        {
+            clearTimer()
             
-            self?.timer?.invalidate()
-            
-            if self != nil
-            {
-                self!.timer = NSTimer.scheduledTimerWithTimeInterval(self!.kTimeoutSave, target:self!, selector:#selector(self!.timerDone(sender:)), userInfo:nil, repeats:false)
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0))
+            { [weak self] in
+                
+                self?.actualSave()
+            }
+        }
+        else
+        {
+            dispatch_async(dispatch_get_main_queue())
+            { [weak self] in
+                
+                self?.timer?.invalidate()
+                
+                if self != nil
+                {
+                    self!.timer = NSTimer.scheduledTimerWithTimeInterval(self!.kTimeoutSave, target:self!, selector:#selector(self!.timerDone(sender:)), userInfo:nil, repeats:false)
+                }
             }
         }
     }
@@ -49,7 +73,16 @@ class DManagerSaver
     {
         if timer != nil
         {
-            save()
+            save(false)
+        }
+    }
+    
+    func clearTimer()
+    {
+        dispatch_async(dispatch_get_main_queue())
+        { [weak self] in
+            
+            self?.timer?.invalidate()
         }
     }
 }
