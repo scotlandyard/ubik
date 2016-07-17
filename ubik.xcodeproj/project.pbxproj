@@ -374,10 +374,10 @@
 			children = (
 				DAA6785D1D2A25A100DDD9CC /* DManager.swift */,
 				DAA6785E1D2A25A100DDD9CC /* DManagerModel.swift */,
+				DA2C7D181D3C23CB005FFDB0 /* DManagerDelegate.swift */,
 				DAA6785F1D2A25A100DDD9CC /* DManagerModelSession.swift */,
 				DA2C38C91D30908A00977D50 /* DManagerModelSteps.swift */,
 				DAD79D681D3A97B3001BBCF5 /* DManagerSaver.swift */,
-				DA2C7D181D3C23CB005FFDB0 /* DManagerDelegate.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";

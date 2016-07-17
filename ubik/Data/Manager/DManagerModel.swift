@@ -4,7 +4,7 @@ import CoreData
 class DManagerModel
 {
     let saver:DManagerSaver
-    private let managedObjectContext:NSManagedObjectContext
+    let managedObjectContext:NSManagedObjectContext
     private let kModelExtension:String = "momd"
     private let kSQLiteExtension:String = "%@.sqlite"
     
@@ -31,60 +31,60 @@ class DManagerModel
     
     //MARK: public
     
-    func forceSaveContext()
+    func createManagedObject(entity:String, delegate:DManagerDelegate?)
     {
-        if managedObjectContext.hasChanges
-        {
-            managedObjectContext.performBlock
+        saver.delaySaving()
+        
+        managedObjectContext.performBlock
+        { [weak self] in
+                
+                if self != nil
                 {
-                    do
-                    {
-                        try self.managedObjectContext.save()
-                    }
-                    catch{}
-            }
+                    let entityDescription:NSEntityDescription = NSEntityDescription.entityForName(entity, inManagedObjectContext:self!.managedObjectContext)!
+                    let managedObject:NSManagedObject = NSManagedObject(entity:entityDescription, insertIntoManagedObjectContext:self!.managedObjectContext)
+                    
+                    delegate?.dManagerCreated(managedObject, manager:self!, entity:entity)
+                }
         }
     }
     
-    func createManagedObject(entity:String) -> NSManagedObject
+    func fetchManagedObjects(entity:String, limit:Int, predicate:NSPredicate?, sorters:[NSSortDescriptor]?, delegate:DManagerDelegate?)
     {
-        let entityDescription:NSEntityDescription = NSEntityDescription.entityForName(entity, inManagedObjectContext:managedObjectContext)!
-        let managedObject:NSManagedObject = NSManagedObject(entity:entityDescription, insertIntoManagedObjectContext: managedObjectContext)
         saver.delaySaving()
-        
-        return managedObject
-    }
-    
-    func fetchManagedObjects(entity:String, limit:Int, predicate:NSPredicate?, sorters:[NSSortDescriptor]?) -> [NSManagedObject]
-    {
         let fetchRequest:NSFetchRequest = NSFetchRequest(entityName:entity)
         fetchRequest.predicate = predicate
         fetchRequest.sortDescriptors = sorters
         fetchRequest.fetchLimit = limit
-        let results:[NSManagedObject]
         
-        do
-        {
-            results = try managedObjectContext.executeFetchRequest(fetchRequest) as! [NSManagedObject]
+        managedObjectContext.performBlock
+        { [weak self] in
+                
+                let results:[NSManagedObject]
+                
+                do
+                {
+                    results = try self?.managedObjectContext.executeFetchRequest(fetchRequest) as! [NSManagedObject]
+                }
+                catch
+                {
+                    results = []
+                }
+                
+                if self != nil
+                {
+                    delegate?.dManagerFetched(results, manager:self!, entity:entity)
+                }
         }
-        catch
-        {
-            results = []
-        }
-        
-        return results
-    }
-    
-    func fetchLastManagedObject(entity:String) -> NSManagedObject?
-    {
-        let managedObjects:[NSManagedObject] = fetchManagedObjects(entity, limit:1, predicate:nil, sorters:nil)
-        
-        return managedObjects.last
     }
     
     func delete(object:NSManagedObject)
     {
-        managedObjectContext.deleteObject(object)
         saver.delaySaving()
+        
+        managedObjectContext.performBlock
+        { [weak self] in
+                
+                self?.managedObjectContext.deleteObject(object)
+        }
     }
 }
