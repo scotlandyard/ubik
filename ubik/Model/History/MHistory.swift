@@ -3,7 +3,7 @@ import UIKit
 class MHistory
 {
     let items:[MHistoryItem]
-    private let kDateFormat:String = "dd.MM.yy"
+    private let kDateFormat:String = "MMMM d / yyyy"
     
     init(dbModel:[DStepsHike], maxSteps:Int32)
     {

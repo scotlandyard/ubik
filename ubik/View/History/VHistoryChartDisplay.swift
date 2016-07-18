@@ -17,7 +17,7 @@ class VHistoryChartDisplay:UIView
         labelDate.userInteractionEnabled = false
         labelDate.translatesAutoresizingMaskIntoConstraints = false
         labelDate.backgroundColor = UIColor.clearColor()
-        labelDate.font = UIFont.regular(14)
+        labelDate.font = UIFont.regular(17)
         labelDate.textAlignment = NSTextAlignment.Center
         labelDate.textColor = UIColor(white:0.7, alpha:1)
         self.labelDate = labelDate
@@ -26,7 +26,7 @@ class VHistoryChartDisplay:UIView
         labelAmount.userInteractionEnabled = false
         labelAmount.translatesAutoresizingMaskIntoConstraints = false
         labelAmount.backgroundColor = UIColor.clearColor()
-        labelAmount.font = UIFont.numeric(20)
+        labelAmount.font = UIFont.numeric(40)
         labelAmount.textAlignment = NSTextAlignment.Center
         labelAmount.textColor = UIColor.main()
         self.labelAmount = labelAmount
@@ -51,7 +51,7 @@ class VHistoryChartDisplay:UIView
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-20-[labelDate(30)]-0-[labelAmount(50)]",
+            "V:|-30-[labelDate(22)]-0-[labelAmount(55)]",
             options:[],
             metrics:metrics,
             views:views))

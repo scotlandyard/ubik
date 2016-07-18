@@ -6,9 +6,11 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
     weak var collection:UICollectionView!
     weak var selector:VHistoryChartSelector!
     weak var touch:VHistoryChartTouch!
+    weak var display:VHistoryChartDisplay!
     private weak var layoutSelectorLeft:NSLayoutConstraint!
+    private(set) var selectorX:CGFloat
     private let selectorWidth_2:CGFloat
-    private let kCellWidth:CGFloat = 10
+    private let kCellWidth:CGFloat = 20
     private let kCollectionHeight:CGFloat = 50
     private let kCollectionBaseHeight:CGFloat = 2
     private let kSelectorWidth:CGFloat = 30
@@ -20,6 +22,7 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
     init()
     {
         selectorWidth_2 = kSelectorWidth / 2.0
+        selectorX = 0
         
         super.init(frame:CGRectZero)
         translatesAutoresizingMaskIntoConstraints = false
@@ -30,6 +33,9 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
         
         let touch:VHistoryChartTouch = VHistoryChartTouch(chart:self)
         self.touch = touch
+        
+        let display:VHistoryChartDisplay = VHistoryChartDisplay()
+        self.display = display
         
         let borderBottom:UIView = UIView()
         borderBottom.userInteractionEnabled = false
@@ -75,6 +81,7 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
         addSubview(base)
         addSubview(collection)
         addSubview(touch)
+        addSubview(display)
         addSubview(selector)
         
         let views:[String:AnyObject] = [
@@ -83,6 +90,7 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
             "borderBottom":borderBottom,
             "borderTop":borderTop,
             "touch":touch,
+            "display":display,
             "selector":selector]
         
         let metrics:[String:AnyObject] = [
@@ -104,6 +112,11 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:|-0-[display]-0-|",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "H:|-0-[base]-0-|",
             options:[],
             metrics:metrics,
@@ -119,7 +132,7 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-0-[borderTop(1)]-0-[collection(collectionHeight)]-0-[base(baseHeight)]-0-[borderBottom(1)]-0-[touch(touchHeight)]",
+            "V:|-0-[borderTop(1)]-0-[collection(collectionHeight)]-0-[base(baseHeight)]-0-[borderBottom(1)]-0-[touch(touchHeight)]-0-[display]-0-|",
             options:[],
             metrics:metrics,
             views:views))
@@ -161,7 +174,8 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
         let remain:CGFloat = maxWidth - kSelectorWidth
         let margin:CGFloat = remain / 2.0
         
-        animateSelector(margin)
+        selectorX = maxWidth / 2.0
+        layoutSelectorLeft.constant = margin
     }
     
     private func modelAtIndex(index:NSIndexPath) -> MHistoryItem
@@ -182,15 +196,29 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
         }
     }
     
-    private func hikeAt(left:CGFloat)
+    private func hikeAt()
     {
-        let point:CGPoint = CGPointMake(left, 1)
-        let index:NSIndexPath? = collection.indexPathForItemAtPoint(point)
-        
-        if index != nil
-        {
-            let item:MHistoryItem = modelAtIndex(index!)
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0))
+        { [weak self] in
             
+            if self != nil
+            {
+                let scrollX:CGFloat = self!.collection.contentOffset.x
+                let totalX:CGFloat = self!.selectorX + scrollX
+                let point:CGPoint = CGPointMake(totalX, 1)
+                let index:NSIndexPath? = self!.collection.indexPathForItemAtPoint(point)
+                
+                if index != nil
+                {
+                    let item:MHistoryItem = self!.modelAtIndex(index!)
+                    
+                    dispatch_async(dispatch_get_main_queue())
+                    { [weak self] in
+                        
+                        self?.display.hikeSelected(item)
+                    }
+                }
+            }
         }
     }
     
@@ -205,21 +233,29 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
             
             self?.collection.reloadData()
         }
+        
+        hikeAt()
     }
     
     func touching(left:CGFloat)
     {
+        selectorX = left
         let realX:CGFloat = left - selectorWidth_2
         animateSelector(realX)
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0))
         { [weak self] in
             
-            self?.hikeAt(left)
+            self?.hikeAt()
         }
     }
     
     //MARK: col del
+    
+    func scrollViewDidScroll(scrollView:UIScrollView)
+    {
+        hikeAt()
+    }
     
     func numberOfSectionsInCollectionView(collectionView:UICollectionView) -> Int
     {
