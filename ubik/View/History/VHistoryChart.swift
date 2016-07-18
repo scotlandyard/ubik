@@ -12,9 +12,9 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
     private let selectorWidth_2:CGFloat
     private let kCellWidth:CGFloat = 20
     private let kCollectionHeight:CGFloat = 50
-    private let kSelectorWidth:CGFloat = 30
-    private let kSelectorTop:CGFloat = 35
-    private let kSelectorHeight:CGFloat = 70
+    private let kSelectorTop:CGFloat = 50
+    private let kSelectorWidth:CGFloat = 50
+    private let kSelectorHeight:CGFloat = 72
     private let kTouchHeight:CGFloat = 150
     private let kSelectorAnimationDuration:NSTimeInterval = 0.3
     
