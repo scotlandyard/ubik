@@ -10,3 +10,4 @@
 "VMainBarButtonConfig_title"="Settings";
 
 "MHealthMain_stepsError"="Error loading HealthKit info";
+"MSettingsSectionConfig_title"="Configuration";
