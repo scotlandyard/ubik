@@ -12,4 +12,4 @@
 "MHealthMain_stepsError"="Error loading HealthKit info";
 "MSettingsSectionConfig_title"="Configuration";
 "MSettingsItemNotifications_title"="Notitfications";
-"MSettingsItemNotifications_subtitle"="Receive notifications reminding you to start moving";
+"MSettingsItemNotifications_subtitle"="\nReceive notifications reminding you to start moving";

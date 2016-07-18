@@ -8,4 +8,10 @@ class MSettingsItem
     {
         self.reusableIdentifier = reusableIdentifier
     }
+    
+    //MARK: public
+    
+    func config(cell:VSettingsCell, controller:CSettings)
+    {
+    }
 }
