@@ -10,7 +10,7 @@ class VHistoryChartCell:UICollectionViewCell
         color = UIColor.clearColor()
         super.init(frame:frame)
         clipsToBounds = true
-        backgroundColor = UIColor.clearColor()
+        userInteractionEnabled = false
     }
     
     required init?(coder:NSCoder)
@@ -58,10 +58,12 @@ class VHistoryChartCell:UICollectionViewCell
         if selected || highlighted
         {
             color = UIColor.blackColor()
+            backgroundColor = UIColor(white:0, alpha:0.08)
         }
         else
         {
             color = UIColor.main()
+            backgroundColor = UIColor.clearColor()
         }
         
         setNeedsDisplay()

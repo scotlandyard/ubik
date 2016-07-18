@@ -282,4 +282,14 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
         
         return cell
     }
+    
+    func collectionView(collectionView:UICollectionView, shouldHighlightItemAtIndexPath indexPath:NSIndexPath) -> Bool
+    {
+        return false
+    }
+    
+    func collectionView(collectionView:UICollectionView, shouldSelectItemAtIndexPath indexPath:NSIndexPath) -> Bool
+    {
+        return false
+    }
 }
