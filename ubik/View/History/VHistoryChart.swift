@@ -189,6 +189,7 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
         
         if index != nil
         {
+            let item:MHistoryItem = modelAtIndex(index!)
             
         }
     }
