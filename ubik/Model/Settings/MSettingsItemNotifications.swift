@@ -2,12 +2,15 @@ import Foundation
 
 class MSettingsItemNotifications:MSettingsItem
 {
+    let title:String
+    let subtitle:String
+    
     init()
     {
-        let title:String = NSLocalizedString("", comment:"")
-        let subtitle:String = NSLocalizedString("", comment:"")
-        let reusableIdentifier:String = NSLocalizedString("", comment:"")
+        title = NSLocalizedString("MSettingsItemNotifications_title", comment:"")
+        subtitle = NSLocalizedString("MSettingsItemNotifications_subtitle", comment:"")
+        let reusableIdentifier:String = VSettingsCellCheck.reusableIdentifier()
         
-        super.init(title:title, subtitle:subtitle, reusableIdentifier:reusableIdentifier)
+        super.init(reusableIdentifier:reusableIdentifier)
     }
 }
