@@ -17,6 +17,8 @@
 		DA2C7D1D1D3C4746005FFDB0 /* VHistoryChartTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C7D1C1D3C4746005FFDB0 /* VHistoryChartTouch.swift */; };
 		DA2C7D1F1D3C5652005FFDB0 /* VHistoryChartDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C7D1E1D3C5652005FFDB0 /* VHistoryChartDisplay.swift */; };
 		DA2C7D221D3D1A2C005FFDB0 /* CSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C7D211D3D1A2C005FFDB0 /* CSettings.swift */; };
+		DA2C7D251D3D1A45005FFDB0 /* VSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C7D241D3D1A45005FFDB0 /* VSettings.swift */; };
+		DA2C7D281D3D1A56005FFDB0 /* MSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C7D271D3D1A56005FFDB0 /* MSettings.swift */; };
 		DA55F34B1D31CF3E00BBF21F /* MHealthTodayDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F34A1D31CF3E00BBF21F /* MHealthTodayDelegate.swift */; };
 		DA55F34D1D33081D00BBF21F /* CategoryNSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F34C1D33081D00BBF21F /* CategoryNSDate.swift */; };
 		DA55F34F1D3314EA00BBF21F /* VMainBarButtonConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F34E1D3314EA00BBF21F /* VMainBarButtonConfig.swift */; };
@@ -106,6 +108,8 @@
 		DA2C7D1C1D3C4746005FFDB0 /* VHistoryChartTouch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHistoryChartTouch.swift; sourceTree = "<group>"; };
 		DA2C7D1E1D3C5652005FFDB0 /* VHistoryChartDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHistoryChartDisplay.swift; sourceTree = "<group>"; };
 		DA2C7D211D3D1A2C005FFDB0 /* CSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSettings.swift; sourceTree = "<group>"; };
+		DA2C7D241D3D1A45005FFDB0 /* VSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettings.swift; sourceTree = "<group>"; };
+		DA2C7D271D3D1A56005FFDB0 /* MSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettings.swift; sourceTree = "<group>"; };
 		DA55F34A1D31CF3E00BBF21F /* MHealthTodayDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealthTodayDelegate.swift; sourceTree = "<group>"; };
 		DA55F34C1D33081D00BBF21F /* CategoryNSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSDate.swift; sourceTree = "<group>"; };
 		DA55F34E1D3314EA00BBF21F /* VMainBarButtonConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainBarButtonConfig.swift; sourceTree = "<group>"; };
@@ -202,6 +206,22 @@
 			isa = PBXGroup;
 			children = (
 				DA2C7D211D3D1A2C005FFDB0 /* CSettings.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		DA2C7D231D3D1A3B005FFDB0 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				DA2C7D241D3D1A45005FFDB0 /* VSettings.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		DA2C7D261D3D1A4D005FFDB0 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				DA2C7D271D3D1A56005FFDB0 /* MSettings.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -305,6 +325,7 @@
 		DA906DEC1D22F9490095B270 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DA2C7D261D3D1A4D005FFDB0 /* Settings */,
 				DAA076CE1D35D28C0039248D /* History */,
 				DAB8F6BF1D31C49000236A00 /* Summary */,
 				DAB8F6BC1D31C0EB00236A00 /* Hike */,
@@ -337,6 +358,7 @@
 		DA906DF31D22F9490095B270 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DA2C7D231D3D1A3B005FFDB0 /* Settings */,
 				DA55F3551D334A0200BBF21F /* History */,
 				DAAF3C8B1D2C865100BBBD40 /* Onboarding */,
 				DAD00CF41D27108600BCDDAA /* Main */,
@@ -683,6 +705,7 @@
 				DAB8F6C11D31C4A000236A00 /* MSummary.swift in Sources */,
 				DAA076C91D35CE360039248D /* VHistoryChart.swift in Sources */,
 				DAA6785B1D2A23DF00DDD9CC /* MConfiguration.swift in Sources */,
+				DA2C7D251D3D1A45005FFDB0 /* VSettings.swift in Sources */,
 				DAA005501D2F42DA004B57FA /* VOnboardingItemPermission.swift in Sources */,
 				DAB8F6BE1D31C0F600236A00 /* MHike.swift in Sources */,
 				DA94E20E1D28B77E002FF88B /* VMainBarButton.swift in Sources */,
@@ -697,6 +720,7 @@
 				DAB3442D1D2A9F2D00406CEE /* DSessionExperience+CoreDataProperties.swift in Sources */,
 				DA2C7D1D1D3C4746005FFDB0 /* VHistoryChartTouch.swift in Sources */,
 				DAE320701D33D8FE007FDC96 /* VSummaryHeaderCounter.swift in Sources */,
+				DA2C7D281D3D1A56005FFDB0 /* MSettings.swift in Sources */,
 				DAA678661D2A25A100DDD9CC /* DManagerModelSession.swift in Sources */,
 				DA94E2101D28B7D8002FF88B /* VMainBarButtonHistory.swift in Sources */,
 				DAB344371D2AAE8800406CEE /* MOnboardingItem.swift in Sources */,

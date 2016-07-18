@@ -163,12 +163,12 @@ class VMainBar:UIView
     func actionHistory(sender button:UIButton)
     {
         controller.showHistory()
-        
         selectHistory(true)
     }
     
     func actionConfig(sender button:UIButton)
     {
+        controller.showConfig()
         selectConfig(true)
     }
     

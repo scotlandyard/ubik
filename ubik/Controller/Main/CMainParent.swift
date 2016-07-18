@@ -186,6 +186,12 @@ class CMainParent:UIViewController
         showController(summary, scroll:CMainParentScroll.Left)
     }
     
+    func showConfig()
+    {
+        let config:CSettings = CSettings()
+        showController(config, scroll:CMainParentScroll.Left)
+    }
+    
     func statusBarLight()
     {
         statusBarStyle = UIStatusBarStyle.LightContent
