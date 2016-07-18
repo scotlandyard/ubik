@@ -5,6 +5,7 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
     var model:MHistory?
     weak var collection:UICollectionView!
     weak var selector:VHistoryChartSelector!
+    weak var touch:VHistoryChartTouch!
     private weak var layoutSelectorLeft:NSLayoutConstraint!
     private let selectorWidth_2:CGFloat
     private let kCellWidth:CGFloat = 10
@@ -13,6 +14,7 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
     private let kSelectorWidth:CGFloat = 30
     private let kSelectorTop:CGFloat = 35
     private let kSelectorHeight:CGFloat = 70
+    private let kTouchHeight:CGFloat = 150
     private let kSelectorAnimationDuration:NSTimeInterval = 0.3
     
     init()
@@ -25,6 +27,9 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
         
         let selector:VHistoryChartSelector = VHistoryChartSelector()
         self.selector = selector
+        
+        let touch:VHistoryChartTouch = VHistoryChartTouch(chart:self)
+        self.touch = touch
         
         let borderBottom:UIView = UIView()
         borderBottom.userInteractionEnabled = false
@@ -69,6 +74,7 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
         addSubview(borderTop)
         addSubview(base)
         addSubview(collection)
+        addSubview(touch)
         addSubview(selector)
         
         let views:[String:AnyObject] = [
@@ -76,6 +82,7 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
             "base":base,
             "borderBottom":borderBottom,
             "borderTop":borderTop,
+            "touch":touch,
             "selector":selector]
         
         let metrics:[String:AnyObject] = [
@@ -83,10 +90,16 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
             "baseHeight":kCollectionBaseHeight,
             "selectorWidth":kSelectorWidth,
             "selectorHeight":kSelectorHeight,
-            "selectorTop":kSelectorTop]
+            "selectorTop":kSelectorTop,
+            "touchHeight":kTouchHeight]
         
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "H:|-0-[collection]-0-|",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:|-0-[touch]-0-|",
             options:[],
             metrics:metrics,
             views:views))
@@ -106,7 +119,7 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-0-[borderTop(1)]-0-[collection(collectionHeight)]-0-[base(baseHeight)]-0-[borderBottom(1)]",
+            "V:|-0-[borderTop(1)]-0-[collection(collectionHeight)]-0-[base(baseHeight)]-0-[borderBottom(1)]-0-[touch(touchHeight)]",
             options:[],
             metrics:metrics,
             views:views))
@@ -140,33 +153,7 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
         fatalError()
     }
     
-    override func touchesBegan(touches:Set<UITouch>, withEvent event:UIEvent?)
-    {
-        if !touches.isEmpty
-        {
-            let touch:UITouch = touches.first!
-            touchProcess(touch)
-        }
-    }
-    
-    override func touchesMoved(touches:Set<UITouch>, withEvent event:UIEvent?)
-    {
-        if !touches.isEmpty
-        {
-            let touch:UITouch = touches.first!
-            touchProcess(touch)
-        }
-    }
-    
     //MARK: private
-    
-    private func touchProcess(touch:UITouch)
-    {
-        let point:CGPoint = touch.locationInView(self)
-        let x:CGFloat = point.x
-        let realX:CGFloat = x - selectorWidth_2
-        animateSelector(realX)
-    }
     
     private func centerSelector()
     {
@@ -195,6 +182,17 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
         }
     }
     
+    private func hikeAt(left:CGFloat)
+    {
+        let point:CGPoint = CGPointMake(left, 1)
+        let index:NSIndexPath? = collection.indexPathForItemAtPoint(point)
+        
+        if index != nil
+        {
+            
+        }
+    }
+    
     //MARK: public
     
     func modelLoaded(model:MHistory)
@@ -205,6 +203,18 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
         { [weak self] in
             
             self?.collection.reloadData()
+        }
+    }
+    
+    func touching(left:CGFloat)
+    {
+        let realX:CGFloat = left - selectorWidth_2
+        animateSelector(realX)
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0))
+        { [weak self] in
+            
+            self?.hikeAt(left)
         }
     }
     

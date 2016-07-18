@@ -9,6 +9,7 @@ class VHistoryChartSelector:UIView
         super.init(frame:CGRectZero)
         userInteractionEnabled = false
         translatesAutoresizingMaskIntoConstraints = false
+        clipsToBounds = true
         
         let image:UIImageView = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false

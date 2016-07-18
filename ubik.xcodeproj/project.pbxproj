@@ -14,6 +14,7 @@
 		DA2C38CA1D30908A00977D50 /* DManagerModelSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C38C91D30908A00977D50 /* DManagerModelSteps.swift */; };
 		DA2C7D191D3C23CB005FFDB0 /* DManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C7D181D3C23CB005FFDB0 /* DManagerDelegate.swift */; };
 		DA2C7D1B1D3C41BD005FFDB0 /* MHealthHike.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C7D1A1D3C41BD005FFDB0 /* MHealthHike.swift */; };
+		DA2C7D1D1D3C4746005FFDB0 /* VHistoryChartTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C7D1C1D3C4746005FFDB0 /* VHistoryChartTouch.swift */; };
 		DA55F34B1D31CF3E00BBF21F /* MHealthTodayDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F34A1D31CF3E00BBF21F /* MHealthTodayDelegate.swift */; };
 		DA55F34D1D33081D00BBF21F /* CategoryNSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F34C1D33081D00BBF21F /* CategoryNSDate.swift */; };
 		DA55F34F1D3314EA00BBF21F /* VMainBarButtonConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F34E1D3314EA00BBF21F /* VMainBarButtonConfig.swift */; };
@@ -100,6 +101,7 @@
 		DA2C38C91D30908A00977D50 /* DManagerModelSteps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManagerModelSteps.swift; sourceTree = "<group>"; };
 		DA2C7D181D3C23CB005FFDB0 /* DManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManagerDelegate.swift; sourceTree = "<group>"; };
 		DA2C7D1A1D3C41BD005FFDB0 /* MHealthHike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealthHike.swift; sourceTree = "<group>"; };
+		DA2C7D1C1D3C4746005FFDB0 /* VHistoryChartTouch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHistoryChartTouch.swift; sourceTree = "<group>"; };
 		DA55F34A1D31CF3E00BBF21F /* MHealthTodayDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealthTodayDelegate.swift; sourceTree = "<group>"; };
 		DA55F34C1D33081D00BBF21F /* CategoryNSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSDate.swift; sourceTree = "<group>"; };
 		DA55F34E1D3314EA00BBF21F /* VMainBarButtonConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainBarButtonConfig.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				DAA076C81D35CE360039248D /* VHistoryChart.swift */,
 				DAA076CA1D35D0A90039248D /* VHistoryChartCell.swift */,
 				DA97F3091D389958008176E6 /* VHistoryChartSelector.swift */,
+				DA2C7D1C1D3C4746005FFDB0 /* VHistoryChartTouch.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -676,6 +679,7 @@
 				DACE5CB61D26C93D00080E5F /* CSummary.swift in Sources */,
 				DAB344391D2AB0BB00406CEE /* MOnboardingItemWelcome.swift in Sources */,
 				DAB3442D1D2A9F2D00406CEE /* DSessionExperience+CoreDataProperties.swift in Sources */,
+				DA2C7D1D1D3C4746005FFDB0 /* VHistoryChartTouch.swift in Sources */,
 				DAE320701D33D8FE007FDC96 /* VSummaryHeaderCounter.swift in Sources */,
 				DAA678661D2A25A100DDD9CC /* DManagerModelSession.swift in Sources */,
 				DA94E2101D28B7D8002FF88B /* VMainBarButtonHistory.swift in Sources */,

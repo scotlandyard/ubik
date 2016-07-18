@@ -14,9 +14,7 @@ class MHistory
         
         let dateFormatter:NSDateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = kDateFormat
-        
         let countItems:Int = dbModel.count
-        let lastItem:Int = countItems - 1
         
         for indexModel:Int in 0..<countItems
         {
@@ -27,21 +25,8 @@ class MHistory
             let amount:String = numberFormatter.stringFromNumber(amountFloat)!
             let date:String = dateFormatter.stringFromDate(dateRaw)
             let percentage:CGFloat = amountFloat / maxStepsFloat
-            let percentagePrevious:CGFloat
             
-            if indexModel < lastItem
-            {
-                let dbItemPrevious:DStepsHike = dbModel[indexModel + 1]
-                let amountIntPrevious:Int32 = dbItemPrevious.amount
-                let amountFloatPrevious:CGFloat = CGFloat(amountIntPrevious)
-                percentagePrevious = amountFloatPrevious / maxStepsFloat
-            }
-            else
-            {
-                percentagePrevious = 0
-            }
-            
-            let item:MHistoryItem = MHistoryItem(amount:amount, date:date, percentage:percentage, percentagePrevious:percentagePrevious)
+            let item:MHistoryItem = MHistoryItem(amount:amount, date:date, percentage:percentage)
             items.append(item)
         }
         
