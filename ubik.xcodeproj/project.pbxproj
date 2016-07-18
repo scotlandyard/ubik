@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DA2AFAD51D3D2594000B6E44 /* VSettingsCellCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2AFAD41D3D2594000B6E44 /* VSettingsCellCheck.swift */; };
 		DA2AFAD71D3D2EAB000B6E44 /* brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA2AFAD61D3D2EAB000B6E44 /* brand.xcassets */; };
+		DA2AFAD91D3D3500000B6E44 /* VSettingsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2AFAD81D3D3500000B6E44 /* VSettingsHeader.swift */; };
 		DA2C38BD1D30619800977D50 /* VMainLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C38BC1D30619800977D50 /* VMainLoader.swift */; };
 		DA2C38C01D308D5900977D50 /* DStepsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA2C38BE1D308D5900977D50 /* DStepsModel.xcdatamodeld */; };
 		DA2C38C71D308EA100977D50 /* DStepsHike.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C38C51D308EA100977D50 /* DStepsHike.swift */; };
@@ -107,6 +108,7 @@
 /* Begin PBXFileReference section */
 		DA2AFAD41D3D2594000B6E44 /* VSettingsCellCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsCellCheck.swift; sourceTree = "<group>"; };
 		DA2AFAD61D3D2EAB000B6E44 /* brand.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = brand.xcassets; sourceTree = "<group>"; };
+		DA2AFAD81D3D3500000B6E44 /* VSettingsHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsHeader.swift; sourceTree = "<group>"; };
 		DA2C38BC1D30619800977D50 /* VMainLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainLoader.swift; sourceTree = "<group>"; };
 		DA2C38BF1D308D5900977D50 /* DStepsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DStepsModel.xcdatamodel; sourceTree = "<group>"; };
 		DA2C38C51D308EA100977D50 /* DStepsHike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DStepsHike.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				DA2C7D241D3D1A45005FFDB0 /* VSettings.swift */,
 				DA2C7D311D3D2529005FFDB0 /* VSettingsCell.swift */,
 				DA2AFAD41D3D2594000B6E44 /* VSettingsCellCheck.swift */,
+				DA2AFAD81D3D3500000B6E44 /* VSettingsHeader.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -750,6 +753,7 @@
 				DA2C7D281D3D1A56005FFDB0 /* MSettings.swift in Sources */,
 				DAA678661D2A25A100DDD9CC /* DManagerModelSession.swift in Sources */,
 				DA94E2101D28B7D8002FF88B /* VMainBarButtonHistory.swift in Sources */,
+				DA2AFAD91D3D3500000B6E44 /* VSettingsHeader.swift in Sources */,
 				DAB344371D2AAE8800406CEE /* MOnboardingItem.swift in Sources */,
 				DAD00CFC1D2752B600BCDDAA /* VComponentGyroIcon.swift in Sources */,
 				DAD00CF61D27109100BCDDAA /* VMainBar.swift in Sources */,
