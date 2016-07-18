@@ -1,6 +1,6 @@
 import UIKit
 
-class VSettings:UIView
+class VSettings:UIView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewFlowLayout
 {
     weak var controller:CSettings!
     weak var collection:UICollectionView!
@@ -26,5 +26,19 @@ class VSettings:UIView
         self.collection = collection
         
         addSubview(collection)
+    }
+    
+    //MARK: collection delegate
+    
+    func numberOfSectionsInCollectionView(collectionView:UICollectionView) -> Int
+    {
+        let count:Int = controller.model.sections.count
+        
+        return count
+    }
+    
+    func collectionView(collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
+    {
+        let
     }
 }
