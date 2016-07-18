@@ -12,7 +12,6 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
     private let selectorWidth_2:CGFloat
     private let kCellWidth:CGFloat = 20
     private let kCollectionHeight:CGFloat = 50
-    private let kCollectionBaseHeight:CGFloat = 2
     private let kSelectorWidth:CGFloat = 30
     private let kSelectorTop:CGFloat = 35
     private let kSelectorHeight:CGFloat = 70
@@ -47,11 +46,6 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
         borderTop.translatesAutoresizingMaskIntoConstraints = false
         borderTop.backgroundColor = UIColor.blackColor()
         
-        let base:UIView = UIView()
-        base.backgroundColor = UIColor.main()
-        base.userInteractionEnabled = false
-        base.translatesAutoresizingMaskIntoConstraints = false
-        
         let flow:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         flow.headerReferenceSize = CGSizeZero
         flow.footerReferenceSize = CGSizeZero
@@ -78,7 +72,6 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
         
         addSubview(borderBottom)
         addSubview(borderTop)
-        addSubview(base)
         addSubview(collection)
         addSubview(touch)
         addSubview(display)
@@ -86,7 +79,6 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
         
         let views:[String:AnyObject] = [
             "collection":collection,
-            "base":base,
             "borderBottom":borderBottom,
             "borderTop":borderTop,
             "touch":touch,
@@ -95,7 +87,6 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
         
         let metrics:[String:AnyObject] = [
             "collectionHeight":kCollectionHeight,
-            "baseHeight":kCollectionBaseHeight,
             "selectorWidth":kSelectorWidth,
             "selectorHeight":kSelectorHeight,
             "selectorTop":kSelectorTop,
@@ -117,11 +108,6 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-0-[base]-0-|",
-            options:[],
-            metrics:metrics,
-            views:views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "H:|-0-[borderBottom]-0-|",
             options:[],
             metrics:metrics,
@@ -132,7 +118,7 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-0-[borderTop(1)]-0-[collection(collectionHeight)]-0-[base(baseHeight)]-0-[borderBottom(1)]-0-[touch(touchHeight)]-0-[display]-0-|",
+            "V:|-0-[borderTop(1)]-0-[collection(collectionHeight)]-0-[borderBottom(2)]-0-[touch(touchHeight)]-0-[display]-0-|",
             options:[],
             metrics:metrics,
             views:views))
@@ -216,6 +202,7 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
                     { [weak self] in
                         
                         self?.display.hikeSelected(item)
+                        self?.collection.selectItemAtIndexPath(index, animated:false, scrollPosition:UICollectionViewScrollPosition.None)
                     }
                 }
             }
@@ -232,9 +219,13 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
         { [weak self] in
             
             self?.collection.reloadData()
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(NSEC_PER_SEC)), dispatch_get_main_queue())
+            { [weak self] in
+                
+                self?.hikeAt()
+            }
         }
-        
-        hikeAt()
     }
     
     func touching(left:CGFloat)

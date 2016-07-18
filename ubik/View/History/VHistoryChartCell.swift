@@ -3,9 +3,11 @@ import UIKit
 class VHistoryChartCell:UICollectionViewCell
 {
     weak var model:MHistoryItem?
+    private var color:UIColor
     
     override init(frame:CGRect)
     {
+        color = UIColor.clearColor()
         super.init(frame:frame)
         clipsToBounds = true
         backgroundColor = UIColor.clearColor()
@@ -27,10 +29,42 @@ class VHistoryChartCell:UICollectionViewCell
             let rect:CGRect = CGRectMake(0, remainHeight, maxWidth, topMax)
             let context:CGContext = UIGraphicsGetCurrentContext()!
             
-            CGContextSetFillColorWithColor(context, UIColor.main().CGColor)
+            CGContextSetFillColorWithColor(context, color.CGColor)
             CGContextAddRect(context, rect)
             CGContextDrawPath(context, CGPathDrawingMode.Fill)
         }
+    }
+    
+    override var selected:Bool
+    {
+        didSet
+        {
+            hover()
+        }
+    }
+    
+    override var highlighted:Bool
+    {
+        didSet
+        {
+            hover()
+        }
+    }
+    
+    //MARK: private
+    
+    private func hover()
+    {
+        if selected || highlighted
+        {
+            color = UIColor.blackColor()
+        }
+        else
+        {
+            color = UIColor.main()
+        }
+        
+        setNeedsDisplay()
     }
     
     //MARK: public
@@ -38,6 +72,6 @@ class VHistoryChartCell:UICollectionViewCell
     func config(model:MHistoryItem)
     {
         self.model = model
-        setNeedsDisplay()
+        hover()
     }
 }
