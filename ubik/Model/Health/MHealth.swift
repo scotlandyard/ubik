@@ -7,6 +7,8 @@ class MHealth
     let healthStore:HKHealthStore?
     let stepsType:HKQuantityType
     let stepsUnit:HKUnit
+    let distanceType:HKQuantityType
+    let distanceUnit:HKUnit
     
     private init()
     {
@@ -21,6 +23,8 @@ class MHealth
         
         stepsType = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierStepCount)!
         stepsUnit = HKUnit.countUnit()
+        distanceType = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierDistanceWalkingRunning)!
+        distanceUnit = HKUnit.meterUnit()
     }
     
     //MARK: private
