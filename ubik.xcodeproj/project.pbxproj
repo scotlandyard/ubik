@@ -8,14 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		DA152B0F1D3E7EAB00568204 /* DUbikModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA152B0D1D3E7EAB00568204 /* DUbikModel.xcdatamodeld */; };
+		DA152B121D3E810F00568204 /* DManagerModelUbik.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA152B111D3E810F00568204 /* DManagerModelUbik.swift */; };
 		DA2AFAD51D3D2594000B6E44 /* VSettingsCellCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2AFAD41D3D2594000B6E44 /* VSettingsCellCheck.swift */; };
 		DA2AFAD71D3D2EAB000B6E44 /* brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA2AFAD61D3D2EAB000B6E44 /* brand.xcassets */; };
 		DA2AFAD91D3D3500000B6E44 /* VSettingsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2AFAD81D3D3500000B6E44 /* VSettingsHeader.swift */; };
 		DA2C38BD1D30619800977D50 /* VMainLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C38BC1D30619800977D50 /* VMainLoader.swift */; };
-		DA2C38C01D308D5900977D50 /* DStepsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA2C38BE1D308D5900977D50 /* DStepsModel.xcdatamodeld */; };
-		DA2C38C71D308EA100977D50 /* DStepsHike.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C38C51D308EA100977D50 /* DStepsHike.swift */; };
-		DA2C38C81D308EA100977D50 /* DStepsHike+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C38C61D308EA100977D50 /* DStepsHike+CoreDataProperties.swift */; };
-		DA2C38CA1D30908A00977D50 /* DManagerModelSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C38C91D30908A00977D50 /* DManagerModelSteps.swift */; };
 		DA2C7D191D3C23CB005FFDB0 /* DManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C7D181D3C23CB005FFDB0 /* DManagerDelegate.swift */; };
 		DA2C7D1B1D3C41BD005FFDB0 /* MHealthHike.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C7D1A1D3C41BD005FFDB0 /* MHealthHike.swift */; };
 		DA2C7D1D1D3C4746005FFDB0 /* VHistoryChartTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C7D1C1D3C4746005FFDB0 /* VHistoryChartTouch.swift */; };
@@ -59,15 +56,11 @@
 		DAA6785B1D2A23DF00DDD9CC /* MConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA6785A1D2A23DF00DDD9CC /* MConfiguration.swift */; };
 		DAA678641D2A25A100DDD9CC /* DManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA6785D1D2A25A100DDD9CC /* DManager.swift */; };
 		DAA678651D2A25A100DDD9CC /* DManagerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA6785E1D2A25A100DDD9CC /* DManagerModel.swift */; };
-		DAA678661D2A25A100DDD9CC /* DManagerModelSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA6785F1D2A25A100DDD9CC /* DManagerModelSession.swift */; };
-		DAA678691D2A261F00DDD9CC /* DSessionModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAA678671D2A261F00DDD9CC /* DSessionModel.xcdatamodeld */; };
 		DAAF3C8A1D2C838700BBBD40 /* COnboardingItemWelcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAF3C891D2C838700BBBD40 /* COnboardingItemWelcome.swift */; };
 		DAAF3C8D1D2C873800BBBD40 /* VOnboardingItemWelcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAF3C8C1D2C873800BBBD40 /* VOnboardingItemWelcome.swift */; };
 		DAAF3C8F1D2C89C600BBBD40 /* COnboardingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAF3C8E1D2C89C600BBBD40 /* COnboardingItem.swift */; };
 		DAAF3C911D2CAC6700BBBD40 /* CategoryUIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAF3C901D2CAC6700BBBD40 /* CategoryUIFont.swift */; };
 		DAAF3C941D2CADA300BBBD40 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAAF3C921D2CADA300BBBD40 /* Localizable.strings */; };
-		DAB3442C1D2A9F2D00406CEE /* DSessionExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3442A1D2A9F2D00406CEE /* DSessionExperience.swift */; };
-		DAB3442D1D2A9F2D00406CEE /* DSessionExperience+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3442B1D2A9F2D00406CEE /* DSessionExperience+CoreDataProperties.swift */; };
 		DAB344321D2AA48000406CEE /* COnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB344311D2AA48000406CEE /* COnboarding.swift */; };
 		DAB344351D2AAE7C00406CEE /* MOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB344341D2AAE7C00406CEE /* MOnboarding.swift */; };
 		DAB344371D2AAE8800406CEE /* MOnboardingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB344361D2AAE8800406CEE /* MOnboardingItem.swift */; };
@@ -109,14 +102,11 @@
 
 /* Begin PBXFileReference section */
 		DA152B0E1D3E7EAB00568204 /* DUbikModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DUbikModel.xcdatamodel; sourceTree = "<group>"; };
+		DA152B111D3E810F00568204 /* DManagerModelUbik.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManagerModelUbik.swift; sourceTree = "<group>"; };
 		DA2AFAD41D3D2594000B6E44 /* VSettingsCellCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsCellCheck.swift; sourceTree = "<group>"; };
 		DA2AFAD61D3D2EAB000B6E44 /* brand.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = brand.xcassets; sourceTree = "<group>"; };
 		DA2AFAD81D3D3500000B6E44 /* VSettingsHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsHeader.swift; sourceTree = "<group>"; };
 		DA2C38BC1D30619800977D50 /* VMainLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainLoader.swift; sourceTree = "<group>"; };
-		DA2C38BF1D308D5900977D50 /* DStepsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DStepsModel.xcdatamodel; sourceTree = "<group>"; };
-		DA2C38C51D308EA100977D50 /* DStepsHike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DStepsHike.swift; sourceTree = "<group>"; };
-		DA2C38C61D308EA100977D50 /* DStepsHike+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DStepsHike+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		DA2C38C91D30908A00977D50 /* DManagerModelSteps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManagerModelSteps.swift; sourceTree = "<group>"; };
 		DA2C7D181D3C23CB005FFDB0 /* DManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManagerDelegate.swift; sourceTree = "<group>"; };
 		DA2C7D1A1D3C41BD005FFDB0 /* MHealthHike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealthHike.swift; sourceTree = "<group>"; };
 		DA2C7D1C1D3C4746005FFDB0 /* VHistoryChartTouch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHistoryChartTouch.swift; sourceTree = "<group>"; };
@@ -165,15 +155,11 @@
 		DAA6785A1D2A23DF00DDD9CC /* MConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MConfiguration.swift; sourceTree = "<group>"; };
 		DAA6785D1D2A25A100DDD9CC /* DManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManager.swift; sourceTree = "<group>"; };
 		DAA6785E1D2A25A100DDD9CC /* DManagerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManagerModel.swift; sourceTree = "<group>"; };
-		DAA6785F1D2A25A100DDD9CC /* DManagerModelSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManagerModelSession.swift; sourceTree = "<group>"; };
-		DAA678681D2A261F00DDD9CC /* DSessionModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DSessionModel.xcdatamodel; sourceTree = "<group>"; };
 		DAAF3C891D2C838700BBBD40 /* COnboardingItemWelcome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COnboardingItemWelcome.swift; sourceTree = "<group>"; };
 		DAAF3C8C1D2C873800BBBD40 /* VOnboardingItemWelcome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VOnboardingItemWelcome.swift; sourceTree = "<group>"; };
 		DAAF3C8E1D2C89C600BBBD40 /* COnboardingItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COnboardingItem.swift; sourceTree = "<group>"; };
 		DAAF3C901D2CAC6700BBBD40 /* CategoryUIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryUIFont.swift; sourceTree = "<group>"; };
 		DAAF3C931D2CADA300BBBD40 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		DAB3442A1D2A9F2D00406CEE /* DSessionExperience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSessionExperience.swift; sourceTree = "<group>"; };
-		DAB3442B1D2A9F2D00406CEE /* DSessionExperience+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DSessionExperience+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DAB344311D2AA48000406CEE /* COnboarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COnboarding.swift; sourceTree = "<group>"; };
 		DAB344341D2AAE7C00406CEE /* MOnboarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOnboarding.swift; sourceTree = "<group>"; };
 		DAB344361D2AAE8800406CEE /* MOnboardingItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOnboardingItem.swift; sourceTree = "<group>"; };
@@ -222,6 +208,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA152B101D3E80F200568204 /* Ubik */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Ubik;
+			sourceTree = "<group>";
+		};
 		DA2C7D201D3D1A23005FFDB0 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -444,11 +437,10 @@
 			isa = PBXGroup;
 			children = (
 				DAA6785D1D2A25A100DDD9CC /* DManager.swift */,
-				DAA6785E1D2A25A100DDD9CC /* DManagerModel.swift */,
 				DA2C7D181D3C23CB005FFDB0 /* DManagerDelegate.swift */,
-				DAA6785F1D2A25A100DDD9CC /* DManagerModelSession.swift */,
-				DA2C38C91D30908A00977D50 /* DManagerModelSteps.swift */,
 				DAD79D681D3A97B3001BBCF5 /* DManagerSaver.swift */,
+				DAA6785E1D2A25A100DDD9CC /* DManagerModel.swift */,
+				DA152B111D3E810F00568204 /* DManagerModelUbik.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -456,8 +448,6 @@
 		DAA678601D2A25A100DDD9CC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DAA678671D2A261F00DDD9CC /* DSessionModel.xcdatamodeld */,
-				DA2C38BE1D308D5900977D50 /* DStepsModel.xcdatamodeld */,
 				DA152B0D1D3E7EAB00568204 /* DUbikModel.xcdatamodeld */,
 			);
 			path = Model;
@@ -466,28 +456,9 @@
 		DAA678611D2A25A100DDD9CC /* Object */ = {
 			isa = PBXGroup;
 			children = (
-				DAA678621D2A25A100DDD9CC /* Session */,
-				DAA678631D2A25A100DDD9CC /* Steps */,
+				DA152B101D3E80F200568204 /* Ubik */,
 			);
 			path = Object;
-			sourceTree = "<group>";
-		};
-		DAA678621D2A25A100DDD9CC /* Session */ = {
-			isa = PBXGroup;
-			children = (
-				DAB3442A1D2A9F2D00406CEE /* DSessionExperience.swift */,
-				DAB3442B1D2A9F2D00406CEE /* DSessionExperience+CoreDataProperties.swift */,
-			);
-			path = Session;
-			sourceTree = "<group>";
-		};
-		DAA678631D2A25A100DDD9CC /* Steps */ = {
-			isa = PBXGroup;
-			children = (
-				DA2C38C51D308EA100977D50 /* DStepsHike.swift */,
-				DA2C38C61D308EA100977D50 /* DStepsHike+CoreDataProperties.swift */,
-			);
-			path = Steps;
 			sourceTree = "<group>";
 		};
 		DAAF3C8B1D2C865100BBBD40 /* Onboarding */ = {
@@ -724,7 +695,6 @@
 				DAA005481D2F3C54004B57FA /* CategoryUIViewController.swift in Sources */,
 				DA2C7D301D3D1F2F005FFDB0 /* MSettingsItemNotifications.swift in Sources */,
 				DA2C38BD1D30619800977D50 /* VMainLoader.swift in Sources */,
-				DA2C38C71D308EA100977D50 /* DStepsHike.swift in Sources */,
 				DA906DF41D22F9490095B270 /* CMain.swift in Sources */,
 				DAAF3C8A1D2C838700BBBD40 /* COnboardingItemWelcome.swift in Sources */,
 				DA55F34B1D31CF3E00BBF21F /* MHealthTodayDelegate.swift in Sources */,
@@ -749,29 +719,26 @@
 				DA152B0F1D3E7EAB00568204 /* DUbikModel.xcdatamodeld in Sources */,
 				DAAF3C911D2CAC6700BBBD40 /* CategoryUIFont.swift in Sources */,
 				DA55F3511D33192E00BBF21F /* VMainBarButtonSummary.swift in Sources */,
-				DA2C38CA1D30908A00977D50 /* DManagerModelSteps.swift in Sources */,
 				DA2C7D321D3D2529005FFDB0 /* VSettingsCell.swift in Sources */,
 				DAA005541D2F42F3004B57FA /* VOnboardingItemReady.swift in Sources */,
 				DACE5CB61D26C93D00080E5F /* CSummary.swift in Sources */,
 				DAB344391D2AB0BB00406CEE /* MOnboardingItemWelcome.swift in Sources */,
-				DAB3442D1D2A9F2D00406CEE /* DSessionExperience+CoreDataProperties.swift in Sources */,
 				DA2C7D1D1D3C4746005FFDB0 /* VHistoryChartTouch.swift in Sources */,
 				DAE320701D33D8FE007FDC96 /* VSummaryHeaderCounter.swift in Sources */,
 				DA2C7D281D3D1A56005FFDB0 /* MSettings.swift in Sources */,
-				DAA678661D2A25A100DDD9CC /* DManagerModelSession.swift in Sources */,
 				DA94E2101D28B7D8002FF88B /* VMainBarButtonHistory.swift in Sources */,
 				DA2AFAD91D3D3500000B6E44 /* VSettingsHeader.swift in Sources */,
 				DAB344371D2AAE8800406CEE /* MOnboardingItem.swift in Sources */,
 				DA3E0ADA1D3DBAF000906E81 /* CategoryUILocalNotification.swift in Sources */,
 				DAD00CFC1D2752B600BCDDAA /* VComponentGyroIcon.swift in Sources */,
 				DAD00CF61D27109100BCDDAA /* VMainBar.swift in Sources */,
+				DA152B121D3E810F00568204 /* DManagerModelUbik.swift in Sources */,
 				DA2C7D191D3C23CB005FFDB0 /* DManagerDelegate.swift in Sources */,
 				DAB3443B1D2AB0D700406CEE /* MOnboardingItemPermission.swift in Sources */,
 				DAA076CD1D35D1390039248D /* CategoryUICollectionReusableView.swift in Sources */,
 				DA55F34D1D33081D00BBF21F /* CategoryNSDate.swift in Sources */,
 				DAA076D01D35D2950039248D /* MHistory.swift in Sources */,
 				DACE5CBD1D26D5EF00080E5F /* CategoryUIColor.swift in Sources */,
-				DAA678691D2A261F00DDD9CC /* DSessionModel.xcdatamodeld in Sources */,
 				DA906DFB1D22FC700095B270 /* CMainParent.swift in Sources */,
 				DAD00CF81D273E7000BCDDAA /* VComponentGyroBase.swift in Sources */,
 				DAAF3C8D1D2C873800BBBD40 /* VOnboardingItemWelcome.swift in Sources */,
@@ -779,7 +746,6 @@
 				DA2C7D1B1D3C41BD005FFDB0 /* MHealthHike.swift in Sources */,
 				DAA005521D2F42E6004B57FA /* VOnboardingItemLoading.swift in Sources */,
 				DAA0DC681D23184C00F3EF29 /* CategoryNSFileManager.swift in Sources */,
-				DAB3442C1D2A9F2D00406CEE /* DSessionExperience.swift in Sources */,
 				DAD79D691D3A97B3001BBCF5 /* DManagerSaver.swift in Sources */,
 				DADF024C1D35404C00FBFDA6 /* CategoryNSNotification.swift in Sources */,
 				DAA076CB1D35D0A90039248D /* VHistoryChartCell.swift in Sources */,
@@ -789,9 +755,7 @@
 				DAAF3C8F1D2C89C600BBBD40 /* COnboardingItem.swift in Sources */,
 				DAA0054C1D2F426F004B57FA /* COnboardingItemReady.swift in Sources */,
 				DAA076D21D35D29D0039248D /* MHistoryItem.swift in Sources */,
-				DA2C38C01D308D5900977D50 /* DStepsModel.xcdatamodeld in Sources */,
 				DAB344351D2AAE7C00406CEE /* MOnboarding.swift in Sources */,
-				DA2C38C81D308EA100977D50 /* DStepsHike+CoreDataProperties.swift in Sources */,
 				DACE5CBB1D26CAC200080E5F /* CMainController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1011,26 +975,6 @@
 			);
 			currentVersion = DA152B0E1D3E7EAB00568204 /* DUbikModel.xcdatamodel */;
 			path = DUbikModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-		DA2C38BE1D308D5900977D50 /* DStepsModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				DA2C38BF1D308D5900977D50 /* DStepsModel.xcdatamodel */,
-			);
-			currentVersion = DA2C38BF1D308D5900977D50 /* DStepsModel.xcdatamodel */;
-			path = DStepsModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-		DAA678671D2A261F00DDD9CC /* DSessionModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				DAA678681D2A261F00DDD9CC /* DSessionModel.xcdatamodel */,
-			);
-			currentVersion = DAA678681D2A261F00DDD9CC /* DSessionModel.xcdatamodel */;
-			path = DSessionModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
