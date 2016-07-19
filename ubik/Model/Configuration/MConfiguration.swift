@@ -3,7 +3,6 @@ import Foundation
 class MConfiguration
 {
     static let sharedInstance = MConfiguration()
-    weak var managerUbik:DManagerModelUbik!
     private(set) var device:DUbikDevice?
     private let kAppVersionName:String = "CFBundleShortVersionString"
     
@@ -15,70 +14,43 @@ class MConfiguration
     
     private func firstTime()
     {
-        managerSession.createManagedObject(managerSession.kEntity_Experience)
-        { [weak self] (managedObject) in
+        DManager.sharedInstance.managerUbik.createManagedObject(DUbikDevice.self)
+        { [weak self] (model) in
             
-            self?.experience = managedObject as? DSessionExperience
-            self?.experienceLoaded()
+            self?.device = model
+            self?.deviceLoaded()
         }
     }
     
-    private func experienceLoaded()
+    private func deviceLoaded()
     {
         let currentVersion:String = NSBundle.mainBundle().objectForInfoDictionaryKey(kAppVersionName) as! String
-        experience?.newVersion(currentVersion)
+        device?.newVersion(currentVersion)
+        DManager.sharedInstance.managerUbik.saver.save(false)
     }
     
     //MARK: public
     
     func loadSession()
     {
-        managerUbik = DManager.sharedInstance.managerUbik
-        managerUbik.fetchManagedObjects(DUbikDevice.self, entity:"")
-        managerUbik.fetchManagedObjects(managerUbik.kEntity_Device, limit:1, predicate:nil, sorters:nil)
-        { [weak self] (managedObjects) in
+        DManager.sharedInstance.managerUbik.fetchManagedObjects(DUbikDevice.self, limit:1)
+        {[weak self] (models) in
             
-            
-            
-            if managedObjects.isEmpty
-            {
-                
-            }
-            else
-            {
-                self?.device = managedObjects.first
-            }
-        }
-        
-        managerSession.fetchManagedObjects(managerSession.kEntity_Experience, limit:1, predicate:nil, sorters:nil)
-        { [weak self] (managedObjects) in
-            
-            if managedObjects.isEmpty
+            if models.isEmpty
             {
                 self?.firstTime()
             }
             else
             {
-                self?.experience = managedObjects.first as? DSessionExperience
-                self?.experienceLoaded()
+                self?.device = models.first
+                self?.deviceLoaded()
             }
         }
     }
     
-    func saveSession()
-    {
-        managerSession.saver.save(false)
-    }
-    
     func onboardingDone()
     {
-        experience?.finishedOnboarding()
-        saveSession()
-    }
-    
-    func updateStats(lastHike:NSTimeInterval, maxKm:Int32, maxSteps:Int32)
-    {
-        
-        saveSession()
+        device?.onboardingDone()
+        DManager.sharedInstance.managerUbik.saver.save(false)
     }
 }

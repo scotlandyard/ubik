@@ -12,4 +12,16 @@ class DUbikDevice:NSManagedObject
     {
         return "Device"
     }
+    
+    //MARK: public
+    
+    func newVersion(version:String)
+    {
+        self.version = version
+    }
+    
+    func onboardingDone()
+    {
+        self.onboarded = true
+    }
 }
