@@ -22,9 +22,9 @@ extension UILocalNotification
     
     private class func Remainder() -> UILocalNotification
     {
-        let kRemainderMinHour:NSTimeInterval = 21
-        let kRemainderMaxHour:NSTimeInterval = 6
-        let kSecondsInterval:NSTimeInterval = 6
+        let kRemainderMinHour:NSTimeInterval = 7
+        let kRemainderMaxHour:NSTimeInterval = 21
+        let kSecondsInterval:NSTimeInterval = 3600
         
         let now:NSDate = NSDate()
         let calendar:NSCalendar = NSCalendar.currentCalendar()
