@@ -79,7 +79,7 @@ class MHealth
     
     func askAuthorization(delegate:MHealthAuthDelegate)
     {
-        let readTypes:Set<HKObjectType> = Set(arrayLiteral:stepsType)
+        let readTypes:Set<HKObjectType> = Set(arrayLiteral:stepsType, distanceType)
         
         healthStore!.requestAuthorizationToShareTypes(nil, readTypes:readTypes)
         { (done, error) in
@@ -87,6 +87,20 @@ class MHealth
             delegate.healthAuthorizationAsked()
         }
     }
+    
+    func loadAll(delegate:MHealthLoadDelegate)
+    {
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     func loadStepsHistory(delegate:MHealthStepsDelegate)
     {

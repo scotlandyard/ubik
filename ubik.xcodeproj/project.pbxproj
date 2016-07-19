@@ -19,6 +19,7 @@
 		DA152B3B1D3E912900568204 /* CategoryNSManagerdObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA152B3A1D3E912900568204 /* CategoryNSManagerdObject.swift */; };
 		DA152B3E1D3E968900568204 /* CLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA152B3D1D3E968900568204 /* CLanding.swift */; };
 		DA152B411D3E96B800568204 /* VLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA152B401D3E96B800568204 /* VLanding.swift */; };
+		DA152B431D3E9E7B00568204 /* MHealthLoadDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA152B421D3E9E7B00568204 /* MHealthLoadDelegate.swift */; };
 		DA2AFAD51D3D2594000B6E44 /* VSettingsCellCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2AFAD41D3D2594000B6E44 /* VSettingsCellCheck.swift */; };
 		DA2AFAD71D3D2EAB000B6E44 /* brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA2AFAD61D3D2EAB000B6E44 /* brand.xcassets */; };
 		DA2AFAD91D3D3500000B6E44 /* VSettingsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2AFAD81D3D3500000B6E44 /* VSettingsHeader.swift */; };
@@ -35,7 +36,6 @@
 		DA2C7D301D3D1F2F005FFDB0 /* MSettingsItemNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C7D2F1D3D1F2F005FFDB0 /* MSettingsItemNotifications.swift */; };
 		DA2C7D321D3D2529005FFDB0 /* VSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C7D311D3D2529005FFDB0 /* VSettingsCell.swift */; };
 		DA3E0ADA1D3DBAF000906E81 /* CategoryUILocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3E0AD91D3DBAF000906E81 /* CategoryUILocalNotification.swift */; };
-		DA55F34B1D31CF3E00BBF21F /* MHealthTodayDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F34A1D31CF3E00BBF21F /* MHealthTodayDelegate.swift */; };
 		DA55F34D1D33081D00BBF21F /* CategoryNSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F34C1D33081D00BBF21F /* CategoryNSDate.swift */; };
 		DA55F34F1D3314EA00BBF21F /* VMainBarButtonConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F34E1D3314EA00BBF21F /* VMainBarButtonConfig.swift */; };
 		DA55F3511D33192E00BBF21F /* VMainBarButtonSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F3501D33192E00BBF21F /* VMainBarButtonSummary.swift */; };
@@ -81,7 +81,6 @@
 		DAB8F6BE1D31C0F600236A00 /* MHike.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8F6BD1D31C0F600236A00 /* MHike.swift */; };
 		DAB8F6C11D31C4A000236A00 /* MSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8F6C01D31C4A000236A00 /* MSummary.swift */; };
 		DAB8F6C31D31CEC100236A00 /* MHealthAuthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8F6C21D31CEC100236A00 /* MHealthAuthDelegate.swift */; };
-		DAB8F6C51D31CED700236A00 /* MHealthStepsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8F6C41D31CED700236A00 /* MHealthStepsDelegate.swift */; };
 		DACE5CB61D26C93D00080E5F /* CSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CB51D26C93D00080E5F /* CSummary.swift */; };
 		DACE5CB91D26CA0800080E5F /* VSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CB81D26CA0800080E5F /* VSummary.swift */; };
 		DACE5CBB1D26CAC200080E5F /* CMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CBA1D26CAC200080E5F /* CMainController.swift */; };
@@ -122,6 +121,7 @@
 		DA152B3A1D3E912900568204 /* CategoryNSManagerdObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSManagerdObject.swift; sourceTree = "<group>"; };
 		DA152B3D1D3E968900568204 /* CLanding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLanding.swift; sourceTree = "<group>"; };
 		DA152B401D3E96B800568204 /* VLanding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VLanding.swift; sourceTree = "<group>"; };
+		DA152B421D3E9E7B00568204 /* MHealthLoadDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealthLoadDelegate.swift; sourceTree = "<group>"; };
 		DA2AFAD41D3D2594000B6E44 /* VSettingsCellCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsCellCheck.swift; sourceTree = "<group>"; };
 		DA2AFAD61D3D2EAB000B6E44 /* brand.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = brand.xcassets; sourceTree = "<group>"; };
 		DA2AFAD81D3D3500000B6E44 /* VSettingsHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsHeader.swift; sourceTree = "<group>"; };
@@ -138,7 +138,6 @@
 		DA2C7D2F1D3D1F2F005FFDB0 /* MSettingsItemNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettingsItemNotifications.swift; sourceTree = "<group>"; };
 		DA2C7D311D3D2529005FFDB0 /* VSettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsCell.swift; sourceTree = "<group>"; };
 		DA3E0AD91D3DBAF000906E81 /* CategoryUILocalNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryUILocalNotification.swift; sourceTree = "<group>"; };
-		DA55F34A1D31CF3E00BBF21F /* MHealthTodayDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealthTodayDelegate.swift; sourceTree = "<group>"; };
 		DA55F34C1D33081D00BBF21F /* CategoryNSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSDate.swift; sourceTree = "<group>"; };
 		DA55F34E1D3314EA00BBF21F /* VMainBarButtonConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainBarButtonConfig.swift; sourceTree = "<group>"; };
 		DA55F3501D33192E00BBF21F /* VMainBarButtonSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainBarButtonSummary.swift; sourceTree = "<group>"; };
@@ -189,7 +188,6 @@
 		DAB8F6BD1D31C0F600236A00 /* MHike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHike.swift; sourceTree = "<group>"; };
 		DAB8F6C01D31C4A000236A00 /* MSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSummary.swift; sourceTree = "<group>"; };
 		DAB8F6C21D31CEC100236A00 /* MHealthAuthDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealthAuthDelegate.swift; sourceTree = "<group>"; };
-		DAB8F6C41D31CED700236A00 /* MHealthStepsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealthStepsDelegate.swift; sourceTree = "<group>"; };
 		DACE5CB51D26C93D00080E5F /* CSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSummary.swift; sourceTree = "<group>"; };
 		DACE5CB81D26CA0800080E5F /* VSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSummary.swift; sourceTree = "<group>"; };
 		DACE5CBA1D26CAC200080E5F /* CMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMainController.swift; sourceTree = "<group>"; };
@@ -446,8 +444,7 @@
 				DAB8F6B81D31BFE900236A00 /* MHealth.swift */,
 				DA2C7D1A1D3C41BD005FFDB0 /* MHealthHike.swift */,
 				DAB8F6C21D31CEC100236A00 /* MHealthAuthDelegate.swift */,
-				DAB8F6C41D31CED700236A00 /* MHealthStepsDelegate.swift */,
-				DA55F34A1D31CF3E00BBF21F /* MHealthTodayDelegate.swift */,
+				DA152B421D3E9E7B00568204 /* MHealthLoadDelegate.swift */,
 			);
 			path = Health;
 			sourceTree = "<group>";
@@ -738,7 +735,6 @@
 				DACE5CC61D26E52000080E5F /* MComponentGyroSummary.swift in Sources */,
 				DA97F30A1D389958008176E6 /* VHistoryChartSelector.swift in Sources */,
 				DA152B341D3E82A900568204 /* DUbikHike+CoreDataProperties.swift in Sources */,
-				DAB8F6C51D31CED700236A00 /* MHealthStepsDelegate.swift in Sources */,
 				DA152B3E1D3E968900568204 /* CLanding.swift in Sources */,
 				DA55F34F1D3314EA00BBF21F /* VMainBarButtonConfig.swift in Sources */,
 				DA2C7D221D3D1A2C005FFDB0 /* CSettings.swift in Sources */,
@@ -748,12 +744,12 @@
 				DAD00CF31D270DD600BCDDAA /* VSummaryHeader.swift in Sources */,
 				DAA005481D2F3C54004B57FA /* CategoryUIViewController.swift in Sources */,
 				DA2C7D301D3D1F2F005FFDB0 /* MSettingsItemNotifications.swift in Sources */,
+				DA152B431D3E9E7B00568204 /* MHealthLoadDelegate.swift in Sources */,
 				DA2C38BD1D30619800977D50 /* VMainLoader.swift in Sources */,
 				DA906DF41D22F9490095B270 /* CMain.swift in Sources */,
 				DAAF3C8A1D2C838700BBBD40 /* COnboardingItemWelcome.swift in Sources */,
 				DA152B351D3E82A900568204 /* DUbikSession.swift in Sources */,
 				DA152B391D3E841400568204 /* MSession.swift in Sources */,
-				DA55F34B1D31CF3E00BBF21F /* MHealthTodayDelegate.swift in Sources */,
 				DA55F3541D33493D00BBF21F /* CHistory.swift in Sources */,
 				DACE5CC41D26E44E00080E5F /* MComponentGyro.swift in Sources */,
 				DA2C7D2A1D3D1EB4005FFDB0 /* MSettingsSection.swift in Sources */,

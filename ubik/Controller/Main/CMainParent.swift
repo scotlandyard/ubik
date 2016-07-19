@@ -56,7 +56,7 @@ class CMainParent:UIViewController
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0))
         {
-            MConfiguration.sharedInstance.loadSession(self)
+            MConfiguration.sharedInstance.loadDevice(self)
         }
     }
     
@@ -153,6 +153,11 @@ class CMainParent:UIViewController
     }
     
     //MARK: public
+    
+    func deviceLoaded()
+    {
+        MSession.sharedInstance.loadSession(self)
+    }
     
     func sessionLoaded()
     {
