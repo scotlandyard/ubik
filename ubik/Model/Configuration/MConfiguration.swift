@@ -41,6 +41,12 @@ class MConfiguration:DManagerDelegate
         saveSession()
     }
     
+    func allowNotifications(allow:Bool)
+    {
+        experience!.notifications = allow
+        saveSession()
+    }
+    
     //MARK: dmanager delegate
     
     func dManagerFetched(results:[NSManagedObject], manager:DManagerModel, entity:String)

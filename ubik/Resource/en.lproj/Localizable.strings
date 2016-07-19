@@ -13,3 +13,5 @@
 "MSettingsSectionConfig_title"="Configuration";
 "MSettingsItemNotifications_title"="Notifications";
 "MSettingsItemNotifications_subtitle"="\nReceive notifications reminding you to keep moving";
+
+"UILocalNotification_remainder"="How about a 5 minutes walk?\nYou need it";
