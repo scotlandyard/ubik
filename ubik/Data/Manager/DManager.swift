@@ -3,12 +3,10 @@ import Foundation
 class DManager
 {
     static let sharedInstance = DManager()
-    let managerSession:DManagerModelSession
-    let managerSteps:DManagerModelSteps
+    let managerUbik:DManagerModelUbik
     
     private init()
     {
-        managerSession = DManagerModelSession()
-        managerSteps = DManagerModelSteps()
+        managerUbik = DManagerModelUbik()
     }
 }
