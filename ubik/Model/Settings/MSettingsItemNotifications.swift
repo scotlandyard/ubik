@@ -1,9 +1,10 @@
-import Foundation
+import UIKit
 
 class MSettingsItemNotifications:MSettingsItem
 {
     let title:String
     let subtitle:String
+    private let kCellHeight:CGFloat = 80
     
     init()
     {
@@ -11,7 +12,7 @@ class MSettingsItemNotifications:MSettingsItem
         subtitle = NSLocalizedString("MSettingsItemNotifications_subtitle", comment:"")
         let reusableIdentifier:String = VSettingsCellCheck.reusableIdentifier()
         
-        super.init(reusableIdentifier:reusableIdentifier)
+        super.init(reusableIdentifier:reusableIdentifier, cellHeight:kCellHeight)
     }
     
     override func config(cell:VSettingsCell, controller:CSettings)

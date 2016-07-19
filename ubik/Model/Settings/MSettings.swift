@@ -6,7 +6,10 @@ class MSettings
     
     init()
     {
+        let sectionConfig:MSettingsSection = MSettingsSection.Config()
+        
         sections = [
+            sectionConfig
         ]
     }
 }
