@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15E65" minimumToolsVersion="Xcode 7.0">
-    <entity name="Device" syncable="YES">
+    <entity name="Device" representedClassName="DUbikDevice" syncable="YES">
         <attribute name="notifications" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
         <attribute name="onboarded" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="version" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="Hike" syncable="YES">
+    <entity name="Hike" representedClassName="DUbikHike" syncable="YES">
         <attribute name="date" attributeType="Date" syncable="YES"/>
         <attribute name="distance" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="steps" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="sessionMaxDistance" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Session" inverseName="maxDistance" inverseEntity="Session" syncable="YES"/>
         <relationship name="sessionMaxSteps" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Session" inverseName="maxSteps" inverseEntity="Session" syncable="YES"/>
     </entity>
-    <entity name="Session" syncable="YES">
+    <entity name="Session" representedClassName="DUbikSession" syncable="YES">
         <attribute name="lastDate" attributeType="Date" syncable="YES"/>
         <relationship name="maxDistance" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hike" inverseName="sessionMaxDistance" inverseEntity="Hike" syncable="YES"/>
         <relationship name="maxSteps" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hike" inverseName="sessionMaxSteps" inverseEntity="Hike" syncable="YES"/>

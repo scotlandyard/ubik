@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		DA152B0F1D3E7EAB00568204 /* DUbikModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA152B0D1D3E7EAB00568204 /* DUbikModel.xcdatamodeld */; };
 		DA152B121D3E810F00568204 /* DManagerModelUbik.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA152B111D3E810F00568204 /* DManagerModelUbik.swift */; };
+		DA152B311D3E82A900568204 /* DUbikDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA152B2B1D3E82A900568204 /* DUbikDevice.swift */; };
+		DA152B321D3E82A900568204 /* DUbikDevice+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA152B2C1D3E82A900568204 /* DUbikDevice+CoreDataProperties.swift */; };
+		DA152B331D3E82A900568204 /* DUbikHike.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA152B2D1D3E82A900568204 /* DUbikHike.swift */; };
+		DA152B341D3E82A900568204 /* DUbikHike+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA152B2E1D3E82A900568204 /* DUbikHike+CoreDataProperties.swift */; };
+		DA152B351D3E82A900568204 /* DUbikSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA152B2F1D3E82A900568204 /* DUbikSession.swift */; };
+		DA152B361D3E82A900568204 /* DUbikSession+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA152B301D3E82A900568204 /* DUbikSession+CoreDataProperties.swift */; };
 		DA2AFAD51D3D2594000B6E44 /* VSettingsCellCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2AFAD41D3D2594000B6E44 /* VSettingsCellCheck.swift */; };
 		DA2AFAD71D3D2EAB000B6E44 /* brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA2AFAD61D3D2EAB000B6E44 /* brand.xcassets */; };
 		DA2AFAD91D3D3500000B6E44 /* VSettingsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2AFAD81D3D3500000B6E44 /* VSettingsHeader.swift */; };
@@ -103,6 +109,12 @@
 /* Begin PBXFileReference section */
 		DA152B0E1D3E7EAB00568204 /* DUbikModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DUbikModel.xcdatamodel; sourceTree = "<group>"; };
 		DA152B111D3E810F00568204 /* DManagerModelUbik.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManagerModelUbik.swift; sourceTree = "<group>"; };
+		DA152B2B1D3E82A900568204 /* DUbikDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DUbikDevice.swift; sourceTree = "<group>"; };
+		DA152B2C1D3E82A900568204 /* DUbikDevice+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DUbikDevice+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DA152B2D1D3E82A900568204 /* DUbikHike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DUbikHike.swift; sourceTree = "<group>"; };
+		DA152B2E1D3E82A900568204 /* DUbikHike+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DUbikHike+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DA152B2F1D3E82A900568204 /* DUbikSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DUbikSession.swift; sourceTree = "<group>"; };
+		DA152B301D3E82A900568204 /* DUbikSession+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DUbikSession+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DA2AFAD41D3D2594000B6E44 /* VSettingsCellCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsCellCheck.swift; sourceTree = "<group>"; };
 		DA2AFAD61D3D2EAB000B6E44 /* brand.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = brand.xcassets; sourceTree = "<group>"; };
 		DA2AFAD81D3D3500000B6E44 /* VSettingsHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsHeader.swift; sourceTree = "<group>"; };
@@ -211,6 +223,12 @@
 		DA152B101D3E80F200568204 /* Ubik */ = {
 			isa = PBXGroup;
 			children = (
+				DA152B2B1D3E82A900568204 /* DUbikDevice.swift */,
+				DA152B2C1D3E82A900568204 /* DUbikDevice+CoreDataProperties.swift */,
+				DA152B2D1D3E82A900568204 /* DUbikHike.swift */,
+				DA152B2E1D3E82A900568204 /* DUbikHike+CoreDataProperties.swift */,
+				DA152B2F1D3E82A900568204 /* DUbikSession.swift */,
+				DA152B301D3E82A900568204 /* DUbikSession+CoreDataProperties.swift */,
 			);
 			path = Ubik;
 			sourceTree = "<group>";
@@ -683,8 +701,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAA0054A1D2F3F97004B57FA /* COnboardingItemPermission.swift in Sources */,
+				DA152B361D3E82A900568204 /* DUbikSession+CoreDataProperties.swift in Sources */,
 				DACE5CC61D26E52000080E5F /* MComponentGyroSummary.swift in Sources */,
 				DA97F30A1D389958008176E6 /* VHistoryChartSelector.swift in Sources */,
+				DA152B341D3E82A900568204 /* DUbikHike+CoreDataProperties.swift in Sources */,
 				DAB8F6C51D31CED700236A00 /* MHealthStepsDelegate.swift in Sources */,
 				DA55F34F1D3314EA00BBF21F /* VMainBarButtonConfig.swift in Sources */,
 				DA2C7D221D3D1A2C005FFDB0 /* CSettings.swift in Sources */,
@@ -697,6 +717,7 @@
 				DA2C38BD1D30619800977D50 /* VMainLoader.swift in Sources */,
 				DA906DF41D22F9490095B270 /* CMain.swift in Sources */,
 				DAAF3C8A1D2C838700BBBD40 /* COnboardingItemWelcome.swift in Sources */,
+				DA152B351D3E82A900568204 /* DUbikSession.swift in Sources */,
 				DA55F34B1D31CF3E00BBF21F /* MHealthTodayDelegate.swift in Sources */,
 				DA55F3541D33493D00BBF21F /* CHistory.swift in Sources */,
 				DACE5CC41D26E44E00080E5F /* MComponentGyro.swift in Sources */,
@@ -707,6 +728,7 @@
 				DAB344321D2AA48000406CEE /* COnboarding.swift in Sources */,
 				DAB8F6C11D31C4A000236A00 /* MSummary.swift in Sources */,
 				DAA076C91D35CE360039248D /* VHistoryChart.swift in Sources */,
+				DA152B321D3E82A900568204 /* DUbikDevice+CoreDataProperties.swift in Sources */,
 				DAA6785B1D2A23DF00DDD9CC /* MConfiguration.swift in Sources */,
 				DA2C7D251D3D1A45005FFDB0 /* VSettings.swift in Sources */,
 				DA2C7D2C1D3D1EBD005FFDB0 /* MSettingsItem.swift in Sources */,
@@ -733,6 +755,7 @@
 				DAD00CFC1D2752B600BCDDAA /* VComponentGyroIcon.swift in Sources */,
 				DAD00CF61D27109100BCDDAA /* VMainBar.swift in Sources */,
 				DA152B121D3E810F00568204 /* DManagerModelUbik.swift in Sources */,
+				DA152B331D3E82A900568204 /* DUbikHike.swift in Sources */,
 				DA2C7D191D3C23CB005FFDB0 /* DManagerDelegate.swift in Sources */,
 				DAB3443B1D2AB0D700406CEE /* MOnboardingItemPermission.swift in Sources */,
 				DAA076CD1D35D1390039248D /* CategoryUICollectionReusableView.swift in Sources */,
@@ -753,6 +776,7 @@
 				DAB3443F1D2AB10800406CEE /* MOnboardingItemReady.swift in Sources */,
 				DA2C7D2E1D3D1F21005FFDB0 /* MSettingsSectionConfig.swift in Sources */,
 				DAAF3C8F1D2C89C600BBBD40 /* COnboardingItem.swift in Sources */,
+				DA152B311D3E82A900568204 /* DUbikDevice.swift in Sources */,
 				DAA0054C1D2F426F004B57FA /* COnboardingItemReady.swift in Sources */,
 				DAA076D21D35D29D0039248D /* MHistoryItem.swift in Sources */,
 				DAB344351D2AAE7C00406CEE /* MOnboarding.swift in Sources */,
