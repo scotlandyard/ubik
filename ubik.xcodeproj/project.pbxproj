@@ -17,6 +17,8 @@
 		DA152B361D3E82A900568204 /* DUbikSession+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA152B301D3E82A900568204 /* DUbikSession+CoreDataProperties.swift */; };
 		DA152B391D3E841400568204 /* MSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA152B381D3E841400568204 /* MSession.swift */; };
 		DA152B3B1D3E912900568204 /* CategoryNSManagerdObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA152B3A1D3E912900568204 /* CategoryNSManagerdObject.swift */; };
+		DA152B3E1D3E968900568204 /* CLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA152B3D1D3E968900568204 /* CLanding.swift */; };
+		DA152B411D3E96B800568204 /* VLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA152B401D3E96B800568204 /* VLanding.swift */; };
 		DA2AFAD51D3D2594000B6E44 /* VSettingsCellCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2AFAD41D3D2594000B6E44 /* VSettingsCellCheck.swift */; };
 		DA2AFAD71D3D2EAB000B6E44 /* brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA2AFAD61D3D2EAB000B6E44 /* brand.xcassets */; };
 		DA2AFAD91D3D3500000B6E44 /* VSettingsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2AFAD81D3D3500000B6E44 /* VSettingsHeader.swift */; };
@@ -118,6 +120,8 @@
 		DA152B301D3E82A900568204 /* DUbikSession+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DUbikSession+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DA152B381D3E841400568204 /* MSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSession.swift; sourceTree = "<group>"; };
 		DA152B3A1D3E912900568204 /* CategoryNSManagerdObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSManagerdObject.swift; sourceTree = "<group>"; };
+		DA152B3D1D3E968900568204 /* CLanding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLanding.swift; sourceTree = "<group>"; };
+		DA152B401D3E96B800568204 /* VLanding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VLanding.swift; sourceTree = "<group>"; };
 		DA2AFAD41D3D2594000B6E44 /* VSettingsCellCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsCellCheck.swift; sourceTree = "<group>"; };
 		DA2AFAD61D3D2EAB000B6E44 /* brand.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = brand.xcassets; sourceTree = "<group>"; };
 		DA2AFAD81D3D3500000B6E44 /* VSettingsHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsHeader.swift; sourceTree = "<group>"; };
@@ -243,6 +247,22 @@
 			path = Session;
 			sourceTree = "<group>";
 		};
+		DA152B3C1D3E967E00568204 /* Landing */ = {
+			isa = PBXGroup;
+			children = (
+				DA152B3D1D3E968900568204 /* CLanding.swift */,
+			);
+			path = Landing;
+			sourceTree = "<group>";
+		};
+		DA152B3F1D3E96B000568204 /* Landing */ = {
+			isa = PBXGroup;
+			children = (
+				DA152B401D3E96B800568204 /* VLanding.swift */,
+			);
+			path = Landing;
+			sourceTree = "<group>";
+		};
 		DA2C7D201D3D1A23005FFDB0 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,6 +362,7 @@
 		DA906DE51D22F9490095B270 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DA152B3C1D3E967E00568204 /* Landing */,
 				DA2C7D201D3D1A23005FFDB0 /* Settings */,
 				DA55F3521D3348D900BBF21F /* History */,
 				DAB3442E1D2AA44200406CEE /* Onboarding */,
@@ -408,6 +429,7 @@
 		DA906DF31D22F9490095B270 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DA152B3F1D3E96B000568204 /* Landing */,
 				DA2C7D231D3D1A3B005FFDB0 /* Settings */,
 				DA55F3551D334A0200BBF21F /* History */,
 				DAAF3C8B1D2C865100BBBD40 /* Onboarding */,
@@ -717,6 +739,7 @@
 				DA97F30A1D389958008176E6 /* VHistoryChartSelector.swift in Sources */,
 				DA152B341D3E82A900568204 /* DUbikHike+CoreDataProperties.swift in Sources */,
 				DAB8F6C51D31CED700236A00 /* MHealthStepsDelegate.swift in Sources */,
+				DA152B3E1D3E968900568204 /* CLanding.swift in Sources */,
 				DA55F34F1D3314EA00BBF21F /* VMainBarButtonConfig.swift in Sources */,
 				DA2C7D221D3D1A2C005FFDB0 /* CSettings.swift in Sources */,
 				DACE5CB91D26CA0800080E5F /* VSummary.swift in Sources */,
@@ -758,6 +781,7 @@
 				DAA005541D2F42F3004B57FA /* VOnboardingItemReady.swift in Sources */,
 				DACE5CB61D26C93D00080E5F /* CSummary.swift in Sources */,
 				DAB344391D2AB0BB00406CEE /* MOnboardingItemWelcome.swift in Sources */,
+				DA152B411D3E96B800568204 /* VLanding.swift in Sources */,
 				DA2C7D1D1D3C4746005FFDB0 /* VHistoryChartTouch.swift in Sources */,
 				DAE320701D33D8FE007FDC96 /* VSummaryHeaderCounter.swift in Sources */,
 				DA2C7D281D3D1A56005FFDB0 /* MSettings.swift in Sources */,
