@@ -9,15 +9,17 @@
         <attribute name="date" attributeType="Date" syncable="YES"/>
         <attribute name="distance" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="steps" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="sessionMaxDistance" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Session" inverseName="maxDistance" inverseEntity="Session" syncable="YES"/>
+        <relationship name="sessionMaxSteps" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Session" inverseName="maxSteps" inverseEntity="Session" syncable="YES"/>
     </entity>
     <entity name="Session" syncable="YES">
         <attribute name="lastDate" attributeType="Date" syncable="YES"/>
-        <relationship name="maxDistance" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hike" syncable="YES"/>
-        <relationship name="maxSteps" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hike" syncable="YES"/>
+        <relationship name="maxDistance" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hike" inverseName="sessionMaxDistance" inverseEntity="Hike" syncable="YES"/>
+        <relationship name="maxSteps" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hike" inverseName="sessionMaxSteps" inverseEntity="Hike" syncable="YES"/>
     </entity>
     <elements>
         <element name="Session" positionX="-54" positionY="-9" width="128" height="90"/>
-        <element name="Hike" positionX="-36" positionY="9" width="128" height="90"/>
+        <element name="Hike" positionX="-36" positionY="9" width="128" height="120"/>
         <element name="Device" positionX="-18" positionY="27" width="128" height="90"/>
     </elements>
 </model>
