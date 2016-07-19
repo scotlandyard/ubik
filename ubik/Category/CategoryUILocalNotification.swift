@@ -11,7 +11,7 @@ extension UILocalNotification
     {
         self.cancelAll()
         
-        if MConfiguration.sharedInstance.experience!.notifications
+        if MConfiguration.sharedInstance.device!.notifications
         {
             let notification:UILocalNotification = self.Remainder()
             UIApplication.sharedApplication().scheduleLocalNotification(notification)

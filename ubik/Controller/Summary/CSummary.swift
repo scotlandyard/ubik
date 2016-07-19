@@ -1,20 +1,8 @@
 import UIKit
 
-class CSummary:CMainController, MHealthTodayDelegate
+class CSummary:CMainController, MHealthLoadDelegate
 {
     weak var viewSummary:VSummary!
-    let model:MSummary
-    
-    init()
-    {
-        model = MSummary()
-        super.init(nibName:nil, bundle:nil)
-    }
-    
-    required init?(coder:NSCoder)
-    {
-        fatalError()
-    }
     
     deinit
     {
@@ -46,9 +34,10 @@ class CSummary:CMainController, MHealthTodayDelegate
     
     private func reload()
     {
-        if model.max != nil
-        {
-            viewSummary.update(model.today, maxValue:model.max!.amount)
+        dispatch_async(dispatch_get_main_queue())
+        { [weak self] in
+            
+            self?.viewSummary.update()
         }
     }
     
@@ -59,25 +48,19 @@ class CSummary:CMainController, MHealthTodayDelegate
             
             if self != nil
             {
-                self!.model.loadMax()
-                MHealth.sharedInstance.loadStepsRemaining(self!)
+                MHealth.sharedInstance.loadAll(self!)
             }
         }
     }
     
     //MARK: health del
     
-    func healthTodaySteps(steps:Int32)
+    func healthLoadFinished()
     {
-        model.today = steps
-        
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0))
+        dispatch_async(dispatch_get_main_queue())
         { [weak self] in
             
-            MConfiguration.sharedInstance.saveSession()
-            MHike.sharedInstance.saveSession()
-            
-            self?.reload()
+            self?.viewSummary.update()
         }
     }
 }

@@ -91,6 +91,7 @@ class MComponentGyro
         {
             delta = MComponentGyroDelta.None
         }
+        
         percentValue = newPercentValue
     }
 }

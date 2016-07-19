@@ -87,19 +87,6 @@ class CMainParent:UIViewController
         rootController(onboarding, bar:false)
     }
     
-    private func onboardingDone()
-    {
-        let summary:CSummary = CSummary()
-        rootController(summary, bar:true)
-        
-        let bar:VMainBar = VMainBar(controller:self)
-        bar.frame = CGRectMake(0, 0, view.bounds.maxX, kBarHeight)
-        bar.selectSummary(false)
-        self.bar = bar
-
-        view.addSubview(bar)
-    }
-    
     private func showController(controller:UIViewController, scroll:CMainParentScroll)
     {
         switch scroll
@@ -173,6 +160,19 @@ class CMainParent:UIViewController
                 self?.loadOnboarding()
             }
         }
+    }
+    
+    func onboardingDone()
+    {
+        let summary:CSummary = CSummary()
+        rootController(summary, bar:true)
+        
+        let bar:VMainBar = VMainBar(controller:self)
+        bar.frame = CGRectMake(0, 0, view.bounds.maxX, kBarHeight)
+        bar.selectSummary(false)
+        self.bar = bar
+        
+        view.addSubview(bar)
     }
     
     func showHistory()

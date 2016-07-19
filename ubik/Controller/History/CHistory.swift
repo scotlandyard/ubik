@@ -24,7 +24,7 @@ class CHistory:CMainController
     //MARK: private
     
     private func loadModel()
-    {
+    {/*
         MHike.sharedInstance.fetchMaxHike
         { [weak self] (maxHike) in
             
@@ -40,11 +40,11 @@ class CHistory:CMainController
             }
             
             self?.maxHikeLoaded(maxHikeNum)
-        }
+        }*/
     }
     
     private func maxHikeLoaded(maxHikeNum:Int32)
-    {
+    {/*
         MHike.sharedInstance.fetchHistory
         { (history) in
             
@@ -55,6 +55,6 @@ class CHistory:CMainController
                 
                 self?.viewHistory.chart.modelLoaded(model)
             }
-        }
+        }*/
     }
 }

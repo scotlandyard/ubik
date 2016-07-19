@@ -37,11 +37,8 @@ class VSummary:UIView
     
     //MARK: public
     
-    func update(value:Int32, maxValue:Int32)
-    {
-        let floatValue:CGFloat = CGFloat(value)
-        let floatMaxValue:CGFloat = CGFloat(maxValue)
-        
-        header.update(floatValue, maxValue:floatMaxValue)
+    func update()
+    {   
+        header.update()
     }
 }

@@ -5,8 +5,8 @@ class MHistory
     let items:[MHistoryItem]
     private let kDateFormat:String = "MMMM d / yyyy"
     
-    init(dbModel:[DStepsHike], maxSteps:Int32)
-    {
+    init(dbModel:[AnyObject], maxSteps:Int32)
+    {/*
         var items:[MHistoryItem] = []
         let maxStepsFloat:CGFloat = CGFloat(maxSteps)
         let numberFormatter:NSNumberFormatter = NSNumberFormatter()
@@ -30,6 +30,7 @@ class MHistory
             items.append(item)
         }
         
-        self.items = items
+        self.items = items*/
+        items = []
     }
 }
