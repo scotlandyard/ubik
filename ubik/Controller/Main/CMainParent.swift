@@ -3,9 +3,9 @@ import UIKit
 class CMainParent:UIViewController
 {
     weak var bar:VMainBar!
-    weak var current:UIViewController!
+    weak var current:UIViewController?
     private var controllerRect:CGRect!
-    private var statusBarStyle:UIStatusBarStyle
+    private var statusBarStyle:UIStatusBarStyle = UIStatusBarStyle.Default
     private let kBarHeight:CGFloat = 64
     private let kAnimationDuration:NSTimeInterval = 0.3
     
@@ -29,16 +29,12 @@ class CMainParent:UIViewController
         return rect
     }()
     
-    init()
+    override func viewDidLoad()
     {
-        statusBarStyle = UIStatusBarStyle.Default
-        super.init(nibName:nil, bundle:nil)
+        super.viewDidLoad()
+        
         controllerRect = CGRectMake(0, kBarHeight, view.bounds.maxX, view.bounds.maxY - kBarHeight)
-    }
-    
-    required init?(coder aDecoder:NSCoder?)
-    {
-        fatalError()
+        startSession()
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle
@@ -55,35 +51,53 @@ class CMainParent:UIViewController
     
     private func startSession()
     {
-        
+        let landing:CLanding = CLanding()
+        rootController(landing, bar:false)
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0))
         {
-            MConfiguration.sharedInstance.loadSession()
+            MConfiguration.sharedInstance.loadSession(self)
         }
     }
     
-    private func rootController(controller:UIViewController)
+    private func rootController(controller:UIViewController, bar:Bool)
     {
+        current?.view.removeFromSuperview()
+        current?.removeFromParentViewController()
+        current = controller
         
-    }
-    
-    private func startBar()
-    {
-        let bar:VMainBar = VMainBar(controller:self)
-        bar.frame = CGRectMake(0, 0, view.bounds.maxX, kBarHeight)
-        self.bar = bar
-        
-        view.addSubview(bar)
-    }
-    
-    private func startOnboarding()
-    {
-        let controller:COnboarding = COnboarding()
         addChildViewController(controller)
-        controller.view.frame = view.bounds
+        
+        if bar
+        {
+            controller.view.frame = controllerRect
+        }
+        else
+        {
+            controller.view.frame = view.bounds
+        }
+        
         view.addSubview(controller.view)
         controller.didMoveToParentViewController(self)
+    }
+    
+    private func loadOnboarding()
+    {
+        let onboarding:COnboarding = COnboarding()
+        rootController(onboarding, bar:false)
+    }
+    
+    private func onboardingDone()
+    {
+        let summary:CSummary = CSummary()
+        rootController(summary, bar:true)
+        
+        let bar:VMainBar = VMainBar(controller:self)
+        bar.frame = CGRectMake(0, 0, view.bounds.maxX, kBarHeight)
+        bar.selectSummary(false)
+        self.bar = bar
+
+        view.addSubview(bar)
     }
     
     private func showController(controller:UIViewController, scroll:CMainParentScroll)
@@ -103,11 +117,11 @@ class CMainParent:UIViewController
                 break
         }
         
-        current.willMoveToParentViewController(nil)
+        current!.willMoveToParentViewController(nil)
         addChildViewController(controller)
         
         transitionFromViewController(
-            current,
+            current!,
             toViewController:controller,
             duration:kAnimationDuration,
             options:UIViewAnimationOptions.CurveEaseOut,
@@ -119,20 +133,20 @@ class CMainParent:UIViewController
                 {
                     case CMainParentScroll.Left:
                         
-                        self.current.view.frame = self.leftRect
+                        self.current!.view.frame = self.leftRect
                         
                         break
                         
                     case CMainParentScroll.Right:
                         
-                        self.current.view.frame = self.rightRect
+                        self.current!.view.frame = self.rightRect
                         
                         break
                 }
             })
         { (done) in
             
-            self.current.removeFromParentViewController()
+            self.current!.removeFromParentViewController()
             controller.didMoveToParentViewController(self)
             self.current = controller
         }
@@ -140,21 +154,20 @@ class CMainParent:UIViewController
     
     //MARK: public
     
-    func startSummary()
+    func sessionLoaded()
     {
-        if bar == nil
-        {
-            startBar()
+        dispatch_async(dispatch_get_main_queue())
+        { [weak self] in
+            
+            if MConfiguration.sharedInstance.device!.onboarded
+            {
+                self?.onboardingDone()
+            }
+            else
+            {
+                self?.loadOnboarding()
+            }
         }
-        
-        let controller:CSummary = CSummary()
-        addChildViewController(controller)
-        controller.view.frame = controllerRect
-        view.addSubview(controller.view)
-        controller.didMoveToParentViewController(self)
-        current = controller
-        
-        bar.selectSummary(false)
     }
     
     func showHistory()

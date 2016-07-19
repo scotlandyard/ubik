@@ -3,6 +3,7 @@ import Foundation
 class MConfiguration
 {
     static let sharedInstance = MConfiguration()
+    weak var main:CMainParent?
     private(set) var device:DUbikDevice?
     private let kAppVersionName:String = "CFBundleShortVersionString"
     
@@ -27,12 +28,14 @@ class MConfiguration
         let currentVersion:String = NSBundle.mainBundle().objectForInfoDictionaryKey(kAppVersionName) as! String
         device?.newVersion(currentVersion)
         DManager.sharedInstance.managerUbik.saver.save(false)
+        main?.sessionLoaded()
     }
     
     //MARK: public
     
-    func loadSession()
+    func loadSession(main:CMainParent)
     {
+        self.main = main
         DManager.sharedInstance.managerUbik.fetchManagedObjects(DUbikDevice.self, limit:1)
         {[weak self] (models) in
             
