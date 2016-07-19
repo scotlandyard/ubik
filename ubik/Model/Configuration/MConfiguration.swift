@@ -1,11 +1,10 @@
 import Foundation
-import CoreData
 
 class MConfiguration
 {
     static let sharedInstance = MConfiguration()
-    private weak var managerSession:DManagerModelSession!
-    private(set) var experience:DSessionExperience?
+    weak var managerUbik:DManagerModelUbik!
+    private(set) var device:DUbikDevice?
     private let kAppVersionName:String = "CFBundleShortVersionString"
     
     private init()
@@ -34,7 +33,23 @@ class MConfiguration
     
     func loadSession()
     {
-        managerSession = DManager.sharedInstance.managerSession
+        managerUbik = DManager.sharedInstance.managerUbik
+        managerUbik.fetchManagedObjects(DUbikDevice.self, entity:"")
+        managerUbik.fetchManagedObjects(managerUbik.kEntity_Device, limit:1, predicate:nil, sorters:nil)
+        { [weak self] (managedObjects) in
+            
+            
+            
+            if managedObjects.isEmpty
+            {
+                
+            }
+            else
+            {
+                self?.device = managedObjects.first
+            }
+        }
+        
         managerSession.fetchManagedObjects(managerSession.kEntity_Experience, limit:1, predicate:nil, sorters:nil)
         { [weak self] (managedObjects) in
             

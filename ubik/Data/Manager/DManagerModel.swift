@@ -31,7 +31,7 @@ class DManagerModel
     
     //MARK: public
     
-    func createManagedObject(entity:String, block:(NSManagedObject -> ())?)
+    func createManagedObject<ModelType:NSManagedObject>(modelType:ModelType.Type, block:(ModelType -> ())? = nil)
     {
         saver.delaySaving()
         
@@ -40,18 +40,19 @@ class DManagerModel
                 
             if self != nil
             {
-                let entityDescription:NSEntityDescription = NSEntityDescription.entityForName(entity, inManagedObjectContext:self!.managedObjectContext)!
+                let entityDescription:NSEntityDescription = NSEntityDescription.entityForName(modelType.entityName(), inManagedObjectContext:self!.managedObjectContext)!
                 let managedObject:NSManagedObject = NSManagedObject(entity:entityDescription, insertIntoManagedObjectContext:self!.managedObjectContext)
+                let managedGeneric:ModelType = managedObject as! ModelType
                 
-                block?(managedObject)
+                block?(managedGeneric)
             }
         }
     }
     
-    func fetchManagedObjects<ModelType:NSManagedObject>(entity:String, limit:Int, predicate:NSPredicate?, sorters:[NSSortDescriptor]?, block:([ModelType] -> ())?)
+    func fetchManagedObjects<ModelType:NSManagedObject>(modelType:ModelType.Type, limit:Int = 0, predicate:NSPredicate? = nil, sorters:[NSSortDescriptor]? = nil, block:([ModelType] -> ())? = nil)
     {
         saver.delaySaving()
-        let fetchRequest:NSFetchRequest = NSFetchRequest(entityName:entity)
+        let fetchRequest:NSFetchRequest = NSFetchRequest(entityName:modelType.entityName())
         fetchRequest.predicate = predicate
         fetchRequest.sortDescriptors = sorters
         fetchRequest.fetchLimit = limit

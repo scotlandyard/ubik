@@ -9,4 +9,9 @@ class DUbikHike:NSManagedObject
     @NSManaged private(set) var date:NSTimeInterval
     @NSManaged private(set) var distance:Int32
     @NSManaged private(set) var steps:Int32
+    
+    override class func entityName() -> String
+    {
+        return "Hike"
+    }
 }
