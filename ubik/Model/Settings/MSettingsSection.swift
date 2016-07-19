@@ -16,4 +16,11 @@ class MSettingsSection
         self.items = items
         self.title = title
     }
+    
+    //MARK: public
+    
+    func config(header:VSettingsHeader)
+    {
+        header.label.text = title
+    }
 }
