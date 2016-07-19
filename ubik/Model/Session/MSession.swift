@@ -18,6 +18,9 @@ class MSession
         { [weak self] (model) in
             
             self?.session = model
+            
+            DManager.sharedInstance.managerUbik.saver.save(false)
+            
             self?.main?.sessionLoaded()
         }
     }
