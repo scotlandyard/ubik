@@ -1,7 +1,7 @@
 import UIKit
 import CoreData
 
-class MConfiguration:DManagerDelegate
+class MConfiguration
 {
     static let sharedInstance = MConfiguration()
     private weak var managerSession:DManagerModelSession!
@@ -10,19 +10,45 @@ class MConfiguration:DManagerDelegate
     
     private init()
     {
-        managerSession = DManager.sharedInstance.managerSession
-        managerSession.fetchManagedObjects(managerSession.kEntity_Experience, limit:1, predicate:nil, sorters:nil, delegate:self)
     }
     
     //MARK: private
     
+    private func firstTime()
+    {
+        managerSession.createManagedObject(managerSession.kEntity_Experience)
+        { [weak self] (managedObject) in
+            
+            self?.experience = managedObject as? DSessionExperience
+            self?.experienceLoaded()
+        }
+    }
+    
     private func experienceLoaded()
     {
         let currentVersion:String = NSBundle.mainBundle().objectForInfoDictionaryKey(kAppVersionName) as! String
-        experience!.version = currentVersion
+        experience?.newVersion(currentVersion)
     }
     
     //MARK: public
+    
+    func loadSession()
+    {
+        managerSession = DManager.sharedInstance.managerSession
+        managerSession.fetchManagedObjects(managerSession.kEntity_Experience, limit:1, predicate:nil, sorters:nil)
+        { [weak self] (managedObjects) in
+            
+            if managedObjects.isEmpty
+            {
+                self?.firstTime()
+            }
+            else
+            {
+                self?.experience = managedObjects.first as? DSessionExperience
+                self?.experienceLoaded()
+            }
+        }
+    }
     
     func saveSession()
     {
