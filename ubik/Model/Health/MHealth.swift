@@ -120,7 +120,8 @@ class MHealth
                 }
             }
             
-            self.loadDistance(model, delegate:delegate, predicate:predicate)
+            model.getMaxs()
+            self.storeAll(model, delegate:delegate)
         }
         
         healthStore!.executeQuery(stepsQuery)
@@ -128,7 +129,39 @@ class MHealth
     
     private func storeAll(model:MHealthModel, delegate:MHealthLoadDelegate)
     {
-        let mhealt
+        let item:MHealthModelItem? = model.pop()
+        
+        if item == nil
+        {
+            DManager.sharedInstance.managerUbik.saver.save(false)
+            delegate.healthLoadFinished()
+        }
+        else
+        {
+            if item === model.today
+            {
+                let dbModel:DUbikHike = DUbikHike()
+                MSession.sharedInstance.newCurrent(dbModel)
+            }
+            else
+            {
+                DManager.sharedInstance.managerUbik.createManagedObject(DUbikHike.self)
+                { (dbModel) in
+                    
+                    if item === model.maxSteps
+                    {
+                        MSession.sharedInstance.newMaxSteps(dbModel)
+                    }
+                    
+                    if item === model.maxDistance
+                    {
+                        MSession.sharedInstance.newMaxDistance(dbModel)
+                    }
+                }
+                
+                storeAll(model, delegate:delegate)
+            }
+        }
     }
     
     //MARK: public

@@ -49,18 +49,15 @@ class MSession
     func newMaxDistance(maxDistance:DUbikHike)
     {
         session?.newMaxDistance(maxDistance)
-        DManager.sharedInstance.managerUbik.saver.save(false)
     }
     
     func newMaxSteps(maxSteps:DUbikHike)
     {
         session?.newMaxSteps(maxSteps)
-        DManager.sharedInstance.managerUbik.saver.save(false)
     }
     
     func newCurrent(current:DUbikHike)
     {
         session?.newCurrent(current)
-        DManager.sharedInstance.managerUbik.saver.save(false)
     }
 }
