@@ -39,6 +39,13 @@ class VSettings:UIView, UICollectionViewDataSource, UICollectionViewDelegate, UI
     
     func collectionView(collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
     {
-        let
+        let count:Int = controller.model.sections[section].items.count
+        
+        return count
+    }
+    
+    func collectionView(collectionView:UICollectionView, cellForItemAtIndexPath indexPath:NSIndexPath) -> UICollectionViewCell
+    {
+        return UICollectionViewCell()
     }
 }
