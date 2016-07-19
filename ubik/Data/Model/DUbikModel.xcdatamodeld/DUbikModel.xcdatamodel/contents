@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15E65" minimumToolsVersion="Xcode 7.0">
+    <entity name="Device" syncable="YES">
+        <attribute name="notifications" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="onboarded" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="version" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Hike" syncable="YES">
+        <attribute name="date" attributeType="Date" syncable="YES"/>
+        <attribute name="distance" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="steps" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="Session" syncable="YES">
+        <attribute name="lastDate" attributeType="Date" syncable="YES"/>
+        <relationship name="maxDistance" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hike" syncable="YES"/>
+        <relationship name="maxSteps" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hike" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Session" positionX="-54" positionY="-9" width="128" height="90"/>
+        <element name="Hike" positionX="-36" positionY="9" width="128" height="90"/>
+        <element name="Device" positionX="-18" positionY="27" width="128" height="90"/>
+    </elements>
+</model>

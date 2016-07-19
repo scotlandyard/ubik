@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA152B0F1D3E7EAB00568204 /* DUbikModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA152B0D1D3E7EAB00568204 /* DUbikModel.xcdatamodeld */; };
 		DA2AFAD51D3D2594000B6E44 /* VSettingsCellCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2AFAD41D3D2594000B6E44 /* VSettingsCellCheck.swift */; };
 		DA2AFAD71D3D2EAB000B6E44 /* brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA2AFAD61D3D2EAB000B6E44 /* brand.xcassets */; };
 		DA2AFAD91D3D3500000B6E44 /* VSettingsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2AFAD81D3D3500000B6E44 /* VSettingsHeader.swift */; };
@@ -107,6 +108,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA152B0E1D3E7EAB00568204 /* DUbikModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DUbikModel.xcdatamodel; sourceTree = "<group>"; };
 		DA2AFAD41D3D2594000B6E44 /* VSettingsCellCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsCellCheck.swift; sourceTree = "<group>"; };
 		DA2AFAD61D3D2EAB000B6E44 /* brand.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = brand.xcassets; sourceTree = "<group>"; };
 		DA2AFAD81D3D3500000B6E44 /* VSettingsHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsHeader.swift; sourceTree = "<group>"; };
@@ -456,6 +458,7 @@
 			children = (
 				DAA678671D2A261F00DDD9CC /* DSessionModel.xcdatamodeld */,
 				DA2C38BE1D308D5900977D50 /* DStepsModel.xcdatamodeld */,
+				DA152B0D1D3E7EAB00568204 /* DUbikModel.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -743,6 +746,7 @@
 				DA94E20E1D28B77E002FF88B /* VMainBarButton.swift in Sources */,
 				DAA678641D2A25A100DDD9CC /* DManager.swift in Sources */,
 				DAA0054E1D2F427C004B57FA /* COnboardingItemLoading.swift in Sources */,
+				DA152B0F1D3E7EAB00568204 /* DUbikModel.xcdatamodeld in Sources */,
 				DAAF3C911D2CAC6700BBBD40 /* CategoryUIFont.swift in Sources */,
 				DA55F3511D33192E00BBF21F /* VMainBarButtonSummary.swift in Sources */,
 				DA2C38CA1D30908A00977D50 /* DManagerModelSteps.swift in Sources */,
@@ -1000,6 +1004,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		DA152B0D1D3E7EAB00568204 /* DUbikModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DA152B0E1D3E7EAB00568204 /* DUbikModel.xcdatamodel */,
+			);
+			currentVersion = DA152B0E1D3E7EAB00568204 /* DUbikModel.xcdatamodel */;
+			path = DUbikModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		DA2C38BE1D308D5900977D50 /* DStepsModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
