@@ -76,6 +76,8 @@ class CMainParent:UIViewController
             {
                 startOnboarding()
             }
+            
+            MConfiguration.sharedInstance.registerNotifications()
         }
     }
     

@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 import CoreData
 
 class MConfiguration:DManagerDelegate
@@ -45,6 +45,14 @@ class MConfiguration:DManagerDelegate
     {
         experience!.notifications = allow
         saveSession()
+    }
+    
+    //MARK: public
+    
+    func registerNotifications()
+    {
+        let settings:UIUserNotificationSettings = UIUserNotificationSettings(forTypes:[.Alert, .Badge, .Sound], categories:nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
     }
     
     //MARK: dmanager delegate
