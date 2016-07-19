@@ -19,8 +19,19 @@ class AppDelegate:UIResponder, UIApplicationDelegate
         return true
     }
     
+    func applicationDidEnterBackground(application:UIApplication)
+    {
+        
+    }
+    
     func applicationDidBecomeActive(application:UIApplication)
     {
         NSNotification.postBecameActive()
+        UIApplication.sharedApplication().cancelAllLocalNotifications()
+    }
+    
+    func applicationWillTerminate(application:UIApplication)
+    {
+        
     }
 }

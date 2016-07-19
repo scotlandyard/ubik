@@ -16,7 +16,8 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
     private let kSelectorWidth:CGFloat = 50
     private let kSelectorHeight:CGFloat = 72
     private let kTouchHeight:CGFloat = 150
-    private let kSelectorAnimationDuration:NSTimeInterval = 0.3
+    private let kSelectorAnimationDuration:NSTimeInterval = 0.25
+    private let kReloadDelay:UInt64 = 300
     
     init()
     {
@@ -218,12 +219,15 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
         dispatch_async(dispatch_get_main_queue())
         { [weak self] in
             
-            self?.collection.reloadData()
-            
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(NSEC_PER_SEC)), dispatch_get_main_queue())
-            { [weak self] in
+            if self != nil
+            {
+                self!.collection.reloadData()
                 
-                self?.hikeAt()
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(NSEC_PER_MSEC * self!.kReloadDelay)), dispatch_get_main_queue())
+                { [weak self] in
+                    
+                    self?.hikeAt()
+                }
             }
         }
     }
