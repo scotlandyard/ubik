@@ -6,7 +6,7 @@ class DStepsHike:NSManagedObject
 {
     @NSManaged private(set) var amount:Int32
     @NSManaged private(set) var day:NSTimeInterval
-    @NSManaged private(set) var km:Int32
+    @NSManaged private(set) var distance:Int32
     
     //MARK: public
     
