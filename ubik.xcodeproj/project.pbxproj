@@ -20,7 +20,6 @@
 		DA2AFAD71D3D2EAB000B6E44 /* brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA2AFAD61D3D2EAB000B6E44 /* brand.xcassets */; };
 		DA2AFAD91D3D3500000B6E44 /* VSettingsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2AFAD81D3D3500000B6E44 /* VSettingsHeader.swift */; };
 		DA2C38BD1D30619800977D50 /* VMainLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C38BC1D30619800977D50 /* VMainLoader.swift */; };
-		DA2C7D191D3C23CB005FFDB0 /* DManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C7D181D3C23CB005FFDB0 /* DManagerDelegate.swift */; };
 		DA2C7D1B1D3C41BD005FFDB0 /* MHealthHike.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C7D1A1D3C41BD005FFDB0 /* MHealthHike.swift */; };
 		DA2C7D1D1D3C4746005FFDB0 /* VHistoryChartTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C7D1C1D3C4746005FFDB0 /* VHistoryChartTouch.swift */; };
 		DA2C7D1F1D3C5652005FFDB0 /* VHistoryChartDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C7D1E1D3C5652005FFDB0 /* VHistoryChartDisplay.swift */; };
@@ -121,7 +120,6 @@
 		DA2AFAD61D3D2EAB000B6E44 /* brand.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = brand.xcassets; sourceTree = "<group>"; };
 		DA2AFAD81D3D3500000B6E44 /* VSettingsHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsHeader.swift; sourceTree = "<group>"; };
 		DA2C38BC1D30619800977D50 /* VMainLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainLoader.swift; sourceTree = "<group>"; };
-		DA2C7D181D3C23CB005FFDB0 /* DManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManagerDelegate.swift; sourceTree = "<group>"; };
 		DA2C7D1A1D3C41BD005FFDB0 /* MHealthHike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealthHike.swift; sourceTree = "<group>"; };
 		DA2C7D1C1D3C4746005FFDB0 /* VHistoryChartTouch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHistoryChartTouch.swift; sourceTree = "<group>"; };
 		DA2C7D1E1D3C5652005FFDB0 /* VHistoryChartDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHistoryChartDisplay.swift; sourceTree = "<group>"; };
@@ -466,7 +464,6 @@
 			isa = PBXGroup;
 			children = (
 				DAA6785D1D2A25A100DDD9CC /* DManager.swift */,
-				DA2C7D181D3C23CB005FFDB0 /* DManagerDelegate.swift */,
 				DAD79D681D3A97B3001BBCF5 /* DManagerSaver.swift */,
 				DAA6785E1D2A25A100DDD9CC /* DManagerModel.swift */,
 				DA152B111D3E810F00568204 /* DManagerModelUbik.swift */,
@@ -768,7 +765,6 @@
 				DAD00CF61D27109100BCDDAA /* VMainBar.swift in Sources */,
 				DA152B121D3E810F00568204 /* DManagerModelUbik.swift in Sources */,
 				DA152B331D3E82A900568204 /* DUbikHike.swift in Sources */,
-				DA2C7D191D3C23CB005FFDB0 /* DManagerDelegate.swift in Sources */,
 				DAB3443B1D2AB0D700406CEE /* MOnboardingItemPermission.swift in Sources */,
 				DAA076CD1D35D1390039248D /* CategoryUICollectionReusableView.swift in Sources */,
 				DA55F34D1D33081D00BBF21F /* CategoryNSDate.swift in Sources */,

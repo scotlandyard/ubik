@@ -48,18 +48,6 @@ class DManagerModel
         }
     }
     
-    func createManagedObject(entity:String, delegate:DManagerDelegate?)
-    {
-        createManagedObject(entity)
-        { [weak self] (managedObject) in
-            
-            if self != nil
-            {
-                delegate?.dManagerCreated(managedObject, manager:self!, entity:entity)
-            }
-        }
-    }
-    
     func fetchManagedObjects<ModelType:NSManagedObject>(entity:String, limit:Int, predicate:NSPredicate?, sorters:[NSSortDescriptor]?, block:([ModelType] -> ())?)
     {
         saver.delaySaving()
@@ -86,18 +74,6 @@ class DManagerModel
         }
     }
     
-    func fetchManagedObjects(entity:String, limit:Int, predicate:NSPredicate?, sorters:[NSSortDescriptor]?, delegate:DManagerDelegate?)
-    {
-        fetchManagedObjects(entity, limit:limit, predicate:predicate, sorters:sorters)
-        { [weak self] (managedObjects) in
-            
-            if self != nil
-            {
-                delegate?.dManagerFetched(managedObjects, manager:self!, entity:entity)
-            }
-        }
-    }
-    
     func delete(object:NSManagedObject)
     {
         saver.delaySaving()
@@ -105,7 +81,7 @@ class DManagerModel
         managedObjectContext.performBlock
         { [weak self] in
                 
-                self?.managedObjectContext.deleteObject(object)
+            self?.managedObjectContext.deleteObject(object)
         }
     }
 }
