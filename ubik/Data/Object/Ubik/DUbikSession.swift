@@ -1,17 +1,10 @@
-//
-//  DUbikSession.swift
-//  ubik
-//
-//  Created by zero on 7/19/16.
-//  Copyright © 2016 zero. All rights reserved.
-//
-
 import Foundation
 import CoreData
 
 @objc(DUbikSession)
-class DUbikSession: NSManagedObject {
-
-// Insert code here to add functionality to your managed object subclass
-
+class DUbikSession:NSManagedObject
+{
+    @NSManaged private(set) var lastDate:NSTimeInterval
+    @NSManaged private(set) var maxDistance:DUbikHike?
+    @NSManaged private(set) var maxSteps:DUbikHike?
 }
