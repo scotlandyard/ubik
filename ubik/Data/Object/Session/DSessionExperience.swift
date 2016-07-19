@@ -17,4 +17,9 @@ class DSessionExperience:NSManagedObject
     {
         self.version = version
     }
+    
+    func finishedOnboarding()
+    {
+        onboardingDone = true
+    }
 }

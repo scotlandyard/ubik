@@ -57,19 +57,13 @@ class MConfiguration
     
     func onboardingDone()
     {
-        experience!.onboardingDone = true
+        experience?.finishedOnboarding()
         saveSession()
     }
     
-    func updateLastHike(lastHike:NSTimeInterval)
+    func updateStats(lastHike:NSTimeInterval, maxKm:Int32, maxSteps:Int32)
     {
-        experience!.lastHike = lastHike
-        saveSession()
-    }
-    
-    func allowNotifications(allow:Bool)
-    {
-        experience!.notifications = allow
+        
         saveSession()
     }
     
@@ -79,26 +73,5 @@ class MConfiguration
     {
         let settings:UIUserNotificationSettings = UIUserNotificationSettings(forTypes:[.Alert, .Badge, .Sound], categories:nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(settings)
-    }
-    
-    //MARK: dmanager delegate
-    
-    func dManagerFetched(results:[NSManagedObject], manager:DManagerModel, entity:String)
-    {
-        if results.isEmpty
-        {
-            managerSession.createManagedObject(managerSession.kEntity_Experience, delegate:self)
-        }
-        else
-        {
-            experience = results.first as? DSessionExperience
-            experienceLoaded()
-        }
-    }
-    
-    func dManagerCreated(result:NSManagedObject, manager:DManagerModel, entity:String)
-    {
-        experience = result as? DSessionExperience
-        experienceLoaded()
     }
 }
