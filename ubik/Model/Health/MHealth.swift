@@ -140,7 +140,7 @@ class MHealth
         {
             if item === model.today
             {
-                let dbModel:DUbikHike = DUbikHike()
+                let dbModel:DUbikHike = DManager.sharedInstance.managerUbik.untracked(DUbikHike.self)
                 MSession.sharedInstance.newCurrent(dbModel)
             }
             else

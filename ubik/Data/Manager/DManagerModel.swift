@@ -85,4 +85,13 @@ class DManagerModel
             self?.managedObjectContext.deleteObject(object)
         }
     }
+    
+    func untracked<ModelType:NSManagedObject>(modelType:ModelType.Type) -> ModelType
+    {
+        let entity:NSEntityDescription = NSEntityDescription.entityForName(modelType.entityName(), inManagedObjectContext:managedObjectContext)!
+        let managedObject:NSManagedObject = NSManagedObject(entity:entity, insertIntoManagedObjectContext:nil)
+        let model:ModelType = managedObject as! ModelType
+        
+        return model
+    }
 }
