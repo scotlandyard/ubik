@@ -6,11 +6,11 @@ class DStepsHike:NSManagedObject
 {
     @NSManaged private(set) var amount:Int32
     @NSManaged private(set) var day:NSTimeInterval
-    @NSManaged private(set) var km: Int32
+    @NSManaged private(set) var km:Int32
     
     //MARK: public
     
-    func record(day:Timestamp, amount:Step)
+    func record(day:NSTimeInterval, amount:Int32)
     {
         self.day = day
         self.amount = amount
