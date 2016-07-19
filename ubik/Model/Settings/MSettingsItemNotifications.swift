@@ -4,7 +4,7 @@ class MSettingsItemNotifications:MSettingsItem
 {
     let title:String
     let subtitle:String
-    private let kCellHeight:CGFloat = 80
+    private let kCellHeight:CGFloat = 90
     
     init()
     {

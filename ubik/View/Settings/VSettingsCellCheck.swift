@@ -10,7 +10,7 @@ class VSettingsCellCheck:VSettingsCell
     override init(frame:CGRect)
     {
         attrTitle = [NSFontAttributeName:UIFont.bold(15), NSForegroundColorAttributeName:UIColor(white:0.2, alpha:1)]
-        attrSubtitle = [NSFontAttributeName:UIFont.regular(14), NSForegroundColorAttributeName:UIColor(white:0.4, alpha:1)]
+        attrSubtitle = [NSFontAttributeName:UIFont.regular(14), NSForegroundColorAttributeName:UIColor(white:0.3, alpha:1)]
         
         super.init(frame:frame)
         
@@ -36,17 +36,17 @@ class VSettingsCellCheck:VSettingsCell
         let metrics:[String:AnyObject] = [:]
         
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-10-[label]-0-[check(90)]-0-|",
+            "H:|-10-[label]-15-[check(68)]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-20-[check]-20-|",
+            "V:|-28-[check]",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-20-[label]-20-|",
+            "V:|-0-[label]-0-|",
             options:[],
             metrics:metrics,
             views:views))

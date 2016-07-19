@@ -11,6 +11,11 @@ class VSettingsHeader:UICollectionReusableView
         clipsToBounds = true
         backgroundColor = UIColor.clearColor()
         
+        let border:UIView = UIView()
+        border.userInteractionEnabled = false
+        border.backgroundColor = UIColor(white:0.95, alpha:1)
+        border.translatesAutoresizingMaskIntoConstraints = false
+        
         let label:UILabel = UILabel()
         label.userInteractionEnabled = false
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -19,10 +24,12 @@ class VSettingsHeader:UICollectionReusableView
         label.textColor = UIColor(white:0.5, alpha:1)
         self.label = label
         
+        addSubview(border)
         addSubview(label)
         
         let views:[String:AnyObject] = [
-            "label":label]
+            "label":label,
+            "border":border]
         
         let metrics:[String:AnyObject] = [:]
         
@@ -33,6 +40,16 @@ class VSettingsHeader:UICollectionReusableView
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "V:|-0-[label]-0-|",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:|-10-[border]-10-|",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:[border(1)]-0-|",
             options:[],
             metrics:metrics,
             views:views))
