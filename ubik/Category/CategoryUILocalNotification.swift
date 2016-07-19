@@ -6,4 +6,15 @@ extension UILocalNotification
     {
         UIApplication.sharedApplication().cancelAllLocalNotifications()
     }
+    
+    class func postRemainder()
+    {
+        self.cancelAll()
+        
+        if([msettings singleton].notifications)
+        {
+            UILocalNotification *notification = [snotpollution notification];
+            [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+        }
+    }
 }

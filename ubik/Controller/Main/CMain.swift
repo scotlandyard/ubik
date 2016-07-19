@@ -21,17 +21,17 @@ class AppDelegate:UIResponder, UIApplicationDelegate
     
     func applicationDidEnterBackground(application:UIApplication)
     {
-        
+        UILocalNotification.postRemainder()
     }
     
     func applicationDidBecomeActive(application:UIApplication)
     {
         NSNotification.postBecameActive()
-        UIApplication.sharedApplication().cancelAllLocalNotifications()
+        UILocalNotification.cancelAll()
     }
     
     func applicationWillTerminate(application:UIApplication)
     {
-        
+        UILocalNotification.postRemainder()
     }
 }
