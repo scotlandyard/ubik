@@ -1,4 +1,4 @@
-import UIKit
+import Foundation
 import CoreData
 
 class MConfiguration
@@ -65,13 +65,5 @@ class MConfiguration
     {
         
         saveSession()
-    }
-    
-    //MARK: public
-    
-    func registerNotifications()
-    {
-        let settings:UIUserNotificationSettings = UIUserNotificationSettings(forTypes:[.Alert, .Badge, .Sound], categories:nil)
-        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
     }
 }

@@ -15,6 +15,7 @@
 		DA152B341D3E82A900568204 /* DUbikHike+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA152B2E1D3E82A900568204 /* DUbikHike+CoreDataProperties.swift */; };
 		DA152B351D3E82A900568204 /* DUbikSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA152B2F1D3E82A900568204 /* DUbikSession.swift */; };
 		DA152B361D3E82A900568204 /* DUbikSession+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA152B301D3E82A900568204 /* DUbikSession+CoreDataProperties.swift */; };
+		DA152B391D3E841400568204 /* MSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA152B381D3E841400568204 /* MSession.swift */; };
 		DA2AFAD51D3D2594000B6E44 /* VSettingsCellCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2AFAD41D3D2594000B6E44 /* VSettingsCellCheck.swift */; };
 		DA2AFAD71D3D2EAB000B6E44 /* brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA2AFAD61D3D2EAB000B6E44 /* brand.xcassets */; };
 		DA2AFAD91D3D3500000B6E44 /* VSettingsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2AFAD81D3D3500000B6E44 /* VSettingsHeader.swift */; };
@@ -115,6 +116,7 @@
 		DA152B2E1D3E82A900568204 /* DUbikHike+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DUbikHike+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DA152B2F1D3E82A900568204 /* DUbikSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DUbikSession.swift; sourceTree = "<group>"; };
 		DA152B301D3E82A900568204 /* DUbikSession+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DUbikSession+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DA152B381D3E841400568204 /* MSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSession.swift; sourceTree = "<group>"; };
 		DA2AFAD41D3D2594000B6E44 /* VSettingsCellCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsCellCheck.swift; sourceTree = "<group>"; };
 		DA2AFAD61D3D2EAB000B6E44 /* brand.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = brand.xcassets; sourceTree = "<group>"; };
 		DA2AFAD81D3D3500000B6E44 /* VSettingsHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsHeader.swift; sourceTree = "<group>"; };
@@ -231,6 +233,14 @@
 				DA152B301D3E82A900568204 /* DUbikSession+CoreDataProperties.swift */,
 			);
 			path = Ubik;
+			sourceTree = "<group>";
+		};
+		DA152B371D3E840B00568204 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				DA152B381D3E841400568204 /* MSession.swift */,
+			);
+			path = Session;
 			sourceTree = "<group>";
 		};
 		DA2C7D201D3D1A23005FFDB0 /* Settings */ = {
@@ -364,6 +374,7 @@
 		DA906DEC1D22F9490095B270 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DA152B371D3E840B00568204 /* Session */,
 				DA2C7D261D3D1A4D005FFDB0 /* Settings */,
 				DAA076CE1D35D28C0039248D /* History */,
 				DAB8F6BF1D31C49000236A00 /* Summary */,
@@ -718,6 +729,7 @@
 				DA906DF41D22F9490095B270 /* CMain.swift in Sources */,
 				DAAF3C8A1D2C838700BBBD40 /* COnboardingItemWelcome.swift in Sources */,
 				DA152B351D3E82A900568204 /* DUbikSession.swift in Sources */,
+				DA152B391D3E841400568204 /* MSession.swift in Sources */,
 				DA55F34B1D31CF3E00BBF21F /* MHealthTodayDelegate.swift in Sources */,
 				DA55F3541D33493D00BBF21F /* CHistory.swift in Sources */,
 				DACE5CC41D26E44E00080E5F /* MComponentGyro.swift in Sources */,

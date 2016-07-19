@@ -60,7 +60,7 @@ class DManagerModel
         }
     }
     
-    func fetchManagedObjects(entity:String, limit:Int, predicate:NSPredicate?, sorters:[NSSortDescriptor]?, block:([NSManagedObject] -> ())?)
+    func fetchManagedObjects<ModelType:NSManagedObject>(entity:String, limit:Int, predicate:NSPredicate?, sorters:[NSSortDescriptor]?, block:([ModelType] -> ())?)
     {
         saver.delaySaving()
         let fetchRequest:NSFetchRequest = NSFetchRequest(entityName:entity)
@@ -71,11 +71,11 @@ class DManagerModel
         managedObjectContext.performBlock
         { [weak self] in
                 
-            let results:[NSManagedObject]
+            let results:[ModelType]
             
             do
             {
-                results = try self?.managedObjectContext.executeFetchRequest(fetchRequest) as! [NSManagedObject]
+                results = try self?.managedObjectContext.executeFetchRequest(fetchRequest) as! [ModelType]
             }
             catch
             {
