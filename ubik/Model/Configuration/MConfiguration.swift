@@ -37,7 +37,7 @@ class MConfiguration
     {
         self.main = main
         DManager.sharedInstance.managerUbik.fetchManagedObjects(DUbikDevice.self, limit:1)
-        {[weak self] (models) in
+        { [weak self] (models) in
             
             if models.isEmpty
             {

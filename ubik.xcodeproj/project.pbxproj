@@ -20,11 +20,12 @@
 		DA152B3E1D3E968900568204 /* CLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA152B3D1D3E968900568204 /* CLanding.swift */; };
 		DA152B411D3E96B800568204 /* VLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA152B401D3E96B800568204 /* VLanding.swift */; };
 		DA152B431D3E9E7B00568204 /* MHealthLoadDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA152B421D3E9E7B00568204 /* MHealthLoadDelegate.swift */; };
+		DA152B451D3EA72100568204 /* MHealthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA152B441D3EA72100568204 /* MHealthModel.swift */; };
+		DA152B471D3EA72D00568204 /* MHealthModelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA152B461D3EA72D00568204 /* MHealthModelItem.swift */; };
 		DA2AFAD51D3D2594000B6E44 /* VSettingsCellCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2AFAD41D3D2594000B6E44 /* VSettingsCellCheck.swift */; };
 		DA2AFAD71D3D2EAB000B6E44 /* brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA2AFAD61D3D2EAB000B6E44 /* brand.xcassets */; };
 		DA2AFAD91D3D3500000B6E44 /* VSettingsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2AFAD81D3D3500000B6E44 /* VSettingsHeader.swift */; };
 		DA2C38BD1D30619800977D50 /* VMainLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C38BC1D30619800977D50 /* VMainLoader.swift */; };
-		DA2C7D1B1D3C41BD005FFDB0 /* MHealthHike.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C7D1A1D3C41BD005FFDB0 /* MHealthHike.swift */; };
 		DA2C7D1D1D3C4746005FFDB0 /* VHistoryChartTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C7D1C1D3C4746005FFDB0 /* VHistoryChartTouch.swift */; };
 		DA2C7D1F1D3C5652005FFDB0 /* VHistoryChartDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C7D1E1D3C5652005FFDB0 /* VHistoryChartDisplay.swift */; };
 		DA2C7D221D3D1A2C005FFDB0 /* CSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C7D211D3D1A2C005FFDB0 /* CSettings.swift */; };
@@ -122,11 +123,12 @@
 		DA152B3D1D3E968900568204 /* CLanding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLanding.swift; sourceTree = "<group>"; };
 		DA152B401D3E96B800568204 /* VLanding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VLanding.swift; sourceTree = "<group>"; };
 		DA152B421D3E9E7B00568204 /* MHealthLoadDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealthLoadDelegate.swift; sourceTree = "<group>"; };
+		DA152B441D3EA72100568204 /* MHealthModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealthModel.swift; sourceTree = "<group>"; };
+		DA152B461D3EA72D00568204 /* MHealthModelItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealthModelItem.swift; sourceTree = "<group>"; };
 		DA2AFAD41D3D2594000B6E44 /* VSettingsCellCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsCellCheck.swift; sourceTree = "<group>"; };
 		DA2AFAD61D3D2EAB000B6E44 /* brand.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = brand.xcassets; sourceTree = "<group>"; };
 		DA2AFAD81D3D3500000B6E44 /* VSettingsHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsHeader.swift; sourceTree = "<group>"; };
 		DA2C38BC1D30619800977D50 /* VMainLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainLoader.swift; sourceTree = "<group>"; };
-		DA2C7D1A1D3C41BD005FFDB0 /* MHealthHike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealthHike.swift; sourceTree = "<group>"; };
 		DA2C7D1C1D3C4746005FFDB0 /* VHistoryChartTouch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHistoryChartTouch.swift; sourceTree = "<group>"; };
 		DA2C7D1E1D3C5652005FFDB0 /* VHistoryChartDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHistoryChartDisplay.swift; sourceTree = "<group>"; };
 		DA2C7D211D3D1A2C005FFDB0 /* CSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSettings.swift; sourceTree = "<group>"; };
@@ -442,7 +444,8 @@
 			isa = PBXGroup;
 			children = (
 				DAB8F6B81D31BFE900236A00 /* MHealth.swift */,
-				DA2C7D1A1D3C41BD005FFDB0 /* MHealthHike.swift */,
+				DA152B441D3EA72100568204 /* MHealthModel.swift */,
+				DA152B461D3EA72D00568204 /* MHealthModelItem.swift */,
 				DAB8F6C21D31CEC100236A00 /* MHealthAuthDelegate.swift */,
 				DA152B421D3E9E7B00568204 /* MHealthLoadDelegate.swift */,
 			);
@@ -746,6 +749,7 @@
 				DA2C7D301D3D1F2F005FFDB0 /* MSettingsItemNotifications.swift in Sources */,
 				DA152B431D3E9E7B00568204 /* MHealthLoadDelegate.swift in Sources */,
 				DA2C38BD1D30619800977D50 /* VMainLoader.swift in Sources */,
+				DA152B471D3EA72D00568204 /* MHealthModelItem.swift in Sources */,
 				DA906DF41D22F9490095B270 /* CMain.swift in Sources */,
 				DAAF3C8A1D2C838700BBBD40 /* COnboardingItemWelcome.swift in Sources */,
 				DA152B351D3E82A900568204 /* DUbikSession.swift in Sources */,
@@ -758,6 +762,7 @@
 				DAB8F6BA1D31BFE900236A00 /* MHealth.swift in Sources */,
 				DAB344321D2AA48000406CEE /* COnboarding.swift in Sources */,
 				DAB8F6C11D31C4A000236A00 /* MSummary.swift in Sources */,
+				DA152B451D3EA72100568204 /* MHealthModel.swift in Sources */,
 				DAA076C91D35CE360039248D /* VHistoryChart.swift in Sources */,
 				DA152B321D3E82A900568204 /* DUbikDevice+CoreDataProperties.swift in Sources */,
 				DAA6785B1D2A23DF00DDD9CC /* MConfiguration.swift in Sources */,
@@ -798,7 +803,6 @@
 				DAD00CF81D273E7000BCDDAA /* VComponentGyroBase.swift in Sources */,
 				DAAF3C8D1D2C873800BBBD40 /* VOnboardingItemWelcome.swift in Sources */,
 				DACE5CC01D26D6B600080E5F /* VComponentGyro.swift in Sources */,
-				DA2C7D1B1D3C41BD005FFDB0 /* MHealthHike.swift in Sources */,
 				DAA005521D2F42E6004B57FA /* VOnboardingItemLoading.swift in Sources */,
 				DAA0DC681D23184C00F3EF29 /* CategoryNSFileManager.swift in Sources */,
 				DAD79D691D3A97B3001BBCF5 /* DManagerSaver.swift in Sources */,

@@ -9,7 +9,6 @@
 "VMainBarButtonHistory_title"="History";
 "VMainBarButtonConfig_title"="Settings";
 
-"MHealthMain_stepsError"="Error loading HealthKit info";
 "MSettingsSectionConfig_title"="Configuration";
 "MSettingsItemNotifications_title"="Notifications";
 "MSettingsItemNotifications_subtitle"="\nReceive notifications reminding you to keep moving";

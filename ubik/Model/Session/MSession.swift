@@ -15,16 +15,11 @@ class MSession
     private func sessionFirstTime()
     {
         DManager.sharedInstance.managerUbik.createManagedObject(DUbikSession.self)
-        {[weak self] (model) in
+        { [weak self] (model) in
             
             self?.session = model
-            self?.sessionLoaded()
+            self?.main?.sessionLoaded()
         }
-    }
-    
-    private func sessionLoaded()
-    {
-        main?.sessionLoaded()
     }
     
     //MARK: public
@@ -34,7 +29,7 @@ class MSession
         self.main = main
         
         DManager.sharedInstance.managerUbik.fetchManagedObjects(DUbikSession.self, limit:1)
-        {[weak self] (models) in
+        { [weak self] (models) in
             
             if models.isEmpty
             {
@@ -43,7 +38,7 @@ class MSession
             else
             {
                 self?.session = models.first
-                self?.sessionLoaded()
+                self?.main?.sessionLoaded()
             }
         }
     }

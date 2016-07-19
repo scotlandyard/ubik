@@ -1,6 +1,6 @@
 import UIKit
 
-class COnboardingItemLoading:COnboardingItem, MHealthStepsDelegate
+class COnboardingItemLoading:COnboardingItem, MHealthLoadDelegate
 {
     private var loading:Bool = false
     
@@ -19,7 +19,7 @@ class COnboardingItemLoading:COnboardingItem, MHealthStepsDelegate
         view = VOnboardingItemLoading(controller:self)
     }
     
-    //Mark: private
+    //MARK: private
     
     private func goNext()
     {
@@ -34,18 +34,13 @@ class COnboardingItemLoading:COnboardingItem, MHealthStepsDelegate
     {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0))
         {
-            MHealth.sharedInstance.loadStepsHistory(self)
+            MHealth.sharedInstance.loadAll(self)
         }
     }
     
-    //Mark: health del
+    //MARK: health del
     
-    func healthStepsSaved()
-    {
-        goNext()
-    }
-    
-    func healthStepsError(error:String)
+    func healthLoadFinished()
     {
         goNext()
     }

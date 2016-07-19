@@ -9,6 +9,8 @@ class MHealth
     let stepsUnit:HKUnit
     let distanceType:HKQuantityType
     let distanceUnit:HKUnit
+    let calendar:NSCalendar
+    let calendarUnits:NSCalendarUnit
     
     private init()
     {
@@ -25,54 +27,108 @@ class MHealth
         stepsUnit = HKUnit.countUnit()
         distanceType = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierDistanceWalkingRunning)!
         distanceUnit = HKUnit.meterUnit()
+        calendar = NSCalendar.currentCalendar()
+        calendarUnits = [NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day]
     }
     
     //MARK: private
     
-    private func storeSteps(samples:[HKQuantitySample], lastHike:NSTimeInterval, delegate:MHealthStepsDelegate?)
+    private func normalizedTimestamp(date:NSDate) -> NSTimeInterval
     {
-        let calendar:NSCalendar = NSCalendar.currentCalendar()
-        let calendarUnits:NSCalendarUnit = [NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day]
-        var hikes:[MHealthHike] = []
-        var hike:MHealthHike?
+        let components:NSDateComponents = self.calendar.components(self.calendarUnits, fromDate:date)
+        let normalizedDate:NSDate = self.calendar.dateFromComponents(components)!
+        let timestamp:NSTimeInterval = normalizedDate.timeIntervalSince1970
         
-        for sample:HKQuantitySample in samples
-        {
-            let count:Int32 = Int32(sample.quantity.doubleValueForUnit(stepsUnit))
-            let date:NSDate = sample.startDate
-            let components:NSDateComponents = calendar.components(calendarUnits, fromDate:date)
-            let normalizedDate:NSDate = calendar.dateFromComponents(components)!
-            let timestamp:NSTimeInterval = normalizedDate.timeIntervalSince1970
+        return timestamp
+    }
+    
+    private func predicateFor(minTimestamp:NSTimeInterval) -> NSPredicate
+    {
+        let minDate:NSDate = NSDate(timeIntervalSince1970:minTimestamp)
+        let predicate:NSPredicate = HKQuery.predicateForSamplesWithStartDate(minDate, endDate:nil, options:HKQueryOptions.StrictStartDate)
+        
+        return predicate
+    }
+    
+    private func loadSteps(model:MHealthModel, delegate:MHealthLoadDelegate)
+    {
+        let minTimestamp:NSTimeInterval = MSession.sharedInstance.session!.lastDate
+        let predicate:NSPredicate = predicateFor(minTimestamp)
+        let stepsQuery:HKSampleQuery = HKSampleQuery(
+            sampleType:stepsType,
+            predicate:predicate,
+            limit:0,
+            sortDescriptors:nil)
+        { (query, results, error) in
             
-            if hike != nil
+            let rawSteps:[HKQuantitySample]? = results as? [HKQuantitySample]
+            
+            if rawSteps != nil
             {
-                if hike!.timestamp == timestamp
+                for rawStep:HKQuantitySample in rawSteps!
                 {
-                    hike!.add(count)
-                }
-                else
-                {
-                    hike = nil
+                    let stepsDouble:Double = rawStep.quantity.doubleValueForUnit(self.stepsUnit)
+                    let steps:Int32 = Int32(stepsDouble)
+                    let date:NSDate = rawStep.startDate
+                    let timestamp:NSTimeInterval = self.normalizedTimestamp(date)
+                    var item:MHealthModelItem? = model.itemFor(timestamp)
+                    
+                    if item == nil
+                    {
+                        item = MHealthModelItem(date:timestamp)
+                        model.add(item!)
+                    }
+                    
+                    item!.steps = steps
                 }
             }
             
-            if hike == nil
-            {
-                hike = MHealthHike(timestamp:timestamp, amount:count)
-                hikes.append(hike!)
-            }
+            self.loadDistance(model, delegate:delegate, predicate:predicate)
         }
         
-        for inHike:MHealthHike in hikes
-        {
-            let timestamp:NSTimeInterval = inHike.timestamp
-            let amount:Int32 = inHike.amount
+        healthStore!.executeQuery(stepsQuery)
+    }
+    
+    private func loadDistance(model:MHealthModel, delegate:MHealthLoadDelegate, predicate:NSPredicate)
+    {
+        let stepsQuery:HKSampleQuery = HKSampleQuery(
+            sampleType:distanceType,
+            predicate:predicate,
+            limit:0,
+            sortDescriptors:nil)
+        { (query, results, error) in
             
-            MHike.sharedInstance.newHike(timestamp, amount:amount)
+            let rawDistances:[HKQuantitySample]? = results as? [HKQuantitySample]
+            
+            if rawDistances != nil
+            {
+                for rawDistance:HKQuantitySample in rawDistances!
+                {
+                    let distanceDouble:Double = rawDistance.quantity.doubleValueForUnit(self.distanceUnit)
+                    let distance:Int32 = Int32(distanceDouble)
+                    let date:NSDate = rawDistance.startDate
+                    let timestamp:NSTimeInterval = self.normalizedTimestamp(date)
+                    var item:MHealthModelItem? = model.itemFor(timestamp)
+                    
+                    if item == nil
+                    {
+                        item = MHealthModelItem(date:timestamp)
+                        model.add(item!)
+                    }
+                    
+                    item!.distance = distance
+                }
+            }
+            
+            self.loadDistance(model, delegate:delegate, predicate:predicate)
         }
         
-        MConfiguration.sharedInstance.updateLastHike(lastHike)
-        delegate?.healthStepsSaved()
+        healthStore!.executeQuery(stepsQuery)
+    }
+    
+    private func storeAll(model:MHealthModel, delegate:MHealthLoadDelegate)
+    {
+        
     }
     
     //MARK: public
@@ -90,100 +146,9 @@ class MHealth
     
     func loadAll(delegate:MHealthLoadDelegate)
     {
-        
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    func loadStepsHistory(delegate:MHealthStepsDelegate)
-    {
-        let today:NSDate = NSDate().beginningOfDay()
-        let predicate:NSPredicate = HKQuery.predicateForSamplesWithStartDate(nil, endDate:today, options:HKQueryOptions.StrictStartDate)
-        let todayTimestamp:NSTimeInterval = today.timeIntervalSince1970
-        
-        let sampleQuery:HKSampleQuery = HKSampleQuery(
-            sampleType:stepsType,
-            predicate:predicate,
-            limit:0,
-            sortDescriptors:nil)
-        { (query, results, error) in
-            
-            let resultsQuantity:[HKQuantitySample]? = results as? [HKQuantitySample]
-            
-            if error == nil && resultsQuantity != nil
-            {
-                self.storeSteps(resultsQuantity!, lastHike:todayTimestamp, delegate:delegate)
-            }
-            else
-            {
-                var errorString:String? = error?.localizedDescription
-                
-                if errorString == nil
-                {
-                    errorString = NSLocalizedString("MHealthMain_stepsError", comment:"")
-                }
-                
-                delegate.healthStepsError(errorString!)
-            }
-        }
-        
-        healthStore!.executeQuery(sampleQuery)
-    }
-    
-    func loadStepsRemaining(delegate:MHealthTodayDelegate)
-    {
-        let lastTimestamp:NSTimeInterval = MConfiguration.sharedInstance.experience!.lastHike
-        let lastLoadedDate:NSDate = NSDate(timeIntervalSince1970:lastTimestamp)
-        let today:NSDate = NSDate().beginningOfDay()
-        let predicate:NSPredicate = HKQuery.predicateForSamplesWithStartDate(lastLoadedDate, endDate:nil, options:HKQueryOptions.StrictStartDate)
-        let todayTimestamp:NSTimeInterval = today.timeIntervalSince1970
-        
-        let sampleQuery:HKSampleQuery = HKSampleQuery(
-            sampleType:stepsType,
-            predicate:predicate,
-            limit:0,
-            sortDescriptors:nil)
-        { (query, results, error) in
-            
-            let resultsQuantity:[HKQuantitySample]? = results as? [HKQuantitySample]
-            
-            if error == nil && resultsQuantity != nil
-            {
-                var countToday:Int32 = 0
-                var history:[HKQuantitySample] = []
-                
-                for result:HKQuantitySample in resultsQuantity!
-                {
-                    let date:NSDate = result.startDate
-                    let timestamp:NSTimeInterval = date.timeIntervalSince1970
-                    
-                    if timestamp < todayTimestamp
-                    {
-                        history.append(result)
-                    }
-                    else
-                    {
-                        let amount:Int32 = Int32(result.quantity.doubleValueForUnit(self.stepsUnit))
-                        countToday += amount
-                    }
-                }
-                
-                self.storeSteps(history, lastHike:todayTimestamp, delegate:nil)
-                delegate.healthTodaySteps(countToday)
-            }
-            else
-            {
-                delegate.healthTodaySteps(0)
-            }
-        }
-        
-        healthStore!.executeQuery(sampleQuery)
+        let today:NSDate = NSDate()
+        let threshold:NSTimeInterval = normalizedTimestamp(today)
+        let model:MHealthModel = MHealthModel(threshold:threshold)
+        loadSteps(model, delegate:delegate)
     }
 }
