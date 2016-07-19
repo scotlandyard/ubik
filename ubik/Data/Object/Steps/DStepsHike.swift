@@ -4,11 +4,9 @@ import CoreData
 @objc(DStepsHike)
 class DStepsHike:NSManagedObject
 {
-    @NSManaged private(set) var amount:Step
-    @NSManaged private(set) var day:Timestamp
-    
-    typealias Step = Int32
-    typealias Timestamp = NSTimeInterval
+    @NSManaged private(set) var amount:Int32
+    @NSManaged private(set) var day:NSTimeInterval
+    @NSManaged private(set) var km: Int32
     
     //MARK: public
     
