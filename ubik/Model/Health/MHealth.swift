@@ -128,7 +128,7 @@ class MHealth
     
     private func storeAll(model:MHealthModel, delegate:MHealthLoadDelegate)
     {
-        
+        let mhealt
     }
     
     //MARK: public
