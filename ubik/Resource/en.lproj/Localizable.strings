@@ -8,6 +8,8 @@
 "VOnboardingItemReady_button"="Enter";
 "VMainBarButtonHistory_title"="History";
 "VMainBarButtonConfig_title"="Settings";
+"VSummaryHeaderCounter_measuresMetric"="Metres";
+"VSummaryHeaderCounter_measuresImperial"="Feet";
 
 "MSettingsSectionConfig_title"="Configuration";
 "MSettingsItemNotifications_title"="Notifications";

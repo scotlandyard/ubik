@@ -5,10 +5,11 @@ class MHistory
     let items:[MHistoryItem]
     private let kDateFormat:String = "MMMM d / yyyy"
     
-    init(dbModel:[AnyObject], maxSteps:Int32)
-    {/*
+    init(dbModel:[DUbikHike])
+    {
+        let maxDistance:Int32 = MSession.sharedInstance.session!.maxDistance!.distance
         var items:[MHistoryItem] = []
-        let maxStepsFloat:CGFloat = CGFloat(maxSteps)
+        let maxDistanceFloat:CGFloat = CGFloat(maxDistance)
         let numberFormatter:NSNumberFormatter = NSNumberFormatter()
         numberFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
         
@@ -30,7 +31,7 @@ class MHistory
             items.append(item)
         }
         
-        self.items = items*/
+        self.items = items
         items = []
     }
 }
