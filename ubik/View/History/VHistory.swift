@@ -12,7 +12,7 @@ class VHistory:UIView
         backgroundColor = UIColor.whiteColor()
         self.controller = controller
         
-        let chart:VHistoryChart = VHistoryChart()
+        let chart:VHistoryChart = VHistoryChart(controller:controller)
         self.chart = chart
         
         addSubview(chart)

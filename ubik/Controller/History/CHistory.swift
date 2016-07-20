@@ -32,21 +32,16 @@ class CHistory:CMainController
         { [weak self] (models) in
             
             self?.model = MHistory(dbModel:models)
+            self?.modelLoaded()
         }
     }
     
-    private func maxHikeLoaded(maxHikeNum:Int32)
-    {/*
-        MHike.sharedInstance.fetchHistory
-        { (history) in
+    private func modelLoaded()
+    {
+        dispatch_async(dispatch_get_main_queue())
+        { [weak self] in
             
-            let model:MHistory = MHistory(dbModel:history, maxSteps:maxHikeNum)
-            
-            dispatch_async(dispatch_get_main_queue())
-            { [weak self] in
-                
-                self?.viewHistory.chart.modelLoaded(model)
-            }
-        }*/
+            self?.viewHistory.chart.reload()
+        }
     }
 }

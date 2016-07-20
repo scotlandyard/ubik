@@ -2,7 +2,7 @@ import UIKit
 
 class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
-    var model:MHistory?
+    weak var controller:CHistory!
     weak var collection:UICollectionView!
     weak var selector:VHistoryChartSelector!
     weak var touch:VHistoryChartTouch!
@@ -19,12 +19,13 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
     private let kSelectorAnimationDuration:NSTimeInterval = 0.25
     private let kReloadDelay:UInt64 = 300
     
-    init()
+    init(controller:CHistory)
     {
         selectorWidth_2 = kSelectorWidth / 2.0
         selectorX = 0
         
         super.init(frame:CGRectZero)
+        self.controller = controller
         translatesAutoresizingMaskIntoConstraints = false
         clipsToBounds = true
         
@@ -167,7 +168,7 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
     
     private func modelAtIndex(index:NSIndexPath) -> MHistoryItem
     {
-        let item:MHistoryItem = model!.items[index.item]
+        let item:MHistoryItem = controller.model!.items[index.item]
         
         return item
     }
@@ -212,23 +213,14 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
     
     //MARK: public
     
-    func modelLoaded(model:MHistory)
+    func reload()
     {
-        self.model = model
+        collection.reloadData()
         
-        dispatch_async(dispatch_get_main_queue())
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(NSEC_PER_MSEC * kReloadDelay)), dispatch_get_main_queue())
         { [weak self] in
             
-            if self != nil
-            {
-                self!.collection.reloadData()
-                
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(NSEC_PER_MSEC * self!.kReloadDelay)), dispatch_get_main_queue())
-                { [weak self] in
-                    
-                    self?.hikeAt()
-                }
-            }
+            self?.hikeAt()
         }
     }
     
@@ -256,7 +248,7 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
     {
         let count:Int
 
-        if model == nil
+        if controller.model == nil
         {
             count = 0
         }
@@ -270,7 +262,7 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
     
     func collectionView(collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
     {
-        let count:Int = model!.items.count
+        let count:Int = controller.model!.items.count
         
         return count
     }
