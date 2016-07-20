@@ -4,8 +4,14 @@ import CoreData
 @objc(DUbikDevice)
 class DUbikDevice:NSManagedObject
 {
+    @objc enum DUbikDeviceMeasures:Int16
+    {
+        case Metric
+        case Imperial
+    }
+    
     @NSManaged private(set) var version:String
-    @NSManaged private(set) var measures:Int16
+    @NSManaged private(set) var measures:DUbikDeviceMeasures
     @NSManaged private(set) var onboarded:Bool
     @NSManaged private(set) var notifications:Bool
     
@@ -24,5 +30,15 @@ class DUbikDevice:NSManagedObject
     func onboardingDone()
     {
         self.onboarded = true
+    }
+    
+    func measuresMetric()
+    {
+        measures = DUbikDeviceMeasures.Metric
+    }
+    
+    func measuresImperial()
+    {
+        measures = DUbikDeviceMeasures.Imperial
     }
 }
