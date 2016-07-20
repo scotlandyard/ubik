@@ -14,4 +14,13 @@ class DUbikHike:NSManagedObject
     {
         return "Hike"
     }
+    
+    //MARK: public
+    
+    func parse(item:MHealthModelItem)
+    {
+        self.date = item.date
+        self.distance = item.distance
+        self.steps = item.steps
+    }
 }

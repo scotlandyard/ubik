@@ -79,7 +79,7 @@ class MHealth
                         model.add(item!)
                     }
                     
-                    item!.steps = steps
+                    item!.steps += steps
                 }
             }
             
@@ -116,7 +116,7 @@ class MHealth
                         model.add(item!)
                     }
                     
-                    item!.distance = distance
+                    item!.distance += distance
                 }
             }
             
@@ -141,12 +141,15 @@ class MHealth
             if item === model.today
             {
                 let dbModel:DUbikHike = DManager.sharedInstance.managerUbik.untracked(DUbikHike.self)
+                dbModel.parse(item!)
                 MSession.sharedInstance.newCurrent(dbModel)
             }
             else
             {
                 DManager.sharedInstance.managerUbik.createManagedObject(DUbikHike.self)
                 { (dbModel) in
+                    
+                    dbModel.parse(item!)
                     
                     if item === model.maxSteps
                     {
@@ -158,9 +161,9 @@ class MHealth
                         MSession.sharedInstance.newMaxDistance(dbModel)
                     }
                 }
-                
-                storeAll(model, delegate:delegate)
             }
+            
+            storeAll(model, delegate:delegate)
         }
     }
     
