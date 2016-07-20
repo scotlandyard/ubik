@@ -40,8 +40,6 @@ class MHealthModel
     
     func getMaxs()
     {
-        print("total items: \(list.count)")
-
         maxDistance = nil
         maxSteps = nil
         

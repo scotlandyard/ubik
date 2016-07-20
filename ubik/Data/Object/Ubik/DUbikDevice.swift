@@ -5,6 +5,7 @@ import CoreData
 class DUbikDevice:NSManagedObject
 {
     @NSManaged private(set) var version:String
+    @NSManaged private(set) var measures:Int16
     @NSManaged private(set) var onboarded:Bool
     @NSManaged private(set) var notifications:Bool
     
