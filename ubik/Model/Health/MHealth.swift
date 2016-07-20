@@ -53,7 +53,39 @@ class MHealth
     private func loadSteps(model:MHealthModel, delegate:MHealthLoadDelegate)
     {
         let minTimestamp:NSTimeInterval = MSession.sharedInstance.session!.lastDate
-        let predicate:NSPredicate = predicateFor(minTimestamp)
+        let predicate:NSPredicate = predicateFor(0)
+        
+        let compo:NSDateComponents = NSDateComponents()
+        compo.day = 1
+        let anotherQuery:HKStatisticsCollectionQuery = HKStatisticsCollectionQuery(
+            quantityType:stepsType,
+            quantitySamplePredicate:predicate,
+            options:[HKStatisticsOptions.CumulativeSum], anchorDate:NSDate().beginningOfDay(), intervalComponents:compo)
+        anotherQuery.initialResultsHandler = {
+            (query, results, error) in
+            
+            let statistics = results?.statistics()
+            
+            let startDate:NSDate = NSDate(timeIntervalSince1970:1467331200)
+            results?.enumerateStatisticsFromDate(startDate, toDate:NSDate())
+            { (statistics, pointer) in
+                
+                let quantity = statistics.sumQuantity()
+                
+                if quantity != nil
+                {
+                    let doub:Double = quantity!.doubleValueForUnit(self.stepsUnit)
+                    print("date:\(statistics.endDate) amount:\(doub)")
+                }
+                else
+                {
+                    print("nil")
+                }
+            }
+        }
+        
+        healthStore?.executeQuery(anotherQuery)
+        
         let stepsQuery:HKSampleQuery = HKSampleQuery(
             sampleType:stepsType,
             predicate:predicate,
@@ -86,7 +118,7 @@ class MHealth
             self.loadDistance(model, delegate:delegate, predicate:predicate)
         }
         
-        healthStore!.executeQuery(stepsQuery)
+//        healthStore!.executeQuery(stepsQuery)
     }
     
     private func loadDistance(model:MHealthModel, delegate:MHealthLoadDelegate, predicate:NSPredicate)
