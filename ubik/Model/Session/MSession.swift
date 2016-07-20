@@ -45,19 +45,4 @@ class MSession
             }
         }
     }
-    
-    func newMaxDistance(maxDistance:DUbikHike)
-    {
-        session?.newMaxDistance(maxDistance)
-    }
-    
-    func newMaxSteps(maxSteps:DUbikHike)
-    {
-        session?.newMaxSteps(maxSteps)
-    }
-    
-    func newCurrent(current:DUbikHike)
-    {
-        session?.newCurrent(current)
-    }
 }

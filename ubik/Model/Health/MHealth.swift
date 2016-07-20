@@ -121,6 +121,7 @@ class MHealth
             }
             
             model.getMaxs()
+            MSession.sharedInstance.session!.newLastDate(model.lastDate)
             self.storeAll(model, delegate:delegate)
         }
         
@@ -142,7 +143,7 @@ class MHealth
             {
                 let dbModel:DUbikHike = DManager.sharedInstance.managerUbik.untracked(DUbikHike.self)
                 dbModel.parse(item!)
-                MSession.sharedInstance.newCurrent(dbModel)
+                MSession.sharedInstance.session!.newCurrent(dbModel)
             }
             else
             {
@@ -153,12 +154,12 @@ class MHealth
                     
                     if item === model.maxSteps
                     {
-                        MSession.sharedInstance.newMaxSteps(dbModel)
+                        MSession.sharedInstance.session!.newMaxSteps(dbModel)
                     }
                     
                     if item === model.maxDistance
                     {
-                        MSession.sharedInstance.newMaxDistance(dbModel)
+                        MSession.sharedInstance.session!.newMaxDistance(dbModel)
                     }
                 }
             }

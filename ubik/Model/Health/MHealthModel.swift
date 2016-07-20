@@ -7,11 +7,13 @@ class MHealthModel
     weak var today:MHealthModelItem!
     weak var maxDistance:MHealthModelItem?
     weak var maxSteps:MHealthModelItem?
+    let lastDate:NSTimeInterval
     
     init(threshold:NSTimeInterval)
     {
         let today:MHealthModelItem = MHealthModelItem(date:threshold)
         self.today = today
+        self.lastDate = threshold
         map = [:]
         list = []
         
@@ -38,6 +40,8 @@ class MHealthModel
     
     func getMaxs()
     {
+        print("total items: \(list.count)")
+
         maxDistance = nil
         maxSteps = nil
         

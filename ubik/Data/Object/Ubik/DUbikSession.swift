@@ -50,4 +50,9 @@ class DUbikSession:NSManagedObject
     {
         self.current = current
     }
+    
+    func newLastDate(lastDate:NSTimeInterval)
+    {
+        self.lastDate = lastDate
+    }
 }
