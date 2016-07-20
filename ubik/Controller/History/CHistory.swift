@@ -3,6 +3,7 @@ import UIKit
 class CHistory:CMainController
 {
     weak var viewHistory:VHistory!
+    var model:MHistory?
     
     override func viewDidLoad()
     {
@@ -25,21 +26,12 @@ class CHistory:CMainController
     
     private func loadModel()
     {
-        MHike.sharedInstance.fetchMaxHike
-        { [weak self] (maxHike) in
+        let sorter:NSSortDescriptor = NSSortDescriptor(key:"date", ascending:false)
+        let sorters:[NSSortDescriptor] = [sorter]
+        DManager.sharedInstance.managerUbik.fetchManagedObjects(DUbikHike.self, sorters:sorters)
+        { [weak self] (models) in
             
-            let maxHikeNum:Int32
-            
-            if maxHike == nil
-            {
-                maxHikeNum = 1
-            }
-            else
-            {
-                maxHikeNum = maxHike!.amount
-            }
-            
-            self?.maxHikeLoaded(maxHikeNum)
+            self?.model = MHistory(dbModel:models)
         }
     }
     
