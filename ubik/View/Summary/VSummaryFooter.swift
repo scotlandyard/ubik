@@ -5,6 +5,7 @@ class VSummaryFooter:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     weak var controller:CSummary!
     weak var collection:UICollectionView!
     private var model:MSummary?
+    private var cellSize:CGSize?
     
     convenience init(controller:CSummary)
     {
@@ -63,10 +64,35 @@ class VSummaryFooter:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     
     func update()
     {
-        model = MSummary()
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0))
+        { [weak self] in
+            
+            self?.cellSize = nil
+            self?.model = MSummary()
+            
+            dispatch_async(dispatch_get_main_queue())
+            { [weak self] in
+                
+                self?.collection.reloadData()
+            }
+        }
     }
     
     //MARK: collection del
+    
+    func collectionView(collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAtIndexPath indexPath:NSIndexPath) -> CGSize
+    {
+        if cellSize == nil
+        {
+            let width:CGFloat = collectionView.bounds.maxX
+            let height:CGFloat = collectionView.bounds.maxY
+            let items:CGFloat = CGFloat(model!.items.count)
+            let heightItem:CGFloat = height / items
+            cellSize = CGSizeMake(width, heightItem)
+        }
+        
+        return cellSize!
+    }
     
     func numberOfSectionsInCollectionView(collectionView:UICollectionView) -> Int
     {

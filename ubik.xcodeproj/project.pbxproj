@@ -41,6 +41,7 @@
 		DA4A47E51D41B37200D8E065 /* MSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4A47E41D41B37200D8E065 /* MSummary.swift */; };
 		DA4A47E71D41B43100D8E065 /* MSummaryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4A47E61D41B43100D8E065 /* MSummaryItem.swift */; };
 		DA4A47E91D41B4BE00D8E065 /* VSummaryFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4A47E81D41B4BE00D8E065 /* VSummaryFooterCell.swift */; };
+		DA4A47EB1D41B91800D8E065 /* VComponentPay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4A47EA1D41B91800D8E065 /* VComponentPay.swift */; };
 		DA55F34D1D33081D00BBF21F /* CategoryNSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F34C1D33081D00BBF21F /* CategoryNSDate.swift */; };
 		DA55F34F1D3314EA00BBF21F /* VMainBarButtonConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F34E1D3314EA00BBF21F /* VMainBarButtonConfig.swift */; };
 		DA55F3511D33192E00BBF21F /* VMainBarButtonSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F3501D33192E00BBF21F /* VMainBarButtonSummary.swift */; };
@@ -146,6 +147,7 @@
 		DA4A47E41D41B37200D8E065 /* MSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSummary.swift; sourceTree = "<group>"; };
 		DA4A47E61D41B43100D8E065 /* MSummaryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSummaryItem.swift; sourceTree = "<group>"; };
 		DA4A47E81D41B4BE00D8E065 /* VSummaryFooterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSummaryFooterCell.swift; sourceTree = "<group>"; };
+		DA4A47EA1D41B91800D8E065 /* VComponentPay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VComponentPay.swift; sourceTree = "<group>"; };
 		DA55F34C1D33081D00BBF21F /* CategoryNSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSDate.swift; sourceTree = "<group>"; };
 		DA55F34E1D3314EA00BBF21F /* VMainBarButtonConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainBarButtonConfig.swift; sourceTree = "<group>"; };
 		DA55F3501D33192E00BBF21F /* VMainBarButtonSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainBarButtonSummary.swift; sourceTree = "<group>"; };
@@ -587,6 +589,7 @@
 				DACE5CBF1D26D6B600080E5F /* VComponentGyro.swift */,
 				DAD00CF71D273E7000BCDDAA /* VComponentGyroBase.swift */,
 				DAD00CFB1D2752B600BCDDAA /* VComponentGyroIcon.swift */,
+				DA4A47EA1D41B91800D8E065 /* VComponentPay.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -810,6 +813,7 @@
 				DAB3443F1D2AB10800406CEE /* MOnboardingItemReady.swift in Sources */,
 				DA2C7D2E1D3D1F21005FFDB0 /* MSettingsSectionConfig.swift in Sources */,
 				DA4A47E51D41B37200D8E065 /* MSummary.swift in Sources */,
+				DA4A47EB1D41B91800D8E065 /* VComponentPay.swift in Sources */,
 				DAAF3C8F1D2C89C600BBBD40 /* COnboardingItem.swift in Sources */,
 				DA4A47E21D41B0B100D8E065 /* VSummaryFooter.swift in Sources */,
 				DA152B311D3E82A900568204 /* DUbikDevice.swift in Sources */,
