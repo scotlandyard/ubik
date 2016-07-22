@@ -42,68 +42,77 @@ class MHealth
         return timestamp
     }
     
-    private func predicateFor(minTimestamp:NSTimeInterval) -> NSPredicate
+    private func samplePredicate() -> NSPredicate
     {
+        let minTimestamp:NSTimeInterval = MSession.sharedInstance.session!.lastDate
         let minDate:NSDate = NSDate(timeIntervalSince1970:minTimestamp)
         let predicate:NSPredicate = HKQuery.predicateForSamplesWithStartDate(minDate, endDate:nil, options:HKQueryOptions.StrictStartDate)
         
         return predicate
     }
     
+    private func statisticOptions() -> HKStatisticsOptions
+    {
+        let options:HKStatisticsOptions = HKStatisticsOptions.CumulativeSum
+        
+        return options
+    }
+    
+    private func anchorDate() -> NSDate
+    {
+        let date:NSDate = NSDate().beginningOfDay()
+        
+        return date
+    }
+    
+    private func intervalComponents() -> NSDateComponents
+    {
+        let components:NSDateComponents = NSDateComponents()
+        components.day = 1
+        
+        return components
+    }
+    
     private func loadSteps(model:MHealthModel, delegate:MHealthLoadDelegate)
     {
-        let minTimestamp:NSTimeInterval = MSession.sharedInstance.session!.lastDate
-        let predicate:NSPredicate = predicateFor(0)
+        let predicate:NSPredicate = samplePredicate()
+        let options:HKStatisticsOptions = statisticOptions()
+        let startDate:NSDate = anchorDate()
+        let components:NSDateComponents = intervalComponents()
         
-        let compo:NSDateComponents = NSDateComponents()
-        compo.day = 1
-        let anotherQuery:HKStatisticsCollectionQuery = HKStatisticsCollectionQuery(
+        let stepsQuery:HKStatisticsCollectionQuery = HKStatisticsCollectionQuery(
             quantityType:stepsType,
             quantitySamplePredicate:predicate,
-            options:[HKStatisticsOptions.CumulativeSum], anchorDate:NSDate().beginningOfDay(), intervalComponents:compo)
-        anotherQuery.initialResultsHandler = {
-            (query, results, error) in
-            
-            let statistics = results?.statistics()
-            
-            let startDate:NSDate = NSDate(timeIntervalSince1970:1467331200)
-            results?.enumerateStatisticsFromDate(startDate, toDate:NSDate())
-            { (statistics, pointer) in
-                
-                let quantity = statistics.sumQuantity()
-                
-                if quantity != nil
-                {
-                    let doub:Double = quantity!.doubleValueForUnit(self.stepsUnit)
-                    print("date:\(statistics.endDate) amount:\(doub)")
-                }
-                else
-                {
-                    print("nil")
-                }
-            }
-        }
+            options:options,
+            anchorDate:startDate,
+            intervalComponents:components)
         
-        healthStore?.executeQuery(anotherQuery)
-        
-        let stepsQuery:HKSampleQuery = HKSampleQuery(
-            sampleType:stepsType,
-            predicate:predicate,
-            limit:0,
-            sortDescriptors:nil)
+        stepsQuery.initialResultsHandler =
         { (query, results, error) in
             
-            let rawSteps:[HKQuantitySample]? = results as? [HKQuantitySample]
-            
-            if rawSteps != nil
+            if results != nil
             {
-                for rawStep:HKQuantitySample in rawSteps!
+                let statistics:[HKStatistics] = results!.statistics()
+                
+                for statistic:HKStatistics in statistics
                 {
-                    let stepsDouble:Double = rawStep.quantity.doubleValueForUnit(self.stepsUnit)
-                    let steps:Int32 = Int32(stepsDouble)
-                    let date:NSDate = rawStep.startDate
-                    let timestamp:NSTimeInterval = self.normalizedTimestamp(date)
-                    var item:MHealthModelItem? = model.itemFor(timestamp)
+                    let quantity:HKQuantity? = statistic.sumQuantity()
+                    let statisticDate:NSDate = statistic.startDate
+                    let timestamp:NSTimeInterval = statisticDate.timeIntervalSince1970
+                    let steps:Int32
+                    var item:MHealthModelItem?
+                    
+                    if quantity == nil
+                    {
+                        steps = 0
+                    }
+                    else
+                    {
+                        let stepsDouble:Double = quantity!.doubleValueForUnit(self.stepsUnit)
+                        steps = Int32(stepsDouble)
+                    }
+                    
+                    item = model.itemFor(timestamp)
                     
                     if item == nil
                     {
@@ -115,13 +124,13 @@ class MHealth
                 }
             }
             
-            self.loadDistance(model, delegate:delegate, predicate:predicate)
+            self.loadDistance(model, delegate:delegate)
         }
         
-//        healthStore!.executeQuery(stepsQuery)
+        healthStore!.executeQuery(stepsQuery)
     }
     
-    private func loadDistance(model:MHealthModel, delegate:MHealthLoadDelegate, predicate:NSPredicate)
+    private func loadDistance(model:MHealthModel, delegate:MHealthLoadDelegate)
     {
         let stepsQuery:HKSampleQuery = HKSampleQuery(
             sampleType:distanceType,
