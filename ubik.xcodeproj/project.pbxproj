@@ -46,6 +46,8 @@
 		DA4A47F01D41BA2900D8E065 /* MComponentPaySteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4A47EF1D41BA2900D8E065 /* MComponentPaySteps.swift */; };
 		DA4A47F21D41BA3600D8E065 /* MComponentPayTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4A47F11D41BA3600D8E065 /* MComponentPayTime.swift */; };
 		DA4A47F41D41BC4500D8E065 /* VComponentPayBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4A47F31D41BC4500D8E065 /* VComponentPayBase.swift */; };
+		DA4A47F61D41BE2400D8E065 /* MSummaryItemSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4A47F51D41BE2400D8E065 /* MSummaryItemSteps.swift */; };
+		DA4A47F81D41BE2E00D8E065 /* MSummaryItemTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4A47F71D41BE2E00D8E065 /* MSummaryItemTime.swift */; };
 		DA55F34D1D33081D00BBF21F /* CategoryNSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F34C1D33081D00BBF21F /* CategoryNSDate.swift */; };
 		DA55F34F1D3314EA00BBF21F /* VMainBarButtonConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F34E1D3314EA00BBF21F /* VMainBarButtonConfig.swift */; };
 		DA55F3511D33192E00BBF21F /* VMainBarButtonSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F3501D33192E00BBF21F /* VMainBarButtonSummary.swift */; };
@@ -156,6 +158,8 @@
 		DA4A47EF1D41BA2900D8E065 /* MComponentPaySteps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MComponentPaySteps.swift; sourceTree = "<group>"; };
 		DA4A47F11D41BA3600D8E065 /* MComponentPayTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MComponentPayTime.swift; sourceTree = "<group>"; };
 		DA4A47F31D41BC4500D8E065 /* VComponentPayBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VComponentPayBase.swift; sourceTree = "<group>"; };
+		DA4A47F51D41BE2400D8E065 /* MSummaryItemSteps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSummaryItemSteps.swift; sourceTree = "<group>"; };
+		DA4A47F71D41BE2E00D8E065 /* MSummaryItemTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSummaryItemTime.swift; sourceTree = "<group>"; };
 		DA55F34C1D33081D00BBF21F /* CategoryNSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSDate.swift; sourceTree = "<group>"; };
 		DA55F34E1D3314EA00BBF21F /* VMainBarButtonConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainBarButtonConfig.swift; sourceTree = "<group>"; };
 		DA55F3501D33192E00BBF21F /* VMainBarButtonSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainBarButtonSummary.swift; sourceTree = "<group>"; };
@@ -313,6 +317,8 @@
 			children = (
 				DA4A47E41D41B37200D8E065 /* MSummary.swift */,
 				DA4A47E61D41B43100D8E065 /* MSummaryItem.swift */,
+				DA4A47F51D41BE2400D8E065 /* MSummaryItemSteps.swift */,
+				DA4A47F71D41BE2E00D8E065 /* MSummaryItemTime.swift */,
 			);
 			path = Summary;
 			sourceTree = "<group>";
@@ -769,6 +775,7 @@
 				DAA005481D2F3C54004B57FA /* CategoryUIViewController.swift in Sources */,
 				DA2C7D301D3D1F2F005FFDB0 /* MSettingsItemNotifications.swift in Sources */,
 				DA152B431D3E9E7B00568204 /* MHealthLoadDelegate.swift in Sources */,
+				DA4A47F61D41BE2400D8E065 /* MSummaryItemSteps.swift in Sources */,
 				DA2C38BD1D30619800977D50 /* VMainLoader.swift in Sources */,
 				DA152B471D3EA72D00568204 /* MHealthModelItem.swift in Sources */,
 				DA906DF41D22F9490095B270 /* CMain.swift in Sources */,
@@ -793,6 +800,7 @@
 				DA152B3B1D3E912900568204 /* CategoryNSManagerdObject.swift in Sources */,
 				DA4A47F21D41BA3600D8E065 /* MComponentPayTime.swift in Sources */,
 				DA2AFAD51D3D2594000B6E44 /* VSettingsCellCheck.swift in Sources */,
+				DA4A47F81D41BE2E00D8E065 /* MSummaryItemTime.swift in Sources */,
 				DA94E20E1D28B77E002FF88B /* VMainBarButton.swift in Sources */,
 				DAA678641D2A25A100DDD9CC /* DManager.swift in Sources */,
 				DAA0054E1D2F427C004B57FA /* COnboardingItemLoading.swift in Sources */,
