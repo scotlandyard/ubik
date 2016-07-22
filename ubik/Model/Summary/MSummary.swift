@@ -6,6 +6,11 @@ class MSummary
     
     init()
     {
-        items = []
+        let itemSteps:MSummaryItem = MSummaryItem.Steps()
+        let itemTime:MSummaryItem = MSummaryItem.Time()
+        
+        items = [
+            itemSteps,
+            itemTime]
     }
 }

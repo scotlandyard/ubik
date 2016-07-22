@@ -60,6 +60,15 @@ class VSummaryFooter:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
             views:views))
     }
     
+    //MARK: private
+    
+    private func modelAtIndex(index:NSIndexPath) -> MSummaryItem
+    {
+        let item:MSummaryItem = model!.items[index.item]
+        
+        return item
+    }
+    
     //MARK: public
     
     func update()
@@ -119,10 +128,12 @@ class VSummaryFooter:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(collectionView:UICollectionView, cellForItemAtIndexPath indexPath:NSIndexPath) -> UICollectionViewCell
     {
+        let item:MSummaryItem = modelAtIndex(indexPath)
         let cell:VSummaryFooterCell = collectionView.dequeueReusableCellWithReuseIdentifier(
             VSummaryFooterCell.reusableIdentifier(),
             forIndexPath:
             indexPath) as! VSummaryFooterCell
+        cell.config(item)
         
         return cell
     }
