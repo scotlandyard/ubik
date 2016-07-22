@@ -1,6 +1,6 @@
 import UIKit
 
-class VComponentPay:UIView
+class VComponentPayBase:UIView
 {
     let model:MComponentPay
     
@@ -24,5 +24,10 @@ class VComponentPay:UIView
     override func drawRect(rect:CGRect)
     {
         model.loadRect(rect)
+        
+        let context:CGContext = UIGraphicsGetCurrentContext()!
+        CGContextSetFillColorWithColor(context, UIColor(white:0.98, alpha:1).CGColor)
+        CGContextAddArc(context, model.width_2!, model.height_2!, model.radius!, 0.0001, 0, 0)
+        CGContextDrawPath(context, CGPathDrawingMode.Fill)
     }
 }

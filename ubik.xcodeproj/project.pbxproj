@@ -45,6 +45,7 @@
 		DA4A47EE1D41BA1D00D8E065 /* MComponentPay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4A47ED1D41BA1D00D8E065 /* MComponentPay.swift */; };
 		DA4A47F01D41BA2900D8E065 /* MComponentPaySteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4A47EF1D41BA2900D8E065 /* MComponentPaySteps.swift */; };
 		DA4A47F21D41BA3600D8E065 /* MComponentPayTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4A47F11D41BA3600D8E065 /* MComponentPayTime.swift */; };
+		DA4A47F41D41BC4500D8E065 /* VComponentPayBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4A47F31D41BC4500D8E065 /* VComponentPayBase.swift */; };
 		DA55F34D1D33081D00BBF21F /* CategoryNSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F34C1D33081D00BBF21F /* CategoryNSDate.swift */; };
 		DA55F34F1D3314EA00BBF21F /* VMainBarButtonConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F34E1D3314EA00BBF21F /* VMainBarButtonConfig.swift */; };
 		DA55F3511D33192E00BBF21F /* VMainBarButtonSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F3501D33192E00BBF21F /* VMainBarButtonSummary.swift */; };
@@ -154,6 +155,7 @@
 		DA4A47ED1D41BA1D00D8E065 /* MComponentPay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MComponentPay.swift; sourceTree = "<group>"; };
 		DA4A47EF1D41BA2900D8E065 /* MComponentPaySteps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MComponentPaySteps.swift; sourceTree = "<group>"; };
 		DA4A47F11D41BA3600D8E065 /* MComponentPayTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MComponentPayTime.swift; sourceTree = "<group>"; };
+		DA4A47F31D41BC4500D8E065 /* VComponentPayBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VComponentPayBase.swift; sourceTree = "<group>"; };
 		DA55F34C1D33081D00BBF21F /* CategoryNSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSDate.swift; sourceTree = "<group>"; };
 		DA55F34E1D3314EA00BBF21F /* VMainBarButtonConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainBarButtonConfig.swift; sourceTree = "<group>"; };
 		DA55F3501D33192E00BBF21F /* VMainBarButtonSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainBarButtonSummary.swift; sourceTree = "<group>"; };
@@ -606,6 +608,7 @@
 				DAD00CF71D273E7000BCDDAA /* VComponentGyroBase.swift */,
 				DAD00CFB1D2752B600BCDDAA /* VComponentGyroIcon.swift */,
 				DA4A47EA1D41B91800D8E065 /* VComponentPay.swift */,
+				DA4A47F31D41BC4500D8E065 /* VComponentPayBase.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -827,6 +830,7 @@
 				DA4A47EE1D41BA1D00D8E065 /* MComponentPay.swift in Sources */,
 				DAD79D691D3A97B3001BBCF5 /* DManagerSaver.swift in Sources */,
 				DADF024C1D35404C00FBFDA6 /* CategoryNSNotification.swift in Sources */,
+				DA4A47F41D41BC4500D8E065 /* VComponentPayBase.swift in Sources */,
 				DAA076CB1D35D0A90039248D /* VHistoryChartCell.swift in Sources */,
 				DAA678651D2A25A100DDD9CC /* DManagerModel.swift in Sources */,
 				DAB3443F1D2AB10800406CEE /* MOnboardingItemReady.swift in Sources */,
