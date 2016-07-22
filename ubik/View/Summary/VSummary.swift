@@ -4,6 +4,7 @@ class VSummary:UIView
 {
     weak var controller:CSummary!
     weak var header:VSummaryHeader!
+    weak var footer:VSummaryFooter!
     var modelGyro:MComponentGyro = MComponentGyro.Summary()
     
     convenience init(controller:CSummary)
@@ -16,10 +17,15 @@ class VSummary:UIView
         let header:VSummaryHeader = VSummaryHeader(controller:controller)
         self.header = header
         
+        let footer:VSummaryFooter = VSummaryFooter(controller:controller)
+        self.footer = footer
+        
+        addSubview(footer)
         addSubview(header)
         
         let views:[String:AnyObject] = [
-            "header":header]
+            "header":header,
+            "footer":footer]
         
         let metrics:[String:AnyObject] = [:]
         
@@ -29,7 +35,12 @@ class VSummary:UIView
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-0-[header(350)]",
+            "H:|-0-[footer]-0-|",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:|-0-[header(350)]-0-[footer]-0-|",
             options:[],
             metrics:metrics,
             views:views))
@@ -40,5 +51,6 @@ class VSummary:UIView
     func update()
     {   
         header.update()
+        footer.update()
     }
 }
