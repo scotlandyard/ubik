@@ -3,9 +3,12 @@ import UIKit
 class MComponentPay
 {
     let color:UIColor
+    let kStartAngle:CGFloat = CGFloat(M_PI_2)
     private(set) var radius:CGFloat!
     private(set) var width_2:CGFloat!
     private(set) var height_2:CGFloat!
+    private(set) var currentAngle:CGFloat
+    private let expectedAngle:CGFloat
     private let kMargin:CGFloat = 15
     
     class func Steps() -> MComponentPay
@@ -22,9 +25,10 @@ class MComponentPay
         return model
     }
     
-    init(color:UIColor)
+    init(color:UIColor, percentaje:CGFloat)
     {
         self.color = color
+        currentAngle = kStartAngle
     }
     
     //MARK: public
@@ -47,5 +51,10 @@ class MComponentPay
                 radius = width_2! - kMargin
             }
         }
+    }
+    
+    func tick() -> Bool
+    {
+        return false
     }
 }
