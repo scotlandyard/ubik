@@ -10,7 +10,7 @@ class DUbikDevice:NSManagedObject
         case Imperial
     }
     
-    @NSManaged private(set) var version:String
+    @NSManaged private(set) var version:String?
     @NSManaged private(set) var measures:DUbikDeviceMeasures
     @NSManaged private(set) var onboarded:Bool
     @NSManaged private(set) var notifications:Bool

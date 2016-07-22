@@ -73,19 +73,26 @@ class MHealth
         return components
     }
     
-    private func loadSteps(model:MHealthModel, delegate:MHealthLoadDelegate)
+    private func collectionQuery(type:HKQuantityType) -> HKStatisticsCollectionQuery
     {
         let predicate:NSPredicate = samplePredicate()
         let options:HKStatisticsOptions = statisticOptions()
         let startDate:NSDate = anchorDate()
         let components:NSDateComponents = intervalComponents()
         
-        let stepsQuery:HKStatisticsCollectionQuery = HKStatisticsCollectionQuery(
-            quantityType:stepsType,
+        let query:HKStatisticsCollectionQuery = HKStatisticsCollectionQuery(
+            quantityType:type,
             quantitySamplePredicate:predicate,
             options:options,
             anchorDate:startDate,
             intervalComponents:components)
+        
+        return query
+    }
+    
+    private func loadSteps(model:MHealthModel, delegate:MHealthLoadDelegate)
+    {
+        let stepsQuery:HKStatisticsCollectionQuery = collectionQuery(stepsType)
         
         stepsQuery.initialResultsHandler =
         { (query, results, error) in
@@ -100,7 +107,6 @@ class MHealth
                     let statisticDate:NSDate = statistic.startDate
                     let timestamp:NSTimeInterval = statisticDate.timeIntervalSince1970
                     let steps:Int32
-                    var item:MHealthModelItem?
                     
                     if quantity == nil
                     {
@@ -112,15 +118,7 @@ class MHealth
                         steps = Int32(stepsDouble)
                     }
                     
-                    item = model.itemFor(timestamp)
-                    
-                    if item == nil
-                    {
-                        item = MHealthModelItem(date:timestamp)
-                        model.add(item!)
-                    }
-                    
-                    item!.steps += steps
+                    model.increase(timestamp, steps:steps)
                 }
             }
             
@@ -132,41 +130,48 @@ class MHealth
     
     private func loadDistance(model:MHealthModel, delegate:MHealthLoadDelegate)
     {
-        let stepsQuery:HKSampleQuery = HKSampleQuery(
-            sampleType:distanceType,
-            predicate:predicate,
-            limit:0,
-            sortDescriptors:nil)
+        let distanceQuery:HKStatisticsCollectionQuery = collectionQuery(distanceType)
+        
+        distanceQuery.initialResultsHandler =
         { (query, results, error) in
-            
-            let rawDistances:[HKQuantitySample]? = results as? [HKQuantitySample]
-            
-            if rawDistances != nil
+                
+            if results != nil
             {
-                for rawDistance:HKQuantitySample in rawDistances!
+                let statistics:[HKStatistics] = results!.statistics()
+                
+                for statistic:HKStatistics in statistics
                 {
-                    let distanceDouble:Double = rawDistance.quantity.doubleValueForUnit(self.distanceUnit)
-                    let distance:Int32 = Int32(distanceDouble)
-                    let date:NSDate = rawDistance.startDate
-                    let timestamp:NSTimeInterval = self.normalizedTimestamp(date)
-                    var item:MHealthModelItem? = model.itemFor(timestamp)
+                    let quantity:HKQuantity? = statistic.sumQuantity()
+                    let statisticDate:NSDate = statistic.startDate
+                    let timestamp:NSTimeInterval = statisticDate.timeIntervalSince1970
+                    let distance:Int32
                     
-                    if item == nil
+                    if quantity == nil
                     {
-                        item = MHealthModelItem(date:timestamp)
-                        model.add(item!)
+                        distance = 0
+                    }
+                    else
+                    {
+                        let distanceDouble:Double = quantity!.doubleValueForUnit(self.distanceUnit)
+                        distance = Int32(distanceDouble)
                     }
                     
-                    item!.distance += distance
+                    model.increase(timestamp, distance:distance)
                 }
             }
             
-            model.getMaxs()
-            MSession.sharedInstance.session!.newLastDate(model.lastDate)
-            self.storeAll(model, delegate:delegate)
+            self.fetchingFinished(model, delegate:delegate)
         }
         
-        healthStore!.executeQuery(stepsQuery)
+        healthStore!.executeQuery(distanceQuery)
+    }
+    
+    private func fetchingFinished(model:MHealthModel, delegate:MHealthLoadDelegate)
+    {
+        model.getMaxs()
+        MSession.sharedInstance.session!.newLastDate(model.lastDate)
+        
+        self.storeAll(model, delegate:delegate)
     }
     
     private func storeAll(model:MHealthModel, delegate:MHealthLoadDelegate)

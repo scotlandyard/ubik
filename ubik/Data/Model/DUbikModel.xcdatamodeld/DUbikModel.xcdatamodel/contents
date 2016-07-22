@@ -4,7 +4,7 @@
         <attribute name="measures" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="notifications" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
         <attribute name="onboarded" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
-        <attribute name="version" attributeType="String" syncable="YES"/>
+        <attribute name="version" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Hike" representedClassName="DUbikHike" syncable="YES">
         <attribute name="date" attributeType="Date" syncable="YES"/>
