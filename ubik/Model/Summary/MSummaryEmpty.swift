@@ -1,9 +1,17 @@
-//
-//  MSummaryEmpty.swift
-//  ubik
-//
-//  Created by zero on 7/22/16.
-//  Copyright © 2016 zero. All rights reserved.
-//
-
 import Foundation
+
+class MSummaryEmpty:MSummary
+{
+    init()
+    {
+        let itemEmptyA:MSummaryItem = MSummaryItem.Empty()
+        let itemEmptyB:MSummaryItem = MSummaryItem.Empty()
+        
+        let items:[MSummaryItem] = [
+            itemEmptyA,
+            itemEmptyB
+        ]
+        
+        super.init(items:items)
+    }
+}

@@ -1,12 +1,10 @@
 import Foundation
 
-class MSummaryItemTime:MSummaryItem
+class MSummaryItemEmpty:MSummaryItem
 {
     init()
     {
-        let now:NSDate = NSDate()
-        let currentTime:NSTimeInterval = now.timeIntervalSince1970
-        let pay:MComponentPay = MComponentPay.Time(currentTime)
+        let pay:MComponentPay = MComponentPay.Empty()
         super.init(pay:pay)
     }
 }

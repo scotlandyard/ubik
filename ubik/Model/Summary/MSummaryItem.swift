@@ -18,6 +18,13 @@ class MSummaryItem
         return model
     }
     
+    class func Empty() -> MSummaryItem
+    {
+        let model:MSummaryItem = MSummaryItemEmpty()
+        
+        return model
+    }
+    
     init(pay:MComponentPay)
     {
         self.pay = pay

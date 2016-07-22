@@ -27,7 +27,7 @@ class MComponentPay
         return model
     }
     
-    class func Empty(currentTime:NSTimeInterval) -> MComponentPay
+    class func Empty() -> MComponentPay
     {
         let model:MComponentPay = MComponentPayEmpty()
         

@@ -324,12 +324,12 @@
 			isa = PBXGroup;
 			children = (
 				DA4A47E41D41B37200D8E065 /* MSummary.swift */,
+				DA581DB51D42D65700BF56C2 /* MSummaryEmpty.swift */,
+				DA581DB71D42D66200BF56C2 /* MSummaryFilled.swift */,
 				DA4A47E61D41B43100D8E065 /* MSummaryItem.swift */,
 				DA4A47F51D41BE2400D8E065 /* MSummaryItemSteps.swift */,
 				DA4A47F71D41BE2E00D8E065 /* MSummaryItemTime.swift */,
 				DA581DB91D42D66F00BF56C2 /* MSummaryItemEmpty.swift */,
-				DA581DB51D42D65700BF56C2 /* MSummaryEmpty.swift */,
-				DA581DB71D42D66200BF56C2 /* MSummaryFilled.swift */,
 			);
 			path = Summary;
 			sourceTree = "<group>";

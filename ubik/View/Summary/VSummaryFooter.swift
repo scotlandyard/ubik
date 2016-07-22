@@ -9,7 +9,7 @@ class VSummaryFooter:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     
     init(controller:CSummary)
     {
-        model = MSummary()
+        model = MSummary.Empty()
         
         super.init(frame:CGRectZero)
         userInteractionEnabled = false
@@ -84,7 +84,7 @@ class VSummaryFooter:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         { [weak self] in
             
             self?.cellSize = nil
-            self?.model = MSummary()
+            self?.model = MSummary.Filled()
             
             dispatch_async(dispatch_get_main_queue())
             { [weak self] in

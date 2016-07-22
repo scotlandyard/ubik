@@ -6,16 +6,20 @@ class MSummary
     
     class func Empty() -> MSummary
     {
+        let model:MSummary = MSummaryEmpty()
         
+        return model
     }
     
-    init()
+    class func Filled() -> MSummary
     {
-        let itemSteps:MSummaryItem = MSummaryItem.Steps()
-        let itemTime:MSummaryItem = MSummaryItem.Time()
+        let model:MSummary = MSummaryFilled()
         
-        items = [
-            itemSteps,
-            itemTime]
+        return model
+    }
+    
+    init(items:[MSummaryItem])
+    {
+        self.items = items
     }
 }
