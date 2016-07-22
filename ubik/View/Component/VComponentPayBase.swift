@@ -26,7 +26,7 @@ class VComponentPayBase:UIView
         model.loadRect(rect)
         
         let context:CGContext = UIGraphicsGetCurrentContext()!
-        CGContextSetFillColorWithColor(context, UIColor(white:0.98, alpha:1).CGColor)
+        CGContextSetFillColorWithColor(context, UIColor(white:0.97, alpha:1).CGColor)
         CGContextAddArc(context, model.width_2!, model.height_2!, model.radius!, 0.0001, 0, 0)
         CGContextDrawPath(context, CGPathDrawingMode.Fill)
     }

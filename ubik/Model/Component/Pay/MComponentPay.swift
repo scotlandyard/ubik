@@ -6,7 +6,7 @@ class MComponentPay
     private(set) var radius:CGFloat?
     private(set) var width_2:CGFloat?
     private(set) var height_2:CGFloat?
-    private let kMargin:CGFloat = 4
+    private let kMargin:CGFloat = 15
     
     class func Steps() -> MComponentPay
     {
