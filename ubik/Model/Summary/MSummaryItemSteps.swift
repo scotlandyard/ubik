@@ -21,6 +21,8 @@ class MSummaryItemSteps:MSummaryItem
         }
         
         let pay:MComponentPay = MComponentPay.Steps(currentSteps, maxSteps:maxSteps)
-        super.init(pay:pay)
+        let title:String = NSLocalizedString("MSummaryItemSteps_title", comment:"")
+        
+        super.init(pay:pay, title:title)
     }
 }
