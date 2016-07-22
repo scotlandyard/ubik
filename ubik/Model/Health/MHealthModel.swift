@@ -20,22 +20,36 @@ class MHealthModel
         add(today)
     }
     
-    //MARK: public
-    
-    func add(item:MHealthModelItem)
+    private func add(item:MHealthModelItem)
     {
         map[item.date] = item
         list.append(item)
     }
     
+    private func itemFor(date:NSTimeInterval) -> MHealthModelItem?
+    {
+        return map[date]
+    }
+    
+    //MARK: public
+    
+    func increase(timestamp:NSTimeInterval, steps:Int32 = 0, distance:Int32 = 0)
+    {
+        var item:MHealthModelItem? = itemFor(timestamp)
+        
+        if item == nil
+        {
+            item = MHealthModelItem(date:timestamp)
+            add(item!)
+        }
+        
+        item!.steps += steps
+        item!.distance += distance
+    }
+    
     func pop() -> MHealthModelItem?
     {
         return list.popLast()
-    }
-    
-    func itemFor(date:NSTimeInterval) -> MHealthModelItem?
-    {
-        return map[date]
     }
     
     func getMaxs()
