@@ -8,14 +8,14 @@ class MComponentPaySteps:MComponentPay
         
         if maxSteps == 0
         {
-            percentaje = currentSteps / maxSteps
+            percentaje = 0
         }
         else
         {
-            percentaje = 0
+            percentaje = currentSteps / maxSteps
         }
         
-        let color:UIColor = UIColor.redColor()
+        let color:UIColor = UIColor.main()
         super.init(color:color, percentaje:percentaje)
     }
 }

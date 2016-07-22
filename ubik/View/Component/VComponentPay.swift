@@ -46,7 +46,6 @@ class VComponentPay:UIView
         if model.tickAndContinue()
         {
             setNeedsDisplay()
-            print("tick")
         }
         else
         {

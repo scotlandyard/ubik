@@ -6,11 +6,13 @@ class MComponentPayTime:MComponentPay
     
     init(currentTime:NSTimeInterval)
     {
-        let color:UIColor = UIColor.blueColor()
         let beginingOfToday:NSDate = NSDate().beginningOfDay()
         let today:NSTimeInterval = beginingOfToday.timeIntervalSince1970
-        let transcurred:NSTimeInterval = currentTime - today
-        let percentaje:CGFloat = CGFloat(transcurred / kSecondsInDay)
+        let tomorrow:NSTimeInterval = today + kSecondsInDay
+        let remain:NSTimeInterval = tomorrow - currentTime
+        let percentaje:CGFloat = CGFloat(remain / kSecondsInDay)
+        
+        let color:UIColor = UIColor.main()
         
         super.init(color:color, percentaje:percentaje)
     }
