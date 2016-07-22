@@ -4,7 +4,7 @@ class VSummaryFooterCell:UICollectionViewCell
 {
     weak var pay:VComponentPay?
     weak var payBase:VComponentPayBase?
-    private let kPayWidth:CGFloat = 120
+    private let kPayWidth:CGFloat = 160
     
     override init(frame:CGRect)
     {
