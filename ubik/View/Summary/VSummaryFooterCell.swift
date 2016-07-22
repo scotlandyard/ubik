@@ -47,5 +47,27 @@ class VSummaryFooterCell:UICollectionViewCell
     {
         self.pay?.removeFromSuperview()
         payBase?.displayModel(model.pay)
+        
+        let pay:VComponentPay = VComponentPay(model:model.pay)
+        self.pay = pay
+        
+        addSubview(pay)
+        
+        let views:[String:AnyObject] = [
+            "pay":pay]
+        
+        let metrics:[String:AnyObject] = [
+            "payWidth":kPayWidth]
+        
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:|-0-[pay(payWidth)]",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:|-0-[pay]-0-|",
+            options:[],
+            metrics:metrics,
+            views:views))
     }
 }

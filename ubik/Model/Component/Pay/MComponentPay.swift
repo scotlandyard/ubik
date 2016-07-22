@@ -3,24 +3,26 @@ import UIKit
 class MComponentPay
 {
     let color:UIColor
-    let kStartAngle:CGFloat = CGFloat(M_PI_2)
+    let kStartAngle:CGFloat = -CGFloat(M_PI_2)
     private(set) var radius:CGFloat!
     private(set) var width_2:CGFloat!
     private(set) var height_2:CGFloat!
     private(set) var currentAngle:CGFloat
     private let expectedAngle:CGFloat
     private let kMargin:CGFloat = 15
+    private let kTotalRadius:CGFloat = 360
+    private let kAngleDelta:CGFloat = 0.05
     
-    class func Steps() -> MComponentPay
+    class func Steps(currentSteps:CGFloat, maxSteps:CGFloat) -> MComponentPay
     {
-        let model:MComponentPay = MComponentPaySteps()
+        let model:MComponentPay = MComponentPaySteps(currentSteps:currentSteps, maxSteps:maxSteps)
         
         return model
     }
     
-    class func Time() -> MComponentPay
+    class func Time(currentTime:NSTimeInterval) -> MComponentPay
     {
-        let model:MComponentPay = MComponentPayTime()
+        let model:MComponentPay = MComponentPayTime(currentTime:currentTime)
         
         return model
     }
@@ -29,6 +31,10 @@ class MComponentPay
     {
         self.color = color
         currentAngle = kStartAngle
+        
+        let percentRadius:CGFloat = kTotalRadius * percentaje
+        let radiusRadians:CGFloat = percentRadius * CGFloat(M_PI) / 180.0
+        expectedAngle = radiusRadians + kStartAngle
     }
     
     //MARK: public
@@ -53,8 +59,21 @@ class MComponentPay
         }
     }
     
-    func tick() -> Bool
+    func tickAndContinue() -> Bool
     {
-        return false
+        let shouldContinue:Bool
+        currentAngle += kAngleDelta
+        
+        if currentAngle > expectedAngle
+        {
+            currentAngle = expectedAngle
+            shouldContinue = false
+        }
+        else
+        {
+            shouldContinue = true
+        }
+        
+        return shouldContinue
     }
 }
