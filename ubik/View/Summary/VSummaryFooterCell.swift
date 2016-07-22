@@ -32,7 +32,7 @@ class VSummaryFooterCell:UICollectionViewCell
         let labelAmount:UILabel = UILabel()
         labelAmount.userInteractionEnabled = false
         labelAmount.backgroundColor = UIColor.clearColor()
-        labelAmount.font = UIFont.numeric(22)
+        labelAmount.font = UIFont.numeric(24)
         labelAmount.textColor = UIColor.main()
         labelAmount.translatesAutoresizingMaskIntoConstraints = false
         self.labelAmount = labelAmount
