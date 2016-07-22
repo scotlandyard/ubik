@@ -36,7 +36,7 @@ class VComponentPay:UIView
         let context:CGContext = UIGraphicsGetCurrentContext()!
         CGContextSetFillColorWithColor(context, model.color.CGColor)
         CGContextMoveToPoint(context, model.width_2, model.height_2)
-        CGContextAddArc(context, model.width_2, model.height_2, model.radius, model.kStartAngle, model.currentAngle, 0)
+        CGContextAddArc(context, model.width_2, model.height_2, model.radius - 10, model.kStartAngle, model.currentAngle, 0)
         CGContextClosePath(context)
         CGContextDrawPath(context, CGPathDrawingMode.Fill)
     }

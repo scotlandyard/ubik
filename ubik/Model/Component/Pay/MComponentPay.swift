@@ -9,7 +9,7 @@ class MComponentPay
     private(set) var height_2:CGFloat!
     private(set) var currentAngle:CGFloat
     private let expectedAngle:CGFloat
-    private let kMargin:CGFloat = 15
+    private let kMargin:CGFloat = 30
     private let kTotalRadius:CGFloat = 360
     private let kAngleDelta:CGFloat = 0.05
     

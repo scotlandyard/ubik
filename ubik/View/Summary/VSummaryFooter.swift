@@ -4,13 +4,11 @@ class VSummaryFooter:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
 {
     weak var controller:CSummary!
     weak var collection:UICollectionView!
-    private var model:MSummary
+    private var model:MSummary?
     private var cellSize:CGSize?
     
     init(controller:CSummary)
     {
-        model = MSummary()
-        
         super.init(frame:CGRectZero)
         userInteractionEnabled = false
         clipsToBounds = true
@@ -71,7 +69,7 @@ class VSummaryFooter:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     
     private func modelAtIndex(index:NSIndexPath) -> MSummaryItem
     {
-        let item:MSummaryItem = model.items[index.item]
+        let item:MSummaryItem = model!.items[index.item]
         
         return item
     }
@@ -102,7 +100,7 @@ class VSummaryFooter:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         {
             let width:CGFloat = collectionView.bounds.maxX
             let height:CGFloat = collectionView.bounds.maxY
-            let items:CGFloat = CGFloat(model.items.count)
+            let items:CGFloat = CGFloat(model!.items.count)
             let heightItem:CGFloat = height / items
             cellSize = CGSizeMake(width, heightItem)
         }
@@ -112,14 +110,23 @@ class VSummaryFooter:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     
     func numberOfSectionsInCollectionView(collectionView:UICollectionView) -> Int
     {
-        let count:Int = model.items.count
+        let count:Int
+        
+        if model == nil
+        {
+            count = 0
+        }
+        else
+        {
+            count = model!.items.count
+        }
         
         return count
     }
     
     func collectionView(collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
     {
-        let count:Int = model.items.count
+        let count:Int = model!.items.count
         
         return count
     }
