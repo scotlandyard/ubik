@@ -42,6 +42,9 @@
 		DA4A47E71D41B43100D8E065 /* MSummaryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4A47E61D41B43100D8E065 /* MSummaryItem.swift */; };
 		DA4A47E91D41B4BE00D8E065 /* VSummaryFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4A47E81D41B4BE00D8E065 /* VSummaryFooterCell.swift */; };
 		DA4A47EB1D41B91800D8E065 /* VComponentPay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4A47EA1D41B91800D8E065 /* VComponentPay.swift */; };
+		DA4A47EE1D41BA1D00D8E065 /* MComponentPay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4A47ED1D41BA1D00D8E065 /* MComponentPay.swift */; };
+		DA4A47F01D41BA2900D8E065 /* MComponentPaySteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4A47EF1D41BA2900D8E065 /* MComponentPaySteps.swift */; };
+		DA4A47F21D41BA3600D8E065 /* MComponentPayTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4A47F11D41BA3600D8E065 /* MComponentPayTime.swift */; };
 		DA55F34D1D33081D00BBF21F /* CategoryNSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F34C1D33081D00BBF21F /* CategoryNSDate.swift */; };
 		DA55F34F1D3314EA00BBF21F /* VMainBarButtonConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F34E1D3314EA00BBF21F /* VMainBarButtonConfig.swift */; };
 		DA55F3511D33192E00BBF21F /* VMainBarButtonSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F3501D33192E00BBF21F /* VMainBarButtonSummary.swift */; };
@@ -148,6 +151,9 @@
 		DA4A47E61D41B43100D8E065 /* MSummaryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSummaryItem.swift; sourceTree = "<group>"; };
 		DA4A47E81D41B4BE00D8E065 /* VSummaryFooterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSummaryFooterCell.swift; sourceTree = "<group>"; };
 		DA4A47EA1D41B91800D8E065 /* VComponentPay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VComponentPay.swift; sourceTree = "<group>"; };
+		DA4A47ED1D41BA1D00D8E065 /* MComponentPay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MComponentPay.swift; sourceTree = "<group>"; };
+		DA4A47EF1D41BA2900D8E065 /* MComponentPaySteps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MComponentPaySteps.swift; sourceTree = "<group>"; };
+		DA4A47F11D41BA3600D8E065 /* MComponentPayTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MComponentPayTime.swift; sourceTree = "<group>"; };
 		DA55F34C1D33081D00BBF21F /* CategoryNSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNSDate.swift; sourceTree = "<group>"; };
 		DA55F34E1D3314EA00BBF21F /* VMainBarButtonConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainBarButtonConfig.swift; sourceTree = "<group>"; };
 		DA55F3501D33192E00BBF21F /* VMainBarButtonSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainBarButtonSummary.swift; sourceTree = "<group>"; };
@@ -307,6 +313,16 @@
 				DA4A47E61D41B43100D8E065 /* MSummaryItem.swift */,
 			);
 			path = Summary;
+			sourceTree = "<group>";
+		};
+		DA4A47EC1D41BA0800D8E065 /* Pay */ = {
+			isa = PBXGroup;
+			children = (
+				DA4A47ED1D41BA1D00D8E065 /* MComponentPay.swift */,
+				DA4A47EF1D41BA2900D8E065 /* MComponentPaySteps.swift */,
+				DA4A47F11D41BA3600D8E065 /* MComponentPayTime.swift */,
+			);
+			path = Pay;
 			sourceTree = "<group>";
 		};
 		DA55F3521D3348D900BBF21F /* History */ = {
@@ -597,6 +613,7 @@
 		DACE5CC11D26E43E00080E5F /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				DA4A47EC1D41BA0800D8E065 /* Pay */,
 				DACE5CC21D26E43E00080E5F /* Gyro */,
 			);
 			path = Component;
@@ -771,6 +788,7 @@
 				DA4A47E91D41B4BE00D8E065 /* VSummaryFooterCell.swift in Sources */,
 				DAA005501D2F42DA004B57FA /* VOnboardingItemPermission.swift in Sources */,
 				DA152B3B1D3E912900568204 /* CategoryNSManagerdObject.swift in Sources */,
+				DA4A47F21D41BA3600D8E065 /* MComponentPayTime.swift in Sources */,
 				DA2AFAD51D3D2594000B6E44 /* VSettingsCellCheck.swift in Sources */,
 				DA94E20E1D28B77E002FF88B /* VMainBarButton.swift in Sources */,
 				DAA678641D2A25A100DDD9CC /* DManager.swift in Sources */,
@@ -806,6 +824,7 @@
 				DACE5CC01D26D6B600080E5F /* VComponentGyro.swift in Sources */,
 				DAA005521D2F42E6004B57FA /* VOnboardingItemLoading.swift in Sources */,
 				DAA0DC681D23184C00F3EF29 /* CategoryNSFileManager.swift in Sources */,
+				DA4A47EE1D41BA1D00D8E065 /* MComponentPay.swift in Sources */,
 				DAD79D691D3A97B3001BBCF5 /* DManagerSaver.swift in Sources */,
 				DADF024C1D35404C00FBFDA6 /* CategoryNSNotification.swift in Sources */,
 				DAA076CB1D35D0A90039248D /* VHistoryChartCell.swift in Sources */,
@@ -821,6 +840,7 @@
 				DAA076D21D35D29D0039248D /* MHistoryItem.swift in Sources */,
 				DAB344351D2AAE7C00406CEE /* MOnboarding.swift in Sources */,
 				DACE5CBB1D26CAC200080E5F /* CMainController.swift in Sources */,
+				DA4A47F01D41BA2900D8E065 /* MComponentPaySteps.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
