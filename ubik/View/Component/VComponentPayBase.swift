@@ -21,12 +21,22 @@ class VComponentPayBase:UIView
     
     override func drawRect(rect:CGRect)
     {
-        let model:MComponentPay = MComponentPay.Base()
-        model.loadRect(rect)
-        
-        let context:CGContext = UIGraphicsGetCurrentContext()!
-        CGContextSetFillColorWithColor(context, UIColor.complement().CGColor)
-        CGContextAddArc(context, model.width_2, model.height_2, model.radius, 0.0001, 0, 0)
-        CGContextDrawPath(context, CGPathDrawingMode.Fill)
+        if model != nil
+        {
+            model!.loadRect(rect)
+            
+            let context:CGContext = UIGraphicsGetCurrentContext()!
+            CGContextSetFillColorWithColor(context, UIColor.complement().CGColor)
+            CGContextAddArc(context, model!.width_2!, model!.height_2!, model!.radius!, 0.0001, 0, 0)
+            CGContextDrawPath(context, CGPathDrawingMode.Fill)
+        }
+    }
+    
+    //MARK: public
+    
+    func displayModel(model:MComponentPay)
+    {
+        self.model = model
+        setNeedsDisplay()
     }
 }

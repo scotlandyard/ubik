@@ -4,12 +4,14 @@ class VSummaryFooter:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
 {
     weak var controller:CSummary!
     weak var collection:UICollectionView!
-    private var model:MSummary?
+    private var model:MSummary
     private var cellSize:CGSize?
     
-    convenience init(controller:CSummary)
+    init(controller:CSummary)
     {
-        self.init()
+        model = MSummary()
+        
+        super.init(frame:CGRectZero)
         userInteractionEnabled = false
         clipsToBounds = true
         backgroundColor = UIColor.clearColor()
@@ -60,11 +62,16 @@ class VSummaryFooter:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
             views:views))
     }
     
+    required init?(coder:NSCoder)
+    {
+        fatalError()
+    }
+    
     //MARK: private
     
     private func modelAtIndex(index:NSIndexPath) -> MSummaryItem
     {
-        let item:MSummaryItem = model!.items[index.item]
+        let item:MSummaryItem = model.items[index.item]
         
         return item
     }
@@ -95,7 +102,7 @@ class VSummaryFooter:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         {
             let width:CGFloat = collectionView.bounds.maxX
             let height:CGFloat = collectionView.bounds.maxY
-            let items:CGFloat = CGFloat(model!.items.count)
+            let items:CGFloat = CGFloat(model.items.count)
             let heightItem:CGFloat = height / items
             cellSize = CGSizeMake(width, heightItem)
         }
@@ -105,23 +112,14 @@ class VSummaryFooter:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     
     func numberOfSectionsInCollectionView(collectionView:UICollectionView) -> Int
     {
-        let count:Int
-        
-        if model == nil
-        {
-            count = 0
-        }
-        else
-        {
-            count = 1
-        }
+        let count:Int = model.items.count
         
         return count
     }
     
     func collectionView(collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
     {
-        let count:Int = model!.items.count
+        let count:Int = model.items.count
         
         return count
     }

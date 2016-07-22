@@ -22,13 +22,6 @@ class MComponentPay
         return model
     }
     
-    class func Base() -> MComponentPay
-    {
-        let model:MComponentPay = MComponentPayBase()
-        
-        return model
-    }
-    
     init(color:UIColor)
     {
         self.color = color

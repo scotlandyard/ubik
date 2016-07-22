@@ -3,6 +3,7 @@ import UIKit
 class VSummaryFooterCell:UICollectionViewCell
 {
     weak var pay:VComponentPay?
+    weak var payBase:VComponentPayBase?
     private let kPayWidth:CGFloat = 160
     
     override init(frame:CGRect)
@@ -13,6 +14,7 @@ class VSummaryFooterCell:UICollectionViewCell
         userInteractionEnabled = false
         
         let payBase:VComponentPayBase = VComponentPayBase()
+        self.payBase = payBase
         
         addSubview(payBase)
         
@@ -44,5 +46,6 @@ class VSummaryFooterCell:UICollectionViewCell
     func config(model:MSummaryItem)
     {
         self.pay?.removeFromSuperview()
+        payBase?.displayModel(model.pay)
     }
 }
