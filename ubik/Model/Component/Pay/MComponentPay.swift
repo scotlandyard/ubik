@@ -3,6 +3,7 @@ import UIKit
 class MComponentPay
 {
     let color:UIColor
+    let percentage:CGFloat
     let kStartAngle:CGFloat = -CGFloat(M_PI_2)
     private(set) var radius:CGFloat!
     private(set) var width_2:CGFloat!
@@ -34,12 +35,13 @@ class MComponentPay
         return model
     }
     
-    init(color:UIColor, percentaje:CGFloat)
+    init(color:UIColor, percentage:CGFloat)
     {
         self.color = color
+        self.percentage = percentage
         currentAngle = kStartAngle
         
-        let percentRadius:CGFloat = kTotalRadius * percentaje
+        let percentRadius:CGFloat = kTotalRadius * percentage
         let radiusRadians:CGFloat = percentRadius * CGFloat(M_PI) / 180.0
         expectedAngle = radiusRadians + kStartAngle
     }

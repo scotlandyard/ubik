@@ -11,4 +11,9 @@ extension UIColor
     {
         return UIColor(red:0.94, green:0.96, blue:0.98, alpha:1)
     }
+    
+    class func complementDark() -> UIColor
+    {
+        return UIColor(red:0.7, green:0.77, blue:0.85, alpha:1)
+    }
 }

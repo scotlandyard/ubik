@@ -8,7 +8,7 @@ class VSummaryFooterCell:UICollectionViewCell
     weak var labelAmount:UILabel!
     private weak var layoutTitleRight:NSLayoutConstraint!
     private weak var layoutAmountLeft:NSLayoutConstraint!
-    private let kPayMidWidth:CGFloat = 45
+    private let kPayMidWidth:CGFloat = 40
     
     override init(frame:CGRect)
     {
@@ -23,8 +23,8 @@ class VSummaryFooterCell:UICollectionViewCell
         let labelTitle:UILabel = UILabel()
         labelTitle.userInteractionEnabled = false
         labelTitle.backgroundColor = UIColor.clearColor()
-        labelTitle.font = UIFont.bold(22)
-        labelTitle.textColor = UIColor.main()
+        labelTitle.font = UIFont.bold(14)
+        labelTitle.textColor = UIColor.complementDark()
         labelTitle.textAlignment = NSTextAlignment.Right
         labelTitle.translatesAutoresizingMaskIntoConstraints = false
         self.labelTitle = labelTitle
@@ -32,8 +32,8 @@ class VSummaryFooterCell:UICollectionViewCell
         let labelAmount:UILabel = UILabel()
         labelAmount.userInteractionEnabled = false
         labelAmount.backgroundColor = UIColor.clearColor()
-        labelAmount.font = UIFont.regular(16)
-        labelAmount.textColor = UIColor(white:0.6, alpha:1)
+        labelAmount.font = UIFont.numeric(22)
+        labelAmount.textColor = UIColor.main()
         labelAmount.translatesAutoresizingMaskIntoConstraints = false
         self.labelAmount = labelAmount
         

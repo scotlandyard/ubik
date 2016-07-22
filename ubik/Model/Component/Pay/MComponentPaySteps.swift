@@ -4,18 +4,18 @@ class MComponentPaySteps:MComponentPay
 {
     init(currentSteps:CGFloat, maxSteps:CGFloat)
     {
-        let percentaje:CGFloat
+        let percentage:CGFloat
         
         if maxSteps == 0
         {
-            percentaje = 0
+            percentage = 0
         }
         else
         {
-            percentaje = currentSteps / maxSteps
+            percentage = currentSteps / maxSteps
         }
         
         let color:UIColor = UIColor.main()
-        super.init(color:color, percentaje:percentaje)
+        super.init(color:color, percentage:percentage)
     }
 }

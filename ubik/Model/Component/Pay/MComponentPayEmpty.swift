@@ -6,6 +6,6 @@ class MComponentPayEmpty:MComponentPay
     {
         let color:UIColor = UIColor.clearColor()
         
-        super.init(color:color, percentaje:0)
+        super.init(color:color, percentage:0)
     }
 }
