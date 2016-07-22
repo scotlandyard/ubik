@@ -3,9 +3,9 @@ import UIKit
 class MComponentPay
 {
     let color:UIColor
-    private(set) var radius:CGFloat?
-    private(set) var width_2:CGFloat?
-    private(set) var height_2:CGFloat?
+    private(set) var radius:CGFloat!
+    private(set) var width_2:CGFloat!
+    private(set) var height_2:CGFloat!
     private let kMargin:CGFloat = 15
     
     class func Steps() -> MComponentPay
@@ -18,6 +18,13 @@ class MComponentPay
     class func Time() -> MComponentPay
     {
         let model:MComponentPay = MComponentPayTime()
+        
+        return model
+    }
+    
+    class func Base() -> MComponentPay
+    {
+        let model:MComponentPay = MComponentPayBase()
         
         return model
     }

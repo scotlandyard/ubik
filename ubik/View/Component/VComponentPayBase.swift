@@ -2,12 +2,10 @@ import UIKit
 
 class VComponentPayBase:UIView
 {
-    let model:MComponentPay
+    weak var model:MComponentPay?
     
-    init(model:MComponentPay)
+    init()
     {
-        self.model = model
-        
         super.init(frame:CGRectZero)
         
         clipsToBounds = true
@@ -16,18 +14,19 @@ class VComponentPayBase:UIView
         translatesAutoresizingMaskIntoConstraints = false
     }
     
-    required init?(coder aDecoder:NSCoder)
+    required init?(coder:NSCoder)
     {
         fatalError()
     }
     
     override func drawRect(rect:CGRect)
     {
+        let model:MComponentPay = MComponentPay.Base()
         model.loadRect(rect)
         
         let context:CGContext = UIGraphicsGetCurrentContext()!
-        CGContextSetFillColorWithColor(context, UIColor(white:0.97, alpha:1).CGColor)
-        CGContextAddArc(context, model.width_2!, model.height_2!, model.radius!, 0.0001, 0, 0)
+        CGContextSetFillColorWithColor(context, UIColor.complement().CGColor)
+        CGContextAddArc(context, model.width_2, model.height_2, model.radius, 0.0001, 0, 0)
         CGContextDrawPath(context, CGPathDrawingMode.Fill)
     }
 }

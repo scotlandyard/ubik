@@ -53,6 +53,7 @@
 		DA55F3511D33192E00BBF21F /* VMainBarButtonSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F3501D33192E00BBF21F /* VMainBarButtonSummary.swift */; };
 		DA55F3541D33493D00BBF21F /* CHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F3531D33493D00BBF21F /* CHistory.swift */; };
 		DA55F3571D334A0D00BBF21F /* VHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F3561D334A0D00BBF21F /* VHistory.swift */; };
+		DA581D851D4273E700BF56C2 /* MComponentPayBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA581D841D4273E700BF56C2 /* MComponentPayBase.swift */; };
 		DA906DF41D22F9490095B270 /* CMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA906DE71D22F9490095B270 /* CMain.swift */; };
 		DA906DF71D22F9490095B270 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA906DEE1D22F9490095B270 /* LaunchScreen.storyboard */; };
 		DA906DFB1D22FC700095B270 /* CMainParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA906DFA1D22FC700095B270 /* CMainParent.swift */; };
@@ -165,6 +166,7 @@
 		DA55F3501D33192E00BBF21F /* VMainBarButtonSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMainBarButtonSummary.swift; sourceTree = "<group>"; };
 		DA55F3531D33493D00BBF21F /* CHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHistory.swift; sourceTree = "<group>"; };
 		DA55F3561D334A0D00BBF21F /* VHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHistory.swift; sourceTree = "<group>"; };
+		DA581D841D4273E700BF56C2 /* MComponentPayBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MComponentPayBase.swift; sourceTree = "<group>"; };
 		DA906DBE1D22F4AE0095B270 /* ubik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ubik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA906DD51D22F4AF0095B270 /* tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA906DE71D22F9490095B270 /* CMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMain.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 				DA4A47ED1D41BA1D00D8E065 /* MComponentPay.swift */,
 				DA4A47EF1D41BA2900D8E065 /* MComponentPaySteps.swift */,
 				DA4A47F11D41BA3600D8E065 /* MComponentPayTime.swift */,
+				DA581D841D4273E700BF56C2 /* MComponentPayBase.swift */,
 			);
 			path = Pay;
 			sourceTree = "<group>";
@@ -827,6 +830,7 @@
 				DAA076CD1D35D1390039248D /* CategoryUICollectionReusableView.swift in Sources */,
 				DA55F34D1D33081D00BBF21F /* CategoryNSDate.swift in Sources */,
 				DAA076D01D35D2950039248D /* MHistory.swift in Sources */,
+				DA581D851D4273E700BF56C2 /* MComponentPayBase.swift in Sources */,
 				DACE5CBD1D26D5EF00080E5F /* CategoryUIColor.swift in Sources */,
 				DA906DFB1D22FC700095B270 /* CMainParent.swift in Sources */,
 				DAD00CF81D273E7000BCDDAA /* VComponentGyroBase.swift in Sources */,

@@ -3,7 +3,6 @@ import UIKit
 class VSummaryFooterCell:UICollectionViewCell
 {
     weak var pay:VComponentPay?
-    weak var payBase:VComponentPayBase?
     private let kPayWidth:CGFloat = 160
     
     override init(frame:CGRect)
@@ -12,22 +11,8 @@ class VSummaryFooterCell:UICollectionViewCell
         clipsToBounds = true
         backgroundColor = UIColor.clearColor()
         userInteractionEnabled = false
-    }
-    
-    required init?(coder:NSCoder)
-    {
-        fatalError()
-    }
-    
-    //MARK: public
-    
-    func config(model:MSummaryItem)
-    {
-        self.pay?.removeFromSuperview()
-        self.payBase?.removeFromSuperview()
         
-        let payBase:VComponentPayBase = VComponentPayBase(model:model.pay)
-        self.payBase = payBase
+        let payBase:VComponentPayBase = VComponentPayBase()
         
         addSubview(payBase)
         
@@ -47,5 +32,17 @@ class VSummaryFooterCell:UICollectionViewCell
             options:[],
             metrics:metrics,
             views:views))
+    }
+    
+    required init?(coder:NSCoder)
+    {
+        fatalError()
+    }
+    
+    //MARK: public
+    
+    func config(model:MSummaryItem)
+    {
+        self.pay?.removeFromSuperview()
     }
 }
