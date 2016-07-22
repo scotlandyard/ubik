@@ -56,7 +56,7 @@
 		DA581DB61D42D65700BF56C2 /* MSummaryEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA581DB51D42D65700BF56C2 /* MSummaryEmpty.swift */; };
 		DA581DB81D42D66200BF56C2 /* MSummaryFilled.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA581DB71D42D66200BF56C2 /* MSummaryFilled.swift */; };
 		DA581DBA1D42D66F00BF56C2 /* MSummaryItemEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA581DB91D42D66F00BF56C2 /* MSummaryItemEmpty.swift */; };
-		DA581DBC1D42D6D400BF56C2 /* MComponentPayEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA581DBB1D42D6D400BF56C2 /* MComponentPayEmpty.swift */; };
+		DA581DBE1D42E0D200BF56C2 /* MComponentPayEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA581DBD1D42E0D200BF56C2 /* MComponentPayEmpty.swift */; };
 		DA906DF41D22F9490095B270 /* CMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA906DE71D22F9490095B270 /* CMain.swift */; };
 		DA906DF71D22F9490095B270 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA906DEE1D22F9490095B270 /* LaunchScreen.storyboard */; };
 		DA906DFB1D22FC700095B270 /* CMainParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA906DFA1D22FC700095B270 /* CMainParent.swift */; };
@@ -172,7 +172,7 @@
 		DA581DB51D42D65700BF56C2 /* MSummaryEmpty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSummaryEmpty.swift; sourceTree = "<group>"; };
 		DA581DB71D42D66200BF56C2 /* MSummaryFilled.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSummaryFilled.swift; sourceTree = "<group>"; };
 		DA581DB91D42D66F00BF56C2 /* MSummaryItemEmpty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSummaryItemEmpty.swift; sourceTree = "<group>"; };
-		DA581DBB1D42D6D400BF56C2 /* MComponentPayEmpty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MComponentPayEmpty.swift; sourceTree = "<group>"; };
+		DA581DBD1D42E0D200BF56C2 /* MComponentPayEmpty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MComponentPayEmpty.swift; sourceTree = "<group>"; };
 		DA906DBE1D22F4AE0095B270 /* ubik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ubik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA906DD51D22F4AF0095B270 /* tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA906DE71D22F9490095B270 /* CMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMain.swift; sourceTree = "<group>"; };
@@ -340,7 +340,7 @@
 				DA4A47ED1D41BA1D00D8E065 /* MComponentPay.swift */,
 				DA4A47EF1D41BA2900D8E065 /* MComponentPaySteps.swift */,
 				DA4A47F11D41BA3600D8E065 /* MComponentPayTime.swift */,
-				DA581DBB1D42D6D400BF56C2 /* MComponentPayEmpty.swift */,
+				DA581DBD1D42E0D200BF56C2 /* MComponentPayEmpty.swift */,
 			);
 			path = Pay;
 			sourceTree = "<group>";
@@ -806,7 +806,7 @@
 				DA152B451D3EA72100568204 /* MHealthModel.swift in Sources */,
 				DAA076C91D35CE360039248D /* VHistoryChart.swift in Sources */,
 				DA581DB81D42D66200BF56C2 /* MSummaryFilled.swift in Sources */,
-				DA581DBC1D42D6D400BF56C2 /* MComponentPayEmpty.swift in Sources */,
+				DA581DBE1D42E0D200BF56C2 /* MComponentPayEmpty.swift in Sources */,
 				DA152B321D3E82A900568204 /* DUbikDevice+CoreDataProperties.swift in Sources */,
 				DAA6785B1D2A23DF00DDD9CC /* MConfiguration.swift in Sources */,
 				DA2C7D251D3D1A45005FFDB0 /* VSettings.swift in Sources */,

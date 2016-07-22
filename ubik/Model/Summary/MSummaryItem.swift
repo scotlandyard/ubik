@@ -4,6 +4,7 @@ class MSummaryItem
 {
     let pay:MComponentPay
     let title:String?
+    let amount:String?
     
     class func Steps() -> MSummaryItem
     {
@@ -26,9 +27,10 @@ class MSummaryItem
         return model
     }
     
-    init(pay:MComponentPay, title:String?)
+    init(pay:MComponentPay, title:String?, amount:String?)
     {
         self.pay = pay
         self.title = title
+        self.amount = amount
     }
 }

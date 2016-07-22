@@ -5,6 +5,7 @@ class MSummaryItemEmpty:MSummaryItem
     init()
     {
         let pay:MComponentPay = MComponentPay.Empty()
-        super.init(pay:pay)
+        
+        super.init(pay:pay, title:nil, amount:nil)
     }
 }
