@@ -4,7 +4,6 @@ class VSummaryFooterCell:UICollectionViewCell
 {
     weak var pay:VComponentPay?
     weak var payBase:VComponentPayBase?
-    private let kPayWidth:CGFloat = 160
     
     override init(frame:CGRect)
     {
@@ -21,11 +20,10 @@ class VSummaryFooterCell:UICollectionViewCell
         let views:[String:AnyObject] = [
             "payBase":payBase]
         
-        let metrics:[String:AnyObject] = [
-            "payWidth":kPayWidth]
+        let metrics:[String:AnyObject] = [:]
         
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-0-[payBase(payWidth)]",
+            "H:|-0-[payBase]-0-|",
             options:[],
             metrics:metrics,
             views:views))
@@ -56,11 +54,10 @@ class VSummaryFooterCell:UICollectionViewCell
         let views:[String:AnyObject] = [
             "pay":pay]
         
-        let metrics:[String:AnyObject] = [
-            "payWidth":kPayWidth]
+        let metrics:[String:AnyObject] = [:]
         
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-0-[pay(payWidth)]",
+            "H:|-0-[pay]-0-|",
             options:[],
             metrics:metrics,
             views:views))

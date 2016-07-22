@@ -4,6 +4,11 @@ class MSummary
 {
     let items:[MSummaryItem]
     
+    class func Empty() -> MSummary
+    {
+        
+    }
+    
     init()
     {
         let itemSteps:MSummaryItem = MSummaryItem.Steps()

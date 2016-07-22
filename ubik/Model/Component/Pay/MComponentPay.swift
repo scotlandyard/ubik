@@ -27,6 +27,13 @@ class MComponentPay
         return model
     }
     
+    class func Empty(currentTime:NSTimeInterval) -> MComponentPay
+    {
+        let model:MComponentPay = MComponentPayEmpty()
+        
+        return model
+    }
+    
     init(color:UIColor, percentaje:CGFloat)
     {
         self.color = color
