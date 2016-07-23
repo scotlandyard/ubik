@@ -6,7 +6,7 @@ class MHistoryItem
     let steps:String
     let date:String
     let percentage:CGFloat
-    let components:[MHistoryItemComponent]
+    let components:[MHistoryItemComponent<VHistoryChartDisplayCell>]
     
     init(distance:String, steps:String, date:String, percentage:CGFloat)
     {

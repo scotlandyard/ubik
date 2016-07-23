@@ -1,6 +1,6 @@
 import UIKit
 
-class MHistoryItemComponent<CellType:VHistoryChartDisplayCellTitle>
+class MHistoryItemComponent<CellType:VHistoryChartDisplayCell>
 {
     let reusableIdentifier:String
     let cellHeight:CGFloat
@@ -15,6 +15,5 @@ class MHistoryItemComponent<CellType:VHistoryChartDisplayCellTitle>
     
     func config(cell:CellType)
     {
-        cell.label.text = ""
     }
 }
