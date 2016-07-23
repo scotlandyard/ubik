@@ -1,6 +1,6 @@
 import UIKit
 
-class MHistoryItemComponentDate:MHistoryItemComponent<VHistoryChartDisplayCellTitle>
+class MHistoryItemComponentDate<CellType:VHistoryChartDisplayCellTitle>:MHistoryItemComponent<CellType>
 {
     let date:String
     private let kCellHeight:CGFloat = 50
@@ -8,7 +8,12 @@ class MHistoryItemComponentDate:MHistoryItemComponent<VHistoryChartDisplayCellTi
     init(date:String)
     {
         self.date = date
-        
+     
         super.init(cellHeight:kCellHeight)
+    }
+    
+    override func config(cell:CellType)
+    {
+        cell.label.text = date
     }
 }
