@@ -94,6 +94,10 @@
 		DAB3443D1D2AB0E200406CEE /* MOnboardingItemLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3443C1D2AB0E200406CEE /* MOnboardingItemLoading.swift */; };
 		DAB3443F1D2AB10800406CEE /* MOnboardingItemReady.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3443E1D2AB10800406CEE /* MOnboardingItemReady.swift */; };
 		DAB508141D43EEAB00E1D316 /* MHistoryItemComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB508131D43EEAB00E1D316 /* MHistoryItemComponent.swift */; };
+		DAB508161D43EF2A00E1D316 /* VHistoryChartDisplayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB508151D43EF2A00E1D316 /* VHistoryChartDisplayCell.swift */; };
+		DAB5081A1D43EF6A00E1D316 /* VHistoryChartDisplayCellAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB508191D43EF6A00E1D316 /* VHistoryChartDisplayCellAmount.swift */; };
+		DAB5081C1D43EF7300E1D316 /* VHistoryChartDisplayCellTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5081B1D43EF7300E1D316 /* VHistoryChartDisplayCellTitle.swift */; };
+		DAB5081E1D43EF8600E1D316 /* VHistoryChartDisplayCellImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5081D1D43EF8600E1D316 /* VHistoryChartDisplayCellImage.swift */; };
 		DAB8F6BA1D31BFE900236A00 /* MHealth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8F6B81D31BFE900236A00 /* MHealth.swift */; };
 		DAB8F6C31D31CEC100236A00 /* MHealthAuthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8F6C21D31CEC100236A00 /* MHealthAuthDelegate.swift */; };
 		DACE5CB61D26C93D00080E5F /* CSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CB51D26C93D00080E5F /* CSummary.swift */; };
@@ -216,6 +220,10 @@
 		DAB3443C1D2AB0E200406CEE /* MOnboardingItemLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOnboardingItemLoading.swift; sourceTree = "<group>"; };
 		DAB3443E1D2AB10800406CEE /* MOnboardingItemReady.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOnboardingItemReady.swift; sourceTree = "<group>"; };
 		DAB508131D43EEAB00E1D316 /* MHistoryItemComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHistoryItemComponent.swift; sourceTree = "<group>"; };
+		DAB508151D43EF2A00E1D316 /* VHistoryChartDisplayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHistoryChartDisplayCell.swift; sourceTree = "<group>"; };
+		DAB508191D43EF6A00E1D316 /* VHistoryChartDisplayCellAmount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHistoryChartDisplayCellAmount.swift; sourceTree = "<group>"; };
+		DAB5081B1D43EF7300E1D316 /* VHistoryChartDisplayCellTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHistoryChartDisplayCellTitle.swift; sourceTree = "<group>"; };
+		DAB5081D1D43EF8600E1D316 /* VHistoryChartDisplayCellImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHistoryChartDisplayCellImage.swift; sourceTree = "<group>"; };
 		DAB8F6B81D31BFE900236A00 /* MHealth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealth.swift; sourceTree = "<group>"; };
 		DAB8F6C21D31CEC100236A00 /* MHealthAuthDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealthAuthDelegate.swift; sourceTree = "<group>"; };
 		DACE5CB51D26C93D00080E5F /* CSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSummary.swift; sourceTree = "<group>"; };
@@ -364,6 +372,10 @@
 				DA97F3091D389958008176E6 /* VHistoryChartSelector.swift */,
 				DA2C7D1C1D3C4746005FFDB0 /* VHistoryChartTouch.swift */,
 				DA2C7D1E1D3C5652005FFDB0 /* VHistoryChartDisplay.swift */,
+				DAB508151D43EF2A00E1D316 /* VHistoryChartDisplayCell.swift */,
+				DAB508191D43EF6A00E1D316 /* VHistoryChartDisplayCellAmount.swift */,
+				DAB5081B1D43EF7300E1D316 /* VHistoryChartDisplayCellTitle.swift */,
+				DAB5081D1D43EF8600E1D316 /* VHistoryChartDisplayCellImage.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -785,6 +797,7 @@
 				DA2C7D221D3D1A2C005FFDB0 /* CSettings.swift in Sources */,
 				DACE5CB91D26CA0800080E5F /* VSummary.swift in Sources */,
 				DAB3443D1D2AB0E200406CEE /* MOnboardingItemLoading.swift in Sources */,
+				DAB5081C1D43EF7300E1D316 /* VHistoryChartDisplayCellTitle.swift in Sources */,
 				DAB8F6C31D31CEC100236A00 /* MHealthAuthDelegate.swift in Sources */,
 				DA581DBA1D42D66F00BF56C2 /* MSummaryItemEmpty.swift in Sources */,
 				DAD00CF31D270DD600BCDDAA /* VSummaryHeader.swift in Sources */,
@@ -812,6 +825,7 @@
 				DA581DBE1D42E0D200BF56C2 /* MComponentPayEmpty.swift in Sources */,
 				DA152B321D3E82A900568204 /* DUbikDevice+CoreDataProperties.swift in Sources */,
 				DAA6785B1D2A23DF00DDD9CC /* MConfiguration.swift in Sources */,
+				DAB508161D43EF2A00E1D316 /* VHistoryChartDisplayCell.swift in Sources */,
 				DA2C7D251D3D1A45005FFDB0 /* VSettings.swift in Sources */,
 				DA2C7D2C1D3D1EBD005FFDB0 /* MSettingsItem.swift in Sources */,
 				DA4A47E91D41B4BE00D8E065 /* VSummaryFooterCell.swift in Sources */,
@@ -862,6 +876,7 @@
 				DAA076CB1D35D0A90039248D /* VHistoryChartCell.swift in Sources */,
 				DAA678651D2A25A100DDD9CC /* DManagerModel.swift in Sources */,
 				DAB3443F1D2AB10800406CEE /* MOnboardingItemReady.swift in Sources */,
+				DAB5081E1D43EF8600E1D316 /* VHistoryChartDisplayCellImage.swift in Sources */,
 				DA2C7D2E1D3D1F21005FFDB0 /* MSettingsSectionConfig.swift in Sources */,
 				DA4A47E51D41B37200D8E065 /* MSummary.swift in Sources */,
 				DA4A47EB1D41B91800D8E065 /* VComponentPay.swift in Sources */,
@@ -869,6 +884,7 @@
 				DA4A47E21D41B0B100D8E065 /* VSummaryFooter.swift in Sources */,
 				DA152B311D3E82A900568204 /* DUbikDevice.swift in Sources */,
 				DAA0054C1D2F426F004B57FA /* COnboardingItemReady.swift in Sources */,
+				DAB5081A1D43EF6A00E1D316 /* VHistoryChartDisplayCellAmount.swift in Sources */,
 				DAA076D21D35D29D0039248D /* MHistoryItem.swift in Sources */,
 				DAB344351D2AAE7C00406CEE /* MOnboarding.swift in Sources */,
 				DACE5CBB1D26CAC200080E5F /* CMainController.swift in Sources */,
