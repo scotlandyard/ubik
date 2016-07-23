@@ -13,7 +13,7 @@ class MHistoryItemComponent
     
     //MARK: public
     
-    func config(cell:VHistoryChartCell)
+    func config(cell:VHistoryChartDisplayCell)
     {
         
     }

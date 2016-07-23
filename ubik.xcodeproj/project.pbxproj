@@ -99,6 +99,12 @@
 		DAB5081C1D43EF7300E1D316 /* VHistoryChartDisplayCellTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5081B1D43EF7300E1D316 /* VHistoryChartDisplayCellTitle.swift */; };
 		DAB5081E1D43EF8600E1D316 /* VHistoryChartDisplayCellImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5081D1D43EF8600E1D316 /* VHistoryChartDisplayCellImage.swift */; };
 		DAB508201D43F1CE00E1D316 /* VHistoryChartDisplayCellDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5081F1D43F1CE00E1D316 /* VHistoryChartDisplayCellDate.swift */; };
+		DAB508221D43F81100E1D316 /* MHistoryItemComponentDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB508211D43F81100E1D316 /* MHistoryItemComponentDate.swift */; };
+		DAB508241D43F82200E1D316 /* MHistoryItemComponentAmountDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB508231D43F82200E1D316 /* MHistoryItemComponentAmountDistance.swift */; };
+		DAB508261D43F82D00E1D316 /* MHistoryItemComponentTitleDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB508251D43F82D00E1D316 /* MHistoryItemComponentTitleDistance.swift */; };
+		DAB508281D43F83800E1D316 /* MHistoryItemComponentAmountSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB508271D43F83800E1D316 /* MHistoryItemComponentAmountSteps.swift */; };
+		DAB5082A1D43F84300E1D316 /* MHistoryItemComponentTitleSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB508291D43F84300E1D316 /* MHistoryItemComponentTitleSteps.swift */; };
+		DAB5082C1D43F84F00E1D316 /* MHistoryItemComponentRatio.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5082B1D43F84F00E1D316 /* MHistoryItemComponentRatio.swift */; };
 		DAB8F6BA1D31BFE900236A00 /* MHealth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8F6B81D31BFE900236A00 /* MHealth.swift */; };
 		DAB8F6C31D31CEC100236A00 /* MHealthAuthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8F6C21D31CEC100236A00 /* MHealthAuthDelegate.swift */; };
 		DACE5CB61D26C93D00080E5F /* CSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CB51D26C93D00080E5F /* CSummary.swift */; };
@@ -226,6 +232,12 @@
 		DAB5081B1D43EF7300E1D316 /* VHistoryChartDisplayCellTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHistoryChartDisplayCellTitle.swift; sourceTree = "<group>"; };
 		DAB5081D1D43EF8600E1D316 /* VHistoryChartDisplayCellImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHistoryChartDisplayCellImage.swift; sourceTree = "<group>"; };
 		DAB5081F1D43F1CE00E1D316 /* VHistoryChartDisplayCellDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHistoryChartDisplayCellDate.swift; sourceTree = "<group>"; };
+		DAB508211D43F81100E1D316 /* MHistoryItemComponentDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHistoryItemComponentDate.swift; sourceTree = "<group>"; };
+		DAB508231D43F82200E1D316 /* MHistoryItemComponentAmountDistance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHistoryItemComponentAmountDistance.swift; sourceTree = "<group>"; };
+		DAB508251D43F82D00E1D316 /* MHistoryItemComponentTitleDistance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHistoryItemComponentTitleDistance.swift; sourceTree = "<group>"; };
+		DAB508271D43F83800E1D316 /* MHistoryItemComponentAmountSteps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHistoryItemComponentAmountSteps.swift; sourceTree = "<group>"; };
+		DAB508291D43F84300E1D316 /* MHistoryItemComponentTitleSteps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHistoryItemComponentTitleSteps.swift; sourceTree = "<group>"; };
+		DAB5082B1D43F84F00E1D316 /* MHistoryItemComponentRatio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHistoryItemComponentRatio.swift; sourceTree = "<group>"; };
 		DAB8F6B81D31BFE900236A00 /* MHealth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealth.swift; sourceTree = "<group>"; };
 		DAB8F6C21D31CEC100236A00 /* MHealthAuthDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealthAuthDelegate.swift; sourceTree = "<group>"; };
 		DACE5CB51D26C93D00080E5F /* CSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSummary.swift; sourceTree = "<group>"; };
@@ -525,6 +537,12 @@
 				DAA076CF1D35D2950039248D /* MHistory.swift */,
 				DAA076D11D35D29D0039248D /* MHistoryItem.swift */,
 				DAB508131D43EEAB00E1D316 /* MHistoryItemComponent.swift */,
+				DAB508211D43F81100E1D316 /* MHistoryItemComponentDate.swift */,
+				DAB508231D43F82200E1D316 /* MHistoryItemComponentAmountDistance.swift */,
+				DAB508251D43F82D00E1D316 /* MHistoryItemComponentTitleDistance.swift */,
+				DAB508271D43F83800E1D316 /* MHistoryItemComponentAmountSteps.swift */,
+				DAB508291D43F84300E1D316 /* MHistoryItemComponentTitleSteps.swift */,
+				DAB5082B1D43F84F00E1D316 /* MHistoryItemComponentRatio.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -800,6 +818,7 @@
 				DA2C7D221D3D1A2C005FFDB0 /* CSettings.swift in Sources */,
 				DACE5CB91D26CA0800080E5F /* VSummary.swift in Sources */,
 				DAB3443D1D2AB0E200406CEE /* MOnboardingItemLoading.swift in Sources */,
+				DAB508281D43F83800E1D316 /* MHistoryItemComponentAmountSteps.swift in Sources */,
 				DAB5081C1D43EF7300E1D316 /* VHistoryChartDisplayCellTitle.swift in Sources */,
 				DAB8F6C31D31CEC100236A00 /* MHealthAuthDelegate.swift in Sources */,
 				DA581DBA1D42D66F00BF56C2 /* MSummaryItemEmpty.swift in Sources */,
@@ -811,6 +830,7 @@
 				DA4A47F61D41BE2400D8E065 /* MSummaryItemSteps.swift in Sources */,
 				DA2C38BD1D30619800977D50 /* VMainLoader.swift in Sources */,
 				DA152B471D3EA72D00568204 /* MHealthModelItem.swift in Sources */,
+				DAB5082C1D43F84F00E1D316 /* MHistoryItemComponentRatio.swift in Sources */,
 				DA906DF41D22F9490095B270 /* CMain.swift in Sources */,
 				DAAF3C8A1D2C838700BBBD40 /* COnboardingItemWelcome.swift in Sources */,
 				DA152B351D3E82A900568204 /* DUbikSession.swift in Sources */,
@@ -823,6 +843,7 @@
 				DAB8F6BA1D31BFE900236A00 /* MHealth.swift in Sources */,
 				DAB344321D2AA48000406CEE /* COnboarding.swift in Sources */,
 				DA152B451D3EA72100568204 /* MHealthModel.swift in Sources */,
+				DAB5082A1D43F84300E1D316 /* MHistoryItemComponentTitleSteps.swift in Sources */,
 				DAA076C91D35CE360039248D /* VHistoryChart.swift in Sources */,
 				DA581DB81D42D66200BF56C2 /* MSummaryFilled.swift in Sources */,
 				DA581DBE1D42E0D200BF56C2 /* MComponentPayEmpty.swift in Sources */,
@@ -831,10 +852,12 @@
 				DAB508161D43EF2A00E1D316 /* VHistoryChartDisplayCell.swift in Sources */,
 				DA2C7D251D3D1A45005FFDB0 /* VSettings.swift in Sources */,
 				DA2C7D2C1D3D1EBD005FFDB0 /* MSettingsItem.swift in Sources */,
+				DAB508221D43F81100E1D316 /* MHistoryItemComponentDate.swift in Sources */,
 				DA4A47E91D41B4BE00D8E065 /* VSummaryFooterCell.swift in Sources */,
 				DAA005501D2F42DA004B57FA /* VOnboardingItemPermission.swift in Sources */,
 				DA152B3B1D3E912900568204 /* CategoryNSManagerdObject.swift in Sources */,
 				DA4A47F21D41BA3600D8E065 /* MComponentPayTime.swift in Sources */,
+				DAB508241D43F82200E1D316 /* MHistoryItemComponentAmountDistance.swift in Sources */,
 				DA2AFAD51D3D2594000B6E44 /* VSettingsCellCheck.swift in Sources */,
 				DA4A47F81D41BE2E00D8E065 /* MSummaryItemTime.swift in Sources */,
 				DA94E20E1D28B77E002FF88B /* VMainBarButton.swift in Sources */,
@@ -893,6 +916,7 @@
 				DACE5CBB1D26CAC200080E5F /* CMainController.swift in Sources */,
 				DA4A47F01D41BA2900D8E065 /* MComponentPaySteps.swift in Sources */,
 				DAB508201D43F1CE00E1D316 /* VHistoryChartDisplayCellDate.swift in Sources */,
+				DAB508261D43F82D00E1D316 /* MHistoryItemComponentTitleDistance.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

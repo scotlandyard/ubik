@@ -119,10 +119,10 @@ class VHistoryChartDisplay:UIView, UICollectionViewDelegate, UICollectionViewDat
     func collectionView(collectionView:UICollectionView, cellForItemAtIndexPath indexPath:NSIndexPath) -> UICollectionViewCell
     {
         let item:MHistoryItemComponent = modelAtIndex(indexPath)
-        let cell:VHistoryChartCell = collectionView.dequeueReusableCellWithReuseIdentifier(
+        let cell:VHistoryChartDisplayCell = collectionView.dequeueReusableCellWithReuseIdentifier(
             item.reusableIdentifier,
             forIndexPath:
-            indexPath) as! VHistoryChartCell
+            indexPath) as! VHistoryChartDisplayCell
         item.config(cell)
         
         return cell
