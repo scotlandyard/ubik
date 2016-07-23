@@ -1,67 +1,61 @@
 import UIKit
 
-class MHistoryItemComponent<CellType:VHistoryChartDisplayCell>
+class MHistoryItemComponent
 {
     let reusableIdentifier:String
     let cellHeight:CGFloat
     
-    class func Date(date:String) -> MHistoryItemComponent<CellType>
+    class func Date(date:String) -> MHistoryItemComponent
     {
-        let item:AnyObject = MHistoryItemComponentDate(date:date)
-        let itemComponent:MHistoryItemComponent<CellType> = item as! MHistoryItemComponent
+        let item:MHistoryItemComponent = MHistoryItemComponentDate(date:date)
         
-        return itemComponent
+        return item
     }
     
-    class func AmountDistance(distance:String) -> MHistoryItemComponent<CellType>
+    class func AmountDistance(distance:String) -> MHistoryItemComponent
     {
-        let item:AnyObject = MHistoryItemComponentAmountDistance(distance:distance)
-        let itemComponent:MHistoryItemComponent<CellType> = item as! MHistoryItemComponent
+        let item:MHistoryItemComponent = MHistoryItemComponentAmountDistance(distance:distance)
         
-        return itemComponent
+        return item
     }
     
-    class func TitleDistance() -> MHistoryItemComponent<CellType>
+    class func TitleDistance() -> MHistoryItemComponent
     {
-        let item:AnyObject = MHistoryItemComponentTitleDistance()
-        let itemComponent:MHistoryItemComponent<CellType> = item as! MHistoryItemComponent
+        let item:MHistoryItemComponent = MHistoryItemComponentTitleDistance()
         
-        return itemComponent
+        return item
     }
     
-    class func AmountSteps(steps:String) -> MHistoryItemComponent<CellType>
+    class func AmountSteps(steps:String) -> MHistoryItemComponent
     {
-        let item:AnyObject = MHistoryItemComponentAmountSteps(steps:steps)
-        let itemComponent:MHistoryItemComponent<CellType> = item as! MHistoryItemComponent
+        let item:MHistoryItemComponent = MHistoryItemComponentAmountSteps(steps:steps)
         
-        return itemComponent
+        return item
     }
     
-    class func TitleSteps() -> MHistoryItemComponent<CellType>
+    class func TitleSteps() -> MHistoryItemComponent
     {
-        let item:AnyObject = MHistoryItemComponentTitleSteps()
-        let itemComponent:MHistoryItemComponent<CellType> = item as! MHistoryItemComponent
+        let item:MHistoryItemComponent = MHistoryItemComponentTitleSteps()
         
-        return itemComponent
+        return item
     }
     
-    class func Ratio(ratio:String) -> MHistoryItemComponent<CellType>
+    class func Ratio(ratio:String) -> MHistoryItemComponent
     {
-        let item:AnyObject = MHistoryItemComponentRatio(ratio:ratio)
-        let itemComponent:MHistoryItemComponent<CellType> = item as! MHistoryItemComponent
+        let item:MHistoryItemComponent = MHistoryItemComponentRatio(ratio:ratio)
         
-        return itemComponent
+        return item
     }
     
-    init(cellHeight:CGFloat)
+    init(reusableIdentifier:String, cellHeight:CGFloat)
     {
+        self.reusableIdentifier = reusableIdentifier
         self.cellHeight = cellHeight
-        reusableIdentifier = CellType.reusableIdentifier()
     }
     
     //MARK: public
     
-    func config(cell:CellType)
+    func config(cell:VHistoryChartDisplayCell)
     {
     }
 }

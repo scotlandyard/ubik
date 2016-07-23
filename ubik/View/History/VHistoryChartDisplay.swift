@@ -76,7 +76,7 @@ class VHistoryChartDisplay:UIView, UICollectionViewDelegate, UICollectionViewDat
     
     //MARK: private
     
-    func modelAtIndex(index:NSIndexPath) -> MHistoryItemComponent<VHistoryChartDisplayCell>
+    func modelAtIndex(index:NSIndexPath) -> MHistoryItemComponent
     {
         let item:MHistoryItemComponent = model!.components[index.item]
         

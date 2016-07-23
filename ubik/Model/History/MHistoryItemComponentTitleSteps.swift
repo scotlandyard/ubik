@@ -1,6 +1,6 @@
 import UIKit
 
-class MHistoryItemComponentTitleSteps:MHistoryItemComponent<VHistoryChartDisplayCellTitle>
+class MHistoryItemComponentTitleSteps:MHistoryItemComponent
 {
     let title:String
     private let kCellHeight:CGFloat = 40
@@ -8,12 +8,14 @@ class MHistoryItemComponentTitleSteps:MHistoryItemComponent<VHistoryChartDisplay
     init()
     {
         title = NSLocalizedString("MHistoryItemComponentTitleSteps_title", comment:"")
+        let reusableIdentifier:String = VHistoryChartDisplayCellDate.reusableIdentifier()
         
-        super.init(cellHeight:kCellHeight)
+        super.init(reusableIdentifier:reusableIdentifier, cellHeight:kCellHeight)
     }
     
-    override func config(cell:VHistoryChartDisplayCellTitle)
+    override func config(cell:VHistoryChartDisplayCell)
     {
-        cell.label.text = title
+        let cellTitle:VHistoryChartDisplayCellTitle = cell as! VHistoryChartDisplayCellTitle
+        cellTitle.label.text = title
     }
 }

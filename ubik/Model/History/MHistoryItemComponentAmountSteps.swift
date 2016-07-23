@@ -1,6 +1,6 @@
 import UIKit
 
-class MHistoryItemComponentAmountSteps:MHistoryItemComponent<VHistoryChartDisplayCellAmount>
+class MHistoryItemComponentAmountSteps:MHistoryItemComponent
 {
     let steps:String
     private let kCellHeight:CGFloat = 100
@@ -8,12 +8,14 @@ class MHistoryItemComponentAmountSteps:MHistoryItemComponent<VHistoryChartDispla
     init(steps:String)
     {
         self.steps = steps
+        let reusableIdentifier:String = VHistoryChartDisplayCellDate.reusableIdentifier()
         
-        super.init(cellHeight:kCellHeight)
+        super.init(reusableIdentifier:reusableIdentifier, cellHeight:kCellHeight)
     }
     
-    override func config(cell:VHistoryChartDisplayCellAmount)
+    override func config(cell:VHistoryChartDisplayCell)
     {
-        cell.label.text = steps
+        let cellAmount:VHistoryChartDisplayCellAmount = cell as! VHistoryChartDisplayCellAmount
+        cellAmount.label.text = steps
     }
 }
