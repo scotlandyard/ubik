@@ -3,12 +3,12 @@ import UIKit
 class MHistoryItemComponentAmountDistance:MHistoryItemComponent
 {
     let distance:String
-    private let kCellHeight:CGFloat = 100
+    private let kCellHeight:CGFloat = 60
     
     init(distance:String)
     {
         self.distance = distance
-        let reusableIdentifier:String = VHistoryChartDisplayCellDate.reusableIdentifier()
+        let reusableIdentifier:String = VHistoryChartDisplayCellAmount.reusableIdentifier()
         
         super.init(reusableIdentifier:reusableIdentifier, cellHeight:kCellHeight)
     }

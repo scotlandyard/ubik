@@ -9,12 +9,19 @@ class VHistoryChartDisplayCellImage:VHistoryChartDisplayCell
     {
         super.init(frame:frame)
         
+        let image:UIImageView = UIImageView()
+        image.clipsToBounds = true
+        image.contentMode = UIViewContentMode.Center
+        image.userInteractionEnabled = false
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.image = UIImage(named:"circle")
+        
         let label:UILabel = UILabel()
         label.userInteractionEnabled = false
         label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = UIColor.clearColor()
         label.textAlignment = NSTextAlignment.Center
-        label.font = UIFont.numeric(15)
+        label.font = UIFont.numeric(20)
         label.textColor = UIColor.whiteColor()
         self.label = label
         
@@ -23,16 +30,18 @@ class VHistoryChartDisplayCellImage:VHistoryChartDisplayCell
         title.translatesAutoresizingMaskIntoConstraints = false
         title.backgroundColor = UIColor.clearColor()
         title.textAlignment = NSTextAlignment.Center
-        title.font = UIFont.regular(12)
-        title.textColor = UIColor.complementDark()
+        title.font = UIFont.regular(14)
+        title.textColor = UIColor.complementDarker()
         self.title = title
         
-        addSubview(label)
+        image.addSubview(label)
         addSubview(title)
+        addSubview(image)
         
         let views:[String:AnyObject] = [
             "label":label,
-            "title":title]
+            "title":title,
+            "image":image]
         
         let metrics:[String:AnyObject] = [:]
         
@@ -47,12 +56,22 @@ class VHistoryChartDisplayCellImage:VHistoryChartDisplayCell
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:|-0-[image]-0-|",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "V:|-0-[label]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-0-[title]-0-|",
+            "V:[title(20)]-0-|",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:|-0-[image]-0-|",
             options:[],
             metrics:metrics,
             views:views))

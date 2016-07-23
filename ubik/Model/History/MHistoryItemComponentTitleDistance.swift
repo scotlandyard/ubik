@@ -3,7 +3,7 @@ import UIKit
 class MHistoryItemComponentTitleDistance:MHistoryItemComponent
 {
     let title:String
-    private let kCellHeight:CGFloat = 40
+    private let kCellHeight:CGFloat = 18
     
     init()
     {
@@ -22,14 +22,14 @@ class MHistoryItemComponentTitleDistance:MHistoryItemComponent
                 break
         }
         
-        let reusableIdentifier:String = VHistoryChartDisplayCellDate.reusableIdentifier()
+        let reusableIdentifier:String = VHistoryChartDisplayCellTitle.reusableIdentifier()
         
         super.init(reusableIdentifier:reusableIdentifier, cellHeight:kCellHeight)
     }
     
     override func config(cell:VHistoryChartDisplayCell)
     {
-        let cellAmount:VHistoryChartDisplayCellAmount = cell as! VHistoryChartDisplayCellAmount
+        let cellAmount:VHistoryChartDisplayCellTitle = cell as! VHistoryChartDisplayCellTitle
         cellAmount.label.text = title
     }
 }

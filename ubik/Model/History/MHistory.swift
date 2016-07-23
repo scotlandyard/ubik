@@ -13,6 +13,7 @@ class MHistory
         
         let numberFormatter:NSNumberFormatter = NSNumberFormatter()
         numberFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
+        numberFormatter.maximumFractionDigits = 1
         let dateFormatter:NSDateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = kDateFormat
         

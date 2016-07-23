@@ -4,7 +4,7 @@ class VHistoryChartDisplay:UIView, UICollectionViewDelegate, UICollectionViewDat
 {
     weak var collection:UICollectionView!
     weak var model:MHistoryItem?
-    private let kCollectionTop:CGFloat = 100
+    private let kCollectionTop:CGFloat = 70
     
     init()
     {
@@ -92,6 +92,16 @@ class VHistoryChartDisplay:UIView, UICollectionViewDelegate, UICollectionViewDat
     }
     
     //MARK: collection del
+    
+    func collectionView(collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAtIndexPath indexPath:NSIndexPath) -> CGSize
+    {
+        let item:MHistoryItemComponent = modelAtIndex(indexPath)
+        let width:CGFloat = collectionView.bounds.size.width
+        let height:CGFloat = item.cellHeight
+        let size:CGSize = CGSizeMake(width, height)
+        
+        return size
+    }
     
     func numberOfSectionsInCollectionView(collectionView:UICollectionView) -> Int
     {

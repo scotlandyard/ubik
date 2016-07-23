@@ -4,7 +4,7 @@ class MHistoryItemComponentRatio:MHistoryItemComponent
 {
     let ratio:String
     let title:String
-    private let kCellHeight:CGFloat = 200
+    private let kCellHeight:CGFloat = 100
     
     init(ratio:String)
     {
@@ -27,7 +27,7 @@ class MHistoryItemComponentRatio:MHistoryItemComponent
         
         title = String(format:NSLocalizedString("MHistoryItemComponentRatio_title", comment:""), measure)
         self.ratio = ratio
-        let reusableIdentifier:String = VHistoryChartDisplayCellDate.reusableIdentifier()
+        let reusableIdentifier:String = VHistoryChartDisplayCellImage.reusableIdentifier()
         
         super.init(reusableIdentifier:reusableIdentifier, cellHeight:kCellHeight)
     }

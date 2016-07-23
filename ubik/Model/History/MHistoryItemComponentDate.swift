@@ -3,7 +3,7 @@ import UIKit
 class MHistoryItemComponentDate:MHistoryItemComponent
 {
     let date:String
-    private let kCellHeight:CGFloat = 50
+    private let kCellHeight:CGFloat = 60
     
     init(date:String)
     {
