@@ -98,6 +98,7 @@
 		DAB5081A1D43EF6A00E1D316 /* VHistoryChartDisplayCellAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB508191D43EF6A00E1D316 /* VHistoryChartDisplayCellAmount.swift */; };
 		DAB5081C1D43EF7300E1D316 /* VHistoryChartDisplayCellTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5081B1D43EF7300E1D316 /* VHistoryChartDisplayCellTitle.swift */; };
 		DAB5081E1D43EF8600E1D316 /* VHistoryChartDisplayCellImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5081D1D43EF8600E1D316 /* VHistoryChartDisplayCellImage.swift */; };
+		DAB508201D43F1CE00E1D316 /* VHistoryChartDisplayCellDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5081F1D43F1CE00E1D316 /* VHistoryChartDisplayCellDate.swift */; };
 		DAB8F6BA1D31BFE900236A00 /* MHealth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8F6B81D31BFE900236A00 /* MHealth.swift */; };
 		DAB8F6C31D31CEC100236A00 /* MHealthAuthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8F6C21D31CEC100236A00 /* MHealthAuthDelegate.swift */; };
 		DACE5CB61D26C93D00080E5F /* CSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CB51D26C93D00080E5F /* CSummary.swift */; };
@@ -224,6 +225,7 @@
 		DAB508191D43EF6A00E1D316 /* VHistoryChartDisplayCellAmount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHistoryChartDisplayCellAmount.swift; sourceTree = "<group>"; };
 		DAB5081B1D43EF7300E1D316 /* VHistoryChartDisplayCellTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHistoryChartDisplayCellTitle.swift; sourceTree = "<group>"; };
 		DAB5081D1D43EF8600E1D316 /* VHistoryChartDisplayCellImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHistoryChartDisplayCellImage.swift; sourceTree = "<group>"; };
+		DAB5081F1D43F1CE00E1D316 /* VHistoryChartDisplayCellDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHistoryChartDisplayCellDate.swift; sourceTree = "<group>"; };
 		DAB8F6B81D31BFE900236A00 /* MHealth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealth.swift; sourceTree = "<group>"; };
 		DAB8F6C21D31CEC100236A00 /* MHealthAuthDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealthAuthDelegate.swift; sourceTree = "<group>"; };
 		DACE5CB51D26C93D00080E5F /* CSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSummary.swift; sourceTree = "<group>"; };
@@ -373,6 +375,7 @@
 				DA2C7D1C1D3C4746005FFDB0 /* VHistoryChartTouch.swift */,
 				DA2C7D1E1D3C5652005FFDB0 /* VHistoryChartDisplay.swift */,
 				DAB508151D43EF2A00E1D316 /* VHistoryChartDisplayCell.swift */,
+				DAB5081F1D43F1CE00E1D316 /* VHistoryChartDisplayCellDate.swift */,
 				DAB508191D43EF6A00E1D316 /* VHistoryChartDisplayCellAmount.swift */,
 				DAB5081B1D43EF7300E1D316 /* VHistoryChartDisplayCellTitle.swift */,
 				DAB5081D1D43EF8600E1D316 /* VHistoryChartDisplayCellImage.swift */,
@@ -889,6 +892,7 @@
 				DAB344351D2AAE7C00406CEE /* MOnboarding.swift in Sources */,
 				DACE5CBB1D26CAC200080E5F /* CMainController.swift in Sources */,
 				DA4A47F01D41BA2900D8E065 /* MComponentPaySteps.swift in Sources */,
+				DAB508201D43F1CE00E1D316 /* VHistoryChartDisplayCellDate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

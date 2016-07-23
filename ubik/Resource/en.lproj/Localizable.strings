@@ -10,9 +10,6 @@
 "VMainBarButtonConfig_title"="Settings";
 "VSummaryHeaderCounter_measuresMetric"="Metres";
 "VSummaryHeaderCounter_measuresImperial"="Feet";
-"VHistoryChartDisplay_measuresMetric"="meters";
-"VHistoryChartDisplay_measuresImperial"="feet";
-"VHistoryChartDisplay_stepsTitle"="steps";
 
 "MSettingsSectionConfig_title"="Configuration";
 "MSettingsItemNotifications_title"="Notifications";

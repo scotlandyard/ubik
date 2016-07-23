@@ -1,6 +1,6 @@
 import UIKit
 
-class VHistoryChartDisplayCellTitle:VHistoryChartDisplayCell
+class VHistoryChartDisplayCellDate:VHistoryChartDisplayCell
 {
     weak var label:UILabel!
     
@@ -13,8 +13,8 @@ class VHistoryChartDisplayCellTitle:VHistoryChartDisplayCell
         label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = UIColor.clearColor()
         label.textAlignment = NSTextAlignment.Center
-        label.font = UIFont.regular(12)
-        label.textColor = UIColor.blackColor()
+        label.font = UIFont.regular(15)
+        label.textColor = UIColor.complementDarker()
         self.label = label
         
         addSubview(label)
