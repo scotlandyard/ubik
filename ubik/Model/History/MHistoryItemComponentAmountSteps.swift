@@ -1,6 +1,6 @@
 import UIKit
 
-class MHistoryItemComponentAmountSteps<CellType:VHistoryChartDisplayCellAmount>:MHistoryItemComponent<CellType>
+class MHistoryItemComponentAmountSteps:MHistoryItemComponent<VHistoryChartDisplayCellAmount>
 {
     let steps:String
     private let kCellHeight:CGFloat = 100
@@ -12,7 +12,7 @@ class MHistoryItemComponentAmountSteps<CellType:VHistoryChartDisplayCellAmount>:
         super.init(cellHeight:kCellHeight)
     }
     
-    override func config(cell:CellType)
+    override func config(cell:VHistoryChartDisplayCellAmount)
     {
         cell.label.text = steps
     }

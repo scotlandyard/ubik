@@ -1,6 +1,6 @@
 import UIKit
 
-class MHistoryItemComponentTitleDistance<CellType:VHistoryChartDisplayCellTitle>:MHistoryItemComponent<CellType>
+class MHistoryItemComponentTitleDistance:MHistoryItemComponent<VHistoryChartDisplayCellTitle>
 {
     let title:String
     private let kCellHeight:CGFloat = 40
@@ -25,7 +25,7 @@ class MHistoryItemComponentTitleDistance<CellType:VHistoryChartDisplayCellTitle>
         super.init(cellHeight:kCellHeight)
     }
     
-    override func config(cell:CellType)
+    override func config(cell:VHistoryChartDisplayCellTitle)
     {
         cell.label.text = title
     }

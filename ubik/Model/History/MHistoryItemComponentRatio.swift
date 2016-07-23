@@ -1,6 +1,6 @@
 import UIKit
 
-class MHistoryItemComponentRatio<CellType:VHistoryChartDisplayCellImage>:MHistoryItemComponent<CellType>
+class MHistoryItemComponentRatio:MHistoryItemComponent<VHistoryChartDisplayCellImage>
 {
     let ratio:String
     let title:String
@@ -31,7 +31,7 @@ class MHistoryItemComponentRatio<CellType:VHistoryChartDisplayCellImage>:MHistor
         super.init(cellHeight:kCellHeight)
     }
     
-    override func config(cell:CellType)
+    override func config(cell:VHistoryChartDisplayCellImage)
     {
         cell.label.text = ratio
         cell.title.text = title

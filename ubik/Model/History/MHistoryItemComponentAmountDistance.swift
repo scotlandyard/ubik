@@ -1,6 +1,6 @@
 import UIKit
 
-class MHistoryItemComponentAmountDistance<CellType:VHistoryChartDisplayCellAmount>:MHistoryItemComponent<CellType>
+class MHistoryItemComponentAmountDistance:MHistoryItemComponent<VHistoryChartDisplayCellAmount>
 {
     let distance:String
     private let kCellHeight:CGFloat = 100
@@ -12,7 +12,7 @@ class MHistoryItemComponentAmountDistance<CellType:VHistoryChartDisplayCellAmoun
         super.init(cellHeight:kCellHeight)
     }
     
-    override func config(cell:CellType)
+    override func config(cell:VHistoryChartDisplayCellAmount)
     {
         cell.label.text = distance
     }
