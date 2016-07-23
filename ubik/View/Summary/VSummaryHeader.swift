@@ -86,11 +86,14 @@ class VSummaryHeader:UIView
     
     func update()
     {
-        let value:CGFloat = CGFloat(MSession.sharedInstance.session!.current!.distance)
-        let maxValue:CGFloat = CGFloat(MSession.sharedInstance.session!.maxDistance!.distance)
-        
-        modelGyro.update(value, maxValue:maxValue)
-        counter.update()
-        viewGyro.update()
+        if MSession.sharedInstance.session!.current != nil && MSession.sharedInstance.session!.maxDistance != nil
+        {
+            let value:CGFloat = CGFloat(MSession.sharedInstance.session!.current!.distance)
+            let maxValue:CGFloat = CGFloat(MSession.sharedInstance.session!.maxDistance!.distance)
+            
+            modelGyro.update(value, maxValue:maxValue)
+            counter.update()
+            viewGyro.update()
+        }
     }
 }
