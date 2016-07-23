@@ -46,7 +46,8 @@ class MHealth
     {
         let minTimestamp:NSTimeInterval = MSession.sharedInstance.session!.lastDate
         let minDate:NSDate = NSDate(timeIntervalSince1970:minTimestamp)
-        let predicate:NSPredicate = HKQuery.predicateForSamplesWithStartDate(minDate, endDate:nil, options:HKQueryOptions.StrictStartDate)
+        let maxDate:NSDate = NSDate()
+        let predicate:NSPredicate = HKQuery.predicateForSamplesWithStartDate(minDate, endDate:maxDate, options:HKQueryOptions.StrictStartDate)
         
         return predicate
     }

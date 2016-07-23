@@ -17,7 +17,10 @@ class COnboardingItemPermission:COnboardingItem, MHealthAuthDelegate
         }
         else
         {
-            MHealth.sharedInstance.askAuthorization(self)
+            dispatch_async(dispatch_get_main_queue())
+            {
+                MHealth.sharedInstance.askAuthorization(self)
+            }
         }
     }
     

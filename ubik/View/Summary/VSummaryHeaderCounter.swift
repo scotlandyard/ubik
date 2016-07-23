@@ -16,7 +16,7 @@ class VSummaryHeaderCounter:UIView
     private let numberFormatter:NSNumberFormatter
     private let kValueSize:CGFloat = 35
     private let kMaxValueSize:CGFloat = 14
-    private let kMeasuresSize:CGFloat = 16
+    private let kMeasuresSize:CGFloat = 18
     
     init(model:MComponentGyro)
     {
@@ -47,7 +47,7 @@ class VSummaryHeaderCounter:UIView
         labelMaxValue.textAlignment = NSTextAlignment.Center
         labelMaxValue.backgroundColor = UIColor.clearColor()
         labelMaxValue.font = UIFont.numeric(kMaxValueSize)
-        labelMaxValue.textColor = UIColor(white:0.82, alpha:1)
+        labelMaxValue.textColor = UIColor.complementDark()
         self.labelMaxValue = labelMaxValue
         
         let labelMeasures:UILabel = UILabel()
@@ -56,7 +56,7 @@ class VSummaryHeaderCounter:UIView
         labelMeasures.textAlignment = NSTextAlignment.Center
         labelMeasures.backgroundColor = UIColor.clearColor()
         labelMeasures.font = UIFont.bold(kMeasuresSize)
-        labelMeasures.textColor = UIColor(white:0.82, alpha:1)
+        labelMeasures.textColor = UIColor.complementDark()
         self.labelMeasures = labelMeasures
         
         let spinner:VMainLoader = VMainLoader()
@@ -96,12 +96,12 @@ class VSummaryHeaderCounter:UIView
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-50-[labelMaxValue]-0-|",
+            "V:|-55-[labelMaxValue]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-90-[labelMeasures]-0-|",
+            "V:|-105-[labelMeasures]-0-|",
             options:[],
             metrics:metrics,
             views:views))
