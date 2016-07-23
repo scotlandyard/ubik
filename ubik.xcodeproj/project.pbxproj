@@ -93,6 +93,7 @@
 		DAB3443B1D2AB0D700406CEE /* MOnboardingItemPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3443A1D2AB0D700406CEE /* MOnboardingItemPermission.swift */; };
 		DAB3443D1D2AB0E200406CEE /* MOnboardingItemLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3443C1D2AB0E200406CEE /* MOnboardingItemLoading.swift */; };
 		DAB3443F1D2AB10800406CEE /* MOnboardingItemReady.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3443E1D2AB10800406CEE /* MOnboardingItemReady.swift */; };
+		DAB508141D43EEAB00E1D316 /* MHistoryItemComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB508131D43EEAB00E1D316 /* MHistoryItemComponent.swift */; };
 		DAB8F6BA1D31BFE900236A00 /* MHealth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8F6B81D31BFE900236A00 /* MHealth.swift */; };
 		DAB8F6C31D31CEC100236A00 /* MHealthAuthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8F6C21D31CEC100236A00 /* MHealthAuthDelegate.swift */; };
 		DACE5CB61D26C93D00080E5F /* CSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CB51D26C93D00080E5F /* CSummary.swift */; };
@@ -214,6 +215,7 @@
 		DAB3443A1D2AB0D700406CEE /* MOnboardingItemPermission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOnboardingItemPermission.swift; sourceTree = "<group>"; };
 		DAB3443C1D2AB0E200406CEE /* MOnboardingItemLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOnboardingItemLoading.swift; sourceTree = "<group>"; };
 		DAB3443E1D2AB10800406CEE /* MOnboardingItemReady.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOnboardingItemReady.swift; sourceTree = "<group>"; };
+		DAB508131D43EEAB00E1D316 /* MHistoryItemComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHistoryItemComponent.swift; sourceTree = "<group>"; };
 		DAB8F6B81D31BFE900236A00 /* MHealth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealth.swift; sourceTree = "<group>"; };
 		DAB8F6C21D31CEC100236A00 /* MHealthAuthDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealthAuthDelegate.swift; sourceTree = "<group>"; };
 		DACE5CB51D26C93D00080E5F /* CSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSummary.swift; sourceTree = "<group>"; };
@@ -507,6 +509,7 @@
 			children = (
 				DAA076CF1D35D2950039248D /* MHistory.swift */,
 				DAA076D11D35D29D0039248D /* MHistoryItem.swift */,
+				DAB508131D43EEAB00E1D316 /* MHistoryItemComponent.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -833,6 +836,7 @@
 				DA2C7D281D3D1A56005FFDB0 /* MSettings.swift in Sources */,
 				DA94E2101D28B7D8002FF88B /* VMainBarButtonHistory.swift in Sources */,
 				DA2AFAD91D3D3500000B6E44 /* VSettingsHeader.swift in Sources */,
+				DAB508141D43EEAB00E1D316 /* MHistoryItemComponent.swift in Sources */,
 				DAB344371D2AAE8800406CEE /* MOnboardingItem.swift in Sources */,
 				DA3E0ADA1D3DBAF000906E81 /* CategoryUILocalNotification.swift in Sources */,
 				DAD00CFC1D2752B600BCDDAA /* VComponentGyroIcon.swift in Sources */,

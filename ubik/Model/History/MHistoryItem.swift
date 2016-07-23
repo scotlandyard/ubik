@@ -6,6 +6,7 @@ class MHistoryItem
     let steps:String
     let date:String
     let percentage:CGFloat
+    let components:[MHistoryItemComponent]
     
     init(distance:String, steps:String, date:String, percentage:CGFloat)
     {
@@ -13,5 +14,8 @@ class MHistoryItem
         self.steps = steps
         self.date = date
         self.percentage = percentage
+        
+        components = [
+        ]
     }
 }

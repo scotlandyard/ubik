@@ -111,7 +111,7 @@ class VMainBarButton:UIButton
         }
         else
         {
-            color = UIColor.blackColor()
+            color = UIColor.complementDark()
         }
         
         imageView?.tintColor = color
