@@ -1,20 +1,20 @@
 import UIKit
 
-class MHistoryItemComponent
+class MHistoryItemComponent<CellType:VHistoryChartDisplayCellTitle>
 {
     let reusableIdentifier:String
     let cellHeight:CGFloat
     
-    init(reusableIdentifier:String, cellHeight:CGFloat)
+    init(cellHeight:CGFloat)
     {
-        self.reusableIdentifier = reusableIdentifier
         self.cellHeight = cellHeight
+        reusableIdentifier = CellType.reusableIdentifier()
     }
     
     //MARK: public
     
-    func config(cell:VHistoryChartDisplayCell)
+    func config(cell:CellType)
     {
-        
+        cell.label.text = ""
     }
 }
