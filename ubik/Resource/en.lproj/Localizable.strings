@@ -16,5 +16,11 @@
 "MSettingsItemNotifications_subtitle"="\nReceive notifications reminding you to keep moving";
 "MSummaryItemSteps_title"="Steps";
 "MSummaryItemTime_title"="Time";
+"MHistoryItemComponentTitleDistance_titleMetric"="Metres";
+"MHistoryItemComponentTitleDistance_titleImperial"="Feet";
+"MHistoryItemComponentTitleSteps_title"="Steps";
+"MHistoryItemComponentRatio_title"="Steps/%@";
+"MHistoryItemComponentRatio_measureMetric"="metre";
+"MHistoryItemComponentRatio_measureImperial"="foot";
 
 "UILocalNotification_remainder"="How about a 5 minutes walk?\nYou need it";
