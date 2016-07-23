@@ -10,11 +10,12 @@ class MHistory
         let maxDistance:Int32 = MSession.sharedInstance.session!.maxDistance!.distance
         var items:[MHistoryItem] = []
         let maxDistanceFloat:CGFloat = CGFloat(maxDistance)
+        
         let numberFormatter:NSNumberFormatter = NSNumberFormatter()
         numberFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
-        
         let dateFormatter:NSDateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = kDateFormat
+        
         let countItems:Int = dbModel.count
         
         for indexModel:Int in 0 ..< countItems
@@ -30,8 +31,10 @@ class MHistory
             let steps:String = numberFormatter.stringFromNumber(stepsFloat)!
             let date:String = dateFormatter.stringFromDate(dateRaw)
             let percentage:CGFloat = distanceFloat / maxDistanceFloat
+            let ratioFloat:CGFloat = stepsFloat / distanceFloat
+            let ratio:String = numberFormatter.stringFromNumber(ratioFloat)!
             
-            let item:MHistoryItem = MHistoryItem(distance:distance, steps:steps, date:date, percentage:percentage)
+            let item:MHistoryItem = MHistoryItem(distance:distance, steps:steps, ratio:ratio, date:date, percentage:percentage)
             items.append(item)
         }
         
