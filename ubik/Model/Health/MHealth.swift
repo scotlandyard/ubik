@@ -106,17 +106,8 @@ class MHealth
                     let quantity:HKQuantity? = statistic.sumQuantity()
                     let statisticDate:NSDate = statistic.startDate
                     let timestamp:NSTimeInterval = statisticDate.timeIntervalSince1970
-                    let steps:Int32
-                    
-                    if quantity == nil
-                    {
-                        steps = 0
-                    }
-                    else
-                    {
-                        let stepsDouble:Double = quantity!.doubleValueForUnit(self.stepsUnit)
-                        steps = Int32(stepsDouble)
-                    }
+                    let stepsDouble:Double = quantity!.doubleValueForUnit(self.stepsUnit)
+                    let steps:Int32 = Int32(stepsDouble)
                     
                     model.increase(timestamp, steps:steps)
                 }
@@ -144,17 +135,8 @@ class MHealth
                     let quantity:HKQuantity? = statistic.sumQuantity()
                     let statisticDate:NSDate = statistic.startDate
                     let timestamp:NSTimeInterval = statisticDate.timeIntervalSince1970
-                    let distance:Int32
-                    
-                    if quantity == nil
-                    {
-                        distance = 0
-                    }
-                    else
-                    {
-                        let distanceDouble:Double = quantity!.doubleValueForUnit(self.distanceUnit)
-                        distance = Int32(distanceDouble)
-                    }
+                    let distanceDouble:Double = quantity!.doubleValueForUnit(self.distanceUnit)
+                    let distance:Int32 = Int32(distanceDouble)
                     
                     model.increase(timestamp, distance:distance)
                 }
