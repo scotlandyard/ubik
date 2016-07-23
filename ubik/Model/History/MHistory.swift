@@ -17,7 +17,7 @@ class MHistory
         dateFormatter.dateFormat = kDateFormat
         let countItems:Int = dbModel.count
         
-        for indexModel:Int in 0..<countItems
+        for indexModel:Int in 0 ..< countItems
         {
             let dbItem:DUbikHike = dbModel[indexModel]
             let distanceInt:Int32 = dbItem.distance

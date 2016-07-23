@@ -120,7 +120,12 @@ class VHistoryChart:UIView, UICollectionViewDelegate, UICollectionViewDataSource
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-0-[borderTop(1)]-0-[collection(collectionHeight)]-0-[borderBottom(2)]-0-[touch(touchHeight)]-0-[display]-0-|",
+            "V:|-0-[borderTop(1)]-0-[collection(collectionHeight)]-0-[borderBottom(2)]-0-[touch(touchHeight)]",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:[borderBottom]-0-[display]-0-|",
             options:[],
             metrics:metrics,
             views:views))
