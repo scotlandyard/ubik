@@ -18,6 +18,7 @@ class MSettingsItemNotifications:MSettingsItem
     override func config(cell:VSettingsCell, controller:CSettings)
     {
         let cellCheck:VSettingsCellCheck = cell as! VSettingsCellCheck
+        let allowNotifications:Bool = MConfiguration.sharedInstance.device!.notifications
         
         let attrTitle:NSAttributedString = NSAttributedString(string:title, attributes:cellCheck.attrTitle)
         let attrSubtitle:NSAttributedString = NSAttributedString(string:subtitle, attributes:cellCheck.attrSubtitle)
@@ -26,5 +27,14 @@ class MSettingsItemNotifications:MSettingsItem
         mutableString.appendAttributedString(attrSubtitle)
         
         cellCheck.label.attributedText = mutableString
+        cellCheck.check.setOn(allowNotifications, animated:false)
+        cellCheck.check.addTarget(self, action:#selector(self.actionCheckChange(sender:)), forControlEvents:UIControlEvents.ValueChanged)
+    }
+    
+    //MARK: actions
+    
+    @objc func actionCheckChange(sender check:UISwitch)
+    {
+        MConfiguration.sharedInstance.device!.changeNotifications(check.on)
     }
 }

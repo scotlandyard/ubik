@@ -41,4 +41,9 @@ class DUbikDevice:NSManagedObject
     {
         measures = DUbikDeviceMeasures.Imperial
     }
+    
+    func changeNotifications(notifications:Bool)
+    {
+        self.notifications = notifications
+    }
 }
