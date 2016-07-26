@@ -12,6 +12,7 @@ class MHealth
     let calendar:NSCalendar
     let calendarUnits:NSCalendarUnit
     let updateHandler:((HKStatisticsCollectionQuery, HKStatistics?, HKStatisticsCollection?, NSError?) -> Void)?
+    var stepsQuery:HKStatisticsCollectionQuery?
     
     private init()
     {
@@ -25,7 +26,6 @@ class MHealth
             updateHandler =
             { (query, statistics, results, error) in
                 
-                print("update")
             }
         }
         else
@@ -98,16 +98,15 @@ class MHealth
             options:options,
             anchorDate:startDate,
             intervalComponents:components)
-        query.statisticsUpdateHandler = updateHandler
         
         return query
     }
     
     private func loadSteps(model:MHealthModel, delegate:MHealthLoadDelegate)
     {
-        let stepsQuery:HKStatisticsCollectionQuery = collectionQuery(stepsType)
-        
-        stepsQuery.initialResultsHandler =
+        stepsQuery = collectionQuery(stepsType)
+        stepsQuery!.statisticsUpdateHandler = updateHandler
+        stepsQuery!.initialResultsHandler =
         { (query, results, error) in
             
             if results != nil
@@ -129,7 +128,7 @@ class MHealth
             self.loadDistance(model, delegate:delegate)
         }
         
-        healthStore!.executeQuery(stepsQuery)
+        healthStore!.executeQuery(stepsQuery!)
     }
     
     private func loadDistance(model:MHealthModel, delegate:MHealthLoadDelegate)
