@@ -24,6 +24,8 @@ class MHealth
             distanceUnit = HKUnit.meterUnit()
             updateHandler =
             { (query, statistics, results, error) in
+                
+                print("update")
             }
         }
         else
@@ -96,6 +98,7 @@ class MHealth
             options:options,
             anchorDate:startDate,
             intervalComponents:components)
+        query.statisticsUpdateHandler = updateHandler
         
         return query
     }
@@ -103,7 +106,6 @@ class MHealth
     private func loadSteps(model:MHealthModel, delegate:MHealthLoadDelegate)
     {
         let stepsQuery:HKStatisticsCollectionQuery = collectionQuery(stepsType)
-        stepsQuery.statisticsUpdateHandler = updateHandler
         
         stepsQuery.initialResultsHandler =
         { (query, results, error) in
