@@ -99,6 +99,20 @@ class MHealth
     {
         let stepsQuery:HKStatisticsCollectionQuery = collectionQuery(stepsType)
         
+        stepsQuery.statisticsUpdateHandler =
+        { (query, statistics, results, error) in
+            
+            if results != nil
+            {
+                let statistics:[HKStatistics] = results!.statistics()
+                
+                for statistic:HKStatistics in statistics
+                {
+                    print(statisticç)
+                }
+            }
+        }
+        
         stepsQuery.initialResultsHandler =
         { (query, results, error) in
             
