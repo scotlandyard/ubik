@@ -5,28 +5,32 @@ class MHealth
 {
     static let sharedInstance = MHealth()
     let healthStore:HKHealthStore?
-    let stepsType:HKQuantityType
-    let stepsUnit:HKUnit
-    let distanceType:HKQuantityType
-    let distanceUnit:HKUnit
+    let stepsType:HKQuantityType!
+    let stepsUnit:HKUnit!
+    let distanceType:HKQuantityType!
+    let distanceUnit:HKUnit!
     let calendar:NSCalendar
     let calendarUnits:NSCalendarUnit
     
     private init()
     {
-        if HKHealthStore.isHealthDataAvailable()
+        if HKHealthStore.isHealthDataAvailable() && false
         {
             healthStore = HKHealthStore()
+            stepsType = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierStepCount)!
+            stepsUnit = HKUnit.countUnit()
+            distanceType = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierDistanceWalkingRunning)!
+            distanceUnit = HKUnit.meterUnit()
         }
         else
         {
             healthStore = nil
+            stepsType = nil
+            stepsUnit = nil
+            distanceType = nil
+            distanceUnit = nil
         }
         
-        stepsType = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierStepCount)!
-        stepsUnit = HKUnit.countUnit()
-        distanceType = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierDistanceWalkingRunning)!
-        distanceUnit = HKUnit.meterUnit()
         calendar = NSCalendar.currentCalendar()
         calendarUnits = [NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day]
     }

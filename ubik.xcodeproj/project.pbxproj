@@ -107,6 +107,8 @@
 		DAB5082C1D43F84F00E1D316 /* MHistoryItemComponentRatio.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5082B1D43F84F00E1D316 /* MHistoryItemComponentRatio.swift */; };
 		DAB8F6BA1D31BFE900236A00 /* MHealth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8F6B81D31BFE900236A00 /* MHealth.swift */; };
 		DAB8F6C31D31CEC100236A00 /* MHealthAuthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8F6C21D31CEC100236A00 /* MHealthAuthDelegate.swift */; };
+		DABE9FD41D46F11600090C58 /* CErrorHealthKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABE9FD31D46F11600090C58 /* CErrorHealthKit.swift */; };
+		DABE9FD71D46F26E00090C58 /* VErrorHealthKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABE9FD61D46F26E00090C58 /* VErrorHealthKit.swift */; };
 		DACE5CB61D26C93D00080E5F /* CSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CB51D26C93D00080E5F /* CSummary.swift */; };
 		DACE5CB91D26CA0800080E5F /* VSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CB81D26CA0800080E5F /* VSummary.swift */; };
 		DACE5CBB1D26CAC200080E5F /* CMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE5CBA1D26CAC200080E5F /* CMainController.swift */; };
@@ -240,6 +242,8 @@
 		DAB5082B1D43F84F00E1D316 /* MHistoryItemComponentRatio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHistoryItemComponentRatio.swift; sourceTree = "<group>"; };
 		DAB8F6B81D31BFE900236A00 /* MHealth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealth.swift; sourceTree = "<group>"; };
 		DAB8F6C21D31CEC100236A00 /* MHealthAuthDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHealthAuthDelegate.swift; sourceTree = "<group>"; };
+		DABE9FD31D46F11600090C58 /* CErrorHealthKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CErrorHealthKit.swift; sourceTree = "<group>"; };
+		DABE9FD61D46F26E00090C58 /* VErrorHealthKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VErrorHealthKit.swift; sourceTree = "<group>"; };
 		DACE5CB51D26C93D00080E5F /* CSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSummary.swift; sourceTree = "<group>"; };
 		DACE5CB81D26CA0800080E5F /* VSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSummary.swift; sourceTree = "<group>"; };
 		DACE5CBA1D26CAC200080E5F /* CMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMainController.swift; sourceTree = "<group>"; };
@@ -442,6 +446,7 @@
 		DA906DE51D22F9490095B270 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DABE9FD21D46F10900090C58 /* Error */,
 				DA152B3C1D3E967E00568204 /* Landing */,
 				DA2C7D201D3D1A23005FFDB0 /* Settings */,
 				DA55F3521D3348D900BBF21F /* History */,
@@ -508,6 +513,7 @@
 		DA906DF31D22F9490095B270 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DABE9FD51D46F26000090C58 /* Error */,
 				DA152B3F1D3E96B000568204 /* Landing */,
 				DA2C7D231D3D1A3B005FFDB0 /* Settings */,
 				DA55F3551D334A0200BBF21F /* History */,
@@ -633,6 +639,22 @@
 				DAB3443E1D2AB10800406CEE /* MOnboardingItemReady.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		DABE9FD21D46F10900090C58 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				DABE9FD31D46F11600090C58 /* CErrorHealthKit.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		DABE9FD51D46F26000090C58 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				DABE9FD61D46F26E00090C58 /* VErrorHealthKit.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 		DACE5CB41D26C93300080E5F /* Summary */ = {
@@ -815,6 +837,7 @@
 				DA152B341D3E82A900568204 /* DUbikHike+CoreDataProperties.swift in Sources */,
 				DA152B3E1D3E968900568204 /* CLanding.swift in Sources */,
 				DA55F34F1D3314EA00BBF21F /* VMainBarButtonConfig.swift in Sources */,
+				DABE9FD41D46F11600090C58 /* CErrorHealthKit.swift in Sources */,
 				DA2C7D221D3D1A2C005FFDB0 /* CSettings.swift in Sources */,
 				DACE5CB91D26CA0800080E5F /* VSummary.swift in Sources */,
 				DAB3443D1D2AB0E200406CEE /* MOnboardingItemLoading.swift in Sources */,
@@ -905,6 +928,7 @@
 				DAB5081E1D43EF8600E1D316 /* VHistoryChartDisplayCellImage.swift in Sources */,
 				DA2C7D2E1D3D1F21005FFDB0 /* MSettingsSectionConfig.swift in Sources */,
 				DA4A47E51D41B37200D8E065 /* MSummary.swift in Sources */,
+				DABE9FD71D46F26E00090C58 /* VErrorHealthKit.swift in Sources */,
 				DA4A47EB1D41B91800D8E065 /* VComponentPay.swift in Sources */,
 				DAAF3C8F1D2C89C600BBBD40 /* COnboardingItem.swift in Sources */,
 				DA4A47E21D41B0B100D8E065 /* VSummaryFooter.swift in Sources */,

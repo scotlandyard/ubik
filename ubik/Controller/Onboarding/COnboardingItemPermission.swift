@@ -13,7 +13,7 @@ class COnboardingItemPermission:COnboardingItem, MHealthAuthDelegate
     {
         if MHealth.sharedInstance.healthStore == nil
         {
-            onboarding.next()
+            onboarding.parent.healthKitError()
         }
         else
         {
