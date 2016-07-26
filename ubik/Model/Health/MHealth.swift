@@ -11,16 +11,20 @@ class MHealth
     let distanceUnit:HKUnit!
     let calendar:NSCalendar
     let calendarUnits:NSCalendarUnit
+    let updateHandler:((HKStatisticsCollectionQuery, HKStatistics?, HKStatisticsCollection?, NSError?) -> Void)?
     
     private init()
     {
-        if HKHealthStore.isHealthDataAvailable() && false
+        if HKHealthStore.isHealthDataAvailable()
         {
             healthStore = HKHealthStore()
             stepsType = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierStepCount)!
             stepsUnit = HKUnit.countUnit()
             distanceType = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierDistanceWalkingRunning)!
             distanceUnit = HKUnit.meterUnit()
+            updateHandler =
+            { (query, statistics, results, error) in
+            }
         }
         else
         {
@@ -29,6 +33,7 @@ class MHealth
             stepsUnit = nil
             distanceType = nil
             distanceUnit = nil
+            updateHandler = nil
         }
         
         calendar = NSCalendar.currentCalendar()
@@ -98,20 +103,7 @@ class MHealth
     private func loadSteps(model:MHealthModel, delegate:MHealthLoadDelegate)
     {
         let stepsQuery:HKStatisticsCollectionQuery = collectionQuery(stepsType)
-        
-        stepsQuery.statisticsUpdateHandler =
-        { (query, statistics, results, error) in
-            
-            if results != nil
-            {
-                let statistics:[HKStatistics] = results!.statistics()
-                
-                for statistic:HKStatistics in statistics
-                {
-                    print(statisticç)
-                }
-            }
-        }
+        stepsQuery.statisticsUpdateHandler = updateHandler
         
         stepsQuery.initialResultsHandler =
         { (query, results, error) in
